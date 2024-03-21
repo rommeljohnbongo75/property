@@ -112,10 +112,21 @@
     background-color: #efe9e2;
     border-radius: 10px;
     height:20%;
-}
-.btn{
-    margin-top:20px;
+    }
+    .btn{
+        margin-top:20px;
+      }
+   .adults-children.sec-menu-div.active{
+      display: block !important;
    }
+   .counter input[type="text"] {
+            width: calc(35% - 40px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
 </style>
 @section('content')
 
@@ -149,42 +160,42 @@
             @if ($listing ->thumbnail_1)
             <div class="col-md-2">
             <a href="{{ url($listing ->thumbnail_1) }}" data-lightbox="home-images">
-                <img src="{{ url($listing ->thumbnail_1) }}" alt="" class="img-fluid">
+                <img src="{{ url($listing ->thumbnail_1) }}" alt="" class="img-fluid" data-fancybox="gallery">
               </a>
             </div>
             @endif
             @if ($listing ->thumbnail_2)
             <div class="col-md-2">
               <a href="{{ url($listing ->thumbnail_2) }}" data-lightbox="home-images">
-                <img src="{{ url($listing ->thumbnail_2) }}" alt="" class="img-fluid">
+                <img src="{{ url($listing ->thumbnail_2) }}" alt="" class="img-fluid" data-fancybox="gallery">
               </a>
             </div>
             @endif
             @if ($listing ->thumbnail_3)
             <div class="col-md-2">
               <a href="{{ url($listing ->thumbnail_3) }}" data-lightbox="home-images">
-                <img src="{{ url($listing ->thumbnail_3) }}" alt="" class="img-fluid">
+                <img src="{{ url($listing ->thumbnail_3) }}" alt="" class="img-fluid" data-fancybox="gallery">
               </a>
             </div>
             @endif
             @if ($listing ->thumbnail_4)
             <div class="col-md-2">
               <a href="{{ url($listing ->thumbnail_4) }}" data-lightbox="home-images">
-                <img src="{{ url($listing ->thumbnail_4) }}" alt="" class="img-fluid">
+                <img src="{{ url($listing ->thumbnail_4) }}" alt="" class="img-fluid" data-fancybox="gallery">
               </a>
             </div>
             @endif
             @if ($listing ->thumbnail_5)
             <div class="col-md-2">
               <a href="{{ url($listing ->thumbnail_5) }}" data-lightbox="home-images">
-                <img src="{{ url($listing ->thumbnail_5) }}" alt="" class="img-fluid">
+                <img src="{{ url($listing ->thumbnail_5) }}" alt="" class="img-fluid" data-fancybox="gallery">
               </a>
             </div>
             @endif
             @if ($listing ->thumbnail_6)
             <div class="col-md-2">
               <a href="{{ url($listing ->thumbnail_6) }}" data-lightbox="home-images">
-                <img src="{{ url($listing ->thumbnail_6) }}" alt="" class="img-fluid">
+                <img src="{{ url($listing ->thumbnail_6) }}" alt="" class="img-fluid" data-fancybox="gallery">
               </a>
             </div>
             @endif
@@ -251,20 +262,8 @@
                 @csrf 
                 <input type="hidden" name="listing_id" value="{{ $listing ->id }}">
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                    <!-- <div class="from-data d-flex justify-content-around align-items-center ">
-                      <div class="form-icon">
-                          <i class="fa-regular fa-calendar-days" style="color:#23b0ff"></i>
-                      </div>
-                      <div class="form-group">  
-                        <label for="checkin" style="font-size:18px" >Check-In</label>
-                      </div>
-                      <div class="form-img">
-                          <i class="fa-solid fa-arrow-right" style="color:#23b0ff"></i>
-                      </div>
-                      <div class="form-group">
-                          <label for="checkout" style="font-size:18px" >Check-Out</label>
-                      </div>
-                    </div>  -->
+                <input type="hidden" name="name" value="{{ Auth::user()->username; }}">
+                <input type="hidden" name="email" value="{{ Auth::user()->email; }}">
                     <div class="from-data d-flex justify-content-around align-items-center">
                       <div class="form-icon">
                           <i class="fa-regular fa-calendar-days" style="color:#23b0ff"></i>
@@ -279,28 +278,47 @@
                           <input type="text" id='rangesend' name="checkout" value="Check-Out" placeholder="Check-Out">
                       </div>
                   </div>
-              <div class="alert-text">
-                <p class="text-danger text-center py-4">Check In and Check Out is required</p>
-              </div>
-                <div class="form-group-one d-flex align-items-center"> 
-                  <div class="form-group-icon">
-                  <i class="fa-regular fa-user" style="color:#23b0ff"></i>
+                  <div class="alert-text">
+                      <p class="text-danger text-center py-4">Check In and Check Out is required</p>
                   </div>
-                        <div class="data-lable-one"> 
-                          <label for="adults" style="font-size:18px">1 Adults,</label>
-                        </div>
-                
+                  <div class="form-group-one d-flex align-items-center" id="sec-menu"> 
+                      <div class="form-group-icon">
+                          <i class="fa-regular fa-user" style="color:#23b0ff"></i>
+                      </div>
+                      <div class="data-lable-one"> 
+                        <!-- <label for="adults" style="font-size:18px">1 Adults,</label> -->
+                        <input type="text" class="adults-adults" style="font-size:18px"  value="1 Adults" placeholder="1 Adults">
+                      </div>
                       <div class="form-lable-two">
-                          <label for="children" style="font-size:18px">1 Children </label>
+                        <!-- <label for="adults" style="font-size:18px">1 Children,</label> -->
+                          <input type="text" class="children-children" style="font-size:18px"  value="1 Children" placeholder="1 Children">
                       </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="message" class="col-form-label">Message:</label>
-                        <textarea name="message"  class="form-control" style=" background-color: #efe9e2;"></textarea>
-                      </div>
-                      <input type="submit" value="Submit Booking Request" class="btn btn-block btn-secondary">
-              </form>
+                  </div>
+                    <div class="adults-children sec-menu-div" >
+                        <div class="form-group">
+                            <label for="adults">Adults:</label>
+                            <div class="counter">
+                                <span class="adults-minus">-</span>
+                                <input type="text" id="adults" name="adults" value="1" readonly>
+                                <span class="adults-plus">+</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="children">Children:</label>
+                            <div class="counter">
+                                <span class="minus">-</span>
+                                <input type="text" class="children"  id="children" name="children" value="1" readonly>
+                                <span class="plus">+</span>
+                            </div>
+                        </div>
+                  </div>
 
+                  <div class="form-group">
+                    <label for="message" class="col-form-label">Message:</label>
+                    <textarea name="message"  class="form-control" style=" background-color: #efe9e2;"></textarea>
+                  </div>
+                  <input type="submit" value="Submit Booking Request" class="btn btn-block btn-secondary">
+                </form> 
           </div>
             
            </div>
