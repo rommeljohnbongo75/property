@@ -39,16 +39,16 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
       <a class="navbar-brand" href="{{url('/')}}">
-        <span>Estate Rental</span> <br >
+        <span>Estate</span> Rental 
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-        <li class="nav-item {{ (request()->routeIs('index')) ? 'active' : '' }}  mr-3">
+        <!-- <li class="nav-item {{ (request()->routeIs('index')) ? 'active' : '' }}  mr-3">
             <a class="nav-link" href="{{ route('index') }}">Home</a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item mr-3 {{ (request()->routeIs('about')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('about') }}">About</a>
           </li> -->

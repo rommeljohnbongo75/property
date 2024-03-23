@@ -20,8 +20,7 @@
         border: 1px solid #9da6a4;
         box-shadow:22px;
         border-radius: 45px;
-        width: 105%;
-        
+        width: 113%;
         padding: 10px 20px;
 }
 .location{
@@ -51,7 +50,7 @@
 .guests-data{
     display:flex;
     align-items:center;
-    padding:0 30px;
+    padding:0px;
 }
 .guest-icon i{
     font-size:30px;
@@ -136,6 +135,15 @@ label{
     margin-bottom: 20px;
     font-size: 27px;
 }
+input#ranges {
+    border: none;
+}
+input#rangesend {
+    border: none;
+}
+.adults-children.sec-menu-div.active{
+   display: block !important;
+   }
 </style>
 @section('content')
     <!-- Showcase -->
@@ -166,33 +174,33 @@ label{
                     <div class="check-icon">
                         <i class="fa-solid fa-calendar-days"></i>
                         </div>
-                        <div class="check-in-text">
+                        <div class="check-in-text" id="cal">
                         <label for="check_in">Check-In:</label>
-                        <input type="" name="check_out" class="input-box"  placeholder="Add Dates">
+                        <input type="text"  id='ranges' name="checkin" value="Add Dates" placeholder="Add Dates">
+                        <!-- <input type="" name="check_out" class="input-box"  placeholder="Add Dates"> -->
                         </div>
                   </div> 
                   <div class="date-icon">
                          <i class="fa-solid fa-arrow-right"></i>
                   </div>
-            <div class="check-date-two">    
-                    <label for="check_out">Check-Out:</label>
-                    <input type="" name="check_out" class="input-box" id="check_out" placeholder="Add Dates">
-             </div>
-        </div>
-              <div class="guests-data">
+                <div class="check-date-two" id="cal">    
+                        <label for="check_out">Check-Out:</label>
+                        <input type="text"  id='rangesend' name="check_out" value="Add Dates" placeholder="Add Dates">
+                </div>
+                </div>
+                <div class="guests-data"  id="sec-menu">
                     <div class="guest-icon">
                         <i class="fa-regular fa-user"></i>
                     </div>
                     <div class="guests-dec">
-                       <span>Guest</span>
-                       <h5>0 Guests</h5>
+                    <span>Guest</span>
+                    <h5>0 Guests</h5>
                     </div>
-              </div>
-               
+                </div>
                 <!-- <button type="submit">Search</button> -->
                 <div class="form-btn">
                  <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-</div>
+            </div>
             </div>
         </form>
         </div>
