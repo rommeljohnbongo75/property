@@ -4,16 +4,16 @@
 
     
 
-  <section id="showcase-inner" class="py-5 text-white">
+  <!-- <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1 class="display-4">Browse Our Properties</h1>
+          <h1 class="display-4">Featured Properties</h1>
           <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Breadcrumb -->
   <section id="bc" class="mt-3">
@@ -24,7 +24,7 @@
             <a href="{% url 'listing:home' %}">
               <i class="fas fa-home"></i> Home</a>
           </li>
-          <li class="breadcrumb-item active"> Browse Listings</li>
+          <li class="breadcrumb-item active">Featured Properties</li>
         </ol>
       </nav>
     </div>
@@ -42,9 +42,9 @@
           <div class="card listing-preview">
             <img class="card-img-top" src="{{ url($listing ->thumbnail_0)}}" alt="">
             <div class="card-img-overlay">
-              <h2>
+              <!-- <h2>
                 <span class="badge badge-secondary text-white">${{ $listing ->price }}</span>
-              </h2>
+              </h2> -->
             </div>
             <div class="card-body">
               <div class="listing-heading text-center">
