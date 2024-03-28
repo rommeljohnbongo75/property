@@ -50,6 +50,8 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
     Route::post('/logout', 'logout')->name('logout');
+    Route::get('/admin/login', 'adminLogin')->name('admin.login');
+    Route::post('/admin/login/post', 'adminLoginPost')->name('admin.login.post');
 });
 
 

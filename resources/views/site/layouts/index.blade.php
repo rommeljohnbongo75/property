@@ -144,10 +144,18 @@ input#rangesend {
 .adults-children.sec-menu-div.active{
    display: block !important;
    }
+   section.show-section {
+    background-image: url("/assets/img/showcase.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh; 
+}
+
+
 </style>
 @section('content')
     <!-- Showcase -->
-    <section id="showcase">
+    <section class="show-section">
         <div class="container text-center">
             <div class="home-search p-5">
                 <h1>Your Home Away from Home</h1>

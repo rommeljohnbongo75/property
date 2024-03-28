@@ -86,11 +86,7 @@ class LoginRegisterController extends Controller
           if(Auth::attempt($credentials))
         {
             $user = Auth::user();
-            if($user->role == '0'){
-                return redirect()->route('admin.index')
-                ->withSuccess('You have successfully logged in!');
-            }else{
-                $request->session()->regenerate();
+            if($user->role == '1'){
                 return redirect()->route('dashboard')
                 ->withSuccess('You have successfully logged in!');
             }
@@ -136,6 +132,34 @@ class LoginRegisterController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login')
             ->withSuccess('You have logged out successfully!');;
-    }    
+    } 
+    
+    
+    public function adminLogin()
+    {
+        return view('admin.layouts.login.index');
+    }
+
+    public function adminLoginPost(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        
+        if(Auth::attempt($credentials))
+        {
+            $user = Auth::user();
+            if($user->role == '0'){
+                return redirect()->route('admin.index')
+                ->withSuccess('You have successfully logged in!');
+            }    
+        }else{
+                return back()->withErrors([
+                    'email' => 'Your provided credentials do not match in our records.',
+                ])->onlyInput('email');
+         }
+    }
 
 }
