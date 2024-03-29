@@ -24,11 +24,15 @@
         border-radius: 3px;
         box-sizing: border-box;
     }
+    input[type="submit"] {
+        background-color:#e5974f;
+    }   
     footer#main-footer {
         margin-top: 40px;
+        background-color:#718096;
     }
 </style>
-<footer id="main-footer" class="py-4 bg-primary text-white text-center">
+<footer id="main-footer" class="py-4 text-white text-center">
         <section id="services" class="py-5  text-white">
             <div class="container">
                 <div class="row text-center">

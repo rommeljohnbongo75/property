@@ -34,12 +34,22 @@
       </div>
     </div>
   </section> -->
-
+<style>
+  .navbar{
+    background-color:#718096;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #e5974f !important ;
+}
+.navbar-dark .navbar-brand {
+    color:#e5974f;
+}
+  </style>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="{{url('/')}}">
-        <span>Estate</span> Rental 
+        <span class="text-black">Estate</span> Rental 
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
