@@ -46,7 +46,7 @@
 }
   </style>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top ">
     <div class="container">
       <a class="navbar-brand" href="{{url('/')}}">
         <span class="text-black">Estate</span> Rental 

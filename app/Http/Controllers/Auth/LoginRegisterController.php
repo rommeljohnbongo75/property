@@ -48,7 +48,7 @@ class LoginRegisterController extends Controller
             'last_name' => $request->last_name,
             'username' => $request->username,
             'email' => $request->email,
-            'role' => '3', // 3 -> user
+            'role' => '1', // 1 -> user
             'password' => Hash::make($request->password)
         ]);
 
@@ -81,25 +81,20 @@ class LoginRegisterController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
-
-          if(Auth::attempt($credentials))
-        {
+    
+        if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            if($user->role == '1'){
-                return redirect()->route('dashboard')
-                ->withSuccess('You have successfully logged in!');
+    
+            if ($user->role == 1) {
+                return redirect()->route('dashboard')->withSuccess('You have successfully logged in!');
+            } else {
+                Auth::logout();
+                return redirect()->route('login')->withErrors(['email' => 'You do not have permission to access.']);
             }
-            
-        }else{
-                return back()->withErrors([
-                    'email' => 'Your provided credentials do not match in our records.',
-                ])->onlyInput('email');
-         }
-
-       
-
-    } 
+        } else {
+            return back()->withErrors(['email' => 'Your provided credentials do not match our records.'])->onlyInput('email');
+        }
+    }
     
     /**
      * Display a dashboard to authenticated users.

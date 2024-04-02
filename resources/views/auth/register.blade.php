@@ -1,12 +1,16 @@
 @extends('site.base')
-
+<style>
+  .card-header.title.text-white {
+    background-color: #718096 !important;
+}
+</style>
 @section('content')
 <section id="register" class="bg-light py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="card">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header title text-white">
               <h4>
                 <i class="fas fa-user-plus"></i> Register</h4>
             </div>

@@ -164,6 +164,13 @@ input.btn.btn-block.btn-secondary {
     height: 530px;
     padding: 15px;
 }
+.date-pixel{
+   display: flex;
+}
+input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, input.children-children {
+   border: none; 
+   outline: none; 
+}
 
 </style>
 @section('content')
@@ -304,29 +311,29 @@ input.btn.btn-block.btn-secondary {
                               <div class="form-icon">
                                  <i class="fa-regular fa-calendar-days" style="color:#10284e"></i>
                               </div>
-                              <div class="form-group" id="cal">  
-                                 <input type="text"  id='ranges' name="checkin" value="Check In" placeholder="Check In">
+                              
+                              <div class="date-pixel" id="cal">
+                                 <div class="form-group">  
+                                    <input type="text"  id='ranges' name="checkin" value="Check In" placeholder="Check In">
+                                 </div>
+                                 <div class="form-group">
+                                    <input type="text" id='rangesend' name="checkout" value="Check-Out" placeholder="Check-Out">
+                                 </div>
                               </div>
-                              <div class="form-img">
-                                 <i class="fa-solid fa-arrow-right" style="color:#10284e"></i>
-                              </div>
-                              <div class="form-group" id="cal">
-                                 <input type="text" id='rangesend' name="checkout" value="Check-Out" placeholder="Check-Out">
-                              </div>
+
                            </div>
                            <div class="alert-text">
                               <p class="text-danger text-center py-4"></p>
                            </div>
+
                            <div class="form-group-one d-flex align-items-center" id="sec-menu">
                               <div class="form-group-icon">
                                  <i class="fa-regular fa-user" style="color:#10284e"></i>
                               </div>
                               <div class="data-lable-one">
-                                 <!-- <label for="adults" style="font-size:18px">1 Adults,</label> -->
                                  <input type="text" class="adults-adults" style="font-size:18px"  value="1 Adults" placeholder="1 Adults">
                               </div>
                               <div class="form-lable-two">
-                                 <!-- <label for="adults" style="font-size:18px">1 Children,</label> -->
                                  <input type="text" class="children-children" style="font-size:18px"  value="1 Children" placeholder="1 Children">
                               </div>
                            </div>
@@ -384,17 +391,15 @@ input.btn.btn-block.btn-secondary {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" async></script>
 <script>
    let map, activeInfoWindow, markers = [];
-   
-   
+
    function initMap() {
-     console.log('asdasdasdas');
        map = new google.maps.Map(document.getElementById("map"), {
          
            center: {
-               lat: 28.626137,
-               lng: 79.821603,
+               lat: 31.771959,
+               lng: 35.217018,
            },
-           zoom: 15
+           zoom: 5
        });
    
        map.addListener("click", function(event) {
@@ -450,6 +455,8 @@ input.btn.btn-block.btn-secondary {
    /* ------------------------ Handle Marker Click Event ----------------------- */
    function markerClicked(marker, index) {
        console.log(map);
+       console.log('marker-position', marker);
+       console.log('marker-position-one', marker.position);
        console.log(marker.position.lat());
        console.log(marker.position.lng());
    }

@@ -9,25 +9,29 @@
 <script src="{{ asset('assets/datepicker/js/bootstrap-datepicker.min.js' ) }}"></script>
 <script src="{{ asset('assets/datepicker/locales/bootstrap-datepicker.de.min.js' ) }}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
-$('.multiple-items').slick({
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 100) {
+        $("nav.navbar").addClass("scrolltop");
+        } else {
+        $("nav.navbar").removeClass("position-absolute");
+        }
+    });
+
+    $('.multiple-items').slick({
         infinite: true,
         dots:true,
         slidesToShow: 3,
         slidesToScroll: 3
-        });
+    });
 
-        $('.single-item').slick({
-         
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-        });
+    $('.single-item').slick({         
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+    });
 
     document.addEventListener('DOMContentLoaded', function() {
         const adultsminusButtons = document.querySelectorAll('.adults-minus');
@@ -84,9 +88,11 @@ $('.multiple-items').slick({
     var dates = [];
     $(document).ready(function() {
         $("#cal").daterangepicker();
+        
         $("#cal").daterangepicker({
-            minDate: moment()
+                minDate: moment()
             });
+
         $("#cal").on('apply.daterangepicker', function(e, picker) {
             e.preventDefault();
             const obj = {
@@ -126,7 +132,9 @@ $('.multiple-items').slick({
 
     $('.adults-children').hide();
     $('#sec-menu').click(function() {
+        console.log("asdjhfvsdhjfvdhsj");
         $('.adults-children').toggleClass("active");
+        $('.children-children').toggleClass("active");
     });
 
     $('[data-fancybox="gallery"]').fancybox({

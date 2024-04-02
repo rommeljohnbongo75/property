@@ -57,7 +57,10 @@
     .property-dec h5 {
         font-size: 16px;
         margin: 0;
-        padding: 5px 0;
+        padding: 5px 15px 0 0;
+    }
+    .option-option{
+        display:flex;
     }
 
     .property-dec {
@@ -79,9 +82,9 @@
         height: auto;
     }
 
-    .map-inner iframe {
+        div#map_canvas {
         width: 100%;
-        height: 100%;
+        height: 735px;
     }
 </style>
 @section('content')
@@ -112,8 +115,11 @@
                         <div class="property-dec">
                             <h2>Property Details</h2>
                             <span>{{$listing->title}}</span>
-                            <h5>{{ $listing->bathroom }} Bathroom </h5>
-                            <p>Description of the property goes here.</p>
+                            <div class="option-option">
+                                <h5>{{ $listing->bathroom }} Bathroom </h5>
+                                <h5>{{ $listing->bedroom }} Bedrooms </h5>
+                            </div>
+                            <p>{{ substr($listing->description, 0, 50).'...' }}</p>
                         </div>
                         <div class="property-box">
                             <h5>{{ $listing->price }}</h5>
@@ -124,10 +130,85 @@
             </div>
             <!-- Map Section -->
             <div class="map">
-                <div class="map-inner">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d40371121.27261413!2d-89.21876900000001!3d-51.859903!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1711694470236!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                <div id="map_canvas"></div>
             </div>
         </div>
     </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" async></script>
+    <script>
+     let map, activeInfoWindow, markers = [];
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map_canvas"), {
+      
+        center: {
+            lat: 31.0461,
+            lng: 34.8516,
+        },
+        zoom: 5
+    });
+
+    map.addListener("click", function(event) {
+        mapClicked(event);
+    });
+
+    initMarkers();
+}
+
+/* --------------------------- Initialize Markers --------------------------- */
+function initMarkers() {
+    const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+
+    for (let index = 0; index < initialMarkers.length; index++) {
+
+        const markerData = initialMarkers[index];
+        const marker = new google.maps.Marker({
+            position: markerData.position,
+            label: markerData.label,
+            draggable: markerData.draggable,
+            map
+        });
+        markers.push(marker);
+
+        const infowindow = new google.maps.InfoWindow({
+            content: `<b>${markerData.position.lat}, ${markerData.position.lng}</b>`,
+        });
+        marker.addListener("click", (event) => {
+            if(activeInfoWindow) {
+                activeInfoWindow.close();
+            }
+            infowindow.open({
+                anchor: marker,
+                shouldFocus: false,
+                map
+            });
+            activeInfoWindow = infowindow;
+            markerClicked(marker, index);
+        });
+
+        marker.addListener("dragend", (event) => {
+            markerDragEnd(event, index);
+        });
+    }
+}
+
+/* ------------------------- Handle Map Click Event ------------------------- */
+function mapClicked(event) {
+    console.log("11111",map);
+    console.log(event.latLng.lat(), event.latLng.lng());
+}
+
+/* ------------------------ Handle Marker Click Event ----------------------- */
+function markerClicked(marker, index) {
+    console.log(marker.position.lat());
+    console.log(marker.position.lng());
+}
+
+/* ----------------------- Handle Marker DragEnd Event ---------------------- */
+function markerDragEnd(event, index) {
+
+    console.log(event.latLng.lat());
+    console.log(event.latLng.lng());
+}
+    </script>
 @endsection

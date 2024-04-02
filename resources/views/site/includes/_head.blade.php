@@ -21,10 +21,6 @@
   <link rel="stylesheet" href="{{ asset('assets/datepicker/css/bootstrap-datepicker.min.css' ) }}">        
   <link rel="stylesheet" href="{{ asset('assets/datepicker/css/custom.css' ) }}">       
 
-
-  
-
-
   
 					
 
