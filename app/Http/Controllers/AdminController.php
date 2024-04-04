@@ -25,4 +25,6 @@ class AdminController extends Controller
         return view('admin.layouts.dashboard',compact('total_listing','total_admins' ,'total_users','listings',
                     'total_new_listing','inquiries','total_realtors'));
     }
+
+    
 }

@@ -47,23 +47,24 @@ class FrontEndController extends Controller
         ];
 
         $listings = Listing::orderBy('id', 'DESC')->where('is_published','1')->get();
+        
         return view('site.layouts.listings', compact('listings','initialMarkers'));
     }
     
     public function listing($id)
     {
+        $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
         $initialMarkers = [
             [
                 'position' => [
-                    'lat' => 31.771959,
-                    'lng' => 35.217018,
+                    'lat' => '31.771959',
+                    'lng' => '35.217018',
                 ],
                 'label' => [ 'color' => 'white', 'text' => 'P1' ],
                 'draggable' => true
             ],
         ];
 
-        $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
         return view('site.layouts.listing', compact('listing','initialMarkers'));
     }
 

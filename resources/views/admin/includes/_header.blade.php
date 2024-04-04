@@ -19,7 +19,7 @@
                 <!-- Logo text -->
                 <span class="logo-text ml-5" style="color: #ddd;">
                     <!-- dark Logo text -->
-                        <b> Property List </b>
+                        <b> Property List asdas </b>
                 </span>
             </a>
         </div>
@@ -30,22 +30,6 @@
       </div>
       <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
           <ul class="navbar-nav float-left mr-auto">
-                <li class="nav-item three-line">
-                  <a class="nav-link waves-effect waves-dark">
-                      <div class="d-flex align-items-center">
-                          <i class="mdi mdi-magnify font-20 mr-1"></i>
-                          <div class="ml-1 d-none d-sm-block">
-                              <span>Search</span>
-                          </div>
-                      </div>
-                  </a>
-                  <form class="app-search-app">
-                      <input type="text" class="form-control" placeholder="Search &amp; enter">
-                      <a class="srh-btn">
-                          <i class="ti-close"></i>
-                      </a>
-                  </form>
-              </li>
               <li class="nav-item search-box">
                   <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
                       <div class="d-flex align-items-center">
