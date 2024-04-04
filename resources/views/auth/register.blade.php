@@ -43,6 +43,10 @@
                   <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
+                  <label for="email">Phone</label>
+                  <input type="text" name="phone" class="form-control" required>
+                </div>
+                <div class="form-group">
                   <label for="password2">Password</label>
                   <input type="password" name="password" class="form-control" required>
                 </div>
