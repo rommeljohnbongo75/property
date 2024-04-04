@@ -35,8 +35,17 @@
     </div>
   </section> -->
 <style>
+  nav.navbar.scrolltop {
+    background-color: #718096;
+    z-index: 999!important;
+    opacity: 1 !important;
+    top: 0;
+    position: sticky;
+}
   .navbar{
     background-color:#718096;
+    position: absolute;
+    padding:0 !important;
   }
   .navbar-dark .navbar-nav .nav-link {
     color: #e5974f !important ;
@@ -44,12 +53,100 @@
 .navbar-dark .navbar-brand {
     color:#e5974f;
 }
+.navbar-nav .nav-item a{
+  font-size:20px;
+}
+.navbar-dark .navbar-brand span {
+    color: #e5974f;
+    font-size:35px;
+}
+.navbar-dark .navbar-brand{
+  font-style:italic;
+}
+.position-absolute {
+    width: 100%;
+    top: 0;
+    display: flex;
+    
+}
+.navbar img{
+  width:100%;
+  max-width:150px;
+}
+input[type="text"] {
+    width: 100%;
+}
+
+.container-form {
+  width:350px;
+}
+.container-form h1 {
+    font-size: 26px;
+}
+@media only screen and (max-width: 1024px) {
+.container-form {
+ left: 36%;
+}
+}
+@media only screen and (max-width: 768px) {
+.container-form {
+    left: 26%;
+}
+#listings {
+    padding-top: 70px;
+}
+}
+@media only screen and (max-width: 425px) {
+  input#ranges, input#rangesend {
+    border: none;
+    padding-left: 11px;
+    width: 100%;
+    max-width: 200px;
+}
+.container-form {
+    left: 9%;
+    top:10%;
+}
+.banner-image img{
+  height:80%;
+}
+#listings {
+    padding-top: 67px;
+}
+}
+
+@media only screen and (max-width: 375px) {
+.form-btn button {
+    background-color: #e5974f;
+    width: 58%;
+    padding: 9px 0;
+    font-size: 14px;
+}
+.container-form {
+    left:10%;
+    width:312px!important;
+    top:6%;
+}
+.container-form h1 {
+    font-size: 20px !important;
+}
+.banner-image img{
+  height:60%;
+}
+#listings {
+    padding-top: 67px;
+}
+}
+
+
+
   </style>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top ">
-    <div class="container">
+  <!-- <div class="position-absolute">  -->
       <a class="navbar-brand" href="{{url('/')}}">
-        <span class="text-black">Estate</span> Rental 
+       <!-- <span class="text-black ">Estate</span>Rental  -->
+         <img src="{{ asset('assets/img/estate-high-resolution-logo.png' ) }}">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
@@ -101,5 +198,14 @@
           @endif
         </ul>
       </div>
-    </div>
+<!-- </div> -->
   </nav>
+<script>
+ $(window).scroll(function() {
+    if ($(document).scrollTop() > 500) {
+      $("nav.navbar").addClass("scrolltop");
+    } else {
+      $(".navbar").removeClass("position-absolute");
+    }
+  });
+</script>

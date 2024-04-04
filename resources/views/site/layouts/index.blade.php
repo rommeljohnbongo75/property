@@ -263,6 +263,18 @@
    input.children-children.active{
     display: block !important;
    }
+   @media only screen and (max-width: 768px) {
+   #services h3{
+      font-size:23px !important;
+   }
+   #services i{
+      font-size:50px;
+   }
+   #services p{
+      font-size:16px !important;
+   }
+
+}
 </style>
 @section('content')
 <!-- Showcase -->
