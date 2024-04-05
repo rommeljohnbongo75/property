@@ -171,6 +171,90 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
    border: none; 
    outline: none; 
 }
+.option-tab ul li{
+   list-style:none;
+}
+.option-tab ul{
+   gap:40px;
+   padding:0;
+}
+.option-tab ul li a{
+   text-decoration:none;
+   color:black;
+   font-size:20px;
+   position:relative;
+}
+.option-tab ul li a::after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    width: 100%;
+    height: 3px;
+    left: 0px;
+    background-color: #e5974f;
+    transition:all 0.3s ease-in;
+   }
+ li:hover .option-tab ul li a::after{
+   visibility:visible;
+}
+.review-inner {
+  justify-content: space-between;
+}
+.review-btn button{
+   padding:10px 20px;
+   background-color: #e5974f;
+   color:black;
+   border:none;
+   border-radius:50px;
+   outline-offset:none;
+}
+.review-title h3{
+   padding-bottom:20px;
+}
+.tab{
+   padding-bottom:30px;
+}
+.author-name{
+   padding:30px;
+   background-color:lightgray;
+   border-radius:50px;
+}
+.about-host-inner{
+   align-items:center;
+   gap:20px;
+   padding:20px 0;
+}
+.about-host-inner span{
+   font-weight:bold;
+}
+.about-host{
+   padding:20px 0;
+}
+.about-host-title h3{
+   padding:10px 0;
+}
+.contact-details h4{
+   font-size:20px;
+}
+.contact-details h5{
+   margin:0;
+   font-size:16px;
+   padding:10px 0;
+}
+#sticky{
+   position:sticky;
+   z-index:999;
+   top:20%;
+   background-color: #fff;
+    box-shadow: 0 1px 0 0 #d8d8d8;
+    width:100%;
+}
+.listing{
+   position: relative;
+}
+/* .option-tab ul li a:hover{
+ underline:dotted;
+} */
 
 </style>
 @section('content')
@@ -246,9 +330,25 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                @endif
             </div>
          </div>
+  
       </div>
+<!-------------Tab-section--------------->
+<section class="tab" id="sticky">
+      <div class="container">
+         <div class="option-tab">
+            <ul class="d-flex">
+               <li><a href="#Booking-details">Booking-details</a></li>
+               <li><a href="#Property Description">Property Description</a></li>
+               <li><a href="#Property Location">Property Location</a></li>
+               <li><a href="#Dates & Reservations">Dates & Reservations</a></li>
+               <li><a href="#review-one">Reviews</a></li>
+            </ul>
+         </div>
+      </div>
+   </section>
+
       <!-- Fields -->
-      <div class="col-md-12">
+      <div class="col-md-12" id="Booking-details">
          <div class="col-md-12">
             <div class="row mb-5 fields gap-5">
                <div class="col-md-7 d-flex gap-5 justify-content-between">
@@ -368,17 +468,17 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
             </div>
          </div>
          <!-- Description -->
-         <h3 class="" style="margin-top: 45px;">Property Description</h3>
+         <h3 class="" style="margin-top: 45px;" id="Property Description">Property Description</h3>
          <div class="row mb-5">
             <div class="col-md-12">
                {{ $listing ->description }}
             </div>
          </div>
-         <div class="map-map">
+         <div class="map-map" id="Property Location">
             <h3 class="">Property Location</h3>
             <div id="map"></div>
          </div>
-         <h3 class="" style="margin-top: 45px;">Dates & Reservations</h3>
+         <h3 class="" style="margin-top: 45px;" id="Dates & Reservations">Dates & Reservations</h3>
          <div class="calendar-main">
             <div class="calendar" id="calendar-calendar"></div>
             <div class="calendar" id="calendar-calendar"></div>
@@ -386,6 +486,36 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
       </div>
    </div>
 </section>
+<!---------review-section-start------->
+<section class="review" id="review-one">
+   <div class="container">
+      <div class="review-inner d-flex ">
+        <div class="review-title">
+         <h3>Reviews</h3>
+         <span>This property has no reviews yet</span>
+        </div>
+        <div class="review-btn">
+         <button>Add Review</button>
+        </div>
+      </div>
+      <div class="about-host-title">
+          <h3>About Host</h3>
+      </div>
+      <div class="about-host-inner d-flex">
+       <h4 class="author-name">FS</h4>
+       <span>Max MArtin</span>
+      </div>
+      <div class="contact-details">
+         <h4>Contact Us</h4>
+         <h5>Email:abc@yahoo.com</h5>
+         <sapn>Phone:<a href="">+91919652356</a></sapn>
+
+      </div>
+   </div>
+</section>
+<!---------review-section-end------->
+
+<!---------About-host-end------------>
 <!-- Inquiry Modal -->
 <!-- Inquiry Modal -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" async></script>
