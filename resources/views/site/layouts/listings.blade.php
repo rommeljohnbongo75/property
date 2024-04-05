@@ -134,26 +134,32 @@
             </div>
         </div>
     </section>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" async></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
     <script>
+
      let map, activeInfoWindow, markers = [];
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map_canvas"), {
-      
-        center: {
-            lat: 31.0461,
-            lng: 34.8516,
-        },
-        zoom: 5
-    });
+     jQuery(document).ready(function($) {
+        
+    
 
-    map.addListener("click", function(event) {
-        mapClicked(event);
-    });
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map_canvas"), {
+        
+            center: {
+                lat: 31.0461,
+                lng: 34.8516,
+            },  
+            zoom: 5
+        });
 
-    initMarkers();
-}
+        map.addListener("click", function(event) {
+            mapClicked(event);
+        });
+
+        initMarkers();
+    }
+});
 
 /* --------------------------- Initialize Markers --------------------------- */
 function initMarkers() {

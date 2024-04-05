@@ -75,6 +75,14 @@
                             <input type="text" name="country" class="form-control"  value="{{ old('country') }}" placeholder="Country">
                         </div>
                         <div class="form-group">
+                            <label>latitude :</label>
+                            <input type="text" name="latitude" class="form-control"  value="{{ old('latitude') }}" placeholder="latitude">
+                        </div>
+                        <div class="form-group">
+                            <label>longitude:</label>
+                            <input type="text" name="longitude" class="form-control"  value="{{ old('longitude') }}" placeholder="longitude">
+                        </div>
+                        <div class="form-group">
                             <label>Description :</label>
                             <textarea name="description" class="form-control" rows="5">{{ old('description') }}</textarea>
                         </div>

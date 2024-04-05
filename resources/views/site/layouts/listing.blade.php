@@ -518,7 +518,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 <!---------About-host-end------------>
 <!-- Inquiry Modal -->
 <!-- Inquiry Modal -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" async></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
 <script>
    let map, activeInfoWindow, markers = [];
 

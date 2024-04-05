@@ -41,6 +41,7 @@ class LoginRegisterController extends Controller
             'username' => ['required', 'string',  'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required'],
         ]);
 
         User::create([
@@ -49,7 +50,8 @@ class LoginRegisterController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'role' => '1', // 1 -> user
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
         ]);
 
         $credentials = $request->only('email', 'password');

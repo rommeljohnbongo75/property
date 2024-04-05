@@ -43,6 +43,8 @@ class ListingController extends Controller
             'realtor_id' => 'required',
             'is_published' => 'required',
             'status' => 'required',
+            'longitude' => 'required',
+            'latitude' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
@@ -60,6 +62,8 @@ class ListingController extends Controller
             'realtor_id' => $request->get('realtor_id'),
             'is_published' => $request->get('is_published'),
             'status' => $request->get('status'),
+            'latitude' => $request->get('latitude'),
+            'longitude' => $request->get('longitude'),
 
         ]);
 
