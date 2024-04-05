@@ -48,7 +48,7 @@
                         <div class="card">
                             <div class="card-body">
                                     <div class="form-group">
-                                        <label class="col-md-12">Message :</label>
+                                        <label class="col-md-12">Message dasdasd :</label>
                                         <div class="col-md-12">
                                             {{ $inquiry -> description }}
                                         </div>
