@@ -35,6 +35,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+
+    jQuery('li.nav-item.search-box.three-line').click(function(){
+        jQuery('.left-sidebar').toggle();
+    });
+
+    jQuery('.dropdown-toggle').click(function(){
+        jQuery('.dropdown-menu').toggle();
+    });
   
   $(document).ready(function () {
       var SITEURL = "{{ url('/') }}";

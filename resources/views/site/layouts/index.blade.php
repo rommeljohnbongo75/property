@@ -502,7 +502,7 @@
       <div class="multiple-items">
          <div class="image-slider-inner">
             <div class="image-card">
-               <img src="/assets/img/showcase.jpg">
+               <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
                   <div class="card-price">
                      <h4>From:</h4>
@@ -530,7 +530,7 @@
          </div>
          <div class="image-slider-inner">
             <div class="image-card">
-               <img src="/assets/img/showcase.jpg">
+               <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
                   <div class="card-price">
                      <h4>From:</h4>
@@ -558,7 +558,7 @@
          </div>
          <div class="image-slider-inner">
             <div class="image-card">
-               <img src="/assets/img/showcase.jpg">
+               <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
                   <div class="card-price">
                      <h4>From:</h4>
@@ -586,7 +586,7 @@
          </div>
          <div class="image-slider-inner">
             <div class="image-card">
-               <img src="/assets/img/showcase.jpg">
+               <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
                   <div class="card-price">
                      <h4>From:</h4>
@@ -614,7 +614,7 @@
          </div>
          <div class="image-slider-inner">
             <div class="image-card">
-               <img src="/assets/img/showcase.jpg">
+               <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
                   <div class="card-price">
                      <h4>From:</h4>

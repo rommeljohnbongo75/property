@@ -1,5 +1,12 @@
 @extends('admin.base')
-
+<style>
+    .container-fluid {
+        background: #fff;
+    }
+    .page-breadcrumb {
+        background: #fff;
+    }
+</style>
 @section('content')
     <div class="page-breadcrumb">
         <div class="row">
@@ -20,9 +27,10 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="row justify-content-md-center">
-            <div class="col-12">
+            <div class="col-8">
                 <div class="card card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
@@ -84,7 +92,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description :</label>
-                            <textarea name="description" class="form-control" rows="5">{{ old('description') }}</textarea>
+                            <textarea class="ckeditor form-control" name="description">{{ old('description') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Status :</label>
@@ -190,4 +198,11 @@
             </div>
         </div>
     </div>
+
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection

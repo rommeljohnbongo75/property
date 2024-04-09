@@ -138,11 +138,7 @@
     <script>
 
      let map, activeInfoWindow, markers = [];
-
-     jQuery(document).ready(function($) {
-        
     
-
     function initMap() {
         map = new google.maps.Map(document.getElementById("map_canvas"), {
         
@@ -159,7 +155,7 @@
 
         initMarkers();
     }
-});
+
 
 /* --------------------------- Initialize Markers --------------------------- */
 function initMarkers() {

@@ -10473,9 +10473,8 @@ File: scss
     display: block !important; } }
 
 
-aside.left-sidebar.main{
-  display: none;
+
+#main-wrapper[data-layout=vertical][data-sidebartype=full] .page-wrapper {
+  margin-left: auto;
 }
-aside.left-sidebar{
-  display: block !important;
-}
+

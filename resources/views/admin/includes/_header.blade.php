@@ -1,56 +1,27 @@
+<style>
+    div#navbarSupportedContent {
+        background-color: #333333;
+    }
+    li.nav-item.search-box img {
+        margin-left: 25px;
+    }
+</style>
 <header class="topbar" data-navbarbg="skin6">
   <nav class="navbar top-navbar navbar-expand-md navbar-light">
-      <div class="navbar-header" data-logobg="skin5">
-          <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
-              <i class="ti-menu ti-close"></i>
-          </a>
-          <div class="navbar-brand">
-            <a href="#" class="logo">
-             
-                <b class="logo-icon">
-                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                    <!-- Dark Logo icon -->
-                    
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="homepage" class="dark-logo" />
-                    <!-- Light Logo icon -->
-                    {{-- <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> --}}
-                </b>
-                <!--End Logo icon -->
-                <!-- Logo text -->
-                <span class="logo-text ml-5" style="color: #ddd;">
-                    <!-- dark Logo text -->
-                        <b> Property List asdas </b>
-                </span>
-            </a>
-        </div>
-          <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="ti-more"></i>
-          </a>
-      </div>
       <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
           <ul class="navbar-nav float-left mr-auto">
+              <li class="nav-item search-box three-line">
+                <img width="30px" src="{{asset('assets/img/three-line-1.png' )}}">
+              </li>
               <li class="nav-item search-box">
-                  <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
-                      <div class="d-flex align-items-center">
-                          <i class="mdi mdi-magnify font-20 mr-1"></i>
-                          <div class="ml-1 d-none d-sm-block">
-                              <span>Search</span>
-                          </div>
-                      </div>
-                  </a>
-                  <form class="app-search position-absolute">
-                      <input type="text" class="form-control" placeholder="Search &amp; enter">
-                      <a class="srh-btn">
-                          <i class="ti-close"></i>
-                      </a>
-                  </form>
+                <h3 style="margin-left:30px; color:#fff;">Estate Rental</h3>
               </li>
           </ul>
           <ul class="navbar-nav float-right">
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->username }}</a>
-                  <div class="dropdown-menu dropdown-menu-right user-dd animated">
+
+                    <div class="dropdown-menu dropdown-menu-right user-dd animated">
                       <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                       <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
@@ -59,7 +30,7 @@
                       <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                       </form>
-                  </div>
+                    </div>
               </li>
           </ul>
       </div>

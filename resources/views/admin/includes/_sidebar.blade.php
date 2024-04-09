@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
 <!-- ============================================================== -->
-<aside class="left-sidebar" data-sidebarbg="skin5">
+<aside class="left-sidebar" style="display:none;" data-sidebarbg="skin5">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
         <!-- Sidebar navigation-->

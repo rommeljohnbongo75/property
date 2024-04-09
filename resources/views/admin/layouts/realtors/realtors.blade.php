@@ -43,7 +43,7 @@
                             <div class="card-body">
 
                                 <h4 class="card-title">All Agent</h4>
-                                <a href="{{ route('realtors.create') }}"><span class="tr btn btn-sm btn-rounded btn-info">Add Agent</span></a>
+                                <!-- <a href="{{ route('realtors.create') }}"><span class="tr btn btn-sm btn-rounded btn-info">Add Agent</span></a> -->
                             </div>
                             <div class="table-responsive m-t-20">
                                 <table class="table table-bordered table-responsive-lg">
