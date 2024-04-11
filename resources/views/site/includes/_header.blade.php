@@ -35,26 +35,34 @@
     </div>
   </section> -->
 <style>
-  nav.navbar.scrolltop {
-    background-color: #718096;
-    z-index: 999!important;
-    opacity: 1 !important;
-    top: 0;
-    position: sticky;
-}
-  .navbar{
-    background-color:#718096;
-    position: absolute;
-    padding:0 !important;
+  @import url(<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>);
+  image{
+    max-width:100%;
+    height:auto;
+  }
+  #header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
   }
   .navbar-dark .navbar-nav .nav-link {
-    color: #e5974f !important ;
+    color:black !important;
+    font-family:var(--font-family) !important;
+    font-size:16px;
+    font-weight:bold;
 }
-.navbar-dark .navbar-brand {
-    color:#e5974f;
+nav.navbar {
+    background-color: #f8f9fa;
+    width: 100%;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.22);
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
 }
 .navbar-nav .nav-item a{
   font-size:20px;
+}
+.navbar {
+    padding: 13px!important;
 }
 .navbar-dark .navbar-brand span {
     color: #e5974f;
@@ -63,15 +71,10 @@
 .navbar-dark .navbar-brand{
   font-style:italic;
 }
-.position-absolute {
-    width: 100%;
-    top: 0;
-    display: flex;
-    
-}
+
 .navbar img{
   width:100%;
-  max-width:150px;
+  max-width:70px;
 }
 input[type="text"] {
     width: 100%;
@@ -95,6 +98,9 @@ input[type="text"] {
 #listings {
     padding-top: 70px;
 }
+.form-btn button {
+    width: 60%;
+}
 }
 @media only screen and (max-width: 425px) {
   input#ranges, input#rangesend {
@@ -105,16 +111,30 @@ input[type="text"] {
 }
 .container-form {
     left: 9%;
-    top:10%;
+    top:29%;
+}
+#listings .slick-prev::before,.slick-next::before{
+  display:none;
+}
+.form-btn button {
+    width: 51%;
+    padding: 6px 0;
+    font-size: 14px;
+}
+.form-btn button i {
+    font-size: 14px;
 }
 .banner-image img{
-  height:80%;
+  height:60%;
 }
 #listings {
     padding-top: 67px;
 }
-}
+.services-card {
+  flex-wrap:wrap;
 
+}
+}
 @media only screen and (max-width: 375px) {
 .form-btn button {
     background-color: #e5974f;
@@ -123,9 +143,9 @@ input[type="text"] {
     font-size: 14px;
 }
 .container-form {
-    left:10%;
-    width:312px!important;
-    top:6%;
+    left: 10%;
+    width: 312px!important;
+    top: 27%;
 }
 .container-form h1 {
     font-size: 20px !important;
@@ -136,13 +156,15 @@ input[type="text"] {
 #listings {
     padding-top: 67px;
 }
+
 }
 
 
 
   </style>
+  <header id="header">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top ">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
   <!-- <div class="position-absolute">  -->
       <a class="navbar-brand" href="{{url('/')}}">
        <!-- <span class="text-black ">Estate</span>Rental  -->
@@ -161,6 +183,9 @@ input[type="text"] {
           </li> -->
           <li class="nav-item mr-3 {{ (request()->routeIs('listings')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('listings') }}">Featured Property</a>
+          </li>
+          <li class="nav-item mr-3 {{ (request()->routeIs('listings')) ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('listings') }}">Contact</a>
           </li>
         </ul>
 
@@ -200,12 +225,5 @@ input[type="text"] {
       </div>
 <!-- </div> -->
   </nav>
-<script>
- $(window).scroll(function() {
-    if ($(document).scrollTop() > 500) {
-      $("nav.navbar").addClass("scrolltop");
-    } else {
-      $(".navbar").removeClass("position-absolute");
-    }
-  });
-</script>
+</header>
+

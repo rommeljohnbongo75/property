@@ -1,6 +1,13 @@
 @extends('site.base')
 @section('title'){{ $listing ->title }} | @endsection
 <style>
+   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+   :root{
+   --font-family: "DM Sans", sans-serif;
+  }
+
+  *{
    .container-form {
    max-width: 800px;
    padding: 20px;
@@ -9,11 +16,14 @@
    border-radius: 5px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    }
+   
    h1 {
    text-align: center;
    }
    .container-form h1{
    font-size:30px;
+   color:black;
+   font-Family:var(--font-family);
    }
    .form-group label {
    display: block;
@@ -126,9 +136,9 @@
    padding: 0;
    }
    .list-group-item {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+   display:flex;
+   gap:20px;
+  
    }
    .asking-price {
    order: 1; 
@@ -157,7 +167,7 @@ i.fa-solid.fa-dollar-sign {
     font-size: 20px;
 }
 input.btn.btn-block.btn-secondary {
-    background-color: #10284e;
+    background-color: #FFA920;
 }
 .datepicker-days table.table-condensed {
     width: 530px !important;
@@ -182,6 +192,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
    text-decoration:none;
    color:black;
    font-size:20px;
+   font-family:var(--font-family);
    position:relative;
 }
 .option-tab ul li a::after {
@@ -200,9 +211,13 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 .review-inner {
   justify-content: space-between;
 }
+.property-dec{
+   font-family:var(--font-family);
+   font-size:16px;
+}
 .review-btn button{
    padding:10px 20px;
-   background-color: #e5974f;
+   background-color: #FFA920;
    color:black;
    border:none;
    border-radius:50px;
@@ -241,6 +256,12 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
    font-size:16px;
    padding:10px 0;
 }
+#listing{
+   padding:100px 0;
+}
+#Booking-details{
+   padding:40px 0;
+}
 #sticky{
    position:sticky;
    z-index:999;
@@ -251,6 +272,17 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 }
 .listing{
    position: relative;
+}
+.list-group-item i {
+   color:#FFA920;
+}
+.page-title{
+   font-family:var(--font-family);
+}
+.list-group-item{
+   color:black;
+   font-size:18px;
+   font-family:var(--font-family);
 }
 /* .option-tab ul li a:hover{
  underline:dotted;
@@ -275,13 +307,13 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
    </div>
 </section> -->
 <!-- Listing -->
-<section id="listing" class="py-4">
+<section id="listing">
    <div class="container">
       <!-- <a href="{{'listings'}}" class="btn btn-light mb-4">Back To Listings</a> -->
       <div class="row">
-         <div class="col-md-12">
+         <div class="col-md-12 ">
             <!-- Home Main Image -->
-            <h2>{{$listing ->title}}</h2>
+            <h2 class="page-title">{{$listing ->title}}</h2>
             <p><i class="fa-solid fa-location-dot"></i> {{$listing ->city}}, {{$listing ->country}}   <i class="fa-solid fa-bed"></i>  {{ $listing ->bedroom }} Bedroom  <i class="fa-solid fa-dollar-sign"></i>  {{$listing ->price}} Price</p>
             <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3">
             <!-- Thumbnails -->
@@ -333,7 +365,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
   
       </div>
 <!-------------Tab-section--------------->
-<section class="tab" id="sticky">
+<section class="tab">
       <div class="container">
          <div class="option-tab">
             <ul class="d-flex">
@@ -352,21 +384,21 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
          <div class="col-md-12">
             <div class="row mb-5 fields gap-5">
                <div class="col-md-7 d-flex gap-5 justify-content-between">
-                  <div class="">
+                  <div class="page-inner">
                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-money-bill-alt"></i> Asking Price:
-                           <span class="float-right">${{ $listing ->price }}</span>
+                           <span class="  ">${{ $listing ->price }}</span>
                         </li>
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-bed"></i> Bedrooms:
-                           <span class="float-right">{{ $listing ->bedroom }}</span>
+                           <span class="">{{ $listing ->bedroom }}</span>
                         </li>
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-bath"></i> Bathrooms:
                            <span class="float-right">{{ $listing ->bathroom }}</span>
                         </li>
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-car"></i> Garage:
                            <span class="float-right">{{ $listing ->garage }}
                            </span>
@@ -375,20 +407,20 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                   </div>
                   <div class="">
                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-th-large"></i> Square Feet:
                            <span class="float-right">{{ $listing ->square_feet }}</span>
                         </li>
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-square"></i> Lot Size:
                            <span class="float-right">{{ $listing ->lot_size }} Acres
                            </span>
                         </li>
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item ">
                            <i class="fas fa-calendar"></i> Listing Date:
                            <span class="float-right">{{ $listing -> created_at->diffForHumans() }}</span>
                         </li>
-                        <li class="list-group-item text-secondary">
+                        <li class="list-group-item">
                            <i class="fas fa-bed"></i> Realtor:
                            <span class="float-right">{{ $listing -> realtor-> name }}
                            </span>
@@ -470,7 +502,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
          <!-- Description -->
          <h3 class="" style="margin-top: 45px;" id="Property Description">Property Description</h3>
          <div class="row mb-5">
-            <div class="col-md-12">
+            <div class="col-md-12 property-dec">
                {{ $listing ->description }}
             </div>
          </div>

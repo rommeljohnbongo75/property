@@ -13,7 +13,7 @@ class FrontEndController extends Controller
 {
     public function index()
     {
-        $latest_listings = Listing::orderBy('id', 'DESC')->where('is_published','1')->limit('10')->get();
+        $latest_listings = Listing::orderBy('id', 'DESC')->where('is_published','1')->limit('1')->get();
         return view('site.layouts.index', compact('latest_listings'));
     }
 

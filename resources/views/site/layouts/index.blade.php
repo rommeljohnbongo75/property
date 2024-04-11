@@ -1,5 +1,22 @@
 @extends('site.base')
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+  *{
+   padding:0;
+   margin:0;
+   box-sizing:border-box;
+   list-style:none;
+   text-decoration:none;
+  }
+  :root{
+   --font-family: "DM Sans", sans-serif;
+  }
+  body{
+   h1,h2,h3,h4,h5,h6,span,p{
+      font-family:var(--font-family);
+   }
+  
+  }
    .container{
    max-width:1440px;
    margin:0 auto;
@@ -46,6 +63,9 @@
    .image-slider-inner{
    padding:0 10px;
    }
+   .image-slider{
+      padding:70px 0;
+   }
    #main-footer{
    background-color:#718096;
    }
@@ -53,7 +73,23 @@
    height:unset !important;  
    }
    .card-body a{
-   background-color: #e5974f;
+   background-color: #FFA920;
+   }
+   .card-1 h3{
+      font-size:28px;
+      color:black;
+      margin:0;
+      padding:10px 0;
+      transition:all 0.1s linear;
+      
+   }
+   .card-1 h3:hover{
+      color:#FFA920;
+   }
+   .card-1 img{
+      width:100%;
+      max-width:70px;
+      padding-bottom:20px;
    }
    .location{
    border-right:2px solid #9da6a4;
@@ -74,9 +110,40 @@
    padding-left:20px;
    padding-right:40px;
    }
+   #listings .slick-prev:before {
+    font-family: slick;
+    font-size: 32px;
+    line-height: 1;
+    opacity: .75;
+    color: #212529;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index:9999;
+}
+
+.slick-dots li button:before {
+    font-size: 11px !important;
+ 
+}
+.slick-prev {
+    left:-35px !important;
+}
+#listings .slick-next:before {
+    font-family: slick;
+    font-size: 32px;
+    line-height: 1;
+    opacity: .75;
+    color: #212529;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index:9999;
+}
+   .card-body-inner a{
+      background-color:#FFA920;
+   }
    .check-icon i{
    font-size:30px;
-   color:#e5974f;
+   color:#FFA920;
    padding-right:10px;
    }
    .guests-data{
@@ -86,11 +153,11 @@
    }
    .guest-icon i{
    font-size:30px;
-   color:#e5974f;
+   color:#FFA920;
    padding-right:10px;
    }
    .form-btn button{
-   background-color:#e5974f;
+   background-color:#FFA920;
    width:90%;
    padding:15px 0;
    border-radius: 40px;
@@ -150,7 +217,78 @@
    display:block;
    color:#9da6a4;
    }
-   ..guests-dec span{
+   #listings h3{
+      font-size:46px;
+      color:black;
+      text-align:center;
+      font-weight:bold;
+      padding:20px 0;
+      position: relative;
+   }
+   #listings h3::before {
+    content: '';
+    /* top: 45px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* left: 27%; */
+    transform: translate(-72px, 27px);
+}
+#listings h3::after {
+    content: '';
+    /* top: 49px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* right: 27%; */
+    transform: translate(17px, 29px);
+}
+   .listing-heading h4{
+      color:black;
+      font-size:21px;
+      padding-top:10px;
+      margin:0;
+   } 
+   .listing-heading i{
+      color:#FFA920;
+   }
+   .listing-heading p {
+    color: #8E8E93;
+    padding-top: 5px;
+}
+   .featured-properties{
+      padding:20px 0;
+   }
+   .featured-properties h3{
+      font-size:45px;
+      font-weight:bold;
+      text-align:center;
+      color:black;
+      position: relative;
+   }
+   .featured-properties h3::after {
+    content: '';
+    /* top: 28px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* right: 27%; */
+    transform: translate(10px, 27px);
+}
+.featured-properties h3::before {
+    content: '';
+    /* top: 28px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* left: 27%; */
+    transform: translate(-66px, 24px);
+}
+   .guests-dec span{
    font-size:18px;
    }
    ::placeholder{
@@ -164,6 +302,9 @@
    }
    .form-group-one{
    padding:10px;
+   }
+   .card-icon{
+      font-family:var(--font-family);
    }
    .home-search.p-5 h4 {
    color: #000;
@@ -186,7 +327,7 @@
    }
    .form-icon {
    font-size: 30px;
-   color: #e5974f;
+   color: #FFA920;
    }
    .container-form {
    border: 1px solid black;
@@ -203,10 +344,11 @@
    left: 40%;
    }
    .banner-image img{
-   height:810px;
+   height:100%;
+   position: relative;
    }
    #listings{
-   padding-top:190px;
+  padding:70px 0;
    }
    .container-form h1{
    font-size:35px;
@@ -225,7 +367,7 @@
    }
    .card-icon{
    display:flex;
-   gap:30px;
+   gap:10px;
    align-items:center;
    }
    .icon{
@@ -237,12 +379,66 @@
    font-size:15px;
    margin:0;
    }
-   .slick-dots li.slick-active button:before {
+   .card-1{
+      box-shadow:0 16px 32px 0 rgba(7, 28, 31, 0.1);
+      border:1px solid #f6f6f6;
+       flex-wrap:no-wrap;
+       padding:20px;
+   }
+   #services{
+      padding:70px 0;
+   }
+   .services-title span{
+      color:#FFA920;
+      font-weight:bold;
+      font-size:25px;
+     
+   }
+   .services-title h2{
+      font-size:45px;
+      font-weight:bold;
+      color:black;
+      padding-top:10px;
+      position:relative;
+   }
+   .services-title h2::before {
+    content: '';
+    /* top: 42px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* left: 29%; */
+    transform: translate(-77px, 26px);
+}
+.services-title h2::after {
+    content: '';
+    /* top: 42px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* right: 29%; */
+    transform: translate(30px, 26px);
+}
+   .services-card{
+      display:flex;
+      gap:20px;
+    }
+
+   .card-body-inner{
+      padding:0 30px;
+   }
+   .services-title{
+    text-align: center;
+    font-family:var(--font-family);
+   }
+.image-slider .slick-dots li.slick-active button:before {
    opacity: .75;
    color: #000;
-   font-size: 12px;
+   font-size: 12px;  
    }
-   .slick-dots li.slick-active button:before {
+  .image-slider .slick-dots li.slick-active button:before {
    opacity: .75;
    color: #000;
    font-size: 12px;
@@ -253,7 +449,17 @@
    input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, input.children-children {
    border: none; 
    outline: none; 
-   }
+   } 
+   .overlay {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    opacity: 0.3;
+    width: 100%;
+}
    .date-pixel{
    display: flex;
    }
@@ -263,6 +469,34 @@
    input.children-children.active{
     display: block !important;
    }
+  
+   @media only screen and (max-width:1024px) {
+   #listings h3 {
+    font-size: 40px;
+   }
+   .listing-heading h4 {
+    font-size: 17px;
+    }
+    #listings {
+    padding: 42px 0;
+}
+.services-title h2 {
+    font-size: 35px;
+}
+.card-1 img {
+    max-width: 60px;
+    
+}
+.card-1 h3 {
+    font-size: 23px;
+}
+#services {
+    padding: 20px 0;
+}
+#services p {
+    font-size: 16px;
+}
+}
    @media only screen and (max-width: 768px) {
    #services h3{
       font-size:23px !important;
@@ -272,7 +506,64 @@
    }
    #services p{
       font-size:16px !important;
+      margin:0;
    }
+   #listings h3 {
+    font-size: 30px;
+}
+#listings h3::before {
+    transform: translate(-70px, 21px);
+}
+#listings h3::after {   
+    transform: translate(21px, 21px);
+}
+.services-card {
+    flex-wrap: wrap;
+    gap:unset;
+    justify-content:center;
+    
+}
+.services-title h2 {
+    font-size: 30px;
+}
+.services-title span {
+    font-size: 19px;
+}
+.card-dec {
+    top: 71px;
+}
+
+   }
+@media only screen and (max-width:425px) { 
+.container-form {
+    width: 331px;
+}
+.services-card .col-md-6 {
+    flex-wrap: wrap;
+}
+.container-form h1 {
+    font-size: 20px !important;
+}
+.container-form {
+    padding: 20px 15px;
+    top: 30%;
+    left: 40%;
+}
+.services-card {
+   gap:20px;
+}
+.services-title h2::after {
+    transform: translate(28px, 19px);
+}
+.services-title h2::before {
+    transform: translate(-72px, 20px);
+}
+.featured-properties h3 {
+    font-size: 30px;
+}
+.image-slider {
+    padding: 30px 0;
+}
 
 }
 </style>
@@ -283,6 +574,7 @@
       <div class="banner">
          <div class="banner-image">
             <img src="{{ asset('assets/img/showcase.jpg' ) }}">
+            <div class="overlay"></div>
          </div>
          <div class="container-form">
             <h1>Booking Request Deatils</h1>
@@ -342,6 +634,7 @@
       <div class="banner">
          <div class="banner-image">
             <img src="{{asset('assets/img/showcase.jpg' )}}">
+            
          </div>
          <div class="container-form">
             <h1>Booking Request Deatils</h1>
@@ -400,15 +693,20 @@
       </div>
    </div>
 </section>
-<!-- Listings -->
+<!------------------Listings------------------->
 <section id="listings"  >
    <div class="container">
-      <h3 class="mb-3">Featured Listings</h3>
-      <div class="row">
+      <h3>Featured Listings</h3>
+     
+      <!-- <div class="row"> -->
          <!-- Listings -->
          <!-- for listing in listings -->
-         @foreach ($latest_listings as $listing)
-         <div class="col-md-6 col-lg-4 mb-4">
+         <div class="responsive">
+            
+         </div>
+         <!-- @foreach ($latest_listings as $listing) -->
+         <div class="responsive">
+         <div class="px-2 mb-4">
             <div class="card listing-preview">
                <a href="{{ route('single.listing', $listing->id) }}">
                   <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
@@ -417,76 +715,293 @@
                         <span class="badge badge-secondary text-white">{{ $listing -> price }}</span>
                         </h2> -->
                   </div>
-                  <div class="card-body">
+                  <div class="card-body-inner">
                      <div class="listing-heading text-center">
-                        <h4 class="text-primary">{{ $listing -> title }}</h4>
+                        <h4 class="">{{ $listing -> title }}</h4>
                         <p>
-                           <i class="fas fa-map-marker text-secondary" ></i>
+                           <i class="fas fa-map-marker" ></i>
                            {{ $listing -> city }} {{ $listing -> country }}
                         </p>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary">
-                        <div class="col-6">
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
-                        <div class="col-6">
+                        <div class="card-icon">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
                      </div>
-                     <div class="row py-2 text-secondary">
-                        <div class="col-6">
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
                            <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
                         </div>
-                        <div class="col-6">
+                        <div class="card-icon-one  ">
                            <i class="fas fa-bath"></i> Bathrooms: {{ $listing -> bathroom }}
                         </div>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary">
-                        <div class="col-12">
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
-                     </div>
-                     <div class="row text-secondary pb-2">
-                        <div class="col-6">
+                        <div class="card-icon">
                            <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
                         </div>
                      </div>
+                     <div class="row text-secondary pb-2">
+                        
+                     </div>
                      <hr>
-               <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block" >Deatils</a>
+               <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
                </div>
                </a>
             </div>
          </div>
-         @endforeach
-      </div>
+         <div class="px-2 mb-4">
+            <div class="card listing-preview">
+               <a href="{{ route('single.listing', $listing->id) }}">
+                  <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
+                  <div class="card-img-overlay">
+                     <!-- <h2>
+                        <span class="badge badge-secondary text-white">{{ $listing -> price }}</span>
+                        </h2> -->
+                  </div>
+                  <div class="card-body-inner">
+                     <div class="listing-heading text-center">
+                        <h4 class="">{{ $listing -> title }}</h4>
+                        <p>
+                           <i class="fas fa-map-marker" ></i>
+                           {{ $listing -> city }} {{ $listing -> country }}
+                        </p>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-th-large"></i> Sqft: 2500
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
+                        </div>
+                     </div>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
+                           <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
+                        </div>
+                        <div class="card-icon-one  ">
+                           <i class="fas fa-bath"></i> Bathrooms: {{ $listing -> bathroom }}
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
+                        </div>
+                     </div>
+                     <div class="row text-secondary pb-2">
+                        
+                     </div>
+                     <hr>
+               <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
+               </div>
+               </a>
+            </div>
+         </div>
+         <div class="px-2 mb-4">
+            <div class="card listing-preview">
+               <a href="{{ route('single.listing', $listing->id) }}">
+                  <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
+                  <div class="card-img-overlay">
+                     <!-- <h2>
+                        <span class="badge badge-secondary text-white">{{ $listing -> price }}</span>
+                        </h2> -->
+                  </div>
+                  <div class="card-body-inner">
+                     <div class="listing-heading text-center">
+                        <h4 class="">{{ $listing -> title }}</h4>
+                        <p>
+                           <i class="fas fa-map-marker" ></i>
+                           {{ $listing -> city }} {{ $listing -> country }}
+                        </p>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-th-large"></i> Sqft: 2500
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
+                        </div>
+                     </div>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
+                           <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
+                        </div>
+                        <div class="card-icon-one  ">
+                           <i class="fas fa-bath"></i> Bathrooms: {{ $listing -> bathroom }}
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
+                        </div>
+                     </div>
+                     <div class="row text-secondary pb-2">
+                        
+                     </div>
+                     <hr>
+               <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
+               </div>
+               </a>
+            </div>
+         </div>
+         <div class="px-2 mb-4">
+            <div class="card listing-preview">
+               <a href="{{ route('single.listing', $listing->id) }}">
+                  <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
+                  <div class="card-img-overlay">
+                     <!-- <h2>
+                        <span class="badge badge-secondary text-white">{{ $listing -> price }}</span>
+                        </h2> -->
+                  </div>
+                  <div class="card-body-inner">
+                     <div class="listing-heading text-center">
+                        <h4 class="">{{ $listing -> title }}</h4>
+                        <p>
+                           <i class="fas fa-map-marker" ></i>
+                           {{ $listing -> city }} {{ $listing -> country }}
+                        </p>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-th-large"></i> Sqft: 2500
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
+                        </div>
+                     </div>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
+                           <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
+                        </div>
+                        <div class="card-icon-one  ">
+                           <i class="fas fa-bath"></i> Bathrooms: {{ $listing -> bathroom }}
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
+                        </div>
+                     </div>
+                     <div class="row text-secondary pb-2">
+                        
+                     </div>
+                     <hr>
+               <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
+               </div>
+               </a>
+            </div>
+         </div>
+         <div class="px-2 mb-4">
+            <div class="card listing-preview">
+               <a href="{{ route('single.listing', $listing->id) }}">
+                  <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
+                  <div class="card-img-overlay">
+                     <!-- <h2>
+                        <span class="badge badge-secondary text-white">{{ $listing -> price }}</span>
+                        </h2> -->
+                  </div>
+                  <div class="card-body-inner">
+                     <div class="listing-heading text-center">
+                        <h4 class="">{{ $listing -> title }}</h4>
+                        <p>
+                           <i class="fas fa-map-marker" ></i>
+                           {{ $listing -> city }} {{ $listing -> country }}
+                        </p>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-th-large"></i> Sqft: 2500
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
+                        </div>
+                     </div>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
+                           <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
+                        </div>
+                        <div class="card-icon-one  ">
+                           <i class="fas fa-bath"></i> Bathrooms: {{ $listing -> bathroom }}
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row py-2 text-secondary justify-content-between">
+                        <div class="card-icon">
+                           <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
+                        </div>
+                        <div class="card-icon">
+                           <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
+                        </div>
+                     </div>
+                     <div class="row text-secondary pb-2">
+                        
+                     </div>
+                     <hr>
+               <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
+               </div>
+               </a>
+            </div>
+         </div>
+     
+         </div>
+         
+         <!-- @endforeach -->
+      <!-- </div> -->
+   </div>
    </div>
 </section>
-<section id="services" class="py-5">
+<section id="services">
    <div class="container">
-      <div class="row text-center">
-         <div class="col-md-4">
-            <i class="fas fa-comment fa-4x mr-4" style="color:#e5974f"></i>
-            <hr>
+      <div class="services-title">
+         <span>Our Services</span>
+         <h2>Our Main Foucs</h2>
+      </div>
+      <div class="services-card text-center pt-4">
+         <div class=" col-md-6 col-lg-4  card-1">
+            <img src="{{asset('assets/img/customer-agent.png')}}">
+            <!-- <i class="fas fa-comment fa-4x mr-4" style="color:#e5974f"></i> -->
+           
             <h3>Consulting Services</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
                provident iste consequatur
                hic dignissimos ratione ea quae.
             </p>
          </div>
-         <div class="col-md-4">
-            <i class="fas fa-home fa-4x mr-4" style="color:#e5974f"></i>
-            <hr>
+         <div class=" col-md-6 col-lg-4  card-1">
+         <img src="{{asset('assets/img/new-house.png')}}">
+            
             <h3>Propery Selling</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
                provident iste consequatur
                hic dignissimos ratione ea quae.
             </p>
          </div>
-         <div class="col-md-4">
-            <i class="fas fa-suitcase fa-4x mr-4" style="color:#e5974f"></i>
-            <hr>
+         <div class=" col-md-6 col-lg-4  card-1">
+         <img src="{{asset('assets/img/rent.png')}}">
             <h3>Renting & Selling</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
                provident iste consequatur
@@ -494,11 +1009,14 @@
             </p>
          </div>
       </div>
-   </div>
+  
 </section>
 <!--image-slider-section-start -->
 <section class="image-slider">
    <div class="container">
+      <div class="featured-properties">
+         <h3>Featured Property</h3>
+      </div>
       <div class="multiple-items">
          <div class="image-slider-inner">
             <div class="image-card">
@@ -643,5 +1161,7 @@
       </div>
    </div>
 </section>
+
+
 <!--image-slider-section-end-->  
 @endsection
