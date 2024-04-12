@@ -12,10 +12,14 @@
    --font-family: "DM Sans", sans-serif;
   }
   body{
-   h1,h2,h3,h4,h5,h6,span,p{
+   h1,h2,h3,h4,h5,h6,span,p label{
       font-family:var(--font-family);
    }
   
+  }
+  image{
+   max-width:100%;
+   height:auto;
   }
    .container{
    max-width:1440px;
@@ -86,11 +90,13 @@
    .card-1 h3:hover{
       color:#FFA920;
    }
-   .card-1 img{
-      width:100%;
-      max-width:70px;
-      padding-bottom:20px;
-   }
+   .card-1 img {
+    width: 100%;
+    max-width: 60px;
+    transition: all 0.2s linear;
+    padding-bottom: 20px;
+    padding:20px 0;
+}
    .location{
    border-right:2px solid #9da6a4;
    display:flex;
@@ -176,6 +182,9 @@
    .check-date{
    display:flex;
    align-items:center;
+   }
+   .card-icon-one{
+      color:black;
    }
    span.ed {
    margin-right: 91px;
@@ -305,6 +314,7 @@
    }
    .card-icon{
       font-family:var(--font-family);
+      color:black;
    }
    .home-search.p-5 h4 {
    color: #000;
@@ -347,6 +357,9 @@
    height:100%;
    position: relative;
    }
+   .card-cion i{
+      color:black;
+   }
    #listings{
   padding:70px 0;
    }
@@ -384,6 +397,9 @@
       border:1px solid #f6f6f6;
        flex-wrap:no-wrap;
        padding:20px;
+   }
+   .card-1 img:hover{
+      transform:scale(1.3);
    }
    #services{
       padding:70px 0;
@@ -469,7 +485,110 @@
    input.children-children.active{
     display: block !important;
    }
+   .team-inner{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:30px;
+      padding-bottom:40px;
+   }
+   .our-team{
+      text-align:center;
+   }
+   .our-team h2 {
+    font-size: 45px;
+    font-weight: bold;
+    color: black;
+    padding-top: 10px;
+    position: relative;
+    margin:0;
+    padding:10px 0;
+}
+.our-team p{
+   margin:0;
+   color:#8E8E93;
+   padding-bottom:30px;
+}
+.team-dec h4{
+   color:black;
+   font-size:22px;
+   font-weight:bold;
+}
+.team-dec span{
+   color:#8E8E93;
+}
+.team-image{
+   overflow:hidden;
+   border-radius:20px;
   
+}
+   .team-image img{
+      
+      transition:all 0.5s linear;
+      object-fit:cover;
+      overflow:hidden;
+}
+   .team-image img:hover {
+    transform: scale(1.2);
+}
+.team-name {
+    padding: 30px 0;
+    position: absolute;
+    /* top: 79%; */
+    /* left: 35px; */
+    background-color: white;
+    width: 80%;
+    transform: translate(34px, -44px);
+    padding: 20px;
+    box-shadow:0px 15px 30px rgba(0,0,0,0.10);
+    border-radius: 10px;
+}
+   .team-card{
+      position: relative;
+   }
+   .team-cont{
+      gap:30px;
+   }
+   .team-cont i{
+    width: 38px;
+    height: 38px;
+    border: 1px solid #EFEFEF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 13px;
+    transition:all 0.3s ease;
+}
+.team-cont i:hover{
+   background-color:#FFA920;
+   color:white;
+}
+   
+.team {
+    padding: 70px 0;
+    background-color: #F7F7F7;
+}
+.our-team h2::after{
+   content: '';
+    /* top: 42px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* right: 29%; */
+    transform: translate(30px, 26px);
+}
+.our-team h2::before{
+   content: '';
+    /* top: 42px; */
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 49px;
+    /* left: 29%; */
+    transform: translate(-77px, 26px);
+}
+
    @media only screen and (max-width:1024px) {
    #listings h3 {
     font-size: 40px;
@@ -482,10 +601,6 @@
 }
 .services-title h2 {
     font-size: 35px;
-}
-.card-1 img {
-    max-width: 60px;
-    
 }
 .card-1 h3 {
     font-size: 23px;
@@ -532,6 +647,13 @@
 .card-dec {
     top: 71px;
 }
+.team-inner{
+   grid-template-columns:1fr 1fr;
+   gap:20px;
+}
+.team-card{
+   margin-bottom:60px;
+}
 
    }
 @media only screen and (max-width:425px) { 
@@ -564,7 +686,22 @@
 .image-slider {
     padding: 30px 0;
 }
-
+.team-inner{
+   grid-template-columns:1fr;
+   gap:20px;
+}
+.our-team h2 {
+    font-size: 30px;
+}
+.team {
+    padding: 40px 0;
+}
+.our-team p {
+    font-size: 15px;
+}
+.team-name {
+    padding: 10px;
+}
 }
 </style>
 @section('content')
@@ -974,43 +1111,7 @@
    </div>
    </div>
 </section>
-<section id="services">
-   <div class="container">
-      <div class="services-title">
-         <span>Our Services</span>
-         <h2>Our Main Foucs</h2>
-      </div>
-      <div class="services-card text-center pt-4">
-         <div class=" col-md-6 col-lg-4  card-1">
-            <img src="{{asset('assets/img/customer-agent.png')}}">
-            <!-- <i class="fas fa-comment fa-4x mr-4" style="color:#e5974f"></i> -->
-           
-            <h3>Consulting Services</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-               provident iste consequatur
-               hic dignissimos ratione ea quae.
-            </p>
-         </div>
-         <div class=" col-md-6 col-lg-4  card-1">
-         <img src="{{asset('assets/img/new-house.png')}}">
-            
-            <h3>Propery Selling</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-               provident iste consequatur
-               hic dignissimos ratione ea quae.
-            </p>
-         </div>
-         <div class=" col-md-6 col-lg-4  card-1">
-         <img src="{{asset('assets/img/rent.png')}}">
-            <h3>Renting & Selling</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-               provident iste consequatur
-               hic dignissimos ratione ea quae.
-            </p>
-         </div>
-      </div>
-  
-</section>
+
 <!--image-slider-section-start -->
 <section class="image-slider">
    <div class="container">
@@ -1161,7 +1262,107 @@
       </div>
    </div>
 </section>
+<section id="services">
+   <div class="container">
+      <div class="services-title">
+      <h2>Our Main Foucs</h2>
+         <span>Our Services</span>
+         
+      </div>
+      <div class="services-card text-center pt-4">
+         <div class=" col-md-6 col-lg-4  card-1">
+            <img src="{{asset('assets/img/customer-agent.png')}}">
+            <!-- <i class="fas fa-comment fa-4x mr-4" style="color:#e5974f"></i> -->
+           
+            <h3>Consulting Services</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
+               provident iste consequatur
+               hic dignissimos ratione ea quae.
+            </p>
+         </div>
+         <div class=" col-md-6 col-lg-4  card-1">
+         <img src="{{asset('assets/img/new-house.png')}}">
+            
+            <h3>Propery Selling</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
+               provident iste consequatur
+               hic dignissimos ratione ea quae.
+            </p>
+         </div>
+         <div class=" col-md-6 col-lg-4  card-1">
+         <img src="{{asset('assets/img/rent.png')}}">
+            <h3>Renting & Selling</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
+               provident iste consequatur
+               hic dignissimos ratione ea quae.
+            </p>
+         </div>
+      </div>
+</section>
+<!--team-section-start -->
+<section class="team">
+   <div class="container">
+      <div class="our-team">
+         <h2>Meet the Agents</h2>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, magnam.</p>
+         <div class="team-inner">
+            <div class="team-card">
+               <div class="team-image">
+               <img src="{{asset('assets/img/realtors\jenny.jpg')}}">
+               </div>
+               <div class="team-name d-flex justify-content-between">
+                  <div class="team-dec">
+                  <h4>Jenny</h4>
+                  <span>Realtor</span>
+                  </div>
+                  <div class="team-cont d-flex">
+                  <i class="fa-solid fa-phone"></i>
+                  <i class="fa-solid fa-message"></i>
+                  </div>
+                 
+               </div>
+           
+            </div>
+            <div class="team-card">
+               <div class="team-image">
+               <img src="{{asset('assets/img/realtors\kyle.jpg')}}">
+               </div>
+               <div class="team-name d-flex justify-content-between">
+                  <div class="team-dec">
+                  <h4>Kyle</h4>
+                  <span>Realtor</span>
+                  </div>
+                  <div class="team-cont d-flex">
+                  <i class="fa-solid fa-phone"></i>
+                  <i class="fa-solid fa-message"></i>
+                  </div>
+                 
+               </div>
+           
+            </div>
+            <div class="team-card">
+               <div class="team-image">
+               <img src="{{asset('assets/img/realtors\mark.jpg')}}">
+               </div>
+               <div class="team-name d-flex justify-content-between">
+                  <div class="team-dec">
+                  <h4>Mark</h4>
+                  <span>Realtor</span>
+                  </div>
+                  <div class="team-cont d-flex">
+                  <i class="fa-solid fa-phone"></i>
+                  <i class="fa-solid fa-message"></i>
+                  </div>
+                 
+               </div>
+           
+            </div>
 
+            
+         </div>
+      </div>
+   </div>
+   </section>
 
 <!--image-slider-section-end-->  
 @endsection

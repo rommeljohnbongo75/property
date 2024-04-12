@@ -1,16 +1,49 @@
 @extends('site.base')
 <style>
-  .card-header.title.text-white {
-    background-color: #718096 !important;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+#register{
+  padding-top:130px;
+  padding-bottom:40px;
+}
+:root{
+   --font-family: "DM Sans", sans-serif;
+  }
+  body{
+   h1,h2,h3,h4,h5,h6,span,p label{
+      font-family:var(--font-family);
+   }
+  
+  }
+label{
+  font-family:var(--font-family) !important;
+}
+#register  lable{
+  margin-bottom:unset !important;
+}
+#register input[type="email"] {
+    width: 100%;
+    padding: 10px;
+   margin-top:unset !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.register-form{
+  background-color: white;
+    padding: 20px 0;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.10);
 }
 </style>
 @section('content')
-<section id="register" class="bg-light py-5">
+<section id="register" class="bg-light">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 mx-auto">
+      <div class="row align-items-center register-form">
+        <div class="col-md-6">
+          <img src="{{ asset('assets/img/user-registration.png' ) }}">
+        </div>
+        <div class="col-md-6 mx-auto form-reg-inner">
           <div class="card">
-            <div class="card-header title text-white">
+            <div class="card-header title">
               <h4>
                 <i class="fas fa-user-plus"></i> Register</h4>
             </div>

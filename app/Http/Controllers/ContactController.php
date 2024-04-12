@@ -102,4 +102,10 @@ class ContactController extends Controller
         
         return view('site.layouts.cla',compact('initialMarkers'));
     }
+
+    public function conatctNew(){
+
+        return view('site.layouts.contact');
+    }
+
 }

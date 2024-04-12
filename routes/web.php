@@ -42,6 +42,7 @@ Route::get('/query', [searchController::class, 'search'])->name('search');
 Route::get('/search', [searchController::class, 'result'])->name('result'); 
 Route::post('/contact', [ContactController::class, 'store'])->name('send-message');
 Route::get('/cla', [ContactController::class, 'cla'])->name('cla');
+Route::get('/conatct-new', [ContactController::class, 'conatctNew'])->name('conatct.new');
 
 
 Route::controller(LoginRegisterController::class)->group(function() {

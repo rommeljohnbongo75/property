@@ -5,19 +5,24 @@
         display: flex;
         gap: 20px;
     }
+    .conatiner{
+        max-width:1440px;
+        margin:0 auto;
+    }
 
     .property {
-        width: 100%; /* Change width to full width */
-        display: flex;
+        width:40%; /* Change width to full width */
+        /* display: flex; */
         flex-wrap: wrap; /* Ensure properties wrap to new line */
-        gap: 10px;
+        
         justify-content: space-between; /* Evenly distribute properties */
     }
 
     .property-inner {
-        width: calc(33.33% - 10px); /* Adjust width to fit 3 properties in a row */
+        /* width: calc(50% - 10px); Adjust width to fit 3 properties in a row */
         border: 1px solid rgba(0, 0, 0, 0.1);
         position: relative;
+        margin:20px 0;
     }
 
     .property:nth-child(3n+1) {
@@ -104,6 +109,7 @@
     </section>
     <!-- Listings -->
     <section id="listings" class=" px-4">
+        <div class="conatiner">
         <div class="map-section">
             <div class="property">
                 <!-- Property 1 -->
@@ -133,6 +139,8 @@
                 <div id="map_canvas"></div>
             </div>
         </div>
+        </div>
+        
     </section>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
     <script>

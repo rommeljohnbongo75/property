@@ -6,7 +6,11 @@
    :root{
    --font-family: "DM Sans", sans-serif;
   }
-
+  body{
+   h1,h2,h3,h4,h5,h6, span, p{
+      font-family:var(--font-family);
+   }
+  }
   *{
    .container-form {
    max-width: 800px;
@@ -129,7 +133,7 @@
    }
    div#map {
    width: 100%;
-   height: 65%;
+   height: 40%;
    }
    .list-group {
    list-style: none;
@@ -170,8 +174,8 @@ input.btn.btn-block.btn-secondary {
     background-color: #FFA920;
 }
 .datepicker-days table.table-condensed {
-    width: 530px !important;
-    height: 530px;
+   max-width:400px !important;
+    height: 400px !important;
     padding: 15px;
 }
 .date-pixel{
@@ -187,6 +191,11 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 .option-tab ul{
    gap:40px;
    padding:0;
+}
+.review-card{
+   background-color: white;
+    padding: 20px;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.10);
 }
 .option-tab ul li a{
    text-decoration:none;
@@ -211,6 +220,9 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 .review-inner {
   justify-content: space-between;
 }
+.review{
+   padding-bottom:70px;
+}
 .property-dec{
    font-family:var(--font-family);
    font-size:16px;
@@ -225,9 +237,21 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 }
 .review-title h3{
    padding-bottom:20px;
+   color:black;
 }
+.review-dec p{
+   color:#8E8E93;
+}
+
 .tab{
    padding-bottom:30px;
+    /* padding-top: 0px;
+    padding-bottom: 1px;
+    transform: translateY(60px);
+    left: 1142px;
+    top: 0px;
+    position: fixed;
+    width: 356px; */
 }
 .author-name{
    padding:30px;
@@ -278,11 +302,79 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 }
 .page-title{
    font-family:var(--font-family);
+   font-size:45px;
 }
 .list-group-item{
    color:black;
    font-size:18px;
    font-family:var(--font-family);
+}
+.property-title h3{
+   font-family:var(--font-family);
+   font-size:40px;
+   color:black;
+   margin:0;
+   padding:20px 0;
+}
+.map-map{
+   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+   padding:30px;
+}
+.map-map h3{
+   font-family:var(--font-family);
+   font-size:40px;
+   color:black;
+   margin:0;
+   padding:20px 0;
+}
+.property{
+   padding:60px 0;
+}
+.property-title{
+   padding:20px 30px;
+}
+.fields {
+   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+   padding-top:20px;
+   padding-bottom:60px;
+   padding-left:20px;
+}
+.fields h2{
+   font-family:var(--font-family);
+   font-size:40px;
+   color:black;
+   margin:0;
+   padding:20px 0;
+}
+.property-title {
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+}
+.date{
+   padding:40px 30px;
+   margin-top:80px;
+   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+}
+.date h3{
+   font-family:var(--font-family);
+   font-size:40px;
+   color:black;
+   margin:0;
+   padding:20px 0;
+}
+.about-host-title ul {
+   display:flex;
+   margin:0;
+   padding:0;
+}
+.about-host-title ul li{
+   list-style:none;
+   padding-right:10px;
+}
+.about-host-title ul li i{
+   font-size:20px;
+}
+.about-host-inner span{
+   font-size:20px;
 }
 /* .option-tab ul li a:hover{
  underline:dotted;
@@ -382,7 +474,10 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
       <!-- Fields -->
       <div class="col-md-12" id="Booking-details">
          <div class="col-md-12">
-            <div class="row mb-5 fields gap-5">
+         
+            <div class=" fields ">
+            <h2>Booking Details</h2>
+               <div class="row gap-5">
                <div class="col-md-7 d-flex gap-5 justify-content-between">
                   <div class="page-inner">
                      <ul class="list-group list-group-flush">
@@ -497,30 +592,41 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                      </div>
                   </div>
                </div>
+               </div>
             </div>
          </div>
          <!-- Description -->
-         <h3 class="" style="margin-top: 45px;" id="Property Description">Property Description</h3>
-         <div class="row mb-5">
-            <div class="col-md-12 property-dec">
+         <section class="property">
+            <div class="property-title">
+            <h3>Property Description</h3>
+             <div class="row mb-5">
+                <div class="col-md-12 property-dec">
                {{ $listing ->description }}
             </div>
          </div>
+            </div>
+        
+         </section>
+         
          <div class="map-map" id="Property Location">
             <h3 class="">Property Location</h3>
             <div id="map"></div>
          </div>
-         <h3 class="" style="margin-top: 45px;" id="Dates & Reservations">Dates & Reservations</h3>
-         <div class="calendar-main">
+         <div class="date">
+         <h3>Dates & Reservations</h3>
+         <div class="calendar-main ">
             <div class="calendar" id="calendar-calendar"></div>
             <div class="calendar" id="calendar-calendar"></div>
          </div>
+         </div>
+         
       </div>
    </div>
 </section>
 <!---------review-section-start------->
 <section class="review" id="review-one">
    <div class="container">
+      <div class="review-card">
       <div class="review-inner d-flex ">
         <div class="review-title">
          <h3>Reviews</h3>
@@ -532,17 +638,27 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
       </div>
       <div class="about-host-title">
           <h3>About Host</h3>
+          <ul>
+            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i></a></li>
+          </ul>
       </div>
       <div class="about-host-inner d-flex">
-       <h4 class="author-name">FS</h4>
+         <div class="">
+         <h4 class="author-name">FS</h4>
+         </div>
+       <div class="review-dec">
        <span>Max MArtin</span>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore ducimus perferendis porro rerum non eligendi rem consequatur dolorum sint!</p>
+       </div>
+       
       </div>
-      <div class="contact-details">
-         <h4>Contact Us</h4>
-         <h5>Email:abc@yahoo.com</h5>
-         <sapn>Phone:<a href="">+91919652356</a></sapn>
-
+      
       </div>
+     
    </div>
 </section>
 <!---------review-section-end------->
@@ -561,7 +677,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                lat: 31.771959,
                lng: 35.217018,
            },
-           zoom: 5
+           zoom: 3
        });
    
        map.addListener("click", function(event) {

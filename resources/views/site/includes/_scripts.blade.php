@@ -25,6 +25,8 @@
        dots:true,
         slidesToShow: 3,
         slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
         responsive: [
        {
          breakpoint: 1024,
@@ -36,7 +38,7 @@
          }
        },
        {
-         breakpoint: 480,
+         breakpoint: 600,
          settings: {
            slidesToShow: 1,
            slidesToScroll: 1

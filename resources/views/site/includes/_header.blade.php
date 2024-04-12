@@ -71,7 +71,9 @@ nav.navbar {
 .navbar-dark .navbar-brand{
   font-style:italic;
 }
-
+.nav-item a img{
+  width:30px;
+}
 .navbar img{
   width:100%;
   max-width:70px;
@@ -212,13 +214,12 @@ input[type="text"] {
           @else
           <li class="nav-item mr-3 {{ (request()->routeIs('register')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('register') }}">
-              <i class="fas fa-user-plus"></i> Register</a>
+            <img src="{{ asset('assets/img/registered.png' ) }}">Register</a>
           </li>
           <li class="nav-item mr-3 {{ (request()->routeIs('login')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('login') }}">
-              <i class="fas fa-sign-in-alt"></i>
-
-              Login</a>
+            <img src="{{ asset('assets/img/user.png' ) }}">Log In</a>
+             </i>
           </li>
           @endif
         </ul>

@@ -14,7 +14,6 @@
    h1,h2,h3,h4,h5,h6, span, p{
       font-family:var(--font-family);
    }
-  
   }
   image{
     max-width:100%;
@@ -25,7 +24,7 @@
    margin:0 auto;
    }
    #login {
-    padding: 150px 0;
+    padding:160px 0;
   }
   .login-dec{
     text-align:center;
@@ -34,10 +33,11 @@
   #login .card{
     border:none;
   }
-  .login-inner{
-    background-color:white;
-    padding:20px 0;
-  }
+  .login-inner {
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.10);
+}
   .card label{
     font-family:var(--font-family);
     color:black;
@@ -63,6 +63,39 @@
     border-radius: 10px;
     display: flex;
     gap:10px;
+}
+.banner-login{
+  padding:80px 0;
+  
+}
+.overlay1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 58.6%;
+    opacity: 0.3;
+    width: 100%;
+}
+/* .banner-login img{
+height:50%;
+position: relative;
+} */
+.login-banner-heading{
+  position:absolute;
+  top:20%;
+  left:40px;
+
+}
+.login-banner-heading h2{
+  color:black;
+  font-size:50px;
+}
+.login-banner-heading span{
+  font-size:40px;
+  font-weight:bold;
+  color:#FFA920
 }
 .social-media-name span a{
   color:black;
@@ -94,11 +127,22 @@ padding: 0.375rem 2.75rem !important;
 @extends('site.base')
 
 @section('content')
-<section id="login" class="bg-light">
+<!-- <section> 
+  <div class="banner-login">
+    <img src="{{ asset('assets/img/mthome.jpg' ) }}">
+    <div class="overlay1"></div>
+    <div class="login-banner-heading">
+     <h2>Welcome to Estate Rental</h2>
+     <span>Login</span>
+    </div>
+  </div>
+</section> -->
+
+<section id="login" >
     <div class="container">
       <div class="row login-inner align-items-center ">
         <div class="col-sm-12 col-lg-6">
-          <img src="{{ asset('assets/img/loginvector.png' ) }}"">
+          <img src="{{ asset('assets/img/loginvector.png' ) }}">
         </div>
         <div class="col-sm-12 col-lg-6 mx-auto">
           <div class="card">
@@ -119,11 +163,7 @@ padding: 0.375rem 2.75rem !important;
             <div class="card-body">
               <form method="POST" action="{{ route('authenticate') }}">
                 @csrf
-                <div class="form-group">
-                  <label for="username">User Name</label>
-                  <input type="text" name="email" class="form-control" placeholder="User Name" required>
-                  <i class="fa-regular fa-user"></i>
-                </div>
+               
                 <div class="form-group">
                   <label for="username">Email</label>
                   <input type="text" name="email" class="form-control" placeholder="Email" required>
