@@ -33,15 +33,24 @@ label{
     padding: 20px 0;
     box-shadow: 0px 15px 30px rgba(0,0,0,0.10);
 }
+@media only screen and (max-width: 768px) {
+  .reg-img{
+    padding:40px 0;
+    margin:auto;
+  }
+  .title h4{
+    font-size:20px;
+  }
+}
 </style>
 @section('content')
 <section id="register" class="bg-light">
     <div class="container">
       <div class="row align-items-center register-form">
-        <div class="col-md-6">
+        <div class="col-md-5 col-lg-6 reg-img">
           <img src="{{ asset('assets/img/user-registration.png' ) }}">
         </div>
-        <div class="col-md-6 mx-auto form-reg-inner">
+        <div class="col-md-12 col-lg-6 mx-auto form-reg-inner">
           <div class="card">
             <div class="card-header title">
               <h4>
@@ -87,7 +96,7 @@ label{
                   <label for="password">Confirm Password</label>
                   <input type="password" name="password_confirmation" class="form-control" required>
                 </div>
-                <input type="submit" value="Register" class="btn btn-secondary btn-block">
+                <input type="submit" value="Register" class="btn  btn-block">
               </form>
             </div>
           </div>

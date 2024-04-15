@@ -93,7 +93,7 @@
    .form-group-icon i{
    font-size:25px;
    padding-right:5px;
-   margin-left:10px;
+   /* margin-left:10px; */
    }
    .form-img i{
    font-size:25px;
@@ -102,7 +102,7 @@
    background-color: #efe9e2;
    padding:15px;
    border-radius:10px;
-   gap:20px;
+   /* gap:20px; */
    }
    .from-data {
    background-color: #efe9e2;
@@ -129,7 +129,8 @@
    vertical-align: middle;
    }
    .calendar-main {
-   display: flex;
+   display: flex !important;
+   justify-content:center;
    }
    div#map {
    width: 100%;
@@ -138,6 +139,7 @@
    .list-group {
    list-style: none;
    padding: 0;
+   gap:10px;
    }
    .list-group-item {
    display:flex;
@@ -241,6 +243,16 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 }
 .review-dec p{
    color:#8E8E93;
+   font-size:16px;
+}
+.review-dec{
+   /* display:flex; */
+}
+.about-host-inner ul{
+   display:flex;
+}
+.about-host-inner ul li{
+   list-style:none;
 }
 
 .tab{
@@ -259,7 +271,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
    border-radius:50px;
 }
 .about-host-inner{
-   align-items:center;
+   /* align-items:center; */
    gap:20px;
    padding:20px 0;
 }
@@ -286,6 +298,9 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 #Booking-details{
    padding:40px 0;
 }
+.booking i{
+   color:#FFA920;
+}
 #sticky{
    position:sticky;
    z-index:999;
@@ -303,6 +318,9 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 .page-title{
    font-family:var(--font-family);
    font-size:45px;
+}
+.bo p i{
+   color:#FFA920;
 }
 .list-group-item{
    color:black;
@@ -366,15 +384,122 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
    margin:0;
    padding:0;
 }
-.about-host-title ul li{
-   list-style:none;
-   padding-right:10px;
+.img-fluid{
+   display:block !important;
 }
-.about-host-title ul li i{
-   font-size:20px;
+.about-host-title .review-icon li{
+   list-style:none;
+  
+}
+ .review-icon li i{
+   font-size:16px;
+   padding-right:5px !important;
+
 }
 .about-host-inner span{
    font-size:20px;
+}
+.fields1 {
+   display:flex;
+}
+.fileds-inner{
+   display:flex !important;
+}
+.cards{
+   padding-top:unset !important;
+}
+@media only screen and (max-width: 768px) {
+.container-form {
+    width:unset !important;
+}
+.fileds-inner{
+   display: block !important;
+}
+.cards{
+   padding-top:40px;
+}
+.fields h2 {
+font-size: 30px;
+}
+.container-form h1{
+   margin:0;
+   padding:20px 0;
+}
+input[type="text"] {
+ margin:0 !important;
+}
+.property-title h3 {
+    font-size: 30px;
+}
+.map-map h3 {
+    font-size: 30px;
+}
+.date h3 {
+    font-size: 30px;
+    
+}
+.calendar-main {
+    flex-wrap:wrap;
+   justify-content:center;
+}
+
+.review-title h3 {
+  margin:0;
+}
+.about-host-inner{
+  flex-wrap:wrap;
+}
+}
+@media only screen and (max-width:425px) {
+.fields1 {
+   flex-wrap:wrap;
+}
+.container-form h1 {
+    font-size: 21px !important;
+}
+.container-form input[type="text"] {
+    font-size: 14px;
+   }
+   .list-group {
+   gap:0;
+}
+.alert-text p{
+   padding-bottom:0 !important;
+}
+.from-data {
+    padding: 10px;
+}
+.form-group-one {
+    padding: 10px;
+}
+.property-dec {
+    font-size: 14px;
+}
+.about-host-inner ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.author{
+   width:unset !important;
+}
+.review-btn button {
+    padding: 10px 13px;
+    font-size: 14px;
+}
+#listing {
+    padding: 40px 0;
+}
+#listings {
+    padding: 40px 0;
+}
+.date {
+   margin:0;
+}
+.option-tab ul{
+   flex-wrap:wrap;
+}
+
 }
 /* .option-tab ul li a:hover{
  underline:dotted;
@@ -400,16 +525,23 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 </section> -->
 <!-- Listing -->
 <section id="listing">
+   
    <div class="container">
       <!-- <a href="{{'listings'}}" class="btn btn-light mb-4">Back To Listings</a> -->
-      <div class="row">
-         <div class="col-md-12 ">
+       
+   <div class="row">
+      <!-- <div class="slider-for"> -->
+            <div class="col-md-12 booking ">
+          
             <!-- Home Main Image -->
             <h2 class="page-title">{{$listing ->title}}</h2>
             <p><i class="fa-solid fa-location-dot"></i> {{$listing ->city}}, {{$listing ->country}}   <i class="fa-solid fa-bed"></i>  {{ $listing ->bedroom }} Bedroom  <i class="fa-solid fa-dollar-sign"></i>  {{$listing ->price}} Price</p>
-            <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3">
+              <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3">
+            </div>
+<!--             
+         </div> -->
             <!-- Thumbnails -->
-            <div class="row mb-5 thumbs">
+           <div class="row mb-5 thumbs">
                @if ($listing ->thumbnail_1)
                <div class="col-md-2">
                   <a href="{{ url($listing ->thumbnail_1) }}" data-lightbox="home-images">
@@ -452,8 +584,8 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                   </a>
                </div>
                @endif
-            </div>
-         </div>
+            </div> 
+        
   
       </div>
 <!-------------Tab-section--------------->
@@ -477,8 +609,8 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
          
             <div class=" fields ">
             <h2>Booking Details</h2>
-               <div class="row gap-5">
-               <div class="col-md-7 d-flex gap-5 justify-content-between">
+               <div class=" gap-5 fileds-inner">
+               <div class="col-md-12 col-lg-7 gap-5 justify-content-between fields1">
                   <div class="page-inner">
                      <ul class="list-group list-group-flush">
                         <li class="list-group-item ">
@@ -491,11 +623,11 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                         </li>
                         <li class="list-group-item ">
                            <i class="fas fa-bath"></i> Bathrooms:
-                           <span class="float-right">{{ $listing ->bathroom }}</span>
+                           <span class="">{{ $listing ->bathroom }}</span>
                         </li>
                         <li class="list-group-item ">
                            <i class="fas fa-car"></i> Garage:
-                           <span class="float-right">{{ $listing ->garage }}
+                           <span class="">{{ $listing ->garage }}
                            </span>
                         </li>
                      </ul>
@@ -504,27 +636,27 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                      <ul class="list-group list-group-flush">
                         <li class="list-group-item ">
                            <i class="fas fa-th-large"></i> Square Feet:
-                           <span class="float-right">{{ $listing ->square_feet }}</span>
+                           <span class="">{{ $listing ->square_feet }}</span>
                         </li>
                         <li class="list-group-item ">
                            <i class="fas fa-square"></i> Lot Size:
-                           <span class="float-right">{{ $listing ->lot_size }} Acres
+                           <span class="">{{ $listing ->lot_size }} Acres
                            </span>
                         </li>
                         <li class="list-group-item ">
                            <i class="fas fa-calendar"></i> Listing Date:
-                           <span class="float-right">{{ $listing -> created_at->diffForHumans() }}</span>
+                           <span class="">{{ $listing -> created_at->diffForHumans() }}</span>
                         </li>
                         <li class="list-group-item">
                            <i class="fas fa-bed"></i> Realtor:
-                           <span class="float-right">{{ $listing -> realtor-> name }}
+                           <span class="">{{ $listing -> realtor-> name }}
                            </span>
                         </li>
                      </ul>
                   </div>
                </div>
                
-               <div class="col-md-5">
+               <div class="col-md-12 col-lg-5">
                   <div class="cards">
                      <div class="container-form">
                         <h1>Booking Request Deatils</h1>
@@ -553,7 +685,7 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
                               <p class="text-danger text-center py-4"></p>
                            </div>
 
-                           <div class="form-group-one d-flex align-items-center" id="sec-menu">
+                           <div class="form-group-one d-flex align-items-center justify-content-around" id="sec-menu">
                               <div class="form-group-icon">
                                  <i class="fa-regular fa-user" style="color:#10284e"></i>
                               </div>
@@ -638,22 +770,29 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
       </div>
       <div class="about-host-title">
           <h3>About Host</h3>
-          <ul>
-            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
-            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
-            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
-            <li><a href=""><i class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i></a></li>
-            <li><a href=""><i class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i></a></li>
-          </ul>
+          
       </div>
       <div class="about-host-inner d-flex">
-         <div class="">
+         <div class="sm:col-sm-2 author">
          <h4 class="author-name">FS</h4>
          </div>
        <div class="review-dec">
        <span>Max MArtin</span>
        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore ducimus perferendis porro rerum non eligendi rem consequatur dolorum sint!</p>
        </div>
+       <ul class="review-icon">
+            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i></a></li>
+           
+          </ul>
+        
+         
+      
+        
+      
        
       </div>
       

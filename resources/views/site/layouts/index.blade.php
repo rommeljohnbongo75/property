@@ -34,6 +34,10 @@
    input.input-box {
    border: none;
    }
+   .navbar-toggler {
+    background-color:#FFA920 !important;
+    /* border: 1px solid transparent; */
+}
    .search-start {
    display:grid;
    grid-template-columns:1fr 1fr 1fr 1fr;
@@ -44,6 +48,9 @@
    width: 113%;
    padding: 10px 20px;
    }
+   .navbar-collapse.collapse.in {
+    display: block !important;
+}
    .slick-slide{
    width:600px% !important;
    }
@@ -67,9 +74,12 @@
    .image-slider-inner{
    padding:0 10px;
    }
-   .image-slider{
-      padding:70px 0;
-   }
+   section.image-slider {
+    padding-bottom: 70px;
+}
+.listing-heading a{
+   fon-family:var(--font-family);
+}
    #main-footer{
    background-color:#718096;
    }
@@ -116,33 +126,49 @@
    padding-left:20px;
    padding-right:40px;
    }
-   #listings .slick-prev:before {
-    font-family: slick;
-    font-size: 32px;
-    line-height: 1;
-    opacity: .75;
-    color: #212529;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    z-index:9999;
+   #listings .slick-prev {
+    font-size: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 3px solid #8E8E93;
+    border-bottom: 0;
+    /* border-left: 0; */
+    border-right: 0;
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    color:#8E8E93;
+    transform: rotate(-42deg);
+    cursor: pointer;
 }
 
 .slick-dots li button:before {
-    font-size: 11px !important;
+    font-size: 14px !important;
  
 }
 .slick-prev {
     left:-35px !important;
 }
-#listings .slick-next:before {
-    font-family: slick;
-    font-size: 32px;
-    line-height: 1;
-    opacity: .75;
-    color: #212529;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    z-index:9999;
+.slick-prev:before {
+    content: '' !important;
+}
+.slick-next:before {
+    content: '' !important;
+}
+#listings .slick-next {
+    font-size: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 3px solid #8E8E93;
+    border-bottom: 0;
+    border-left: 0;
+    position: absolute;
+    top: 40%;
+    right: -26px;
+    transform: rotate(47deg);
+    cursor: pointer;
 }
    .card-body-inner a{
       background-color:#FFA920;
@@ -185,6 +211,9 @@
    }
    .card-icon-one{
       color:black;
+   }
+   .card-icon .icon{
+      color:white;
    }
    span.ed {
    margin-right: 91px;
@@ -503,6 +532,11 @@
     margin:0;
     padding:10px 0;
 }
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #FFA920 !important;
+    border-color: transparent;
+    color: #fff;
+}
 .our-team p{
    margin:0;
    color:#8E8E93;
@@ -522,7 +556,6 @@
   
 }
    .team-image img{
-      
       transition:all 0.5s linear;
       object-fit:cover;
       overflow:hidden;
@@ -565,8 +598,10 @@
 }
    
 .team {
-    padding: 70px 0;
-    background-color: #F7F7F7;
+  
+    padding-top:70px;
+    padding-bottom:120px;
+    /* background-color: #F7F7F7; */
 }
 .our-team h2::after{
    content: '';
@@ -588,6 +623,25 @@
     /* left: 29%; */
     transform: translate(-77px, 26px);
 }
+.show-section .slick-prev{
+   font-size:30px;
+}
+.show-section .slick-dots {
+    position: absolute;
+    bottom: 14px;
+    font-size: 30px;
+
+}
+.responsive .slick-dots{
+   bottom:-14px;
+}
+.multiple-items .slick-dots {
+    position: absolute;
+    bottom: -41px;
+}
+#services {
+    padding: 70px 0;
+}
 
    @media only screen and (max-width:1024px) {
    #listings h3 {
@@ -605,9 +659,7 @@
 .card-1 h3 {
     font-size: 23px;
 }
-#services {
-    padding: 20px 0;
-}
+
 #services p {
     font-size: 16px;
 }
@@ -634,9 +686,21 @@
 }
 .services-card {
     flex-wrap: wrap;
-    gap:unset;
+    gap:20px;
     justify-content:center;
     
+}
+.our-team h2 {
+    font-size: 30px;
+}
+.image-slider {
+    padding: 30px 0;
+}
+.featured-properties h3 {
+    font-size: 30px;
+}
+#listings {
+    padding-top: 30px !important;
 }
 .services-title h2 {
     font-size: 30px;
@@ -654,9 +718,21 @@
 .team-card{
    margin-bottom:60px;
 }
+.container-form {
+    left: 31% !important;
+    top:27%;
+}
+.team {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
 
    }
 @media only screen and (max-width:425px) { 
+   #listings{
+      padding-top:35px;
+   }
 .container-form {
     width: 331px;
 }
@@ -669,7 +745,7 @@
 .container-form {
     padding: 20px 15px;
     top: 30%;
-    left: 40%;
+    left: 9% !important;
 }
 .services-card {
    gap:20px;
@@ -771,7 +847,9 @@
       <div class="banner">
          <div class="banner-image">
             <img src="{{asset('assets/img/showcase.jpg' )}}">
-            
+            <div class="overlay">
+
+            </div>
          </div>
          <div class="container-form">
             <h1>Booking Request Deatils</h1>
@@ -1270,7 +1348,7 @@
          
       </div>
       <div class="services-card text-center pt-4">
-         <div class=" col-md-6 col-lg-4  card-1">
+         <div class=" col-md-12 col-lg-4  card-1">
             <img src="{{asset('assets/img/customer-agent.png')}}">
             <!-- <i class="fas fa-comment fa-4x mr-4" style="color:#e5974f"></i> -->
            
@@ -1280,7 +1358,7 @@
                hic dignissimos ratione ea quae.
             </p>
          </div>
-         <div class=" col-md-6 col-lg-4  card-1">
+         <div class=" col-md-12 col-lg-4  card-1">
          <img src="{{asset('assets/img/new-house.png')}}">
             
             <h3>Propery Selling</h3>
@@ -1289,7 +1367,7 @@
                hic dignissimos ratione ea quae.
             </p>
          </div>
-         <div class=" col-md-6 col-lg-4  card-1">
+         <div class=" col-md-12 col-lg-4 card-1">
          <img src="{{asset('assets/img/rent.png')}}">
             <h3>Renting & Selling</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,

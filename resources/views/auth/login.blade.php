@@ -176,7 +176,7 @@ padding: 0.375rem 2.75rem !important;
                   <i class="fa-solid fa-lock"></i>
                 </div>
 
-                <input type="submit" value="Login" class="btn btn-secondary btn-block">
+                <input type="submit" value="Login" class="btn  btn-block">
                 <div class="login-dec">
                 <p>Allready have an account? Login</p>
                 <span>or Register with</span>

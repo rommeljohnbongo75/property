@@ -51,6 +51,7 @@
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 2000,
+        dots:true
     
     });
 
@@ -91,6 +92,22 @@
      ]
    });
  
+   $('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+		
     document.addEventListener('DOMContentLoaded', function() {
         const adultsminusButtons = document.querySelectorAll('.adults-minus');
         const adultsplusButtons = document.querySelectorAll('.adults-plus');

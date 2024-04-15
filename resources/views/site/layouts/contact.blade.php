@@ -130,10 +130,6 @@
 .contact-title h2 {
     font-size: 25px;
 }
-.data1{
-  flex-wrap:wrap;
-}
-
   }
   </style>
 @section('content')
@@ -192,13 +188,14 @@
                  <div class="col-sm-12 col-lg-6 contact-image">
                  <div class="contact-us-form">
              <div class="card-header  text-black">
+               
               <h4>
               <i class="fa-regular fa-id-badge"></i>Contact US</h4>
             </div>
             <div class="card-body contact">
               <form method="POST" action="{{ route('authenticate') }}">
                 @csrf
-                <div class="data1 d-flex justify-content-between">
+                <div class="data1">
                 <div class="form-group ">
                   <label for="username">Full Name</label>
                   <input type="text" name="email" class="form-control"  placeholder=" Name" required>

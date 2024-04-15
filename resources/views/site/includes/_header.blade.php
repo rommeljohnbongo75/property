@@ -53,8 +53,9 @@
     font-weight:bold;
 }
 nav.navbar {
-    background-color: #f8f9fa;
+    background-color: #ffff;
     width: 100%;
+    opacity: 1;
     border-bottom: 1px solid rgba(153, 153, 153, 0.22);
     box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
 }
@@ -72,7 +73,8 @@ nav.navbar {
   font-style:italic;
 }
 .nav-item a img{
-  width:30px;
+  width:25px;
+  padding-right:5px;
 }
 .navbar img{
   width:100%;
@@ -94,9 +96,6 @@ input[type="text"] {
 }
 }
 @media only screen and (max-width: 768px) {
-.container-form {
-    left: 26%;
-}
 #listings {
     padding-top: 70px;
 }
@@ -111,10 +110,7 @@ input[type="text"] {
     width: 100%;
     max-width: 200px;
 }
-.container-form {
-    left: 9%;
-    top:29%;
-}
+
 #listings .slick-prev::before,.slick-next::before{
   display:none;
 }
@@ -187,7 +183,7 @@ input[type="text"] {
             <a class="nav-link" href="{{ route('listings') }}">Featured Property</a>
           </li>
           <li class="nav-item mr-3 {{ (request()->routeIs('listings')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('listings') }}">Contact</a>
+            <a class="nav-link" href="{{ route('conatct.new') }}">Contact</a>
           </li>
         </ul>
 
@@ -214,7 +210,7 @@ input[type="text"] {
           @else
           <li class="nav-item mr-3 {{ (request()->routeIs('register')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('register') }}">
-            <img src="{{ asset('assets/img/registered.png' ) }}">Register</a>
+            <img src="{{ asset('assets/img/login.png' ) }}">Register</a>
           </li>
           <li class="nav-item mr-3 {{ (request()->routeIs('login')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('login') }}">
