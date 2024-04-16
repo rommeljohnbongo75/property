@@ -29,6 +29,13 @@
     color:black;
     font-size:18px;
   }
+  .booking-details{
+    padding:30px 0;
+  }
+  .reg-booking-details span svg{
+    font-size:12px;
+    padding:0 10px;
+  }
   .reservation{
     padding:50px 0;
   }
@@ -49,13 +56,13 @@
 color:#8E8E93;
 }
 .payments, .payments-due, .total {
-    min-width: 100px;
+    min-width: 106px;
     border: 1px solid #ccc;
     height: 55px;
     text-align: center;
 }
 .reg-booking{
-    border-bottom:1px solid black;
+    border-bottom:1px solid  #ccc;
     padding-bottom:20px;
 }
 .booking-button{
@@ -67,24 +74,67 @@ color:#8E8E93;
     padding:10px 20px;
 }
 .booking1{
-    border:1px solid black;
+    border:1px solid  #ccc;
     padding:15px;
     border-radius:4px;
     font-size:14px;
 }
 .booking-request{
     padding-bottom:20px;
-   
+}
+.booking-icon {
+    top: 28px;
+    padding: 0;
+    left: 61%;
+    background-color: #b5b0b0;
+    z-index: 9999;
+    visibility:hidden;
+    transition:all 0.2s linear;
+}
+.booking-heading h4:hover .booking-icon{
+    visibility:visible;
+}
+.booking-icon li{
+    padding:10px 30px;
+    list-style:none;
+}
+.booking-icon li a{
+    border:none !important;
+    color: white !important;
+}
+.booking-dropdwon {
+    top: 28px;
+    width: 100%;
+    padding: 0;
+    background-color: #b5b0b0;
+    visibility:hidden;
+    transition:all 0.2s linear;
+ }
+ .booking-dropdwon li {
+    padding:10px 0;
+ }
+.booking-dropdwon li a{
+    border:none !important;
+    color: white !important;
+}
+.booking-dropdwon li:hover{
+    background-color:black;
+}
+.booking-status h5 ul li{
+    list-style :none;
+}
+.booking-status h5:hover .booking-dropdwon{
+    visibility:visible;
 }
 .booking-status h5 a{
     color: #2962FF;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 40px;
-    padding: 5px 8px;
+    padding: 5px 12px;
     font-size:14px;
 }
-.booking-status h5 a i{
-    padding-left:3px;
+.booking-status h5 a svg{
+    padding-left:5px;
     font-size:12px;
 }
 .booking-inner{
@@ -96,8 +146,8 @@ color:#8E8E93;
 }
 .payment-sche {
     padding: 30px 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid  #ccc;
+    border-bottom: 1px solid  #ccc;
 }
 .booking-payments h3{
     margin:0;
@@ -131,7 +181,7 @@ color:#8E8E93;
     color:black;
 }
 .total-final{
-    border-bottom:1px solid black;  
+    border-bottom:1px solid  #ccc;  
 }
 .p-policy h4{
     color:black;
@@ -151,7 +201,7 @@ color:#8E8E93;
     font-weight:bold;
 }
 .total-transaction{
-    border-bottom:1px solid black;
+    border-bottom:1px solid  #ccc;
 }
 .total-amount{
     padding-top:20px;
@@ -164,7 +214,7 @@ color:black;
 font-weight:bold;
 }
 .balance {
-    border-top:1px solid black;
+    border-top:1px solid #ccc;
     padding:20px 0;
 }
 .trash{
@@ -175,14 +225,21 @@ font-weight:bold;
    padding:0 10px;
     margin:0;
 }
-.booking-request-two{
-    display:flex;
-    gap:30px;
+.booking-request-two {
+    display: flex;
+    gap: 30px;
+    padding: 30px 0;
 }
 .guest-form {
-   
-    
-    margin-top:20px;
+   margin-top:20px;
+}
+.nots{
+    box-shadow:0px 15px 30px rgba(0,0,0,0.10);
+    padding:40px 20px; 
+    margin:20px 0
+}
+.Tcp-ip{
+    padding:10px 0;
 }
 .guest{
     box-shadow:0px 15px 30px rgba(0,0,0,0.10);
@@ -190,11 +247,17 @@ font-weight:bold;
 }
 .guest-name{
     padding:10px 0;
-    border-bottom:1px solid black;
+    border-bottom:1px solid  #ccc;
 }
 .guest-email, .guest-phone,.guest-location,.guest-Language{
     padding:10px 0;
-    border-bottom:1px solid black;
+    border-bottom:1px solid  #ccc;
+}
+.trash svg{
+    padding-right:10px;
+}
+.trash span{
+    font-size:18px;
 }
 </style>
 
@@ -281,16 +344,28 @@ font-weight:bold;
  <div class="booking-request-two">
         <div class="col-6">
         <div class="qutoes-form ">
-            <div class="booking-heading d-flex justify-content-between">
+            <div class="booking-heading d-flex justify-content-between position-relative">
                  <h3>Quote (#7516035)</h3>
-                 <h4><a href=""><i class="fa-solid fa-ellipsis"></i></a></h4>
+                 <h4 class=""><a href=""><i class="fa-solid fa-ellipsis"></i></a>
+                 <ul class="booking-icon position-absolute">
+                    <li><a href="">Edit prices</a></li>
+                    <li><a href="">Edit prices</a></li>
+                    <li><a href="">Add New Quote</a></li>
+                 </ul>
+                </h4>
             </div>
             <div class="booking-details">
                 <p>The quote expires on 22 Apr 2024 16:38:34</p>
             </div>
             <div class="booking-status d-flex justify-content-between">
                 <h4>Status</h4>
-                <h5><a href="">Pending For Owner<i class="fa-solid fa-chevron-down"></i></a></h5>
+                <h5 class="position-relative"><a href="">Pending For Owner<i class="fa-solid fa-chevron-down"></i> </a>
+                <ul class="booking-dropdwon position-absolute">
+                    <li><a href="">Agree after Payment</a></li>
+                    <li><a href="">OwnerAgrees</a></li>
+                    <li><a href="">Reject</a></li>
+                </ul>
+           </h5>
             </div>
             <div class="txt1">Max</div>
             <div class="room-rate d-flex justify-content-between">
@@ -365,7 +440,7 @@ font-weight:bold;
        </div>
       
 </div>
-<div class="trash d-flex">
+<div class="trash d-flex justify-content-center ">
         <h4><i class="fa-regular fa-trash-can"></i>Move this booking to trash</h4>
         <span><i class="fa-solid fa-print"></i>Print</span>
        </div>
@@ -405,10 +480,12 @@ font-weight:bold;
                 
             </div>
         </div>
-        <div class="nots col-5  d-flex justify-content-between ">
-     <h4>Notes</h4>
-     <i class="fa-solid fa-plus"></i>
-    </div>
+
+        <div class="nots  d-flex justify-content-between ">
+             <h4>Notes</h4>
+            <h5><i class="fa-solid fa-plus"></i></h5>
+        </div>
+    
     </div>
     
         </div>
