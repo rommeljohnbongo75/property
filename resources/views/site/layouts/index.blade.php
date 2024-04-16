@@ -560,6 +560,9 @@
       object-fit:cover;
       overflow:hidden;
 }
+section.show-section {
+    overflow: hidden;
+}
    .team-image img:hover {
     transform: scale(1.2);
 }

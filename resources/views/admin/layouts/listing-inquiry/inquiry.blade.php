@@ -94,6 +94,35 @@ color:#8E8E93;
     box-shadow:0px 15px 30px rgba(0,0,0,0.10);
     padding:40px 20px;
 }
+.payment-sche {
+    padding: 30px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.booking-payments h3{
+    margin:0;
+    padding:10px 0;
+}
+.sche-heading {
+    padding: 10px 0;
+}
+.sche-heading h4{
+    font-size:16px;
+}
+.payment-sche span{
+    color:#f5a623;
+    padding:0 10px;
+}
+.schedule {
+    color: black;
+    font-weight: bold;
+    padding:10px 0;
+}
+.booking-payments{
+    box-shadow:0px 15px 30px rgba(0,0,0,0.10);
+    padding:40px 20px;
+    margin-top:20px;
+}
 .booking-details p{
     font-style:italic;
 }
@@ -111,6 +140,61 @@ color:#8E8E93;
 .total-final  h4,.total-final  h5 {
     color:black;
     font-weight:bold;
+}
+.transaction h3{
+    color:black;
+    padding:30px 0;
+    font-size:20px;
+}
+.total-transaction h4,.total-transaction h5{
+    color:black;
+    font-weight:bold;
+}
+.total-transaction{
+    border-bottom:1px solid black;
+}
+.total-amount{
+    padding-top:20px;
+}
+.total-amount h4,.total-amount h5{
+    font-size:14px;
+}
+.toatal-amount-one h4,.toatal-amount-one h5{
+color:black;
+font-weight:bold;
+}
+.balance {
+    border-top:1px solid black;
+    padding:20px 0;
+}
+.trash{
+    gap:20px;
+    padding:20px 0;
+}
+.trash h4 i{
+   padding:0 10px;
+    margin:0;
+}
+.booking-request-two{
+    display:flex;
+    gap:30px;
+}
+.guest-form {
+   
+    
+    margin-top:20px;
+}
+.guest{
+    box-shadow:0px 15px 30px rgba(0,0,0,0.10);
+    padding:40px 20px;
+}
+.guest-name{
+    padding:10px 0;
+    border-bottom:1px solid black;
+}
+.guest-email, .guest-phone,.guest-location,.guest-Language{
+    padding:10px 0;
+    border-bottom:1px solid black;
 }
 </style>
 
@@ -177,7 +261,7 @@ color:#8E8E93;
             </div>
         </div>
     </div>
- <div class="booking-request">
+ <div class="booking-request-one">
         <div class="booking-inner d-flex justify-content-between bg-seconary">
             <div class="booking-heading">
                 <h4>Booking request</h4>
@@ -194,8 +278,9 @@ color:#8E8E93;
 <!-- booking-card-start---->
 <section>
     <div class="container">
-    <div class="booking-request">
-        <div class="qutoes-form col-6">
+ <div class="booking-request-two">
+        <div class="col-6">
+        <div class="qutoes-form ">
             <div class="booking-heading d-flex justify-content-between">
                  <h3>Quote (#7516035)</h3>
                  <h4><a href=""><i class="fa-solid fa-ellipsis"></i></a></h4>
@@ -240,15 +325,94 @@ color:#8E8E93;
                 <h4>Rental agreement</h4>
                 <h5>None</h5>
             </div>
-
+           
         </div>
-        <div class="guest-form col-4 ">
-
+<div class="booking-payments ">
+           <div class="d-flex justify-content-between">
+                 <h3>Payment collection</h3>
+                 <h4><a href=""><i class="fa-solid fa-ellipsis"></i></a></h4>
+           </div> 
+        <div class="schedule">Schedule </div>
+            <div class="payment-sche">
+                <h4>Payment schedule</h4>
+                    <div class="sche-heading d-flex justify-content-between ">
+                         <h5>On agreement date<span>Scheduled</span></h5>
+                         <h4>$ 5400.00</h4>
+                    </div>
+                    <div class="sche-heading d-flex justify-content-between ">
+                        <h5>Total scheduled payments</h5>
+                        <h4>$ 5400.00</h4>
+                    </div>
+           </div>
+        <div class="transaction">
+                <h3>transaction</h3>
+                 <div class="total-transaction d-flex justify-content-between">
+                    <h4>Total transactions</h4>
+                    <h5>$ 0.00</h5>
+                 </div>
+            <div class="total-amount d-flex justify-content-between">
+                <h4>Quote #7516035</h4>
+                <h5>$ 5400.00</h5>
+            </div>
+            <div class="toatal-amount-one d-flex justify-content-between">
+                <h4>Total amount</h4>
+                <h5>$ 5400.00</h5>
+            </div>
+            <div class="balance d-flex justify-content-between">
+                <h4>Balance due</h4>
+                <h5>$ 5400.00</h5>
+            </div>
+       </div>
+      
+</div>
+<div class="trash d-flex">
+        <h4><i class="fa-regular fa-trash-can"></i>Move this booking to trash</h4>
+        <span><i class="fa-solid fa-print"></i>Print</span>
+       </div>
+</div>
+     <div class="guest-form col-5">
+        <div class="guest">
+            <div class="guest-form-inner d-flex justify-content-between ">
+                <h4>Guest</h4>
+                <i class="fa-solid fa-pen"></i>
+            </div>
+            <div class="guest-from-inner">
+                <div class="guest-name">
+                <h4>Name</h4>
+                <h5>Asdsa Asdsa</h5>
+                </div>
+                <div class="guest-email">
+                <h4>Email</h4>
+                <h5>asdasd@asdasd.com</h5>
+                </div>
+                <div class="guest-phone">
+                <h4>Phone</h4>
+                <h5>+9875462456</h5>
+                </div>
+                <div class="guest-location">
+                <h4>Location</h4>
+                <h5>India</h5>
+                </div>
+                <div class="guest-Language">
+                <h4>Language</h4>
+                <h5>English</h5>
+                </div>
+                <div class="Tcp-ip">
+                <h4>TCP-IP</h4>
+                <h5>::ffff:10.103.19.11 / -</h5>
+                </div>
+                
+                
+            </div>
         </div>
-
+        <div class="nots col-5  d-flex justify-content-between ">
+     <h4>Notes</h4>
+     <i class="fa-solid fa-plus"></i>
     </div>
     </div>
     
+        </div>
+  </div>
 </section>
 
 <!-- booking-card-end---->
@@ -271,7 +435,7 @@ color:#8E8E93;
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
                 <div class="row">
                 <div class="col-12">
                         <div class="card">
@@ -317,5 +481,5 @@ color:#8E8E93;
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 @endsection
