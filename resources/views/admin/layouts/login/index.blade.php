@@ -1,6 +1,7 @@
 <!-- Login 2 - Bootstrap Brain Component -->
 <head>
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
     .row.justify-content-md-center {
         margin-top: 20%;

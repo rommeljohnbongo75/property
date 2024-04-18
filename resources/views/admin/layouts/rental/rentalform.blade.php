@@ -58,7 +58,7 @@
    font-weight:bold;
    padding-left:5px;
 }
-.rental-details h3{
+.rental-details-one h3{
    color:black !important;
    padding-top:20px;
   }
@@ -107,7 +107,14 @@
  .navbar-img{
    padding:30px 0;
  }
-
+.rental-inner li {
+list-style:none;
+padding:10px 0;
+}
+.rental-inner li a{
+   font-size:18px;
+   color:#6a7a8c;
+}
   .nav-btn a{
     color:white;
     padding:10px 50px;
@@ -235,6 +242,13 @@ select.form-select {
    color:#666;
    font-size:16px;
 }
+#profile-v{
+margin-left: 176px;
+}
+.photos-heading h2{
+   color:black;
+   font-weight:bold;
+}
 .amenities-btn{
    padding:20px 0;
 }
@@ -256,7 +270,6 @@ select.form-select {
     border-radius:4px;
 
 }
-
 .overview-heading{
    margin-left:300px;
    margin-top:40px;
@@ -333,51 +346,39 @@ ul.ns {
                      <h5>abhdhd</h5>
                  </div>
           </div>
-          <div classs="rental-details">
-         <!-- required for floating -->
-          <!-- Nav tabs -->
-          <div class="d-flex align-items-start">
-  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
-  </div>
-  <div class="tab-content" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">htmlspecialchars_decode</div>
-    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-  </div>
-</div>
-          <!-- <ul class=" nav-tabs tabs-left sideways rental-option">
-            <li class="active"><a href="#overview" data-toggle="tab">OverView</a></li>
+          <div classs="rental-details-one">
+            <h3>Rental Details</h3>
+            <ul class="rental-inner nav-tabs tabs-left sideways">
+            <li class="active"><a href="#home-v" data-toggle="tab">Overview</a></li>
             <li><a href="#profile-v" data-toggle="tab">Photos</a></li>
             <li><a href="#messages-v" data-toggle="tab">Location</a></li>
             <li><a href="#settings-v" data-toggle="tab">Booking Settings</a></li>
-            <li><a href="#settings-v" data-toggle="tab">Contact</a></li>
-            <li><a href="#settings-v" data-toggle="tab">Messaging placeholders</a></li>
-          </ul> -->
-   
-            <!-- <ul class="rental-option">
-               <li class="active"><a href="#overview" data-toggle="tab"><i class="fa-solid fa-house"></i>OverView</a></li>
-               <li><a href="" data-toggle="tab"><i class="fa-regular fa-image"></i>Photos</a></li>
-               <li><a href="" data-toggle="tab"><i class="fa-solid fa-location-dot"></i>Location</a></li>
-               <li><a href="" data-toggle="tab"><i class="fa-regular fa-clock"></i>Booking Settings</a></li>
-               <li><a href="" data-toggle="tab"><i class="fa-regular fa-id-badge"></i>Contact</a></li>
-               <li><a href="" data-toggle="tab"><i class="fa-regular fa-comments"></i>Messaging placeholders</a></li>
-            </ul> -->
+            <li><a href="#contact-v" data-toggle="tab">Contact</a></li>
+            <li><a href="#placeholder-v" data-toggle="tab">Messaging Placeholder</a></li>
+          </ul>
           </div>
        </div>
+       <!-- <div class="reserv-inbox d-flex justify-content-between align-items-center">
+        <div class="reserv-one">Select</div>
+        <div class="reserv-1"><i class="fa-solid fa-download"></i></div>
+        <div class="reserv-one"><i class="fa-solid fa-rotate"></i></div>
+   </div> -->
 </div>
 </section>
+
 <section class="overview">
-<div class="col-xs-9">
+<div  class="col-sm-6">
+        <h3>Left Tabs</h3>
+        <hr/>
+        <div class="col-xs-3"> <!-- required for floating -->
+          <!-- Nav tabs -->
+         
+        </div>
+
+        <div class="col-xs-9">
           <!-- Tab panes -->
           <div class="tab-content">
-            <div class="tab-pane active" id="overview">
-               <div class="overview-inner">
-               <div class="overview-heading">
+            <div class="tab-pane active" id="home-v"> <div class="overview-heading">
          <h3>Overview</h3>
          <span>Name & description</span>
       </div>
@@ -473,25 +474,32 @@ ul.ns {
       <a href="">Edit amenities</a>
    </div>
 </div>
-</div>
       </div>
-   </div>
-   <!-- photos-tab -->
-
-            <div class="tab-pane active" id="profile-v">
-           
-               <div class="photos">
-                  <h3>hello</h3>
+    </div>  
+            <div class="tab-pane" id="profile-v">
+               <div class="photos-heading">
+                  <h2>Photos</h2>
                </div>
-            <!-- photos-tab-end -->
+               <p>Catch a potential guest eye with high-quality photos. Include a variety of perspectives (interior and exterior) to give them the best overall impression of your place.</p>
+               <div class="photos-option d-flex gap-4">
+                  <span>GB</span>
+                  <h4>English</h4>
+
+               </div>
+            </div>
             <div class="tab-pane" id="messages-v">Messages Tab.</div>
             <div class="tab-pane" id="settings-v">Settings Tab.</div>
           </div>
         </div>
+
         <div class="clearfix"></div>
 
+      </div>
+</section>
+<!-- photos-section -->
+
 <!-- photos-section-start -->
-<section>
+
 
       
 @endsection
