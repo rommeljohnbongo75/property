@@ -43,6 +43,8 @@ Route::get('/search', [searchController::class, 'result'])->name('result');
 Route::post('/contact', [ContactController::class, 'store'])->name('send-message');
 Route::get('/cla', [ContactController::class, 'cla'])->name('cla');
 Route::get('/conatct-new', [ContactController::class, 'conatctNew'])->name('conatct.new');
+Route::get('/rental', [ContactController::class, 'rental'])->name('rental');
+Route::get('/rental-form', [ContactController::class, 'rentalform'])->name('rental-form');
 
 
 Route::controller(LoginRegisterController::class)->group(function() {

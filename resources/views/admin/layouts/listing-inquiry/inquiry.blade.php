@@ -13,7 +13,7 @@
    h1,h2,h3,h4,h5,h6,span,p label{
       font-family:var(--font-family);
    }
-  .contaainer{
+  .container{
     max-width:1440px;
     margin:0 auto;
   }
@@ -38,9 +38,13 @@
   }
   .reservation{
     padding:50px 0;
+    margin-left:200px;
   }
 .user-msg-box a{
     color:black;
+}
+.user-msg-box a svg{
+    padding-right:7px;
 }
  .main-popup:hover .pop-up{
     visibility:visible;
@@ -256,13 +260,230 @@ font-weight:bold;
 .trash svg{
     padding-right:10px;
 }
+#navbarSupportedContent {
+    position: fixed;
+    width: 100%;
+    opacity: 1;
+}
 .trash span{
     font-size:18px;
 }
+.navbar-default {
+  background-color: #FFF;
+  /* margin-left: 200px; */
+}
+.nav-navbar {
+    border: none;
+    margin-left: 0;
+    padding-top: 45px;
+    background-color: inherit;
+}
+.brand-name-wrapper a svg{
+    color:#857c7c;
+    font-size:16px;
+}
+.nav-img img{
+    max-width:80px;
+}
+.nav-price h4, .nav-price h5{
+    font-size:14px;
+}
+.nav-option h4, .nav-option h5{
+    font-size:14px;
+}
+.custom-login ul li{
+    list-style:none;
+}
+.custom-login ul li a{
+    color:#857c7c;
+}
+.brand-wrapper {
+    padding: 0 10px;
+}
+.custom-login ul{
+    padding:0;
+    margin:0;
+    gap:20px;
+}
+.custom-login ul li a svg{
+    padding-right:5px;
+    font-size:15px;
+}
+.custom-login {
+    padding-top:15px;
+}
+.navbar-brand{
+    color:black;
+}
+.navbar-nav-one{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding:10px;
+}
+.side-menu-container {
+    padding: 10px;
+    width:100%;
+}
+.nav-inner{
+    gap:20px;
+}
+.reserv-inbox{
+    padding:10px;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    margin:10px 0;
+}
+.reserv-1, .reserv-one{
+    font-size:18px;
+}
+.reserv-1{
+    color:#245abc;
+}
+.booking-data,.booking-req{
+    margin-left:200px;
+}
+.reserv-one{
+    color:black;
+    font-family:var(--font-family);
+}
+.msb {
+  width: 300px;
+  background-color: #F5F7F9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  white-space: nowrap;
+  height: 100%;
+  z-index: 1;
+  border-right: 1px solid #ddd;
+  padding-top:40px;
+  display:grid;
+    grid-template-rows: 1fr 20fr 2fr;
+}
+  .navbar {
+    border: none;
+    margin-left: 0;
+    background-color: inherit;
+  }
+  .navbar-header {
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 20px;
+    background: #fff;
+  }
+  .booking-data{
+    margin-left:200px;
+  }
+  .nav-btn a{
+    color:white;
+    padding:10px 50px;
+    border-radius:10px;
+    background-color:#f5a623; 
+  }
+  .nav-btn{
+    text-align:center;
+    padding-top:10px;
+    margin-bottom:20px;
+   
+  }
+  .navbar-nav {
+    .panel {
+      border: 0 none;
+      box-shadow: none;
+      margin: 0;
+      background: inherit;
+    }
+    li {
+      display: block;
+      width: 100%;
+      a {
+        padding: 15px;
+        color: #5f5f5f;
+        .glyphicon, .fa {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  .nb {
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    
+  }
+}
+ul.nv,
+ul.ns {
+  position: relative;
+  padding: 0;
+  list-style: none;  
+}
+  }
+
+
 </style>
 
 
 @section('content')
+<!-- sidebar -->
+<div class="msb" id="msb">
+		<nav class="nav-navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<div class="brand-wrapper">
+					<!-- Brand -->
+					<div class="brand-name-wrapper d-flex justify-content-between align-items-center">
+						<a class="navbar-brand" href="#">
+						Reservations
+						</a>
+                        <a href=""><i class="fa-solid fa-filter"></i></a>
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+					</div>
+                    <span>1 Unread Message</span>
+                </div>
+         </div>
+</nav>
+  <!-- Main Menu -->
+	<div class="side-menu-container">
+        <div class="nav navbar-nav-one ">
+		<div class="nav-inner d-flex">
+				 <div class="nav-img">
+                     <img src="{{ asset('assets/img/showcase-old.jpg' ) }}">
+                 </div>
+                    <div class="nav-option">
+                        <h4>Open</h4>
+                        <h5>Max</h5>
+                    </div>
+                    <div class="nav-price">
+                        <h4>15 Apr 2024</h4>
+                        <h5>US$54.00</h5>
+                    </div>
+				</div>
+                <div class="custom-login ">
+                    <ul class="d-flex justify-content-between align-items-center">
+                        <li><a href="">15 Apr 2024</a></li>
+                        <li><a href=""><i class="fa-regular fa-moon"></i>27</a></li>
+                        <li><a href=""><i class="fa-solid fa-user-group"></i>1</a></li>
+                    </ul>
+               </div>
+	   </div>
+       </div>
+       <div class="reserv-inbox d-flex justify-content-between align-items-center">
+        <div class="reserv-one">Select</div>
+        <div class="reserv-1"><i class="fa-solid fa-download"></i></div>
+        <div class="reserv-one"><i class="fa-solid fa-rotate"></i></div>
+   </div>
+   <div class="nav-btn">
+    <a href="">Create Booking</a> 
+   </div>
+   </div>
+   
+<!-- sidebar-end-->
+
 <!-- offcanvas -->
 <section class="reservation">
  <div class="reservation-inner">
@@ -310,7 +531,7 @@ font-weight:bold;
 </section>
 <!--  -->
 <!--booking-requet-start-->
-<section>
+<section class="booking-data">
     <div class="container">
         <div class="booking-request">
             <div class="booking-inner d-flex justify-content-between bg-seconary">
@@ -339,7 +560,7 @@ font-weight:bold;
 </section>
 <!--booking-request-end-->
 <!-- booking-card-start---->
-<section>
+<section class="booking-req">
     <div class="container">
  <div class="booking-request-two">
         <div class="col-6">
@@ -490,7 +711,7 @@ font-weight:bold;
     
         </div>
   </div>
-</section>
+
 
 <!-- booking-card-end---->
             <!-- <div class="page-breadcrumb"> -->
@@ -512,6 +733,7 @@ font-weight:bold;
                     </div>
                 </div>
             </div>
+            </section>
             <!-- <div class="container-fluid">
                 <div class="row">
                 <div class="col-12">

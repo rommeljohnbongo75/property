@@ -107,5 +107,14 @@ class ContactController extends Controller
 
         return view('site.layouts.contact');
     }
+    public function rental(){
+
+        return view('admin.layouts.rental.rental');
+    }
+
+    public function rentalform(){
+
+        return view('admin.layouts.rental.rentalform');
+    }
 
 }

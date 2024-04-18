@@ -36,6 +36,11 @@
                     <i class="mdi mdi-calendar"></i>
                         <span class="hide-menu">Calender</span>
                     </a>
+                </li> <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{Route('rental') }}" aria-expanded="false">
+                    <i class="mdi mdi-calendar"></i>
+                        <span class="hide-menu">Rental</span>
+                    </a>
                 </li>
                 <!-- <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('som.index') }}" aria-expanded="false">
