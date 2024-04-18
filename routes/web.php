@@ -45,6 +45,7 @@ Route::get('/cla', [ContactController::class, 'cla'])->name('cla');
 Route::get('/conatct-new', [ContactController::class, 'conatctNew'])->name('conatct.new');
 Route::get('/rental', [ContactController::class, 'rental'])->name('rental');
 Route::get('/rental-form', [ContactController::class, 'rentalform'])->name('rental-form');
+Route::get('/photos-form', [ContactController::class, 'photosform'])->name('photos-form');
 
 
 Route::controller(LoginRegisterController::class)->group(function() {

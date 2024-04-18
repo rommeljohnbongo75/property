@@ -76,6 +76,11 @@
       function displayMessage(message) {
           toastr.success(message, 'Event');
       } 
+      (function(){
+  $('#msbo').on('click', function(){
+    $('body').toggleClass('msb-x');
+  });
+}());
 
       setTimeout(function() {
             $(".fc-content .fc-title").click(function(){

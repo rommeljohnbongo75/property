@@ -101,29 +101,30 @@
   </style>
 
 @section('content')
-<a href="{{route('rental-form')}}">asddasdasds</a>
+
 <section>
   <div class="container">
-    <div class="rental-list">
-      <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative">
-      <img src="{{ asset('assets/img/showcase-old.jpg' ) }}">
-      <div class="rental-dec ">
-        <ul class="d-flex position-absolute">
-          <li class="rental-text"><a href="">Completed</a></li>
-          <li class="rental-icon"><a href=""><i class="fa-solid fa-ellipsis"></i></a></li>
-        </ul>
-      </div>
-      <div class="rental-details">
-          <h3>Max</h3>
-          <h4>Max</h4>
-          <span>ID:578916</span>
-          <div class="rental-btn text-center">
-        <a href="">Add To Website<i class="fa-regular fa-circle-check"></i></a>
-      </div>
-      </div>
-      
-      </div>
-    </div>
+    <a href="{{route('rental-form')}}">
+      <div class="rental-list">
+          <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative">
+          <img src="{{ asset('assets/img/showcase-old.jpg' ) }}">
+          <div class="rental-dec ">
+            <ul class="d-flex position-absolute">
+              <li class="rental-text"><a href="">Completed</a></li>
+              <li class="rental-icon"><a href=""><i class="fa-solid fa-ellipsis"></i></a></li>
+            </ul>
+          </div>
+          <div class="rental-details">
+              <h3>Max</h3>
+              <h4>Max</h4>
+              <span>ID:578916</span>
+              <div class="rental-btn text-center">
+            <a href="">Add To Website<i class="fa-regular fa-circle-check"></i></a>
+          </div>
+          </div>
+          </div>
+        </div>
+    </a>
   </div>
 </section>
 @endsection

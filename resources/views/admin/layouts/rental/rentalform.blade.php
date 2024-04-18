@@ -42,6 +42,7 @@
 }
 .rental-option li a{
    font-size:16px;
+   color:#6a7a8c;
 }
 .rental-option li a svg{
   padding:0 20px;
@@ -58,6 +59,7 @@
    padding-left:5px;
 }
 .rental-details h3{
+   color:black !important;
    padding-top:20px;
   }
 .overview-lang-icon h4 svg{
@@ -137,8 +139,11 @@ select.form-select {
    color:black;
 }
 .Rental-rooms{
-   padding:70px 0;
+   padding:50px 0;
    border-bottom:1px solid black;
+}
+.overview-form {
+   padding:0;
 }
 .sleeping-btn{
    padding:20px 0;
@@ -180,7 +185,7 @@ select.form-select {
     border-bottom:1px solid black;
 }
 .rental-info {
-    padding: 70px 0;
+    padding: 50px 0;
     border-bottom:1px solid black;
 }
 .rental-size ul li a{
@@ -188,18 +193,31 @@ select.form-select {
 }
 .rental-type{
    border-bottom:1px solid black;
-   padding:70px 0;
+   padding:50px 0;
 }
 .rental-size ul li{
    list-style:none;
 }
 .sleeping-arrang {
-    padding: 70px 0;
+    padding: 50px 0;
     border-bottom:1px solid black;
+}
+.login-name h4{
+   color:black;
+   font-weight:bold;
+}
+.rental-info p, .sleeping-arrang p,.Rental-rooms p,.Rental-amenities p{
+   margin:0;
+   padding:10px;
+   font-size:16px;
 }
 .rental-size ul{
    margin:0;
    padding:0;
+}
+.rental-form label{
+   font-size:18px;
+   color:black;
 }
 .rental-info-btn{
    padding:20px 0;
@@ -220,6 +238,17 @@ select.form-select {
 .amenities-btn{
    padding:20px 0;
 }
+.overview-heading span{
+   font-size:18px;
+   font-weight:bold;
+}
+.overview-heading h3{
+   font-size:30px;
+   color:black;
+   font-weight:bold;
+   margin:0;
+   padding:10px 0;
+}
 .amenities-btn a{
    background-color: black;
     color: white;
@@ -227,9 +256,11 @@ select.form-select {
     border-radius:4px;
 
 }
+
 .overview-heading{
    margin-left:300px;
    margin-top:40px;
+   padding-bottom:20px;
 }
 .overview-form{
    margin-left:300px;
@@ -280,8 +311,8 @@ ul.ns {
   </style>
 @section('content')
  
-<section class="rental-section">
-<div class="rental" id="msb">
+<section class="rental-section " >
+<div class="rental "left-sidebar" data-sidebarbg="skin5"" id="msb">
 		<nav class="nav-navbar-rental navbar-default-one" role="navigation">
 			<div class="navbar-header">
 				<div class="brand-wrapper">
@@ -303,29 +334,52 @@ ul.ns {
                  </div>
           </div>
           <div classs="rental-details">
-            <h3>Rental Details</h3>
-            <ul class="rental-option">
-               <li><a href=""><i class="fa-solid fa-house"></i>OverView</a></li>
-               <li><a href=""><i class="fa-regular fa-image"></i>Photos</a></li>
-               <li><a href=""><i class="fa-solid fa-location-dot"></i>Location</a></li>
-               <li><a href=""><i class="fa-regular fa-clock"></i>Booking Settings</a></li>
-               <li><a href=""><i class="fa-regular fa-id-badge"></i>Contact</a></li>
-               <li><a href=""><i class="fa-regular fa-comments"></i>Messaging placeholders</a></li>
-            </ul>
+         <!-- required for floating -->
+          <!-- Nav tabs -->
+          <div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">htmlspecialchars_decode</div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+  </div>
+</div>
+          <!-- <ul class=" nav-tabs tabs-left sideways rental-option">
+            <li class="active"><a href="#overview" data-toggle="tab">OverView</a></li>
+            <li><a href="#profile-v" data-toggle="tab">Photos</a></li>
+            <li><a href="#messages-v" data-toggle="tab">Location</a></li>
+            <li><a href="#settings-v" data-toggle="tab">Booking Settings</a></li>
+            <li><a href="#settings-v" data-toggle="tab">Contact</a></li>
+            <li><a href="#settings-v" data-toggle="tab">Messaging placeholders</a></li>
+          </ul> -->
+   
+            <!-- <ul class="rental-option">
+               <li class="active"><a href="#overview" data-toggle="tab"><i class="fa-solid fa-house"></i>OverView</a></li>
+               <li><a href="" data-toggle="tab"><i class="fa-regular fa-image"></i>Photos</a></li>
+               <li><a href="" data-toggle="tab"><i class="fa-solid fa-location-dot"></i>Location</a></li>
+               <li><a href="" data-toggle="tab"><i class="fa-regular fa-clock"></i>Booking Settings</a></li>
+               <li><a href="" data-toggle="tab"><i class="fa-regular fa-id-badge"></i>Contact</a></li>
+               <li><a href="" data-toggle="tab"><i class="fa-regular fa-comments"></i>Messaging placeholders</a></li>
+            </ul> -->
           </div>
        </div>
-       <!-- <div class="reserv-inbox d-flex justify-content-between align-items-center">
-        <div class="reserv-one">Select</div>
-        <div class="reserv-1"><i class="fa-solid fa-download"></i></div>
-        <div class="reserv-one"><i class="fa-solid fa-rotate"></i></div>
-   </div> -->
 </div>
 </section>
-
 <section class="overview">
-   <div class="overview-inner">
-      <div class="overview-heading">
+<div class="col-xs-9">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="overview">
+               <div class="overview-inner">
+               <div class="overview-heading">
          <h3>Overview</h3>
+         <span>Name & description</span>
       </div>
       <div class="overview-form col-8">
          <div class="d-flex justify-content-between">
@@ -419,9 +473,25 @@ ul.ns {
       <a href="">Edit amenities</a>
    </div>
 </div>
+</div>
       </div>
    </div>
+   <!-- photos-tab -->
 
-</section>
+            <div class="tab-pane active" id="profile-v">
+           
+               <div class="photos">
+                  <h3>hello</h3>
+               </div>
+            <!-- photos-tab-end -->
+            <div class="tab-pane" id="messages-v">Messages Tab.</div>
+            <div class="tab-pane" id="settings-v">Settings Tab.</div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
 
+<!-- photos-section-start -->
+<section>
+
+      
 @endsection

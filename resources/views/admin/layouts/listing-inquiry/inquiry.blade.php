@@ -68,14 +68,15 @@ color:#8E8E93;
 .reg-booking{
     border-bottom:1px solid  #ccc;
     padding-bottom:20px;
+    display:flex;
 }
 .booking-button{
     gap:5px;
+    display:flex;
     align-items:center
 }
 .booking-inner {
-    background-color: #dbeaef;
-    padding:10px 20px;
+    
 }
 .booking1{
     border:1px solid  #ccc;
@@ -143,6 +144,10 @@ color:#8E8E93;
 }
 .booking-inner{
     border:1px solid rgba(67, 84, 127, .3);
+    display:flex;
+    flex-wrap:wrap;
+    background-color: #dbeaef;
+    padding:10px 20px;
 }
 .qutoes-form{
     box-shadow:0px 15px 30px rgba(0,0,0,0.10);
@@ -383,12 +388,24 @@ font-weight:bold;
     border-radius:10px;
     background-color:#f5a623; 
   }
+  .navbar-toggle{
+    margin-left:150px;
+  }
   .nav-btn{
     text-align:center;
     padding-top:10px;
     margin-bottom:20px;
    
   }
+  .payments-data{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  #msbo {
+    margin-left: 47px;
+    font-size: 30px;
+    color: black;
+}
   .navbar-nav {
     .panel {
       border: 0 none;
@@ -422,7 +439,181 @@ ul.ns {
   padding: 0;
   list-style: none;  
 }
+.msb, .mnb {
+    -moz-animation: slidein 300ms forwards;
+    -o-animation: slidein 300ms forwards;
+    -webkit-animation: slidein 300ms forwards;
+    animation: slidein 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;  
+}
+.mcw {
+    -moz-animation: bodyslidein 300ms forwards;
+    -o-animation: bodyslidein 300ms forwards;
+    -webkit-animation: bodyslidein 300ms forwards;
+    animation: bodyslidein 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;  
+}
+body.msb-x {
+
+  .mcw, .mnb {
+    margin-left: 0;
+-moz-animation: bodyslideout 300ms forwards;
+    -o-animation: bodyslideout 300ms forwards;
+    -webkit-animation: bodyslideout 300ms forwards;
+    animation: bodyslideout 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
   }
+  .msb {
+    -moz-animation: slideout 300ms forwards;
+    -o-animation: slideout 300ms forwards;
+    -webkit-animation: slideout 300ms forwards;
+    animation: slideout 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+}
+.btn-close{
+    float: inline-end;
+}
+
+  /* Slide in animation */
+  @-moz-keyframes slidein {
+    0% {
+      left: -200px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  @-webkit-keyframes slidein {
+    0% {
+      left: -200px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  @keyframes slidein {
+    0% {
+      left: -200px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  @-moz-keyframes slideout {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -300px;
+    }
+  }
+  @-webkit-keyframes slideout {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -300px;
+    }
+  }
+  @keyframes slideout {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -300px;
+    }
+  }
+
+  @-moz-keyframes bodyslidein {
+    0% {
+      left: 0;
+    }
+    100% {
+      margin-left: 200px;
+    }
+  }
+  @-webkit-keyframes bodyslidein {
+    0% {
+      left: 0;
+    }
+    100% {
+      left:0
+    }
+  }
+  @keyframes bodyslidein {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: 200px;
+    }
+  }
+  @-moz-keyframes bodyslideout {
+    0% {
+      margin-left: 200px;
+    }
+    100% {
+      margin-right: 0;
+    }
+  }
+  @-webkit-keyframes bodyslideout {
+    0% {
+      margin-left: 200px;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+  @keyframes bodyslideout {
+    0% {
+      margin-left: 200px;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+/* media-query */
+@media only screen and (max-width:1440px) {
+
+}
+@media only screen and (max-width:1024px) {
+    .reservation {
+    margin-left: unset !important;
+}
+#msbo{
+    margin-left:300px !important;
+}
+.booking-data ,.booking-req{
+    margin-left: unset !important;
+}
+}
+@media only screen and (max-width:768px) {
+    .booking-request-two {
+     flex-wrap:wrap;
+}
+.reg-booking{
+  display:block !important;
+}
+.reg-booking-details{
+    padding-bottom:10px;
+}
+}
+@media only screen and (max-width:425px) {
+.payments-data{
+    display:block !important;
+}
+.booking-button{
+    display:block !important;
+}
+.booking-inner{
+    display:block !important;;
+}
+}
 
 
 </style>
@@ -432,9 +623,12 @@ ul.ns {
 <!-- sidebar -->
 <div class="msb" id="msb">
 		<nav class="nav-navbar navbar-default" role="navigation">
+        <button type="button" class="btn-close" data-bs-dismiss="#msb">close</button>
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
+          
 				<div class="brand-wrapper">
+                
 					<!-- Brand -->
 					<div class="brand-name-wrapper d-flex justify-content-between align-items-center">
 						<a class="navbar-brand" href="#">
@@ -450,6 +644,7 @@ ul.ns {
   <!-- Main Menu -->
 	<div class="side-menu-container">
         <div class="nav navbar-nav-one ">
+        
 		<div class="nav-inner d-flex">
 				 <div class="nav-img">
                      <img src="{{ asset('assets/img/showcase-old.jpg' ) }}">
@@ -487,6 +682,9 @@ ul.ns {
 <!-- offcanvas -->
 <section class="reservation">
  <div class="reservation-inner">
+      <div style="padding: 15px 0;">
+         <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+      </div>
     <div class="container">
         <div class="user-details d-flex justify-content-between">
             <div class="user-name">
@@ -505,13 +703,13 @@ ul.ns {
                     <li class=" pop-up"><a href="">Set as Tentacive</a></li>
                  </ul>
          </div>
-<div class="reg-booking d-flex justify-content-between"> 
+<div class="reg-booking  justify-content-between"> 
         <div class="reg-booking-details">
             <h4>Max<span>- 1 Adults</span></h4>
             <h5>Max</h5>
             <span>15 Apr 2024<i class="fa-solid fa-arrow-right"></i> 12 may 2024 (27 nights)</span>
          </div>
-         <div class="payments-data d-flex">
+         <div class="payments-data">
              <div class="payments">
                <div class="payment-value">paid</div>
                <div class="payments-value">0</div>
@@ -534,12 +732,12 @@ ul.ns {
 <section class="booking-data">
     <div class="container">
         <div class="booking-request">
-            <div class="booking-inner d-flex justify-content-between bg-seconary">
+            <div class="booking-inner  justify-content-between bg-seconary">
                 <div class="booking-heading">
                     <h4>Booking request</h4>
                     <p>You received a new booking request. Please approve or reject it.</p>
                  </div>
-            <div class="booking-button d-flex">
+            <div class="booking-button">
                 <h4 class="booking1"><a href="">Reject</a></h4>
                 <h5 class="booking1"><a href="">Accept</a></h5>
             </div>
@@ -563,7 +761,7 @@ ul.ns {
 <section class="booking-req">
     <div class="container">
  <div class="booking-request-two">
-        <div class="col-6">
+        <div class="col-sm-12 col-lg-6">
         <div class="qutoes-form ">
             <div class="booking-heading d-flex justify-content-between position-relative">
                  <h3>Quote (#7516035)</h3>
@@ -661,12 +859,9 @@ ul.ns {
        </div>
       
 </div>
-<div class="trash d-flex justify-content-center ">
-        <h4><i class="fa-regular fa-trash-can"></i>Move this booking to trash</h4>
-        <span><i class="fa-solid fa-print"></i>Print</span>
-       </div>
+
 </div>
-     <div class="guest-form col-5">
+     <div class="guest-form col-sm-12 col-lg-5">
         <div class="guest">
             <div class="guest-form-inner d-flex justify-content-between ">
                 <h4>Guest</h4>
@@ -712,7 +907,10 @@ ul.ns {
         </div>
   </div>
 
-
+  <div class="trash d-flex justify-content-center ">
+        <h4><i class="fa-regular fa-trash-can"></i>Move this booking to trash</h4>
+        <span><i class="fa-solid fa-print"></i>Print</span>
+       </div>
 <!-- booking-card-end---->
             <!-- <div class="page-breadcrumb"> -->
                 <div class="row">
@@ -733,52 +931,7 @@ ul.ns {
                     </div>
                 </div>
             </div>
+        
             </section>
-            <!-- <div class="container-fluid">
-                <div class="row">
-                <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-
-                                <h4 class="card-title">All Inquiries</h4>
-                            </div>
-                            <div class="table-responsive m-t-20">
-                                <table class="table table-bordered table-responsive-lg">
-                                    <thead>
-                                        <tr>
-
-                                            <th scope="col">#</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Contact Number</th>
-                                            <th scope="col">Listing</th>
-                                            <th scope="col">User</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        @foreach($inquiries as $inquiry)
-                                        <tr id="row_{{$inquiry->id}}">
-                                            <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $inquiry -> name }}</td>
-                                            <td>{{ $inquiry -> email }}</td>
-                                            <td>{{ $inquiry -> contact_number }}</td>
-                                            <td>{{ $inquiry -> listing-> title }}</td>
-                                            <td>{{ $inquiry -> user-> username }}</td>
-                                            <td>
-                                                <a href="{{ route('inquiries.show', $inquiry -> id ) }}"><span class="btn btn-sm btn-rounded btn-success">View</span></a>
-                                            </td>
-                                            
-                                        </tr>
-                                        @endforeach
-
-                                    </tbody>
-                                </table>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+        
 @endsection
