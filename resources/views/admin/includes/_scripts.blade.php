@@ -47,7 +47,39 @@
     jQuery('.dropdown-toggle').click(function(){
         jQuery('.dropdown-menu').toggle();
     });
+  $(function() {
+    var popupInstance;
+    var editorInstance = $(".html-editor").dxHtmlEditor({
+        height: "300px",
+        value: "<Hr><p>Line 1</p><p>Line 2</p><p>Line 3</p>",
+        toolbar: {
+            items: [
+                "undo", "redo", "separator",
+                "bold", "italic", "strike", "underline", "separator",
+                "alignLeft", "alignCenter", "alignRight", "alignJustify"
+            ]
+        }
+    }).dxHtmlEditor("instance");
   
+  const parchment = editorInstance.get('parchment');
+  const Embed = parchment.Embed;
+  
+  class Hr extends Embed {
+    static create(value){
+      let node = super.create(value);
+      node.setAttribute('style', 'height:0px; margin-top:10px; margin-bottom:10px;');
+      return node;              
+    }
+  }
+
+  Hr.blotName ='hr';
+  Hr.tagName = 'hr';
+  editorInstance.register(Hr); 
+
+
+  
+});
+
   $(document).ready(function () {
       var SITEURL = "{{ url('/') }}";
       $.ajaxSetup({

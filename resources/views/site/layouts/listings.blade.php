@@ -261,7 +261,7 @@
                     <h3>Location</h3>
                 </div>
                <div id="map_canvas"></div>
-            <div class="agent-widget-inner">
+            <!-- <div class="agent-widget-inner">
                 <div class="agent-widget">
                     <div class="agent-image">
                         <img src="{{asset('assets/img/realtors\jenny.jpg')}}"">
@@ -282,7 +282,7 @@
                   <button>Send Message</button>
                   </div>
                 </div>
-            </div>
+            </div> -->
                   </div>
              </div>
              

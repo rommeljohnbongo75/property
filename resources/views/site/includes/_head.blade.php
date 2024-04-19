@@ -23,7 +23,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css' ) }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
   <link rel="stylesheet" href="{{ asset('assets/datepicker/css/bootstrap-datepicker.min.css' ) }}">        
-  <link rel="stylesheet" href="{{ asset('assets/datepicker/css/custom.css' ) }}">       
+  <link rel="stylesheet" href="{{ asset('assets/datepicker/css/custom.css' ) }}">    
+  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/19.2.3/css/dx.common.css" />
+<link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/19.2.3/css/dx.material.orange.light.compact.css" />
 
   
 					
