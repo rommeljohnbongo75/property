@@ -17,38 +17,26 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-     $(function() {
-    var popupInstance;
-    var editorInstance = $(".html-editor").dxHtmlEditor({
-        height: "300px",
-        value: "<Hr><p>Line 1</p><p>Line 2</p><p>Line 3</p>",
-        toolbar: {
-            items: [
-                "undo", "redo", "separator",
-                "bold", "italic", "strike", "underline", "separator",
-                "alignLeft", "alignCenter", "alignRight", "alignJustify"
-            ]
-        }
-    }).dxHtmlEditor("instance");
-  
-  const parchment = editorInstance.get('parchment');
-  const Embed = parchment.Embed;
-  
-  class Hr extends Embed {
-    static create(value){
-      let node = super.create(value);
-      node.setAttribute('style', 'height:0px; margin-top:10px; margin-bottom:10px;');
-      return node;              
-    }
-  }
+ $('.slider-for').slick({
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   arrows: false,
+   fade: true,
+   asNavFor: '.slider-nav'
+ });
+ $('.slider-nav').slick({
+   slidesToShow: 3,
+   slidesToScroll: 1,
+   asNavFor: '.slider-for',
+   dots: true,
+   focusOnSelect: true
+ });
 
-  Hr.blotName ='hr';
-  Hr.tagName = 'hr';
-  editorInstance.register(Hr); 
-
-
-  
-});
+ $('a[data-slide]').click(function(e) {
+   e.preventDefault();
+   var slideno = $(this).data('slide');
+   $('.slider-nav').slick('slickGoTo', slideno - 1);
+ });
 (function(){
   $('#msbo').on('click', function(){
     $('body').toggleClass('msb-x');
@@ -134,21 +122,7 @@
      ]
    });
  
-   $('.slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.slider-for',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
-});
+
 		
     document.addEventListener('DOMContentLoaded', function() {
         const adultsminusButtons = document.querySelectorAll('.adults-minus');

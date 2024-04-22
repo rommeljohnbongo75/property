@@ -30,6 +30,9 @@ color:black;
     font-size:20px;
     color:black;
 }
+.sidebar-item i{
+    font-size:20px;
+}
 .dahsboard-inner img{
     max-width:50px;
     width:100%;
@@ -37,20 +40,37 @@ color:black;
 .dahsboard-inner{
     gap:20px;
 }
+
+.dahsboard-gird {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 30px;
+}
+@media only screen and (max-width:1024px) {
+    .dahsboard-gird {
+    grid-template-columns: 1fr 1fr;
+}
+}
+@media only screen and (max-width:425px) {
+    .dahsboard-gird {
+    grid-template-columns: 1fr;
+}
+}
 </style>
 @section('content')
 <div class="container-fluid">
 
-<div class="dahsboard-inner col-6 mx-auto d-flex">
+<div class="dahsboard-inner col-sm-12 col-lg-6 mx-auto d-flex">
 <h2>Dashboard</h2>
 <img src="{{ asset('assets/img/dashboard.png' ) }}">
 </div>
-<div class="dash-title d-flex col-6 mx-auto justify-content-between">
+<div class="dash-title d-flex  col-sm-12 col-lg-6 mx-auto justify-content-between">
 <span>Last 30 days metrics</span>
 <i class="fa-solid fa-chart-bar"></i>
 </div>
 
-<div class="col-6 mx-auto dahsboard-gird">
+<div class="col-sm-12 col-lg-6 mx-auto dahsboard-gird">
 
 <div class="Revenue">
     <div class=" d-flex justify-content-between">

@@ -91,7 +91,7 @@ body {
    }
 
    .rental {
-      width: 300px;
+      width: 500px;
       position: fixed;
       left: 0;
       top: 0;
@@ -137,12 +137,10 @@ body {
       border-bottom: 1px solid black;
       padding: 10px 0;
    }
-
-   .Bookability {
+ .Bookability {
       padding: 20px 0;
    }
-
-   .Bookability h4 {
+ .Bookability h4 {
       color: black;
       font-size: 16px;
       font-weight: bold;
@@ -273,7 +271,9 @@ body {
       padding: 20px 0;
       color: black;
    }
-
+   .navbar-nav .search-box{
+      width:unset;
+   }
    .Rental-rooms {
       padding: 50px 0;
       border-bottom: 1px solid black;
@@ -329,7 +329,7 @@ body {
 
    .Rental-amenities {
       padding: 70px 0;
-      border-bottom: 1px solid black;
+      /* border-bottom: 1px solid black; */
    }
 
    .rental-info {
@@ -687,12 +687,11 @@ h1 {
       margin: 0;
       padding: 0;
    }
-
-   .overview {
+  .overview {
       background-color: white;
-      margin-left: 299px;
+      width:100%;
+      margin-left: 499px;
    }
-
    .navbar-nav {
       .panel {
          border: 0 none;

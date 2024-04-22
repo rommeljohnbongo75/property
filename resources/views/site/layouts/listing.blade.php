@@ -301,6 +301,38 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 .booking i{
    color:#FFA920;
 }
+/* slick-slider */
+body{
+  background:#ccc;
+}
+.main {
+  font-family:Arial;
+  width:500px;
+  display:block;
+  margin:0 auto;
+}
+ .slider-nav .slick-dots{
+   font-size:30px !important;
+}
+.action{
+  display:block;
+  margin:100px auto;
+  width:100%;
+  text-align:center;
+}
+.action a {
+  display:inline-block;
+  padding:5px 10px; 
+  background:#f30;
+  color:#fff;
+  text-decoration:none;
+}
+.action a:hover{
+  background:#000;
+}
+.slick-tab{
+   padding:0 10px;
+}
 #sticky{
    position:sticky;
    z-index:999;
@@ -536,12 +568,25 @@ input[type="text"] {
             <!-- Home Main Image -->
             <h2 class="page-title">{{$listing ->title}}</h2>
             <p><i class="fa-solid fa-location-dot"></i> {{$listing ->city}}, {{$listing ->country}}   <i class="fa-solid fa-bed"></i>  {{ $listing ->bedroom }} Bedroom  <i class="fa-solid fa-dollar-sign"></i>  {{$listing ->price}} Price</p>
-              <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3">
-            </div>
-<!--             
-         </div> -->
+              <!-- <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"> -->
+            </div>              
+            <div class="slider slider-for">
+    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+  </div>
+  <div class="slider slider-nav">
+    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+  </div>
+         </div>
             <!-- Thumbnails -->
-           <div class="row mb-5 thumbs">
+           <!-- <div class="row mb-5 thumbs">
                @if ($listing ->thumbnail_1)
                <div class="col-md-2">
                   <a href="{{ url($listing ->thumbnail_1) }}" data-lightbox="home-images">
@@ -587,7 +632,7 @@ input[type="text"] {
             </div> 
         
   
-      </div>
+      </div> -->
 <!-------------Tab-section--------------->
 <section class="tab">
       <div class="container">
