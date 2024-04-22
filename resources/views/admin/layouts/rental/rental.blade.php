@@ -104,7 +104,7 @@
 
 <section>
   <div class="container">
-    <a href="{{route('rental-form')}}">
+   
       <div class="rental-list">
           <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative">
           <img src="{{ asset('assets/img/showcase-old.jpg' ) }}">
@@ -115,6 +115,7 @@
             </ul>
           </div>
           <div class="rental-details">
+          <a href="{{route('rental-form')}}">
               <h3>Max</h3>
               <h4>Max</h4>
               <span>ID:578916</span>

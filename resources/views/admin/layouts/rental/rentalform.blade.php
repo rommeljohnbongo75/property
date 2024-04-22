@@ -81,8 +81,8 @@ body {
       padding-left: 5px;
    }
 
-   .rental-details-one h3 {
-      color: black !important;
+   .renatl-text{
+      color:black;
       padding-top: 20px;
    }
 
@@ -148,18 +148,20 @@ body {
       font-weight: bold;
    }
 .booking-box{
-   border-bottom:1px solid black;
    padding:20px 0;
 }
    .instant-booking input[type="radio"] {
       width: 18px;
       height: 18px;
    }
-
+   .instant-booking:hover{
+      border:1px solid black ;
+   }
    .instant-booking {
-      border: 1px solid black;
+      border: 1px solid lightgray;
       border-radius: 10px;
       padding: 30px;
+      transition:all 0.2s linear;
    }
 
    .instant-booking button {
@@ -210,10 +212,13 @@ body {
       padding: 0;
       margin: 0;
    }
-
+   .rental-inner li:hover{
+      background-color:white;
+   }
    .rental-inner li {
       list-style: none;
       padding: 10px;
+      transition:all 0.2s linear;
    }
 
    .rental-inner li a {
@@ -443,12 +448,7 @@ body {
       color: #666;
       font-size: 16px;
    }
-
-   #profile-v {
-      margin-left: 176px;
-   }
-
-   .photos-heading h2 {
+    .photos-heading h2 {
       color: black;
       font-weight: bold;
    }
@@ -550,6 +550,9 @@ body {
 .contact-heading h2{
    color:black;
    font-weight:bold;
+}
+.nav-tabs{
+   border-bottom:0;
 }
 .cont-btn{
     background-color: black;
@@ -675,17 +678,11 @@ h1 {
       background-color: #7460ee;
       font-size: 18px;
    }
-
-   .overview-heading {
-      margin-left: 130px;
+.overview-heading {
+      /* margin-left: 130px; */
       margin-top: 40px;
       padding-bottom: 20px;
    }
-
-   .overview-form {
-      margin-left: 130px;
-   }
-
    .form-check {
       margin: 0;
       padding: 0;
@@ -741,10 +738,25 @@ ul.ns {
    .overview-form {
       margin-left: 164px !important;
    }
-
-   .overview-heading {
+  .overview-heading {
       margin-left: 164px !important;
    }
+  
+}
+@media only screen and (max-width:1024px) {
+.overview {
+    background-color: white;
+    margin-left: 200px !important;
+}
+.photos-grid {
+    grid-template-columns: 1fr !important;
+}
+}
+@media only screen and (max-width:768px) {
+   .overview {
+    background-color: white;
+    margin-left: 100px !important;
+}
 }
 </style>
 @section('content')
@@ -772,7 +784,7 @@ ul.ns {
             </div>
          </div>
          <div classs="rental-details-one">
-            <h3>Rental Details</h3>
+            <h3 class="renatl-text">Rental Details</h3>
             <ul class="rental-inner nav-tabs tabs-left sideways">
                <li class="active"><a href="#home-v" data-toggle="tab"><i
                         class="fa-solid fa-house-chimney"></i>Overview</a></li>
@@ -1146,6 +1158,7 @@ ul.ns {
     <div class="html-editor">
     </div>
 </div>
+
 
 </div>
 </div>

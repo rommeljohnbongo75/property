@@ -12,10 +12,43 @@
 <script src="{{ asset('assets/datepicker/locales/bootstrap-datepicker.de.min.js' ) }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn3.devexpress.com/jslib/19.2.3/js/dx.all.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+     $(function() {
+    var popupInstance;
+    var editorInstance = $(".html-editor").dxHtmlEditor({
+        height: "300px",
+        value: "<Hr><p>Line 1</p><p>Line 2</p><p>Line 3</p>",
+        toolbar: {
+            items: [
+                "undo", "redo", "separator",
+                "bold", "italic", "strike", "underline", "separator",
+                "alignLeft", "alignCenter", "alignRight", "alignJustify"
+            ]
+        }
+    }).dxHtmlEditor("instance");
+  
+  const parchment = editorInstance.get('parchment');
+  const Embed = parchment.Embed;
+  
+  class Hr extends Embed {
+    static create(value){
+      let node = super.create(value);
+      node.setAttribute('style', 'height:0px; margin-top:10px; margin-bottom:10px;');
+      return node;              
+    }
+  }
+
+  Hr.blotName ='hr';
+  Hr.tagName = 'hr';
+  editorInstance.register(Hr); 
+
+
+  
+});
 (function(){
   $('#msbo').on('click', function(){
     $('body').toggleClass('msb-x');

@@ -38,7 +38,7 @@
   }
   .reservation{
     padding:50px 0;
-    margin-left:200px;
+    margin-left:300px;
   }
 .user-msg-box a{
     color:black;
@@ -344,8 +344,11 @@ font-weight:bold;
 .reserv-1{
     color:#245abc;
 }
-.booking-data,.booking-req{
-    margin-left:200px;
+.booking-data{
+    margin-left:300px;
+}
+.booking-req{
+  margin-left:300px;
 }
 .reserv-one{
     color:black;
@@ -379,9 +382,7 @@ font-weight:bold;
     margin-bottom: 20px;
     background: #fff;
   }
-  .booking-data{
-    margin-left:200px;
-  }
+  
   .nav-btn a{
     color:white;
     padding:10px 50px;
@@ -405,6 +406,7 @@ font-weight:bold;
     margin-left: 47px;
     font-size: 30px;
     color: black;
+    display:none;
 }
   .navbar-nav {
     .panel {
@@ -579,7 +581,7 @@ body.msb-x {
   }
 /* media-query */
 @media only screen and (max-width:1440px) {
-
+ 
 }
 @media only screen and (max-width:1024px) {
     .reservation {
@@ -587,10 +589,13 @@ body.msb-x {
 }
 #msbo{
     margin-left:300px !important;
+    display: block!important;
+    
 }
 .booking-data ,.booking-req{
     margin-left: unset !important;
 }
+
 }
 @media only screen and (max-width:768px) {
     .booking-request-two {
@@ -602,6 +607,9 @@ body.msb-x {
 .reg-booking-details{
     padding-bottom:10px;
 }
+#main-wrapper[data-layout="vertical"][data-sidebartype="mini-sidebar"] .page-wrapper {
+    margin-left:0 !important;
+}
 }
 @media only screen and (max-width:425px) {
 .payments-data{
@@ -612,6 +620,9 @@ body.msb-x {
 }
 .booking-inner{
     display:block !important;;
+}
+.msb {
+    width: 100% !important;
 }
 }
 
@@ -682,7 +693,7 @@ body.msb-x {
 <!-- offcanvas -->
 <section class="reservation">
  <div class="reservation-inner">
-      <div style="padding: 15px 0;">
+      <div style="bar-reserv">
          <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
       </div>
     <div class="container">
