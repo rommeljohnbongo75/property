@@ -91,7 +91,7 @@ body {
    }
 
    .rental {
-      width: 500px;
+      width: 450px;
       position: fixed;
       left: 0;
       top: 0;
@@ -638,7 +638,13 @@ h1 {
   font-size: 1.75rem;
   font-weight: bold;
 }
-
+.msg-toolbox h4{
+   color:black;
+   font-size:22px;
+}
+.msg-toolbox p{
+   color:#333;
+}
 
 /*---msg-placeholder-page-end------------------*/
    .location-inner {
@@ -664,14 +670,11 @@ h1 {
       padding: 10px;
       border-radius: 4px;
    }
-
-   .location-map-btn {
+.location-map-btn {
       text-align: center;
       margin: 40px 0;
-
    }
-
-   .location-map-btn a {
+.location-map-btn a {
       padding: 20px 80px;
       color: white;
       width: 100%;
@@ -690,7 +693,7 @@ h1 {
   .overview {
       background-color: white;
       width:100%;
-      margin-left: 499px;
+      margin-left:451px;
    }
    .navbar-nav {
       .panel {
@@ -724,28 +727,24 @@ h1 {
 
    }
 }
-
 ul.nv,
 ul.ns {
    position: relative;
    padding: 0;
    list-style: none;
 }
-
-/* media-query */
-@media only screen and (max-width:1440px) {
-   .overview-form {
-      margin-left: 164px !important;
-   }
-  .overview-heading {
-      margin-left: 164px !important;
-   }
-  
+.ck-blurred.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline {
+    height: 30%;
 }
+/* media-query */
+@media only screen and (max-width:1440px) {}
 @media only screen and (max-width:1024px) {
 .overview {
     background-color: white;
-    margin-left: 200px !important;
+    margin-left: 236px !important;
+}
+.rental{
+   width:300px !important;
 }
 .photos-grid {
     grid-template-columns: 1fr !important;
@@ -754,8 +753,8 @@ ul.ns {
 @media only screen and (max-width:768px) {
    .overview {
     background-color: white;
-    margin-left: 100px !important;
 }
+
 }
 </style>
 @section('content')
@@ -925,7 +924,7 @@ ul.ns {
                   <span>GB</span>
                   <h4>English</h4>
                </div>
-               <div class="photos-grid">
+               <div class="photos-grid col-6">
                   <div class="add-photos">
                      <h4><a href="">Add Photos</a></h4>
                      <span>Or drag them here</span>
@@ -1152,18 +1151,17 @@ ul.ns {
             <h4>GB</h4>
             <h5>English</h5>
          </div>
-     
-         <div class="dx-viewport demo-container">
-    <div class="html-editor">
-    </div>
+      <div class="msg-toolbox">
+            <h4>Check-in instructions</h4>
+            <p>Inform your clients about the details on the check-in instructions and other specific when arriving.</p>
+          <div id="editor">This is some sample content.</div>
+      </div>
+      
+         
+         
+  </div>
+ </div>
 </div>
-
-
-</div>
-</div>
-</div>
-
-    
 </div>
 
             </div>
@@ -1176,5 +1174,16 @@ ul.ns {
 </section>
 <!-- photos-section -->
 <!-- photos-section-start -->
-
+<script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                                
+</script>
 @endsection

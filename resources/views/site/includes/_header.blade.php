@@ -1,39 +1,4 @@
   <!-- Top Bar -->
-
-
-  <!-- <section id="top-bar" class="p-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <i class="fas fa-phone"></i> 
-      
-        </div>
-        <div class="col-md-4">
-          <i class="fas fa-envelope-open"></i> 
-         
-        </div>
-        <div class="col-md-4">
-          <div class="social text-right">
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-pinterest"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 <style>
   @import url(<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>);
   image{
@@ -51,6 +16,10 @@
     font-family:var(--font-family) !important;
     font-size:16px;
     font-weight:bold;
+    transition:all 0.2s linear;
+}
+.navbar-nav .nav-link:hover{
+  color: #e5974f !important;
 }
 nav.navbar {
     background-color: #ffff;
@@ -60,17 +29,18 @@ nav.navbar {
     box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
 }
 .navbar-nav .nav-item a{
-  font-size:20px;
+
 }
 .navbar {
     padding: 13px!important;
 }
 .navbar-dark .navbar-brand span {
     color: #e5974f;
-    font-size:35px;
+    font-size:30px;
+    font-style:italic;
 }
 .navbar-dark .navbar-brand{
-  font-style:italic;
+  /* font-style:italic; */
 }
 .nav-item a img{
   width:25px;
@@ -83,7 +53,24 @@ nav.navbar {
 input[type="text"] {
     width: 100%;
 }
-
+.logo-text{
+  color:black;
+  font-size:30px;
+  font-style:italic;
+}
+.logo-text h4{
+  color: #e5974f;
+  font-size:60px;
+  font-style:italic;
+}
+.logo-text h3{
+  color: #e5974f;
+  font-size:60px;
+  font-style:italic;
+}
+.logo-text{
+  gap:6px;
+}
 .container-form {
   width:350px;
 }
@@ -164,10 +151,16 @@ input[type="text"] {
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <!-- <div class="position-absolute">  -->
-      <a class="navbar-brand" href="{{url('/')}}">
+  <div class="d-flex logo-text align-items-center">
+         <!-- <img src="{{ asset('assets/img/residential.png' ) }}"> -->
+         <h4>E</h4>state
+         <h3>R</h3><span>ental</span>
+         <a class="navbar-brand" href="{{url('/')}}"></a>
+         </div>
+       
        <!-- <span class="text-black ">Estate</span>Rental  -->
-         <img src="{{ asset('assets/img/estate-high-resolution-logo.png' ) }}">
-      </a>
+       
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -179,16 +172,18 @@ input[type="text"] {
           <!-- <li class="nav-item mr-3 {{ (request()->routeIs('about')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('about') }}">About</a>
           </li> -->
-          <li class="nav-item mr-3 {{ (request()->routeIs('listings')) ? 'active' : '' }}">
+          
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-3 {{ (request()->routeIs('listings')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('listings') }}">Featured Property</a>
           </li>
           <li class="nav-item mr-3 {{ (request()->routeIs('listings')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('conatct.new') }}">Contact</a>
           </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto">
           @auth
+         
           <li class="nav-item mr-3 {{ (request()->routeIs('dashboard')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('dashboard') }}">
               <i class="fas fa-user-plus"></i> Dashboard</a>

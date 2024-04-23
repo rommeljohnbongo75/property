@@ -16,6 +16,7 @@
 <script src="https://cdn3.devexpress.com/jslib/19.2.3/js/dx.all.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
 <script>
  $('.slider-for').slick({
    slidesToShow: 1,
@@ -25,11 +26,31 @@
    asNavFor: '.slider-nav'
  });
  $('.slider-nav').slick({
-   slidesToShow: 3,
+   slidesToShow: 5,
    slidesToScroll: 1,
    asNavFor: '.slider-for',
    dots: true,
-   focusOnSelect: true
+   focusOnSelect: true,
+   responsive: [
+       {
+         breakpoint: 1440,
+         settings: {
+           slidesToShow: 3,
+           slidesToScroll: 2,
+           infinite: true,
+           dots: true
+         }
+       },
+       {
+         breakpoint:1024,
+         settings: {
+           slidesToShow: 2,
+           slidesToScroll: 1,
+           infinite: true,
+           dots: true
+         }
+       },
+    ]
  });
 
  $('a[data-slide]').click(function(e) {
@@ -311,7 +332,16 @@
             $(this).datepicker('setUTCDates', newDates);
         });
     });
+ 
 // slick-slider
 
+ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .then( editor => {
+            console.log( editor );
+    } )
+    .catch( error => {
+            console.error( error );
+    } );
 			
 </script>

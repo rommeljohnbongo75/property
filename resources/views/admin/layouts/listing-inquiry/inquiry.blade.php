@@ -238,10 +238,11 @@ font-weight:bold;
     display: flex;
     gap: 30px;
     padding: 30px 0;
+    justify-content: center;
 }
-.guest-form {
+/* .guest-form {
    margin-top:20px;
-}
+} */
 .nots{
     box-shadow:0px 15px 30px rgba(0,0,0,0.10);
     padding:40px 20px; 
@@ -398,15 +399,18 @@ font-weight:bold;
     margin-bottom:20px;
    
   }
+ .search-box{
+    width:unset !important;
+  }
   .payments-data{
     display:flex;
     flex-wrap:wrap;
   }
   #msbo {
-    margin-left: 47px;
+    margin-left: 0;
     font-size: 30px;
     color: black;
-    display:none;
+    
 }
   .navbar-nav {
     .panel {
@@ -481,7 +485,7 @@ body.msb-x {
     float: inline-end;
 }
 
-  /* Slide in animation */
+  Slide in animation
   @-moz-keyframes slidein {
     0% {
       left: -200px;
@@ -587,11 +591,6 @@ body.msb-x {
     .reservation {
     margin-left: unset !important;
 }
-#msbo{
-    margin-left:300px !important;
-    display: block!important;
-    
-}
 .booking-data ,.booking-req{
     margin-left: unset !important;
 }
@@ -634,12 +633,14 @@ body.msb-x {
 <!-- sidebar -->
 <div class="msb" id="msb">
 		<nav class="nav-navbar navbar-default" role="navigation">
-        <button type="button" class="btn-close" data-bs-dismiss="#msb">close</button>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="#msb">close</button> -->
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
           
 				<div class="brand-wrapper">
-                
+        <div style="bar-reserv">
+         <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+      </div>
 					<!-- Brand -->
 					<div class="brand-name-wrapper d-flex justify-content-between align-items-center">
 						<a class="navbar-brand" href="#">
@@ -655,7 +656,9 @@ body.msb-x {
   <!-- Main Menu -->
 	<div class="side-menu-container">
         <div class="nav navbar-nav-one ">
-        
+        <div style="bar-reserv">
+         <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+      </div>
 		<div class="nav-inner d-flex">
 				 <div class="nav-img">
                      <img src="{{ asset('assets/img/showcase-old.jpg' ) }}">
@@ -693,9 +696,7 @@ body.msb-x {
 <!-- offcanvas -->
 <section class="reservation">
  <div class="reservation-inner">
-      <div style="bar-reserv">
-         <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
-      </div>
+      
     <div class="container">
         <div class="user-details d-flex justify-content-between">
             <div class="user-name">

@@ -792,7 +792,7 @@ section.show-section {
             <img src="{{ asset('assets/img/showcase.jpg' ) }}">
             <div class="overlay"></div>
          </div>
-         <!-- <div class="container-form">
+        <div class="container-form">
             <h1>Booking Request Deatils</h1>
             <form>
                <div class="serach-group">
@@ -845,7 +845,7 @@ section.show-section {
                   <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
                </div>
             </form>
-         </div> -->
+         </div>
       </div>
       <div class="banner">
          <div class="banner-image">

@@ -120,12 +120,12 @@
               <h4>Max</h4>
               <span>ID:578916</span>
               <div class="rental-btn text-center">
-            <a href="">Add To Website<i class="fa-regular fa-circle-check"></i></a>
+            <a href="{{route('rental-form')}}">Add To Website<i class="fa-regular fa-circle-check"></i></a>
           </div>
           </div>
           </div>
         </div>
-    </a>
+        </a>
   </div>
 </section>
 @endsection

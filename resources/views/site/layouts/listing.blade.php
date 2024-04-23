@@ -311,9 +311,7 @@ body{
   display:block;
   margin:0 auto;
 }
- .slider-nav .slick-dots{
-   font-size:30px !important;
-}
+
 .action{
   display:block;
   margin:100px auto;
@@ -359,6 +357,9 @@ body{
    font-size:18px;
    font-family:var(--font-family);
 }
+.slider-nav .slick-dots li button:before {
+    font-size: 10px;
+}
 .property-title h3{
    font-family:var(--font-family);
    font-size:40px;
@@ -382,6 +383,12 @@ body{
 }
 .property-title{
    padding:20px 30px;
+}
+.slider-nav .slick-slide img {
+    cursor: pointer;
+}
+.slider-for .slick-slide img {
+   cursor: pointer;
 }
 .fields {
    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
@@ -450,6 +457,9 @@ body{
 .cards{
    padding-top:40px;
 }
+.page-title {
+    font-size: 30px;
+}
 .fields h2 {
 font-size: 30px;
 }
@@ -468,13 +478,12 @@ input[type="text"] {
 }
 .date h3 {
     font-size: 30px;
-    
 }
+
 .calendar-main {
     flex-wrap:wrap;
    justify-content:center;
 }
-
 .review-title h3 {
   margin:0;
 }
@@ -498,8 +507,13 @@ input[type="text"] {
 .alert-text p{
    padding-bottom:0 !important;
 }
+
 .from-data {
     padding: 10px;
+}
+.page-title {
+    margin-top: 56px;
+    font-size: 20px;
 }
 .form-group-one {
     padding: 10px;
@@ -528,8 +542,9 @@ input[type="text"] {
 .date {
    margin:0;
 }
-.option-tab ul{
-   flex-wrap:wrap;
+.option-tab ul {
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 }
@@ -570,18 +585,18 @@ input[type="text"] {
             <p><i class="fa-solid fa-location-dot"></i> {{$listing ->city}}, {{$listing ->country}}   <i class="fa-solid fa-bed"></i>  {{ $listing ->bedroom }} Bedroom  <i class="fa-solid fa-dollar-sign"></i>  {{$listing ->price}} Price</p>
               <!-- <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"> -->
             </div>              
-            <div class="slider slider-for">
+            <div class="slider slider-for" id="img-slider">
+    <div><img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="{{ asset('assets/img/homes/home-3.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
   </div>
   <div class="slider slider-nav">
+    <div class="slick-tab"> <img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ asset('assets/img/homes/home-3.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
   </div>
          </div>
@@ -655,7 +670,7 @@ input[type="text"] {
             <div class=" fields ">
             <h2>Booking Details</h2>
                <div class=" gap-5 fileds-inner">
-               <div class="col-md-12 col-lg-7 gap-5 justify-content-between fields1">
+               <div class="col-md-12 col-lg-7  justify-content-between fields1">
                   <div class="page-inner">
                      <ul class="list-group list-group-flush">
                         <li class="list-group-item ">
