@@ -39,15 +39,19 @@
     #services .icon1:hover i{
         color:white;
     }
-    
-    #services .icon1 :hover{
+    #services .icon1{
+        transition:all 0.2s linear;
+    }
+    #services .icon1:hover{
     transform: translatex(10px);
     color:white;
 }
 #services .icon1{
     transition:all 0.2s linear;
 }
-
+.icon1 a:hover{
+    color:white;
+}
     #services p i{
         color:#FFA920;
         font-size:14px;
@@ -100,8 +104,7 @@
                         <p class="icon1"><a href=""><i class="fa-solid fa-phone"></i>(972) 53-368-3527</a></p>
                         <p class="icon1"><a href=""><i class="fa-solid fa-mobile-button"></i>(732) 503-3216</a></p>
                         
-                            
-</div>
+                    </div>
                     <div class="col-md-6 col-lg-6 col-xl-2">
                         <h4></i>Popular Locations</h4>
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Jerusalem</a> </p> 

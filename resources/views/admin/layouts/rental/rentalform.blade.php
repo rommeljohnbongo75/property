@@ -45,12 +45,10 @@ body {
       background-color: #FFF;
 
    }
-
-   .rental-option {
+  .rental-option {
       margin: 0;
       padding: 0;
    }
-
    .rental {
       background-color: white;
    }
@@ -396,13 +394,11 @@ body {
       padding: 10px;
       font-size: 16px;
    }
-
    .rental-size ul {
       margin: 0;
       padding: 0;
    }
-
-   .rental-form label {
+  .rental-form label {
       font-size: 18px;
       color: black;
    }
@@ -468,7 +464,7 @@ body {
    }
 
    .photos-heading svg {
-      font-size: 20px;
+      font-size: 25px;
       color: black;
    }
 
@@ -623,13 +619,10 @@ body {
    color:black;
    font-weight:bold;
 }
-
-
 main {
   max-width: 720px;
   margin: auto;
 }
-
 section {
   margin-bottom: 3rem;
 }
@@ -650,21 +643,18 @@ h1 {
    .location-inner {
       margin-top: 70px;
    }
-
-   .photos-option span {
+ .photos-option span {
       font-size: 12px;
       color: black;
       font-weight: bold;
    }
-
-   .photos-option h4 {
+.photos-option h4 {
       font-size: 16px;
       color: black;
       margin: 0;
       font-weight: bold;
    }
-
-   .amenities-btn a {
+.amenities-btn a {
       background-color: black;
       color: white;
       padding: 10px;
@@ -753,6 +743,9 @@ ul.ns {
 @media only screen and (max-width:768px) {
    .overview {
     background-color: white;
+}
+.Rental-rooms,.sleeping-arrang,.rental-info,.rental-type,.Rental-amenities{
+    padding: 20px 0 !important;
 }
 
 }

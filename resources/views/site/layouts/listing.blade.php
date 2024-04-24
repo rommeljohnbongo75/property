@@ -11,9 +11,9 @@
       font-family:var(--font-family);
    }
   }
-  *{
-   .container-form {
-   max-width: 800px;
+ 
+   .container-form-one {
+   max-width:500px;
    padding: 20px;
    width:100%;
    background-color: #fff;
@@ -24,7 +24,7 @@
    h1 {
    text-align: center;
    }
-   .container-form h1{
+   .container-form-one h1{
    font-size:30px;
    color:black;
    font-Family:var(--font-family);
@@ -43,7 +43,7 @@
    display: inline-block;
    vertical-align: middle;
    background-color: #efe9e2;
-   margin-left: 12px;
+   margin:0 10px;
    font-size: 18px;
    color: #000 !important;
    }
@@ -58,6 +58,8 @@
    }
    .counter {
    display: inline-block;
+ 
+   padding:10px 0;
    }
    .counter span {
    cursor: pointer;
@@ -105,10 +107,11 @@
    /* gap:20px; */
    }
    .from-data {
-   background-color: #efe9e2;
-   border-radius:10px;
-   padding:15px;
-   }
+    background-color: #efe9e2;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px 0;
+}
    .form-group .form-control{
    background-color: #efe9e2;
    border-radius: 10px;
@@ -117,17 +120,22 @@
    .btn{
    margin-top:20px;
    }
-   .adults-children.sec-menu-div.active{
+   .sec-menu-div{
+      padding:20px 0;
+   }
+   .adults-children .sec-menu-div.active{
    display: block !important;
+  
    }
    .counter input[type="text"] {
-   width: calc(35% - 40px);
-   padding: 10px;
-   border: 1px solid #ccc;
-   border-radius: 5px;
-   display: inline-block;
-   vertical-align: middle;
-   }
+    width: 15%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
    .calendar-main {
    display: flex !important;
    justify-content:center;
@@ -328,6 +336,9 @@ body{
 .action a:hover{
   background:#000;
 }
+.form-group-one {
+   padding:5px;
+}
 .slick-tab{
    padding:0 10px;
 }
@@ -390,6 +401,16 @@ body{
 .slider-for .slick-slide img {
    cursor: pointer;
 }
+.counter-text h4,.counter-text-one h4{
+   font-size:18px;
+}
+.counter-text p,.counter-text-one p{
+   font-size:14px;
+}
+#counter{
+   border-bottom:1px solid lightgray;
+}
+
 .fields {
    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
    padding-top:20px;
@@ -448,7 +469,7 @@ body{
    padding-top:unset !important;
 }
 @media only screen and (max-width: 768px) {
-.container-form {
+.container-form-one {
     width:unset !important;
 }
 .fileds-inner{
@@ -463,7 +484,7 @@ body{
 .fields h2 {
 font-size: 30px;
 }
-.container-form h1{
+.container-form-one h1{
    margin:0;
    padding:20px 0;
 }
@@ -495,10 +516,10 @@ input[type="text"] {
 .fields1 {
    flex-wrap:wrap;
 }
-.container-form h1 {
+.container-form-one h1 {
     font-size: 21px !important;
 }
-.container-form input[type="text"] {
+.container-form-one input[type="text"] {
     font-size: 14px;
    }
    .list-group {
@@ -507,16 +528,13 @@ input[type="text"] {
 .alert-text p{
    padding-bottom:0 !important;
 }
-
-.from-data {
-    padding: 10px;
-}
 .page-title {
     margin-top: 56px;
     font-size: 20px;
 }
 .form-group-one {
     padding: 10px;
+   
 }
 .property-dec {
     font-size: 14px;
@@ -670,7 +688,7 @@ input[type="text"] {
             <div class=" fields ">
             <h2>Booking Details</h2>
                <div class=" gap-5 fileds-inner">
-               <div class="col-md-12 col-lg-7  justify-content-between fields1">
+               <div class="col-md-12 col-lg-6  justify-content-between fields1">
                   <div class="page-inner">
                      <ul class="list-group list-group-flush">
                         <li class="list-group-item ">
@@ -716,9 +734,9 @@ input[type="text"] {
                   </div>
                </div>
                
-               <div class="col-md-12 col-lg-5">
+               <div class="col-md-12 col-lg-6">
                   <div class="cards">
-                     <div class="container-form">
+                     <div class="container-form-one">
                         <h1>Booking Request Deatils</h1>
                         <form action="{{ url('contact') }}" method="POST">
                            @csrf 
@@ -742,7 +760,6 @@ input[type="text"] {
 
                            </div>
                            <div class="alert-text">
-                              <p class="text-danger text-center py-4"></p>
                            </div>
 
                            <div class="form-group-one d-flex align-items-center justify-content-around" id="sec-menu">
@@ -759,21 +776,32 @@ input[type="text"] {
                            
                            <div class="adults-children sec-menu-div" >
                               <div class="form-group">
-                                 <label for="adults">Adults:</label>
-                                 <div class="counter">
+                                 <div class="counter d-flex justify-content-center" id="counter">
+                                    <div class="counter-text">
+                                       <h4>Adults Capacity</h4>
+                                       <p>Total guests capacity</p>
+                                    </div>
+                                    <div class="counter-add text-center">
                                     <span class="adults-minus">-</span>
                                     <input type="text" id="adults" name="adults" value="1" readonly>
                                     <span class="adults-plus">+</span>
+                                    </div>
                                  </div>
                               </div>
                               <div class="form-group">
-                                 <label for="children">Children:</label>
-                                 <div class="counter">
-                                    <span class="minus">-</span>
-                                    <input type="text" class="children"  id="children" name="children" value="1" readonly>
-                                    <span class="plus">+</span>
+                                 <div class="counter d-flex justify-content-center">
+                                    <div class="counter-text-one">
+                                       <h4>Adults Capacity</h4>
+                                       <p>Total guests capacity</p>
+                                    </div>
+                                    <div class="counter-add text-center">
+                                    <span class="adults-minus">-</span>
+                                    <input type="text" id="adults" name="adults" value="1" readonly>
+                                    <span class="adults-plus">+</span>
+                                    </div>
                                  </div>
                               </div>
+                             
                            </div>
                            <div class="form-group">
                               <label for="message" class="col-form-label">Message:</label>

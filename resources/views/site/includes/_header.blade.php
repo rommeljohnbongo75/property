@@ -143,10 +143,7 @@ input[type="text"] {
 }
 
 }
-
-
-
-  </style>
+</style>
   <header id="header">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -157,11 +154,7 @@ input[type="text"] {
          <h3>R</h3><span>ental</span>
          <a class="navbar-brand" href="{{url('/')}}"></a>
          </div>
-       
-       <!-- <span class="text-black ">Estate</span>Rental  -->
-       
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
