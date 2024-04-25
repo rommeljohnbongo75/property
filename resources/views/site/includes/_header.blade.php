@@ -28,9 +28,6 @@ nav.navbar {
     border-bottom: 1px solid rgba(153, 153, 153, 0.22);
     box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
 }
-.navbar-nav .nav-item a{
-
-}
 .navbar {
     padding: 13px!important;
 }
@@ -70,6 +67,9 @@ input[type="text"] {
 }
 .logo-text{
   gap:6px;
+}
+.active {
+  background-color: rgba(34,34,34,0.8);
 }
 .container-form {
   width:350px;
@@ -206,6 +206,7 @@ input[type="text"] {
              </i>
           </li>
           @endif
+          
         </ul>
       </div>
 <!-- </div> -->

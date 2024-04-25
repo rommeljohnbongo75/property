@@ -38,6 +38,20 @@
     background-color:#FFA920 !important;
     /* border: 1px solid transparent; */
 }
+.container-form .sec-menu-div{
+   padding:20px 0;
+}
+.adults-minus,.adults-plus{
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #FFA920;
+    color: #fff;
+    border-radius: 5px;
+}
    .search-start {
    display:grid;
    grid-template-columns:1fr 1fr 1fr 1fr;
@@ -94,10 +108,10 @@
       color:black;
       margin:0;
       padding:10px 0;
-      transition:all 0.1s linear;
+      transition:all 0.2s linear;
       
    }
-   .card-1 h3:hover{
+   .card-1:hover.card-1 h3{
       color:#FFA920;
    }
    .card-1 img {
@@ -368,7 +382,21 @@
    font-size: 30px;
    color: #FFA920;
    }
-   .container-form {
+  
+/* .container-form::after{
+   content:'';
+   position: absolute;
+   width:30px;
+   height:30px;
+   background-color:red;
+   top:30px;
+   left:0;
+
+} */
+.hover-line{
+
+}
+.container-form {
    border: 1px solid black;
    padding: 40px 20px;
    box-shadow: #00000024 2px 7px 20px 0px !important;
@@ -381,6 +409,12 @@
    border: none;
    top: 30%;
    left: 40%;
+   }
+   .guest-icon i{
+      font-size:22px;
+   }
+   .form-icon i{
+      font-size:22px;
    }
    .banner-image img{
    height:100%;
@@ -422,11 +456,15 @@
    font-size:15px;
    margin:0;
    }
+   .card-1:hover{
+    background-color:#fff7ee;
+}
    .card-1{
       box-shadow:0 16px 32px 0 rgba(7, 28, 31, 0.1);
       border:1px solid #f6f6f6;
        flex-wrap:no-wrap;
        padding:20px;
+       transition:all 0.2s linear;
    }
    .card-1 img:hover{
       transform:scale(1.3);
@@ -479,6 +517,11 @@
     text-align: center;
     font-family:var(--font-family);
    }
+   .counter-add-data input[type="text"]{
+      width:30%;
+      height:40px;
+      text-align:center;
+   }
 .image-slider .slick-dots li.slick-active button:before {
    opacity: .75;
    color: #000;
@@ -491,11 +534,26 @@
    }
    input.adults-adults, input.children-children {
    border: none;
+
    }
    input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, input.children-children {
    border: none; 
    outline: none; 
    } 
+   .form-date{
+      width:100%;
+   }
+   .form-date h4{
+      font-size:15px;
+   }
+   .form-date p{
+      font-size:14px;
+   }
+   .counter-add-data{
+      display:flex;
+      justify-content:space-evenly;
+      align-items:center;
+   }
    .overlay {
     background-color: rgb(0, 0, 0);
     position: absolute;
@@ -602,8 +660,7 @@ section.show-section {
 }
    
 .team {
-  
-    padding-top:70px;
+  padding-top:70px;
     padding-bottom:120px;
     /* background-color: #F7F7F7; */
 }
@@ -634,7 +691,9 @@ section.show-section {
     position: absolute;
     bottom: 14px;
     font-size: 30px;
-
+}
+.children-children {
+    display:flex;
 }
 .responsive .slick-dots{
    bottom:-14px;
@@ -749,9 +808,7 @@ section.show-section {
    #listings{
       padding-top:35px;
    }
-.container-form {
-    width: 331px;
-}
+
 .services-card .col-md-6 {
     flex-wrap: wrap;
 }
@@ -762,6 +819,7 @@ section.show-section {
     padding: 20px 15px;
     top: 30%;
     left: 9% !important;
+     width: 331px;
 }
 .services-card {
    gap:20px;
@@ -806,6 +864,7 @@ section.show-section {
             <img src="{{ asset('assets/img/showcase.jpg' ) }}">
             <div class="overlay"></div>
          </div>
+         <div class="hover-line"></div>
         <div class="container-form">
             <h1>Booking Request Deatils</h1>
             <form>
@@ -837,21 +896,31 @@ section.show-section {
 
                <div class="adults-children sec-menu-div" >
                   <div class="form-group">
-                     <label for="adults">Adults:</label>
-                     <div class="counter">
-                        <span class="adults-minus">-</span>
-                        <input type="text" id="adults" name="adults" value="1" readonly>
-                        <span class="adults-plus">+</span>
-                     </div>
+                   <div class="counter d-flex justify-content-center" id="counter">
+                                    <div class="form-date">
+                                       <h4>Adults Capacity</h4>
+                                       <p>Total guests capacity</p>
+                                    </div>
+                                    <div class="counter-add-data text-center">
+                                    <span class="adults-minus">-</span>
+                                    <input type="text" id="adults" name="adults" value="1" readonly>
+                                    <span class="adults-plus">+</span>
+                                    </div>
+                                 </div>
                   </div>
                   
                   <div class="form-group">
-                     <label for="children">Children:</label>
-                     <div class="counter">
-                        <span class="minus">-</span>
-                        <input type="text" class="children"  id="children" name="children" value="1" readonly>
-                        <span class="plus">+</span>
-                     </div>
+                  <div class="counter d-flex justify-content-center" id="counter">
+                                    <div class="form-date">
+                                       <h4>Children Capacity</h4>
+                                       <p>Total bedrooms capacity</p>
+                                    </div>
+                                    <div class="counter-add-data text-center">
+                                    <span class="adults-minus">-</span>
+                                    <input type="text" id="adults" name="adults" value="1" readonly>
+                                    <span class="adults-plus">+</span>
+                                    </div>
+                                 </div>
                   </div>
                </div>
 
