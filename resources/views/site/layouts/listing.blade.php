@@ -141,7 +141,7 @@
    }
    div#map {
    width: 100%;
-   height: 40%;
+   height: 80%;
    }
    .list-group {
    list-style: none;
@@ -183,10 +183,11 @@ input.btn.btn-block.btn-secondary {
     background-color: #FFA920;
 }
 .datepicker-days table.table-condensed {
-   max-width:400px !important;
-    height: 400px !important;
+   max-width:568px !important;
+    height: 490px !important;
     padding: 15px;
 }
+
 .date-pixel{
    display: flex;
 }
@@ -264,13 +265,13 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 
 .tab{
    padding-bottom:30px;
-    /* padding-top: 0px;
+    padding-top: 0px;
     padding-bottom: 1px;
     transform: translateY(60px);
     left: 1142px;
     top: 0px;
     position: fixed;
-    width: 356px; */
+    width: 356px;
 }
 .author-name{
    padding:30px;
@@ -622,54 +623,7 @@ input[type="text"] {
     <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
   </div>
          </div>
-            <!-- Thumbnails -->
-           <!-- <div class="row mb-5 thumbs">
-               @if ($listing ->thumbnail_1)
-               <div class="col-md-2">
-                  <a href="{{ url($listing ->thumbnail_1) }}" data-lightbox="home-images">
-                  <img src="{{ url($listing ->thumbnail_1) }}" alt="" class="img-fluid" data-fancybox="gallery">
-                  </a>
-               </div>
-               @endif
-               @if ($listing ->thumbnail_2)
-               <div class="col-md-2">
-                  <a href="{{ url($listing ->thumbnail_2) }}" data-lightbox="home-images">
-                  <img src="{{ url($listing ->thumbnail_2) }}" alt="" class="img-fluid" data-fancybox="gallery">
-                  </a>
-               </div>
-               @endif
-               @if ($listing ->thumbnail_3)
-               <div class="col-md-2">
-                  <a href="{{ url($listing ->thumbnail_3) }}" data-lightbox="home-images">
-                  <img src="{{ url($listing ->thumbnail_3) }}" alt="" class="img-fluid" data-fancybox="gallery">
-                  </a>
-               </div>
-               @endif
-               @if ($listing ->thumbnail_4)
-               <div class="col-md-2">
-                  <a href="{{ url($listing ->thumbnail_4) }}" data-lightbox="home-images">
-                  <img src="{{ url($listing ->thumbnail_4) }}" alt="" class="img-fluid" data-fancybox="gallery">
-                  </a>
-               </div>
-               @endif
-               @if ($listing ->thumbnail_5)
-               <div class="col-md-2">
-                  <a href="{{ url($listing ->thumbnail_5) }}" data-lightbox="home-images">
-                  <img src="{{ url($listing ->thumbnail_5) }}" alt="" class="img-fluid" data-fancybox="gallery">
-                  </a>
-               </div>
-               @endif
-               @if ($listing ->thumbnail_6)
-               <div class="col-md-2">
-                  <a href="{{ url($listing ->thumbnail_6) }}" data-lightbox="home-images">
-                  <img src="{{ url($listing ->thumbnail_6) }}" alt="" class="img-fluid" data-fancybox="gallery">
-                  </a>
-               </div>
-               @endif
-            </div> 
-        
-  
-      </div> -->
+         
 <!-------------Tab-section--------------->
 <section class="tab">
       <div class="container">

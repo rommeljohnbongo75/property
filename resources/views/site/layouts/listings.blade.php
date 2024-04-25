@@ -19,14 +19,11 @@
         display: flex;
         gap: 60px;
     }
-    .conatiner{
-        max-width:1440px;
-        margin:0 auto;
-    }
 
     .property {
-        width:70%; /* Change width to full width */
-        display: flex;
+        width:100%; /* Change width to full width */
+        display:grid;
+        grid-template-columns:1fr 1fr;
         flex-wrap: wrap; /* Ensure properties wrap to new line */
         gap:30px;
         justify-content: space-between; /* Evenly distribute properties */
@@ -104,7 +101,7 @@
     cursor:pointer;
 }
     .option-option {
-    display: flex;
+    display: inline-flex;
     background-color: #f7f7f7;
     justify-content: space-between;
     padding: 15px 0;
@@ -117,6 +114,9 @@
     font-size:40px;
     padding-bottom:20px;
 }
+.option-option h5{
+    width
+}
     .property-inner h2 {
     font-size: 21px;
     margin: 0;
@@ -125,10 +125,11 @@
   padding: 10px 0;
     }
     .map {
-        width: 100%;
+        width: 80%;
     }
     .property img {
        max-width:500px;
+       height:100%;
     }
     .listing-title{
         padding:40px 0;
@@ -181,7 +182,12 @@
 }
 .property{
         width:100%;
+        padding-bottom:40px;
     }
+    .map {
+    width: 100%;
+    /* margin: auto; */
+}
     .map-heading h3 {
     padding-top:30px;
     }
@@ -190,6 +196,8 @@
     @media only screen and (max-width:768px){
     .property{
         width:100%;
+        grid-template-columns:1fr;
+        
     }
     .map-heading h3 {
     padding-top:30px;
@@ -203,19 +211,31 @@
     .property-inner{
         display:block;
     }
+
     .agent-widget-inner {
     margin: 40px 0;
 }
 #listings {
     padding:unset;
 }
+.property img {
+    max-width:unset!important;
+    max-width: 500px;
+    height: unset !important;
+} 
+.logo-text {
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+}
+.navbar {
+  padding:unset !important;
+}
     }
 </style>
 @section('content')
     <!-- Breadcrumb -->
     <section id="bc" class="mt-3">
-    
-        <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -258,7 +278,7 @@
             
             <div class="map">
                 <div class="map-heading">
-                    <h3>Location</h3>
+                    <!-- <h3>Location</h3> -->
                 </div>
                <div id="map_canvas"></div>
             <!-- <div class="agent-widget-inner">
@@ -286,7 +306,7 @@
                   </div>
              </div>
              
-        </div>
+      
         
     </section>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>

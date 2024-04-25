@@ -18,6 +18,7 @@
     font-weight:bold;
     transition:all 0.2s linear;
 }
+
 .navbar-nav .nav-link:hover{
   color: #e5974f !important;
 }
@@ -96,6 +97,14 @@ input[type="text"] {
     padding-left: 11px;
     width: 100%;
     max-width: 200px;
+}
+.logo-text {
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+}
+.active {
+    background-color:white !important;
 }
 
 #listings .slick-prev::before,.slick-next::before{
