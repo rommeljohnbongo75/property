@@ -44,7 +44,6 @@
    vertical-align: middle;
    background-color: #efe9e2;
    margin-left: 12px;
-   font-size: 18px;
    color: #000 !important;
    }
    input[type="date"]
