@@ -67,13 +67,11 @@
    height: 30px;
    line-height: 30px;
    text-align: center;
-   background-color: #007bff;
+   background-color: #FFA920;
    color: #fff;
    border-radius: 5px;
    }
-   .counter span:hover {
-   background-color: #0056b3;
-   }
+  
    .submit-request {
    display: block;
    width: 100%;
@@ -88,12 +86,14 @@
    .submit-request:hover {
    background-color: #0056b3;
    }
-   .form-icon i{
+   .form-icon-one i{
    font-size:25px;
+   color:#FFA920 !important;
    }
    .form-group-icon i{
    font-size:25px;
    padding-right:5px;
+   color:#FFA920 !important;
    /* margin-left:10px; */
    }
    .form-img i{
@@ -108,7 +108,7 @@
    .from-data {
     background-color: #efe9e2;
     border-radius: 10px;
-    padding: 5px;
+    padding:5px 10px;
     margin: 10px 0;
 }
    .form-group .form-control{
@@ -336,7 +336,7 @@ body{
   background:#000;
 }
 .form-group-one {
-   padding:5px;
+   padding:5px 10px;
 }
 .slick-tab{
    padding:0 10px;
@@ -380,6 +380,9 @@ body{
 .map-map{
    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
    padding:30px;
+}
+.option-tab ul{
+   justify-content:space-between;
 }
 .map-map h3{
    font-family:var(--font-family);
@@ -615,6 +618,8 @@ input[type="text"] {
     <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div class="slick-tab"> <img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div class="slick-tab"> <img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
   </div>
          </div>
             <!-- Thumbnails -->
@@ -744,7 +749,7 @@ input[type="text"] {
                            <input type="hidden" name="name"  @auth value="{{ Auth::user()->get_full_name() }}"@endif>
                            <input type="hidden" name="email" @auth value="{{ Auth::user()->email }}" @endif >
                            <div class="from-data d-flex justify-content-around align-items-center">
-                              <div class="form-icon">
+                              <div class="form-icon-one">
                                  <i class="fa-regular fa-calendar-days" style="color:#10284e"></i>
                               </div>
                               
