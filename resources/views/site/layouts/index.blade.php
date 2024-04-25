@@ -400,13 +400,14 @@
    align-items:center;
    gap:10px;
    }
-   .card-dec{
-   position:absolute;
-   top:90px;
-   left:20px;
-   color:white;
-   font-weight:bold;
-   }
+   .card-dec {
+    position: absolute;
+    top: 0;
+    transform: translate(18px, 150px);
+    /* left: 20px; */
+    color: white;
+    font-weight: bold;
+}
    .card-icon{
    display:flex;
    gap:10px;
@@ -662,6 +663,17 @@ section.show-section {
 .card-1 h3 {
     font-size: 23px;
 }
+.dec-title p{
+   font-size:14px;
+}
+.card-dec {
+    position: absolute;
+    top: 0;
+    transform: translate(18px, 103px);
+    /* left: 20px; */
+    color: white;
+    font-weight: bold;
+}
 
 #services p {
     font-size: 16px;
@@ -691,7 +703,10 @@ section.show-section {
     flex-wrap: wrap;
     gap:20px;
     justify-content:center;
-    
+}
+.card-dec {
+    transform: translate(18px, 41px);
+   
 }
 .our-team h2 {
     font-size: 30px;
@@ -728,10 +743,8 @@ section.show-section {
 .team {
     padding-top: 30px;
     padding-bottom: 30px;
-
 }
-
-   }
+}
 @media only screen and (max-width:425px) { 
    #listings{
       padding-top:35px;
@@ -764,6 +777,7 @@ section.show-section {
 }
 .image-slider {
     padding: 30px 0;
+    padding-bottom:0 !important;
 }
 .team-inner{
    grid-template-columns:1fr;
