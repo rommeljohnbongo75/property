@@ -12,10 +12,11 @@
     z-index:999;
   }
   .navbar-dark .navbar-nav .nav-link {
-    color:black !important;
+    color:black!important;
     font-family:var(--font-family) !important;
     font-size:16px;
     font-weight:bold;
+    z-index:999;
     transition:all 0.2s linear;
 }
 
@@ -23,14 +24,20 @@
   color: #e5974f !important;
 }
 nav.navbar {
-    background-color: #ffff;
+    background-color:transparent;
+    width: 100%;
+    opacity: 1;
+
+}
+.active-header {
+    background-color: #ffff !important;
     width: 100%;
     opacity: 1;
     border-bottom: 1px solid rgba(153, 153, 153, 0.22);
     box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
 }
 .navbar {
-    padding: 13px!important;
+    padding:0 10px!important;
 }
 .navbar-dark .navbar-brand span {
     color: #e5974f;
@@ -69,9 +76,9 @@ input[type="text"] {
 .logo-text{
   gap:6px;
 }
-.active {
+/* .active {
   background-color: rgba(34,34,34,0.8);
-}
+} */
 .container-form {
   width:350px;
 }

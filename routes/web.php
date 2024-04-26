@@ -56,6 +56,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
     Route::get('/admin/login', 'adminLogin')->name('admin.login');
     Route::post('/admin/login/post', 'adminLoginPost')->name('admin.login.post');
+    Route::post('/admin/login/post', 'listingslocation')->name('admin.login.post');
 });
 
 

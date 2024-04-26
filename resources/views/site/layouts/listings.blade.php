@@ -18,6 +18,7 @@
     .map-section {
         display: flex;
         gap: 60px;
+        padding-top:40px;
     }
 
     .property {
@@ -68,6 +69,75 @@
     background-color: white;
     border-radius: 8px;
 }
+.checkbox-dropdown {
+    border: 1px solid #dee2e6;
+    padding: .375rem 2.25rem .375rem .75rem;
+    position: relative;
+    margin: 0 auto;
+    user-select: none;
+    border-radius: 0.375rem;
+}
+
+/* Display CSS arrow to the right of the dropdown text */
+.checkbox-dropdown:after {
+    content:'';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 6px solid transparent;
+    border-top-color: #000;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+}
+
+/* Reverse the CSS arrow when the dropdown is active */
+.checkbox-dropdown.is-active:after {
+    border-bottom-color: #000;
+    border-top-color: #fff;
+    margin-top: -9px;
+}
+
+.checkbox-dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 9999;
+    border: inherit;
+    border-top: none;
+    left: -1px;
+    right: -1px;
+    opacity: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    height:unset !important;
+    overflow-x: hidden;
+    pointer-events: none;
+}
+.is-active .checkbox-dropdown-list {
+    opacity: 1; /* display the dropdown */
+    background-color:white;
+    z-index:999;
+    pointer-events: auto; /* make sure that the user still can select checkboxes */
+}
+.checkbox-dropdown-list input[type="checkbox"] {
+    margin-right:5px;
+}
+
+.checkbox-dropdown-list li label {
+    display: block;
+    /* border-bottom: 1px solid silver; */
+    padding:0 10px;
+   
+    transition: all 0.2s ease-out;
+}
+
+.checkbox-dropdown-list li label:hover {
+    background-color: #fff;
+    color: #000;
+}
+
 .property-box a:hover {
         text-decoration: none;
     }
@@ -80,11 +150,71 @@
 .property-inner a img:hover{
     transform:scale(1.2);
 }
-
-    .property-dec span {
+.property-dec span {
     font-size: 16px;
     color: #8E8E93;
-    
+}
+.search-bar-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 0.3fr;
+    gap:20px;
+}
+.arrive-data{
+    align-items:center;
+}
+
+.arrive-data .form-control[readonly] {
+    background-color: #fff;
+    opacity: 1;
+}
+.adult-data-inner{
+    display:flex !important;
+    gap:30px;
+}
+.arrive-data input[type="text"]{
+    border-left:0;
+}
+.arrive-data i {
+    border: 1px solid #d5dbdb;
+    padding: 9.8px;
+    border-radius: 0.375rem;
+    border-right: 0;
+    margin-right: -6px;
+}
+.arrive-search i {
+    font-size:20px;
+    background-color: #e5974f;
+    text-align: center;
+    color: white;
+    padding:10px;
+}
+.adult-data{
+    align-items:center;
+}
+.adult-data i {
+    border: 1px solid #d5dbdb;
+    padding: 9.8px;
+    border-radius: 0.375rem;
+    border-right: 0;
+    margin-right: -6px;
+}
+.search-location{
+    align-items:center;
+}
+.search-location i {
+    border: 1px solid #d5dbdb;
+    padding: 9.8px;
+    border-radius: 0.375rem;
+    border-right: 0;
+    margin-right: -6px;
+}
+.search-location .form-select {
+    border-left:0;
+    border-radius:0.375rem;
+}
+.adult-data .form-select {
+    border-left:0;
+    border-radius:0.375rem;
 }
 .property-dec p {
         font-size: 16px;
@@ -211,7 +341,6 @@
     .property-inner{
         display:block;
     }
-
     .agent-widget-inner {
     margin: 40px 0;
 }
@@ -228,6 +357,9 @@
     font-size: 16px;
     font-style: italic;
 }
+.search-bar-inner{
+    grid-template-columns:1fr;
+}
 .navbar {
   padding:unset !important;
 }
@@ -235,7 +367,7 @@
 </style>
 @section('content')
     <!-- Breadcrumb -->
-    <section id="bc" class="mt-3">
+    <!-- <section id="bc" class="mt-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -246,10 +378,123 @@
                 </ol>
             </nav>
         </div>
-    </section>
-    <!-- Listings -->
-    <section id="listings" class=" px-4">
-        <div class="conatiner">
+    </section> -->
+<!-- search-bar-start -->
+
+    <!--Listings-start-->
+  
+ <section id="listings" class=" px-4">
+ <div class="container">
+        <div class="search-bar-inner">
+            <div class="search-location d-flex">
+                <label class="visually-hidden" for="specificSizeSelect"></label>
+                <i class="fa-solid fa-location-dot"></i>
+                <select class="form-select" id="specificSizeSelect">
+                 <option selected>Jerusalem</option>
+                    <option value="Jerusalem">Geula</option>
+                    <option value="Jerusalem">New York</option>
+                    <option value="Jerusalem">Shalem Tower</option>
+                </select>
+            </div>
+            <div class="adult-data d-flex">
+                 <label class="visually-hidden" for="specificSizeSelect"></label>
+                 <i class="fa-regular fa-user"></i>
+                <select class="form-select" id="specificSizeSelect">
+                
+                    <option selected>1 Adult | 0 Children | 0infant | 0 Room | 0 Bed</option>
+                    <option value="Jerusalem" class="adult-data-inner">
+                        <div class="">
+                            <h3>1 Adults</h3>
+                        </div>
+                        <div class="d-flex plus-text">
+                            <h4>-</h4>
+                            <h5>+</h5>
+                        </div>
+                    </option>
+                    <option value="Jerusalem" class="adult-data-inner">
+                        <div class="">
+                            <h3>1 Adults</h3>
+                        </div>
+                        <div class="d-flex plus-text">
+                            <h4>-</h4>
+                            <h5>+</h5>
+                        </div> 
+                    </option>
+                    <option value="Jerusalem" class="adult-data-inner">
+                        <div class="">
+                            <h3>1 Adults</h3>
+                        </div>
+                        <div class="d-flex plus-text">
+                            <h4>-</h4>
+                            <h5>+</h5>
+                        </div>
+                    </option>
+                </select>
+            </div>
+            <div class="arrive-data d-flex">
+            <i class="fa-regular fa-calendar"></i><input type="text" name="checkin_filter" id="checkin_filter" autocomplete="off" value="" readonly="" class="form-control" placeholder="Arrive - Depart">
+            </div>
+            <div class=" Amenities-data">
+            <div class="checkbox-dropdown">
+                <i class="fa-solid fa-bath"></i>
+            Amenities
+  <ul class="checkbox-dropdown-list">
+    <li>
+      <label>
+        <input type="checkbox" value="Vejle" name="city" />Air Conditioning</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Horsens" name="city" />Barbecue Area</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" />Beis Medrash</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> City View</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> Coffee Machine</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> Dishwasher</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> Elevator</label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> Elevator for Shabbos</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> Garden
+</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" /> Laundry</label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" />Microwave</label>
+    </li>
+    
+  </ul>
+</div>
+            </div>
+            <div class="arrive-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+</div>
         <div class="map-section">
             <div class="property">
                 <!-- Property 1 -->

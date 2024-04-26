@@ -625,6 +625,9 @@ body.msb-x {
 }
 }
 
+.pop-up.active {
+    display: none !important;
+}
 
 </style>
 
@@ -639,7 +642,7 @@ body.msb-x {
           
 				<div class="brand-wrapper">
         <div style="bar-reserv">
-         <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+         <a href="#" id="msbo" class="pop-up"><i class="ic fa fa-bars"></i></a>
       </div>
 					<!-- Brand -->
 					<div class="brand-name-wrapper d-flex justify-content-between align-items-center">
@@ -657,7 +660,7 @@ body.msb-x {
 	<div class="side-menu-container">
         <div class="nav navbar-nav-one ">
         <div style="bar-reserv">
-         <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+         <a href="#" id="msbo" class="pop-up"><i class="ic fa fa-bars"></i></a>
       </div>
 		<div class="nav-inner d-flex">
 				 <div class="nav-img">

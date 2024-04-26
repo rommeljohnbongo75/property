@@ -262,8 +262,11 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
 .about-host-inner ul li{
    list-style:none;
 }
-
-.tab{
+.tab-scroll{
+   background-color:white;
+   width:100%;
+}
+/* .tab{
    padding-bottom:30px;
     padding-top: 0px;
     padding-bottom: 1px;
@@ -272,6 +275,9 @@ input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, 
     top: 0px;
     position: fixed;
     width: 356px;
+} */
+.adults-children{
+   display:blo
 }
 .author-name{
    padding:30px;
@@ -774,7 +780,7 @@ input[type="text"] {
             </div>
          </div>
          <!-- Description -->
-         <section class="property">
+         <section class="property" id="Property Description">
             <div class="property-title">
             <h3>Property Description</h3>
              <div class="row mb-5">
@@ -790,7 +796,7 @@ input[type="text"] {
             <h3 class="">Property Location</h3>
             <div id="map"></div>
          </div>
-         <div class="date">
+         <div class="date" id="Dates & Reservations">
          <h3>Dates & Reservations</h3>
          <div class="calendar-main ">
             <div class="calendar" id="calendar-calendar"></div>

@@ -567,6 +567,9 @@ body {
     padding: 10px;
     border-radius: 6px;
 }
+.page-wrapper {
+    height: 100%;
+}
 .contact-button {
    gap:30px;
    padding:30px 0;

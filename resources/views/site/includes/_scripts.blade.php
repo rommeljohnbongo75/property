@@ -3,7 +3,7 @@
 <script src="{{ asset('assets/datepicker/locales/bootstrap-datepicker.de.min.js' ) }}"></script> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
@@ -62,11 +62,29 @@
 }());
     $(window).scroll(function() {
         if ($(document).scrollTop() > 100) {
-        $("nav.navbar").addClass("");
+        $("nav.navbar").addClass("active-header");
         } else {
-        $("nav.navbar").removeClass("position-absolute");
+
+        // $("nav.navbar").removeClass("position-absolute");
+        $("nav.navbar").removeClass("active-header");
         }
     });
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 200) {
+            
+        $("option-tab").addClass(".tab-scroll");
+        } else {
+        // $("nav.navbar").removeClass("position-absolute");
+        $("option-tab").removeClass(".tab-scroll");
+        }
+    });
+    $(".checkbox-dropdown").click(function () {
+    $(this).toggleClass("is-active");
+});
+
+$(".checkbox-dropdown ul").click(function(e) {
+    e.stopPropagation();
+});
 
     $('.multiple-items').slick({
         infinite: true,
@@ -222,10 +240,39 @@
         minDate: moment()
     });
 
+    var datess = [];
+    $(document).ready(function() {
+        $("#cal1").daterangepicker();
+        
+        $("#cal1").daterangepicker({
+                minDate: moment()
+            });
+
+        $("#cal1").on('apply.daterangepicker', function(e, picker) {
+            e.preventDefault();
+            const obj = {
+            "key": datess.length + 1,
+            "start": picker.startDate.format('MM/DD/YYYY'),
+            "end": picker.endDate.format('MM/DD/YYYY')
+            }
+            datess.push(obj);
+            showDates();
+        })
+        
+        $(".remove").on('click', function() {
+            removeDate($(this).attr('key'));
+        })
+    })
+
+    $("#cal1").daterangepicker({
+        minDate: moment()
+    });
+
     function showDates() {
         $.each(dates, function() {
             const start = this.start;
             const currentValue = $("#ranges").val(); 
+                console.log('currentValue',currentValue);
             const appendedValue = this.start; 
             const end   = this.end;
             $("#ranges").val(appendedValue); 
@@ -241,7 +288,11 @@
 
     $('.adults-children').hide();
     $('#sec-menu').click(function() {
-        console.log("asdjhfvsdhjfvdhsj");
+        $('.adults-children').toggleClass("active");
+        $('.children-children').toggleClass("active");
+    });
+
+    $('#sec-menu1').click(function() {
         $('.adults-children').toggleClass("active");
         $('.children-children').toggleClass("active");
     });

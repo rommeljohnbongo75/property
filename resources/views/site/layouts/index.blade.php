@@ -187,6 +187,9 @@
    .card-body-inner a{
       background-color:#FFA920;
    }
+   .card-body-inner a:hover{
+      background-color:#FFA920!important;
+   }
    .check-icon i{
    font-size:30px;
    color:#FFA920;
@@ -442,11 +445,11 @@
     color: white;
     font-weight: bold;
 }
-   .card-icon{
-   display:flex;
+   /* .card-icon{
+   display:flex; */
    gap:10px;
-   align-items:center;
-   }
+   /* align-items:center;
+   } */
    .icon{
    display:flex;
    align-items:center;
@@ -937,14 +940,14 @@ section.show-section {
 
             </div>
          </div>
-         <!-- <div class="container-form">
+         <div class="container-form">
             <h1>Booking Request Deatils</h1>
             <form>
                <div class="serach-group">
                   <div class="form-icon">
                      <i class="fa-regular fa-calendar-days" ></i>
                   </div>
-                  <div class="date-pixel" id="cal">
+                  <div class="date-pixel" id="cal1">
                      <div class="form-group">  
                         <input type="text"  id='ranges' name="checkin" value="Check In" placeholder="Location">
                      </div>
@@ -954,7 +957,7 @@ section.show-section {
                   </div>
                </div>
 
-               <div class="form-group-one d-flex align-items-center" id="sec-menu">
+               <div class="form-group-one d-flex align-items-center" id="sec-menu1">
                   <div class="guest-icon">
                      <i class="fa-regular fa-user"></i>
                   </div>
@@ -968,21 +971,31 @@ section.show-section {
 
                <div class="adults-children sec-menu-div" >
                   <div class="form-group">
-                     <label for="adults">Adults:</label>
-                     <div class="counter">
-                        <span class="adults-minus">-</span>
-                        <input type="text" id="adults" name="adults" value="1" readonly>
-                        <span class="adults-plus">+</span>
+                   <div class="counter d-flex justify-content-center" id="counter">
+                     <div class="form-date">
+                        <h4>Adults Capacity</h4>
+                        <p>Total guests capacity</p>
                      </div>
+                     <div class="counter-add-data text-center">
+                     <span class="adults-minus">-</span>
+                     <input type="text" id="adults" name="adults" value="1" readonly>
+                     <span class="adults-plus">+</span>
+                     </div>
+                  </div>
                   </div>
                   
                   <div class="form-group">
-                     <label for="children">Children:</label>
-                     <div class="counter">
-                        <span class="minus">-</span>
-                        <input type="text" class="children"  id="children" name="children" value="1" readonly>
-                        <span class="plus">+</span>
-                     </div>
+                  <div class="counter d-flex justify-content-center" id="counter">
+                                    <div class="form-date">
+                                       <h4>Children Capacity</h4>
+                                       <p>Total bedrooms capacity</p>
+                                    </div>
+                                    <div class="counter-add-data text-center">
+                                    <span class="adults-minus">-</span>
+                                    <input type="text" id="adults" name="adults" value="1" readonly>
+                                    <span class="adults-plus">+</span>
+                                    </div>
+                                 </div>
                   </div>
                </div>
 
@@ -990,7 +1003,8 @@ section.show-section {
                   <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
                </div>
             </form>
-         </div> -->
+         </div>
+      </div>
       </div>
    </div>
 </section>
@@ -1009,7 +1023,6 @@ section.show-section {
          <div class="responsive">
          <div class="px-2 mb-4">
             <div class="card listing-preview">
-               <a href="{{ route('single.listing', $listing->id) }}">
                   <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
                   <div class="card-img-overlay">
                      <!-- <h2>
@@ -1025,15 +1038,16 @@ section.show-section {
                         </p>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
                         <div class="card-icon">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
+                     
                      </div>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon-one">
                            <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
                         </div>
@@ -1042,7 +1056,7 @@ section.show-section {
                         </div>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
@@ -1056,12 +1070,10 @@ section.show-section {
                      <hr>
                <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
                </div>
-               </a>
             </div>
          </div>
          <div class="px-2 mb-4">
             <div class="card listing-preview">
-               <a href="{{ route('single.listing', $listing->id) }}">
                   <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
                   <div class="card-img-overlay">
                      <!-- <h2>
@@ -1077,15 +1089,16 @@ section.show-section {
                         </p>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
                         <div class="card-icon">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
+                     
                      </div>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon-one">
                            <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
                         </div>
@@ -1094,7 +1107,7 @@ section.show-section {
                         </div>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
@@ -1108,12 +1121,10 @@ section.show-section {
                      <hr>
                <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
                </div>
-               </a>
             </div>
          </div>
          <div class="px-2 mb-4">
             <div class="card listing-preview">
-               <a href="{{ route('single.listing', $listing->id) }}">
                   <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
                   <div class="card-img-overlay">
                      <!-- <h2>
@@ -1129,15 +1140,16 @@ section.show-section {
                         </p>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
                         <div class="card-icon">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
+                     
                      </div>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon-one">
                            <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
                         </div>
@@ -1146,7 +1158,7 @@ section.show-section {
                         </div>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
@@ -1160,12 +1172,10 @@ section.show-section {
                      <hr>
                <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
                </div>
-               </a>
             </div>
          </div>
          <div class="px-2 mb-4">
             <div class="card listing-preview">
-               <a href="{{ route('single.listing', $listing->id) }}">
                   <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
                   <div class="card-img-overlay">
                      <!-- <h2>
@@ -1212,12 +1222,10 @@ section.show-section {
                      <hr>
                <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
                </div>
-               </a>
             </div>
          </div>
          <div class="px-2 mb-4">
             <div class="card listing-preview">
-               <a href="{{ route('single.listing', $listing->id) }}">
                   <img  class="card-img-top" src="{{ url($listing -> thumbnail_0) }}" alt="">
                   <div class="card-img-overlay">
                      <!-- <h2>
@@ -1264,7 +1272,6 @@ section.show-section {
                      <hr>
                <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4" >Deatils</a>
                </div>
-               </a>
             </div>
          </div>
      
@@ -1294,7 +1301,7 @@ section.show-section {
                   <div class="dec-title">
                      <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
                   </div>
-                  <div class="card-icon">
+                  <div class="card-icon-one">
                      <div class="icon">
                         <i class="fa-solid fa-bed"></i>
                         <h5>6</h5>

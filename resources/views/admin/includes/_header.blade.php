@@ -2,6 +2,9 @@
     div#navbarSupportedContent {
         background-color: #333333;
     }
+    .active{
+      background-color:unset !important;
+    }
     li.nav-item.search-box img {
         margin-left: 25px;
     }

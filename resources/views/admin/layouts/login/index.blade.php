@@ -32,13 +32,14 @@ label{
     background-position: center;
     background-size: cover;
     height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
   }
   .login-admin-inner{
     box-shadow: #00000024 2px 7px 20px 0px !important;
     border-radius: 20px;
     background-image: linear-gradient(180deg, white 60%, #ffffff00);
-  
-
 }
 .login-admin-inner h3{
   font-size:30px;
@@ -49,7 +50,6 @@ label{
   font-size:30px;
   font-weight:bold;
 }
-
 .login-admin-btn{
   border-radius:50px;
   background-color:#FFA920;
@@ -58,9 +58,7 @@ label{
     .error {
         color: red;
     }
-    .active{
-      background-color:white;
-    }
+   
 @media only screen and (max-width:768px) {
   .Login-admin {
     display: flex !important;
@@ -81,7 +79,7 @@ label{
 <div class=" py-3 py-md-5">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-12 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+      <div class="col-12 col-md-7 col-lg-6 col-xl-7 col-xxl-6">
         <div class=" p-4 p-md-5 rounded login-admin-inner">
           <div class="row">
             <div class="col-12">

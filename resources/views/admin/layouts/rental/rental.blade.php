@@ -21,6 +21,9 @@
   .rental-inner img{
     width:100%;
   }
+  .page-wrapper {
+    height: 100%;
+}
   .rental-inner{
     box-shadow: 0px 15px 30px rgba(0,0,0,0.10);
     padding:10px 0;

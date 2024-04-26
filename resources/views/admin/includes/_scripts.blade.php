@@ -102,6 +102,11 @@
    jQuery('li.nav-item.search-box.three-line').click(function(){
       jQuery('.left-sidebar').toggle();
    });
+
+   jQuery('#msbo').click(function() {
+        console.log('asdasdasd');
+        jQuery('.msbo').toggleClass("active");
+    });
    
    jQuery('.dropdown-toggle').click(function(){
       jQuery('.dropdown-menu').toggle();
