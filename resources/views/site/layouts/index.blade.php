@@ -38,6 +38,9 @@
     background-color:#FFA920 !important;
     /* border: 1px solid transparent; */
 }
+.container-form {
+  width:400px;
+}
 .container-form .sec-menu-div{
    padding:20px 0;
 }
@@ -226,12 +229,12 @@
    display:flex;
    align-items:center;
    }
-   .card-icon-one{
-      color:black;
-   }
    .card-icon .icon{
       color:white;
+      display:flex;
+      gap:5px;
    }
+ 
    span.ed {
    margin-right: 91px;
    }
@@ -361,6 +364,8 @@
    .card-icon{
       font-family:var(--font-family);
       color:black;
+      display:flex;
+      gap:30px;
    }
    .home-search.p-5 h4 {
    color: #000;
@@ -411,7 +416,7 @@
    top: 0;
    border: none;
    top: 30%;
-   left: 40%;
+   left: 38%;
    }
    .guest-icon i{
       font-size:22px;
@@ -431,6 +436,7 @@
    }
    .container-form h1{
    font-size:35px;
+   text-align:center;
    }
    .card-price{
    display:flex;
@@ -569,6 +575,7 @@
 }
    .date-pixel{
    display: flex;
+   text-align:center;
    }
    .children-children{
     display: none;
@@ -1039,10 +1046,10 @@ section.show-section {
                      </div>
                      <hr>
                      <div class="d-flex py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
                      
@@ -1090,10 +1097,10 @@ section.show-section {
                      </div>
                      <hr>
                      <div class="d-flex py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
                      
@@ -1108,10 +1115,10 @@ section.show-section {
                      </div>
                      <hr>
                      <div class="d-flex py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
                         </div>
                      </div>
@@ -1141,10 +1148,10 @@ section.show-section {
                      </div>
                      <hr>
                      <div class="d-flex py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
                      
@@ -1159,10 +1166,10 @@ section.show-section {
                      </div>
                      <hr>
                      <div class="d-flex py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
                         </div>
                      </div>
@@ -1191,15 +1198,16 @@ section.show-section {
                         </p>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
+                     
                      </div>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon-one">
                            <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
                         </div>
@@ -1208,11 +1216,11 @@ section.show-section {
                         </div>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
                         </div>
                      </div>
@@ -1241,15 +1249,16 @@ section.show-section {
                         </p>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
                            <i class="fas fa-th-large"></i> Sqft: 2500
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-car"></i> Garage: {{ $listing -> garage }}
                         </div>
+                     
                      </div>
-                     <div class="row py-2 text-secondary justify-content-between">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
                         <div class="card-icon-one">
                            <i class="fas fa-bed"></i> Bedrooms: {{ $listing -> bedroom }}
                         </div>
@@ -1258,11 +1267,11 @@ section.show-section {
                         </div>
                      </div>
                      <hr>
-                     <div class="row py-2 text-secondary justify-content-between">
-                        <div class="card-icon">
+                     <div class="d-flex py-2 text-secondary justify-content-between">
+                        <div class="card-icon-one">
                            <i class="fas fa-user"></i> {{ $listing -> realtor-> name }}
                         </div>
-                        <div class="card-icon">
+                        <div class="card-icon-one">
                            <i class="fas fa-clock"></i> {{ $listing -> created_at->diffForHumans() }} 
                         </div>
                      </div>
@@ -1287,37 +1296,9 @@ section.show-section {
 <section class="image-slider">
    <div class="container">
       <div class="featured-properties">
-         <h3>Featured Property</h3>
+         <h3>Featured Locations</h3>
       </div>
       <div class="multiple-items">
-         <div class="image-slider-inner">
-            <div class="image-card">
-               <img src="{{asset('assets/img/showcase.jpg' )}}">
-               <div class="card-dec">
-                  <div class="card-price">
-                     <h4>From:</h4>
-                     <span>$550.00/night</span>
-                  </div>
-                  <div class="dec-title">
-                     <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                  </div>
-                  <div class="card-icon-one">
-                     <div class="icon">
-                        <i class="fa-solid fa-bed"></i>
-                        <h5>6</h5>
-                     </div>
-                     <div class="icon">
-                        <i class="fa-solid fa-shower"></i>
-                        <h5>2.5</h5>
-                     </div>
-                     <div class="icon">
-                        <i class="fa-solid fa-user"></i>
-                        <h5>5</h5>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
          <div class="image-slider-inner">
             <div class="image-card">
                <img src="{{asset('assets/img/showcase.jpg' )}}">
@@ -1348,7 +1329,35 @@ section.show-section {
          </div>
          <div class="image-slider-inner">
             <div class="image-card">
-               <img src="{{asset('assets/img/showcase.jpg' )}}">
+               <img src="{{ asset('assets/img/homes/home-3.jpg' ) }}">
+               <div class="card-dec">
+                  <div class="card-price">
+                     <h4>From:</h4>
+                     <span>$550.00/night</span>
+                  </div>
+                  <div class="dec-title">
+                     <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
+                  </div>
+                  <div class="card-icon">
+                     <div class="icon">
+                        <i class="fa-solid fa-bed"></i>
+                        <h5>6</h5>
+                     </div>
+                     <div class="icon">
+                        <i class="fa-solid fa-shower"></i>
+                        <h5>2.5</h5>
+                     </div>
+                     <div class="icon">
+                        <i class="fa-solid fa-user"></i>
+                        <h5>5</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="image-slider-inner">
+            <div class="image-card">
+               <img src="{{ url($listing -> thumbnail_0) }}">
                <div class="card-dec">
                   <div class="card-price">
                      <h4>From:</h4>

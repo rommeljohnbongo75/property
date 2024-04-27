@@ -79,9 +79,7 @@ input[type="text"] {
 /* .active {
   background-color: rgba(34,34,34,0.8);
 } */
-.container-form {
-  width:350px;
-}
+
 .container-form h1 {
     font-size: 26px;
 }

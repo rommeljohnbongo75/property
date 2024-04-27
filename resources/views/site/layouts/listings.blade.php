@@ -3,18 +3,18 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
     :root{
-   --font-family: "DM Sans", sans-serif;
-  }
-  body{
-   h1,h2,h3,h4,h5,h6,span,p, label{
-      font-family:var(--font-family);
-   }
- 
-  }
-  image{
-    max-width:100%;
-    height:auto;
-  }
+    --font-family: "DM Sans", sans-serif;
+    }
+    body{
+    h1,h2,h3,h4,h5,h6,span,p, label{
+        font-family:var(--font-family);
+    }
+    
+    }
+    image{
+        max-width:100%;
+        height:auto;
+    }
     .map-section {
         display: flex;
         gap: 60px;
@@ -306,6 +306,34 @@
         border:none;
         padding:10px 15px;
      }
+/* ------------ocation-listings-start--------------*/
+     .location-filter{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:20px;
+     }
+     .filter-location-dec h4{
+        font-size:20px;
+     }
+     .location-filter-detials a{
+        background-color:#FFA920;
+     }
+     .location-filter-detials a:hover{
+        background-color:#FFA920;
+        border:none;
+     }
+     .filter-icon {
+        display:flex;
+        gap:6px;
+        align-items:center;
+     }
+     .filter-icon i{
+      color:black;
+     
+   }
+/* ------------ocation-listings-end--------------*/
+
+/*------------media-queary-start------------------*/
     @media only screen and (max-width:1024px){
         .map-section {
        display:block;
@@ -363,27 +391,17 @@
 .navbar {
   padding:unset !important;
 }
+.arrive-search{
+      font-size: 20px;
+        background-color: #e5974f;
+        text-align: center;
+        color: white;
+  
+    }
     }
 </style>
 @section('content')
-    <!-- Breadcrumb -->
-    <!-- <section id="bc" class="mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{% url 'listing:home' %}">
-                            <i class="fas fa-home"></i> Home</a>
-                    </li>
-                    <li class="breadcrumb-item active">Featured Properties</li>
-                </ol>
-            </nav>
-        </div>
-    </section> -->
-<!-- search-bar-start -->
-
-    <!--Listings-start-->
-  
- <section id="listings" class=" px-4">
+<section id="listings" >
  <div class="container">
         <div class="search-bar-inner">
             <div class="search-location d-flex">
@@ -479,7 +497,7 @@
     </li>
     <li>
       <label>
-        <input type="checkbox" value="Kolding" name="city" /> Laundry</label>
+        <input type="checkbox" value="Kolding" name="city" />Laundry</label>
     </li>
 
     <li>
@@ -526,6 +544,8 @@
                     <!-- <h3>Location</h3> -->
                 </div>
                <div id="map_canvas"></div>
+
+            <!-- listings-location-end -->
             <!-- <div class="agent-widget-inner">
                 <div class="agent-widget">
                     <div class="agent-image">

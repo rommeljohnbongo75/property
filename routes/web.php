@@ -47,6 +47,9 @@ Route::get('/rental', [ContactController::class, 'rental'])->name('rental');
 Route::get('/rental-form', [ContactController::class, 'rentalform'])->name('rental-form');
 Route::get('/photos-form', [ContactController::class, 'photosform'])->name('photos-form');
 
+Route::get('/photos-form', [ContactController::class, 'photosform'])->name('photos-form');
+Route::get('/listings-location', [ContactController::class, 'listingLocation'])->name('listings.location');
+
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
@@ -56,7 +59,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
     Route::get('/admin/login', 'adminLogin')->name('admin.login');
     Route::post('/admin/login/post', 'adminLoginPost')->name('admin.login.post');
-    Route::post('/admin/login/post', 'listingslocation')->name('admin.login.post');
 });
 
 

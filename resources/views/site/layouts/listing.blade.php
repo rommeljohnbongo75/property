@@ -617,7 +617,7 @@ input[type="text"] {
     <div><img src="{{ asset('assets/img/homes/home-3.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
     <div><img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>
-    <div><img src="{{ url($listing -> thumbnail_0) }}" alt="" class="img-main img-fluid mb-3"></div>
+    <div><img src="card-dec" alt="" class="img-main img-fluid mb-3"></div>
   </div>
   <div class="slider slider-nav">
     <div class="slick-tab"> <img src="{{ asset('assets/img/homes/home-1.jpg' ) }}" alt="" class="img-main img-fluid mb-3"></div>

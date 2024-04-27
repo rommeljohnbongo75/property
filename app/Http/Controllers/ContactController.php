@@ -117,4 +117,9 @@ class ContactController extends Controller
         return view('admin.layouts.rental.rentalform');
     }
 
+    public function listingLocation(){
+
+        return view('site.layouts.listings-location');
+    }
+
 }
