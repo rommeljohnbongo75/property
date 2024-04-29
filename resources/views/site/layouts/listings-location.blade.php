@@ -161,9 +161,13 @@
     align-items:center;
     border: 1px solid #d5dbdb;
     border-radius: 0.375rem;
+    position: relative;
+}
+.adult-data:hover.adult-data ul{
+  visibility:visible;
 }
 .adult-data i {
-    border: 1px solid #d5dbdb;
+    /* border: 1px solid #d5dbdb; */
     padding: 9.8px;
     border-radius: 0.375rem;
     border-right: 0;
@@ -201,6 +205,11 @@
     padding: 5px 15px 0 0;
     cursor:pointer;
 }
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
     .option-option {
     display: inline-flex;
     background-color: #f7f7f7;
@@ -217,12 +226,14 @@
     .adult-data ul {
     top: 105%;
     width: 100%;
-    margin:0;
-    padding:10px 0;
+    margin: 0;
+    padding: 10px 0;
     left: -3px;
     z-index: 9999;
     background-color: white;
-    border:1px solid #d5dbdb;
+    border: 1px solid #d5dbdb;
+    visibility: hidden;
+    transition: all .15s ease-in-out;
 }
     .adult-data ul li{
       list-style:none;

@@ -84,9 +84,7 @@ input[type="text"] {
     font-size: 26px;
 }
 @media only screen and (max-width: 1024px) {
-.container-form {
- left: 36%;
-}
+
 }
 @media only screen and (max-width: 768px) {
 #listings {
@@ -143,8 +141,8 @@ input[type="text"] {
 }
 .container-form {
     left: 10%;
-    width: 312px!important;
-    top: 27%;
+    width: 288px!important;
+    top: 20%;
 }
 .container-form h1 {
     font-size: 20px !important;

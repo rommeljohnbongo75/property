@@ -543,8 +543,8 @@
    }
    input.adults-adults, input.children-children {
    border: none;
+}
 
-   }
    input.adults-adults:focus-visible, input#ranges:focus-visible, input#rangesend, input.children-children {
    border: none; 
    outline: none; 
@@ -743,7 +743,9 @@ section.show-section {
     color: white;
     font-weight: bold;
 }
-
+.container-form {
+   left:30%;
+}
 #services p {
     font-size: 16px;
 }
@@ -806,7 +808,7 @@ section.show-section {
    margin-bottom:60px;
 }
 .container-form {
-    left: 31% !important;
+    left: 21% !important;
     top:27%;
 }
 .team {
@@ -828,7 +830,7 @@ section.show-section {
 .container-form {
     padding: 20px 15px;
     top: 30%;
-    left: 9% !important;
+    left: 7% !important;
      width: 331px;
 }
 .services-card {
