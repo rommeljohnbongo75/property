@@ -28,7 +28,7 @@
     footer#main-footer {
         /* margin-top: 40px; */
         background-color:black;
-        padding:0 30px;
+        padding:0 90px;
     }
     #services .icon1 i{
         color: #FFA920;
@@ -48,6 +48,39 @@
 }
 #services .icon1{
     transition:all 0.2s linear;
+}
+.footer-media{
+    align-items:center;
+    padding:0 15px;
+    gap:20px;
+    margin:20px 0;
+}
+.footer-media ul li i{
+    font-size:25px;
+    padding:0 10px;
+    transition:all 0.2s linear;
+}
+.footer-media ul li i:hover{
+    color:white;
+}
+.footer-media ul{
+    padding:0;
+}
+.footer-media li {
+    list-style:none;
+}
+#services .footer-media h4{
+    font-size:16px;
+}
+.footer-logo{
+    align-items:center;
+    border-bottom:1px solid #9aa4af;
+    padding-bottom:20px;
+}
+.footer-logo img{
+    width: 100%;
+    max-width:110px;
+    
 }
 .icon1 a:hover{
     color:white;
@@ -73,6 +106,7 @@
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
+        padding-top:40px;
     }
  
     @media only screen and (max-width: 768px) {
@@ -94,30 +128,44 @@
 }
     }
 </style>
-<footer id="main-footer" class="py-4 text-white">
-        <section id="services" class="py-5  text-white">
-        
+<footer id="main-footer" class="text-white">
+        <section id="services" class="py-4  text-white">
+           <div class="col-xl-12 footer-logo d-flex justify-content-between">
+            <div class="">
+            <img src="{{ asset('assets/img/logo7.png' ) }}">
+            </div>
+            <div class="d-flex footer-media">
+            <h4>Follow Us</h4>
+                   <ul class="d-flex">
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                   </ul>
+            </div>
+           
+           </div>
                 <div class="footer-inner">
-                    <div class="col-md-6 col-lg-6 col-xl-2 ">
-                        <h4>Estate Rental</h4>
+                    <div class="col-md-6 col-lg-6 col-xl-3 ">
+                    
+                        <h4>Get In Touch</h4>
                         <p class="icon1"><a href="#"><i class="fa-regular fa-envelope"></i>Home2brental@gmail.com</a></p>
                         <p class="icon1"><a href=""><i class="fa-solid fa-phone"></i>(972) 53-368-3527</a></p>
                         <p class="icon1"><a href=""><i class="fa-solid fa-mobile-button"></i>(732) 503-3216</a></p>
                         
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
                         <h4></i>Popular Locations</h4>
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Jerusalem</a> </p> 
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Tzefas </a></p> 
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Teverya </a></p> 
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
                         <h4></i>Support</h4>
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Help Center</a> </p> 
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Cancellation Options</a></p> 
                         <p class="icon1"><a href="#"><i class="fa-solid fa-angle-right"></i>Contact Us </a></p>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
                         <h4>Stay in Touch</h4>
                         <p>Subscribe to our newsletter to receive updates.</p>
                         <form action="#" method="post">
@@ -126,6 +174,7 @@
                         </form>
                     </div>
                 </div>
+               
         
         </section>
 </footer>
