@@ -7,6 +7,6 @@
     <link href="{{ asset('admin/libs/datatable/datatable.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/dist/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/dist/css/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" /> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     

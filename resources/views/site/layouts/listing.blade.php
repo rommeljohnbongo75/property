@@ -477,6 +477,10 @@ body{
 .cards{
    padding-top:unset !important;
 }
+.adults-children.sec-menu-div.active {
+    display: block !important;
+}
+
 @media only screen and (max-width: 768px) {
 .container-form-one {
     width:unset !important;

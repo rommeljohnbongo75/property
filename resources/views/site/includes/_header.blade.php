@@ -40,7 +40,7 @@ nav.navbar {
     padding:0 10px!important;
 }
 .navbar-dark .navbar-brand span {
-    color: #e5974f;
+    color: #000;
     font-size:30px;
     font-style:italic;
 }
@@ -155,6 +155,7 @@ input[type="text"] {
 }
 
 }
+
 </style>
   <header id="header">
   <!-- Navbar -->
@@ -162,9 +163,8 @@ input[type="text"] {
   <!-- <div class="position-absolute">  -->
   <div class="d-flex logo-text align-items-center">
          <!-- <img src="{{ asset('assets/img/residential.png' ) }}"> -->
-         <h4>E</h4>state
-         <h3>R</h3><span>ental</span>
-         <a class="navbar-brand" href="{{url('/')}}"></a>
+              <h4>E</h4>state
+              <h3>R</h3><span>ental</span>
          </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>

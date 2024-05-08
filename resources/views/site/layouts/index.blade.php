@@ -1302,34 +1302,37 @@ section.show-section {
       </div>
       <div class="multiple-items">
          <div class="image-slider-inner">
-            <div class="image-card">
-               <img src="{{asset('assets/img/showcase.jpg' )}}">
-               <div class="card-dec">
-                  <div class="card-price">
-                     <h4>From:</h4>
-                     <span>$550.00/night</span>
-                  </div>
-                  <div class="dec-title">
-                     <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                  </div>
-                  <div class="card-icon">
-                     <div class="icon">
-                        <i class="fa-solid fa-bed"></i>
-                        <h5>6</h5>
-                     </div>
-                     <div class="icon">
-                        <i class="fa-solid fa-shower"></i>
-                        <h5>2.5</h5>
-                     </div>
-                     <div class="icon">
-                        <i class="fa-solid fa-user"></i>
-                        <h5>5</h5>
-                     </div>
-                  </div>
-               </div>
-            </div>
+             <a href="{{route('listings.location')}}">
+                <div class="image-card">
+                   <img src="{{asset('assets/img/showcase.jpg' )}}">
+                   <div class="card-dec">
+                      <div class="card-price">
+                         <h4>From:</h4>
+                         <span>$550.00/night</span>
+                      </div>
+                      <div class="dec-title">
+                         <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
+                      </div>
+                      <div class="card-icon">
+                         <div class="icon">
+                            <i class="fa-solid fa-bed"></i>
+                            <h5>6</h5>
+                         </div>
+                         <div class="icon">
+                            <i class="fa-solid fa-shower"></i>
+                            <h5>2.5</h5>
+                         </div>
+                         <div class="icon">
+                            <i class="fa-solid fa-user"></i>
+                            <h5>5</h5>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </a>
          </div>
          <div class="image-slider-inner">
+            <a href="{{route('listings.location')}}">
             <div class="image-card">
                <img src="{{ asset('assets/img/homes/home-3.jpg' ) }}">
                <div class="card-dec">
@@ -1356,8 +1359,10 @@ section.show-section {
                   </div>
                </div>
             </div>
+            </a>
          </div>
          <div class="image-slider-inner">
+             <a href="{{route('listings.location')}}">
             <div class="image-card">
                <img src="{{ url($listing -> thumbnail_0) }}">
                <div class="card-dec">
@@ -1384,8 +1389,10 @@ section.show-section {
                   </div>
                </div>
             </div>
+            </a>
          </div>
          <div class="image-slider-inner">
+             <a href="{{route('listings.location')}}">
             <div class="image-card">
                <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
@@ -1412,8 +1419,10 @@ section.show-section {
                   </div>
                </div>
             </div>
+            </a>
          </div>
          <div class="image-slider-inner">
+             <a href="{{route('listings.location')}}">
             <div class="image-card">
                <img src="{{asset('assets/img/showcase.jpg' )}}">
                <div class="card-dec">
@@ -1440,6 +1449,7 @@ section.show-section {
                   </div>
                </div>
             </div>
+            </a>
          </div>
       </div>
    </div>
