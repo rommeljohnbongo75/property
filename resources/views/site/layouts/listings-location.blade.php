@@ -113,7 +113,9 @@
    
     transition: all 0.2s ease-out;
 }
-
+.checkbox-dropdown i{
+  padding-right:10px;
+}
 .checkbox-dropdown-list li label:hover {
     background-color: #fff;
     color: #000;

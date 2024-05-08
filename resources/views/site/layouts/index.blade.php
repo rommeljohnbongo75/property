@@ -815,6 +815,9 @@ section.show-section {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+.collapse:not(.show) {
+    display:block !important;
+}
 }
 @media only screen and (max-width:425px) { 
    #listings{

@@ -37,12 +37,17 @@ nav.navbar {
     box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
 }
 .navbar {
-    padding:0 10px!important;
+    padding: 5px 40px!important;
 }
 .navbar-dark .navbar-brand span {
     color: #000;
     font-size:30px;
     font-style:italic;
+}
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    padding: 20px 0;
 }
 .navbar-dark .navbar-brand{
   /* font-style:italic; */
@@ -53,7 +58,7 @@ nav.navbar {
 }
 .navbar img{
   width:100%;
-  max-width:70px;
+  max-width:90px;
 }
 input[type="text"] {
     width: 100%;
@@ -162,9 +167,11 @@ input[type="text"] {
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <!-- <div class="position-absolute">  -->
   <div class="d-flex logo-text align-items-center">
-         <!-- <img src="{{ asset('assets/img/residential.png' ) }}"> -->
-              <h4>E</h4>state
-              <h3>R</h3><span>ental</span>
+  <img src="{{ asset('assets/img/logo7.png' ) }}">
+  <a class="navbar-brand" href="{{url('/')}}"></a>
+         <!-- <h4>E</h4>state
+         <h3>R</h3><span>ental</span> -->
+        
          </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
