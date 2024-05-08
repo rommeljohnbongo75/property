@@ -25,7 +25,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All Property</h4>
-                                <a href="{{ route('listings.create') }}">Add Property</a>
+                                <a href="{{ route('listings.create') }}" class="btn btn-primary">Add Property</a>
                             </div>
                             <div class="table-responsive m-t-20">
                                 <table id="" class="table table-bordered table-responsive-lg">

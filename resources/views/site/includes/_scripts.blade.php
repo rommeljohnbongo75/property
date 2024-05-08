@@ -326,7 +326,7 @@ $(".checkbox-dropdown ul").click(function(e) {
             },
             multidate: true,
             updateViewDate: false
-        });
+        }).prop('readonly', true);
     });
 
     // keep month in sync

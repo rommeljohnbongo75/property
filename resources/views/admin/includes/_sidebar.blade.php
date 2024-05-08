@@ -8,37 +8,44 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.index') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.index') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-av-timer"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('users.index') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('users.index') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-account-location"></i>
                         <span class="hide-menu">Users</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('listings.index') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('listings.index') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-account-network"></i>
                         <span class="hide-menu">Property</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('realtors.index') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('realtors.index') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-face"></i>
                         <span class="hide-menu">Agent</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/back/fullcalender') }}" aria-expanded="false">
-                    <i class="mdi mdi-calendar"></i>
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/back/fullcalender') }}"
+                        aria-expanded="false">
+                        <i class="mdi mdi-calendar"></i>
                         <span class="hide-menu">Calender</span>
                     </a>
-                </li> <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{Route('rental') }}" aria-expanded="false">
-                    <i class="mdi mdi-calendar"></i>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ Route('rental') }}"
+                        aria-expanded="false">
+                        <i class="mdi mdi-calendar"></i>
                         <span class="hide-menu">Rental</span>
                     </a>
                 </li>
@@ -49,12 +56,27 @@
                     </a>
                 </li> -->
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('inquiries.index') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('inquiries.index') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-border-none"></i>
                         <span class="hide-menu">Reservation</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('banner.index') }}"
+                        aria-expanded="false">
+                        <i class="mdi mdi-border-none"></i>
+                        <span class="hide-menu">Home</span>
+                    </a>
+                </li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('contact.index')}}"
+                        aria-expanded="false">
+                        <i class="mdi mdi-border-none"></i>
+                        <span class="hide-menu">Contact Us</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

@@ -48,7 +48,7 @@
             @foreach ($lists as $list)
             <tr>
               <td>22</td>
-              <td>{{ $list ->listing -> title }}</td>
+              <td>{{ @$list ->listing -> title }}</td>
               <td>
                 <a class="btn btn-light" href="{{ route('single.listing', $list-> listing -> id) }}">View Listing</a>
               </td>

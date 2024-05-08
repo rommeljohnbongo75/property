@@ -26,7 +26,6 @@ class LoginRegisterController extends Controller
     {
         return view('auth.register');
     }
-
     /**
      * Store a new user.
      *
@@ -41,7 +40,7 @@ class LoginRegisterController extends Controller
             'username' => ['required', 'string',  'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone' => ['required'],
+            'phone' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10', 'max:10'],
         ]);
 
         User::create([

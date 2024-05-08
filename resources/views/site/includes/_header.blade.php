@@ -189,12 +189,16 @@ input[type="text"] {
           </li>
           @auth
          
-          <li class="nav-item mr-3 {{ (request()->routeIs('dashboard')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('dashboard') }}">
-              <i class="fas fa-user-plus"></i> Dashboard</a>
-          </li>
+          @if (auth()->user()->role == 0)
+            <li class="nav-item mr-3 {{ (request()->routeIs('dashboard')) ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('admin.index') }}"><i class="fas fa-user-plus"></i> Dashboard</a>
+            </li>
+          @else
+            <li class="nav-item mr-3 {{ (request()->routeIs('dashboard')) ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-user-plus"></i> Dashboard</a>
+            </li>
+          @endif
           <li class="nav-item mr-3">
-
           <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); 
             document.getElementById('frm-logout').submit();">
             <i class="fas fa-sign-in-alt"></i>  Logout

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rental;
 use App\Models\Contact;
+use App\Models\MultiImage;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -41,6 +43,7 @@ class ContactController extends Controller
                 'start_date' =>  date('Y-m-d', strtotime($request->checkin)),
                 'end_date' => date('Y-m-d', strtotime($request->checkout)),
                 'adults' => $request->get('adults'),
+                // dd( $request->get('adults')),
                 'children' => $request->get('children'),
 
             ]);
@@ -49,7 +52,7 @@ class ContactController extends Controller
             
             if ($isSuccess) {
                 $notification = array(
-                    'message' => 'Booking Reservation successfully!',
+                    'success' => 'Booking Reservation successfully!',
                     'alert-type' => 'success'
                 );
                 
@@ -108,13 +111,15 @@ class ContactController extends Controller
         return view('site.layouts.contact');
     }
     public function rental(){
-
-        return view('admin.layouts.rental.rental');
+        $image = MultiImage::get();
+        $overview =Rental::get();
+        return view('admin.layouts.rental.rental',compact('image','overview'));
     }
-
     public function rentalform(){
 
-        return view('admin.layouts.rental.rentalform');
+        $rantalId = Rental::first();
+        $user = Auth::user();
+        return view('admin.layouts.rental.rentalform',compact('rantalId',"user"));
     }
 
     public function listingLocation(){
