@@ -353,11 +353,56 @@
         /* align-items:center; */
         gap: 20px;
         padding: 20px 0;
-    }
+    
+}
+.about-host-inner span{
+   font-size:20px;
+}
+.fields1 {
+   display:flex;
+}
+.fileds-inner{
+   display:flex !important;
+}
+.cards{
+   padding-top:unset !important;
+}
+.adults-children.sec-menu-div.active {
+    display: block !important;
+}
 
-    .about-host-inner span {
-        font-weight: bold;
-    }
+@media only screen and (max-width: 768px) {
+.container-form-one {
+    width:unset !important;
+}
+.fileds-inner{
+   display: block !important;
+}
+.cards{
+   padding-top:40px;
+}
+.page-title {
+    font-size: 30px;
+}
+.fields h2 {
+font-size: 30px;
+}
+.container-form-one h1{
+   margin:0;
+   padding:20px 0;
+}
+input[type="text"] {
+ margin:0 !important;
+}
+.property-title h3 {
+    font-size: 30px;
+}
+.map-map h3 {
+    font-size: 30px;
+}
+.date h3 {
+    font-size: 30px;
+}
 
     .about-host {
         padding: 20px 0;

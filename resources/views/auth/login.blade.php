@@ -24,19 +24,29 @@
    margin:0 auto;
    }
    #login {
-    padding:160px 0;
+    padding:80px 0;
+    /* background-image: url('/assets/img/register.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repaet: no-reapet; */
   }
   .login-dec{
     text-align:center;
     padding:20px 0;
   }
   #login .card{
+    box-shadow:0px 15px 30px rgba(0,0,0,0.10);
+    border-radius:unset;
     border:none;
+    /* box-shadow:#00000024 2px 7px 20px 0px;
+    background-image:linear-gradient(180deg, white 60%, #ffffff00);
+    border-bottom:none; */
   }
   .login-inner {
-    background-color: white;
-    padding: 20px 0;
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.10);
+    
+    padding: 60px 0;
+    /* box-shadow: 0px 15px 30px rgba(0,0,0,0.10); */
 }
   .card label{
     font-family:var(--font-family);
@@ -50,11 +60,14 @@
    .login-dec span{
     color:#8E8E93;
    }
-   .card-header {
+   #login .card-header {
      background-color:unset !important;
+     border-bottom:none;
   }
   .card-header h4{
-    font-size:30px;
+    font-size:35px;
+    text-align:center;
+    padding:10px 0;
   }
    .login-media{ 
     margin-left: 10px;
@@ -66,22 +79,17 @@
 }
 .banner-login{
   padding:80px 0;
-  
 }
 .overlay1 {
-    background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    height: 58.6%;
-    opacity: 0.3;
+    height: 100%;
+    opacity: 0.5;
     width: 100%;
 }
-/* .banner-login img{
-height:50%;
-position: relative;
-} */
 .login-banner-heading{
   position:absolute;
   top:20%;
@@ -102,14 +110,33 @@ position: relative;
   font-weight:bold;
 }
 .form-group i {
-    transform: translate(13px, -25px);
+    transform: translate(127px, 10px);
     position: absolute;
+    z-index: 999;
 }
 ::placeholder{
   padding-right:20px;
 }
-.form-group input[type="text"]{
+#login .form-group input[type="text"],#login .form-group input[type="password"]{
   position: relative;
+  width:100%;
+  max-width:60%;
+  margin:auto;
+}
+#login input[type="submit"] {
+    width: 100%;
+    max-width: 60%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    background-color: #FFA920;
+    color: #fff;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
 }
 .form-control {
 padding: 0.375rem 2.75rem !important;
@@ -140,10 +167,11 @@ padding: 0.375rem 2.75rem !important;
 
 <section id="login" >
     <div class="container">
-      <div class="row login-inner align-items-center ">
-        <div class="col-sm-12 col-lg-6">
+      <div class=" login-inner align-items-center ">
+      <!-- <div class="overlay1"></div> -->
+        <!-- <div class="col-sm-12 col-lg-6">
           <img src="{{ asset('assets/img/loginvector.png' ) }}">
-        </div>
+        </div> -->
         <div class="col-sm-12 col-lg-6 mx-auto">
           <div class="card">
             @if ($errors->any())
@@ -157,23 +185,21 @@ padding: 0.375rem 2.75rem !important;
             @endif
 
             <div class="card-header  text-black">
-              <h4>
-                <i class="fas fa-sign-in-alt"></i> Login</h4>
+              <h4>Login</h4>
             </div>
             <div class="card-body">
               <form method="POST" action="{{ route('authenticate') }}">
                 @csrf
                
-                <div class="form-group">
-                  <label for="username">Email</label>
+                <div class="form-group d-flex">
+                <i class="fa-regular fa-envelope"></i>
                   <input type="text" name="email" class="form-control" placeholder="Email" required>
-                  <i class="fa-regular fa-envelope"></i>
                 </div>
 
                 <div class="form-group">
-                  <label for="password2">Password</label>
+                <i class="fa-solid fa-lock"></i>
                   <input type="password" name="password" class="form-control" placeholder="Password" required>
-                  <i class="fa-solid fa-lock"></i>
+                 
                 </div>
 
                 <input type="submit" value="Login" class="btn  btn-block">

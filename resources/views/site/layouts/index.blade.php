@@ -988,6 +988,10 @@
             padding-top: 30px;
             padding-bottom: 30px;
         }
+
+        .collapse:not(.show) {
+            display: block !important;
+        }
     }
 
     @media only screen and (max-width:425px) {
@@ -1076,16 +1080,6 @@
         color: #fff;
         border-radius: 5px;
     }
-
-    .form-btn a {
-        background-color: #FFA920;
-        width: 90%;
-        padding: 15px 0;
-        border-radius: 40px;
-        border: none;
-        color: white;
-        font-size: 18px;
-    }
 </style>
 @section('content')
     <!-- Showcase -->
@@ -1152,16 +1146,16 @@
                                         <p>Total bedrooms capacity</p>
                                     </div>
                                     <div class="counter-add-data text-center">
-                                        <span class="minus">-</span>
-                                        <input type="text" id="adults" name="children" value="1" readonly>
-                                        <span class="plus">+</span>
+                                        <span class="adults-minus">-</span>
+                                        <input type="text" id="adults" name="adults" value="1" readonly>
+                                        <span class="adults-plus">+</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-btn">
-                            <button><i class="fa-solid fa-magnifying-glass"></i><a href="{{ route('listings') }}">Search</a></button>
+                            <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
                         </div>
                     </form>
                 </div>
@@ -1264,8 +1258,8 @@
                         <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
                         <div class="card-img-overlay">
                             <!-- <h2>
-                                <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                                </h2> -->
+                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
+                            </h2> -->
                         </div>
                         <div class="card-body-inner">
                             <div class="listing-heading text-center">
@@ -1315,8 +1309,8 @@
                         <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
                         <div class="card-img-overlay">
                             <!-- <h2>
-                                <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                                </h2> -->
+                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
+                            </h2> -->
                         </div>
                         <div class="card-body-inner">
                             <div class="listing-heading text-center">
@@ -1366,8 +1360,8 @@
                         <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
                         <div class="card-img-overlay">
                             <!-- <h2>
-                                <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                                </h2> -->
+                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
+                            </h2> -->
                         </div>
                         <div class="card-body-inner">
                             <div class="listing-heading text-center">
@@ -1417,8 +1411,8 @@
                         <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
                         <div class="card-img-overlay">
                             <!-- <h2>
-                                <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                                </h2> -->
+                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
+                            </h2> -->
                         </div>
                         <div class="card-body-inner">
                             <div class="listing-heading text-center">
@@ -1468,8 +1462,8 @@
                         <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
                         <div class="card-img-overlay">
                             <!-- <h2>
-                                <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                                </h2> -->
+                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
+                            </h2> -->
                         </div>
                         <div class="card-body-inner">
                             <div class="listing-heading text-center">
@@ -1532,144 +1526,154 @@
             </div>
             <div class="multiple-items">
                 <div class="image-slider-inner">
-                    <div class="image-card">
-                        <img src="{{ asset('assets/img/showcase.jpg') }}">
-                        <div class="card-dec">
-                            <div class="card-price">
-                                <h4>From:</h4>
-                                <span>$550.00/night</span>
-                            </div>
-                            <div class="dec-title">
-                                <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                            </div>
-                            <div class="card-icon">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bed"></i>
-                                    <h5>6</h5>
+                    <a href="{{ route('listings.location') }}">
+                        <div class="image-card">
+                            <img src="{{ asset('assets/img/showcase.jpg') }}">
+                            <div class="card-dec">
+                                <div class="card-price">
+                                    <h4>From:</h4>
+                                    <span>$550.00/night</span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-shower"></i>
-                                    <h5>2.5</h5>
+                                <div class="dec-title">
+                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-user"></i>
-                                    <h5>5</h5>
+                                <div class="card-icon">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-bed"></i>
+                                        <h5>6</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-shower"></i>
+                                        <h5>2.5</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-user"></i>
+                                        <h5>5</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="image-slider-inner">
-                    <div class="image-card">
-                        <img src="{{ asset('assets/img/homes/home-3.jpg') }}">
-                        <div class="card-dec">
-                            <div class="card-price">
-                                <h4>From:</h4>
-                                <span>$550.00/night</span>
-                            </div>
-                            <div class="dec-title">
-                                <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                            </div>
-                            <div class="card-icon">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bed"></i>
-                                    <h5>6</h5>
+                    <a href="{{ route('listings.location') }}">
+                        <div class="image-card">
+                            <img src="{{ asset('assets/img/homes/home-3.jpg') }}">
+                            <div class="card-dec">
+                                <div class="card-price">
+                                    <h4>From:</h4>
+                                    <span>$550.00/night</span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-shower"></i>
-                                    <h5>2.5</h5>
+                                <div class="dec-title">
+                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-user"></i>
-                                    <h5>5</h5>
+                                <div class="card-icon">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-bed"></i>
+                                        <h5>6</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-shower"></i>
+                                        <h5>2.5</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-user"></i>
+                                        <h5>5</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="image-slider-inner">
-                    <div class="image-card">
-                        <img src="{{ url($listing->thumbnail_0) }}">
-                        <div class="card-dec">
-                            <div class="card-price">
-                                <h4>From:</h4>
-                                <span>$550.00/night</span>
-                            </div>
-                            <div class="dec-title">
-                                <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                            </div>
-                            <div class="card-icon">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bed"></i>
-                                    <h5>6</h5>
+                    <a href="{{ route('listings.location') }}">
+                        <div class="image-card">
+                            <img src="{{ url($listing->thumbnail_0) }}">
+                            <div class="card-dec">
+                                <div class="card-price">
+                                    <h4>From:</h4>
+                                    <span>$550.00/night</span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-shower"></i>
-                                    <h5>2.5</h5>
+                                <div class="dec-title">
+                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-user"></i>
-                                    <h5>5</h5>
+                                <div class="card-icon">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-bed"></i>
+                                        <h5>6</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-shower"></i>
+                                        <h5>2.5</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-user"></i>
+                                        <h5>5</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="image-slider-inner">
-                    <div class="image-card">
-                        <img src="{{ asset('assets/img/showcase.jpg') }}">
-                        <div class="card-dec">
-                            <div class="card-price">
-                                <h4>From:</h4>
-                                <span>$550.00/night</span>
-                            </div>
-                            <div class="dec-title">
-                                <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                            </div>
-                            <div class="card-icon">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bed"></i>
-                                    <h5>6</h5>
+                    <a href="{{ route('listings.location') }}">
+                        <div class="image-card">
+                            <img src="{{ asset('assets/img/showcase.jpg') }}">
+                            <div class="card-dec">
+                                <div class="card-price">
+                                    <h4>From:</h4>
+                                    <span>$550.00/night</span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-shower"></i>
-                                    <h5>2.5</h5>
+                                <div class="dec-title">
+                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-user"></i>
-                                    <h5>5</h5>
+                                <div class="card-icon">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-bed"></i>
+                                        <h5>6</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-shower"></i>
+                                        <h5>2.5</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-user"></i>
+                                        <h5>5</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="image-slider-inner">
-                    <div class="image-card">
-                        <img src="{{ asset('assets/img/showcase.jpg') }}">
-                        <div class="card-dec">
-                            <div class="card-price">
-                                <h4>From:</h4>
-                                <span>$550.00/night</span>
-                            </div>
-                            <div class="dec-title">
-                                <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                            </div>
-                            <div class="card-icon">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bed"></i>
-                                    <h5>6</h5>
+                    <a href="{{ route('listings.location') }}">
+                        <div class="image-card">
+                            <img src="{{ asset('assets/img/showcase.jpg') }}">
+                            <div class="card-dec">
+                                <div class="card-price">
+                                    <h4>From:</h4>
+                                    <span>$550.00/night</span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-shower"></i>
-                                    <h5>2.5</h5>
+                                <div class="dec-title">
+                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa-solid fa-user"></i>
-                                    <h5>5</h5>
+                                <div class="card-icon">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-bed"></i>
+                                        <h5>6</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-shower"></i>
+                                        <h5>2.5</h5>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-user"></i>
+                                        <h5>5</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

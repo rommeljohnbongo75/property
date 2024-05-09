@@ -9,6 +9,8 @@
 <script src="{{ asset('admin/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/js/bootstrap5-toggle.ecmas.min.js"></script>
+<script src="{{ asset('admin/libs/popper.js/dist/umd/popper.min.js' ) }}"></script>
+<!-- <script src="{{ asset('admin/libs/bootstrap/dist/js/bootstrap.min.js' ) }}"></script> -->
 <!-- slimscrollbar scrollbar JavaScript -->
 <script src="{{ asset('admin/libs/sparkline/sparkline.js') }}"></script>
 <!--Wave Effects -->
@@ -28,6 +30,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         var SITEURL = "{{ url('/') }}";
