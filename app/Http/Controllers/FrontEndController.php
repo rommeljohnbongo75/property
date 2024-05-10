@@ -58,9 +58,9 @@ class FrontEndController extends Controller
     
     public function listing($id)
     {
-        dd("dfgfdgdfgdgdg");
+        // dd("dfgfdgdfgdgdg");
         $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
-        dd($listing);
+        // dd($listing);
         $initialMarkers = [
             [
                 'position' => [
@@ -94,5 +94,17 @@ class FrontEndController extends Controller
             $lists = Contact::with('listing')->where('user_id',$userid)->get();
             return view('site.layouts.dashboard',compact('lists'));
         }
+    }
+    public function filterOrders(Request $request)
+    {
+        $filter = $request->all();
+        // dd($filter);
+        $listingpost = Listing::where([
+                                ['city', 'like', '%' . request('city') . '%'],
+                               ['bedroom', 'like', '%' . request('bedroom') . '%'],
+                                ['bathroom', 'like', '%' . request('bathroom') . '%']
+                            ])->get();
+            // dd($listingpost);
+        return view('site.layouts.filterdata',compact('listingpost'));
     }
 }

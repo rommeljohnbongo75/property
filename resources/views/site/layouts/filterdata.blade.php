@@ -484,181 +484,130 @@
 
         }
     }
+
+    input[type="text"] {
+        width: calc(100% - 40px);
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #efe9e2;
+        margin-left: 12px;
+        color: #000 !important;
+    }
+
+    input[type="date"] {
+        width: calc(100% - 40px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .form-icon-one i {
+        font-size: 25px;
+        color: #FFA920 !important;
+    }
+
+    .form-group-icon i {
+        font-size: 25px;
+        padding-right: 5px;
+        color: #FFA920 !important;
+        /* margin-left:10px; */
+    }
+
+
+    .form-group-one {
+        background-color: #efe9e2;
+        border-radius: 10px;
+        /* gap:20px; */
+    }
+
+    .from-data {
+        background-color: #efe9e2;
+        border-radius: 10px;
+        padding: 5px 10px;
+        margin: 10px 0;
+    }
+
+    .form-group .form-control {
+        background-color: #efe9e2;
+        border-radius: 10px;
+        height: 20%;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+
+
+    input.adults-adults:focus-visible,
+    input#ranges:focus-visible,
+    input#rangesend,
+    input.children-children {
+        border: none;
+        outline: none;
+    }
+
+
+    .counter span {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #FFA920;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        margin-top: 2;
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #0d6efd;
+        --bs-btn-border-color: #0d6efd;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #0b5ed7;
+        --bs-btn-hover-border-color: #0a58ca;
+        --bs-btn-focus-shadow-rgb: 49, 132, 253;
+        --bs-btn-active-color: #fff;
+        --bs-btn-active-bg: #0a58ca;
+        --bs-btn-active-border-color: #0a53be;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #0d6efd;
+        --bs-btn-disabled-border-color: #0d6efd;
+    }
 </style>
 @section('content')
     <section id="listings">
+
         <div class="container">
-            <form action="{{route('filter')}}" method="post">
-                @csrf
-            <div class="search-bar-inner">
-                <div class="search-location d-flex">
-                    <label class="visually-hidden" for="specificSizeSelect"></label>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <select class="form-select" id="specificSizeSelect">
-                        <option selected>Jerusalem</option>
-                        <option value="Jerusalem">Geula</option>
-                        <option value="Jerusalem">New York</option>
-                        <option value="Jerusalem">Shalem Tower</option>
-                    </select>
-                </div>
-                <div class="adult-data d-flex">
-                    <label class="visually-hidden" for="specificSizeSelect"></label>
-                    <i class="fa-regular fa-user"></i>
-                    <select class="form-select" id="specificSizeSelect">
-
-                        <option selected>1 Adult | 0 Children </option>
-                        <option value="Jerusalem" class="adult-data-inner">
-                            <div class="">
-                                <h3>1 Adults</h3>
-                            </div>
-                            <div class="d-flex plus-text">
-                                <h4>-</h4>
-                                <h5>+</h5>
-                            </div>
-                        </option>
-                        <option value="Jerusalem" class="adult-data-inner">
-                            <div class="">
-                                <h3>1 Adults</h3>
-                            </div>
-                            <div class="d-flex plus-text">
-                                <h4>-</h4>
-                                <h5>+</h5>
-                            </div>
-                        </option>
-                        <option value="Jerusalem" class="adult-data-inner">
-                            <div class="">
-                                <h3>1 Adults</h3>
-                            </div>
-                            <div class="d-flex plus-text">
-                                <h4>-</h4>
-                                <h5>+</h5>
-                            </div>
-                        </option>
-                    </select>
-                </div>
-                <div class="arrive-data d-flex">
-                    <i class="fa-regular fa-calendar"></i><input type="text" name="checkin_filter" id="checkin_filter"
-                        autocomplete="off" value="" readonly="" class="form-control" placeholder="Arrive - Depart">
-                </div>
-                <div class=" Amenities-data">
-                    <div class="checkbox-dropdown">
-                        <i class="fa-solid fa-bath"></i>
-                        Amenities
-                        <ul class="checkbox-dropdown-list">
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Vejle" name="city" />Air Conditioning</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Horsens" name="city" />Barbecue Area</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" />Beis Medrash</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> City View</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Coffee Machine</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Dishwasher</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Elevator</label>
-                            </li>
-
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Elevator for Shabbos</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Garden
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" />Laundry</label>
-                            </li>
-
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" />Microwave</label>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="arrive-search">
-                    <button type="submit" class="btn btn-primary"> search </button>
-                </div>
-            </div>
-        </form>
         </div>
         <div class="map-section">
             <div class="property">
                 <!-- Property 1 -->
-                @foreach ($listings as $listing)
-                    <div class="property-inner">
-                        <a href="{{ route('single.listing', $listing->id) }}">
-                            <img alt="Property Image" src="{{ url($listing->thumbnail_0) }}" alt="">
-                        </a>
-                        <div class="property-dec">
-                            <h2>Property Details</h2>
-                            <span>{{ $listing->title }}</span>
-                            <div class="option-option">
-                                <h5>{{ $listing->bathroom }} Bathroom </h5>
-                                <h5>{{ $listing->bedroom }} Bedrooms </h5>
+                @if ($listingpost)
+                        @foreach ($listingpost as $post)
+                            <div class="property-inner">
+                                <div class="property-img">
+                                    <img src="{{url($post->thumbnail_0)}}" alt="">
+                                </div>
+                                <div class="property-content">
+                                    <h3>{{ $post->title }}</h3>
+                                    <p>{{ $post->description }}</p>
+                                </div>
                             </div>
-                            <p>{{ substr($listing->description, 0, 50) . '...' }}</p>
-                        </div>
-                        <div class="property-box">
-                            <h5>{{ $listing->price }}</h5>
-                            <a href="#">Per Night</a>
-                        </div>
-                    </div>
-                @endforeach
+                        @endforeach
+                @else
+                        <p>No find data</p>
+                @endif
             </div>
-            <!-- Map Section -->
+           
 
-            <div class="map">
-                <div class="map-heading">
-                    <!-- <h3>Location</h3> -->
-                </div>
-                <div id="map_canvas"></div>
-
-                <!-- listings-location-end -->
-                <!-- <div class="agent-widget-inner">
-                    <div class="agent-widget">
-                        <div class="agent-image">
-                            <img src="{{ asset('assets/img/realtors\jenny.jpg') }}"">
-                        </div>
-                        <div class="agent-name">
-                            <h3>Kelly</h3>
-                             <span>+ 9987766766</span>
-                        </div>
-                    </div>
-                    <div class="agent-form">
-                    <label for="first_name"></label>
-                      <input type="text" name="first_name" class="form-control" placeholder="Your Email" required>
-                      <label for="first_name"></label>
-                      <input type="text" name="first_name" class="form-control" placeholder="Your Phone" required>
-                      <label for="first_name"></label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1"
-                          placeholder="I'm interested in this property [ID 123456] and I'd like to know more details." rows="2"></textarea>
-                      <div class="agent-btn">
-                      <button>Send Message</button>
-                      </div>
-                    </div>
-                </div> -->
-            </div>
         </div>
 
 
@@ -666,6 +615,14 @@
     </section>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap"
         defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sec-menu').click(function() {
+                $('#adults').toggle();
+            });
+        });
+    </script>
     <script>
         let map, activeInfoWindow, markers = [];
 
@@ -689,7 +646,7 @@
 
         /* --------------------------- Initialize Markers --------------------------- */
         function initMarkers() {
-            const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+
 
             for (let index = 0; index < initialMarkers.length; index++) {
 

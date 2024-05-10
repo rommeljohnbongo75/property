@@ -167,7 +167,7 @@ input[type="text"] {
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <!-- <div class="position-absolute">  -->
   <div class="d-flex logo-text align-items-center">
-  <img src="{{ asset('assets/img/logo7.png' ) }}">
+  <a href="{{route('index')}}"><img src="{{ asset('assets/img/logo7.png' ) }}"></a>
   <a class="navbar-brand" href="{{url('/')}}"></a>
          <!-- <h4>E</h4>state
          <h3>R</h3><span>ental</span> -->

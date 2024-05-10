@@ -1080,6 +1080,10 @@
         color: #fff;
         border-radius: 5px;
     }
+    #anchor {
+            text-decoration: none;
+            color: white;
+        }
 </style>
 @section('content')
     <!-- Showcase -->
@@ -1156,7 +1160,7 @@
                             </div>
 
                             <div class="form-btn">
-                                <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                                <button><a id="anchor" href="{{route('listings')}}"><i class="fa-solid fa-magnifying-glass"></i>Search</a></button>
                             </div>
                         </form>
                     </div>

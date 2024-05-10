@@ -132,7 +132,7 @@
         <section id="services" class="py-4  text-white">
            <div class="col-xl-12 footer-logo d-flex justify-content-between">
             <div class="">
-            <img src="{{ asset('assets/img/logo7.png' ) }}">
+                <a href="{{route('index')}}"><img src="{{ asset('assets/img/logo7.png' ) }}"></a>
             </div>
             <div class="d-flex footer-media">
             <h4>Follow Us</h4>

@@ -38,6 +38,7 @@ Route::get('/welcome', function () {
 
 // Auth::routes();
 Route::get('/', [FrontEndController::class, 'index'])->name('index');
+Route::post('/filter/orders', [FrontEndController::class, 'filterOrders'])->name('filter');
 Route::get('/listings', [FrontEndController::class, 'listings'])->name('listings');
 Route::get('/listings/{id}', [FrontEndController::class, 'listing'])->name('single.listing');
 Route::get('/dashboard', [FrontEndController::class, 'dashboard'])->name('dashboard');
