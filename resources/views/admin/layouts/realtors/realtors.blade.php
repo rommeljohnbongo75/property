@@ -43,7 +43,9 @@
                             <div class="card-body">
 
                                 <h4 class="card-title">All Agent</h4>
-                                 <a href="{{ route('realtors.create') }}"><span class="btn btn-primary">Add Agent</span></a>
+                                 <div class=" text-right">
+                                    <a href="{{ route('realtors.create') }}"><span class="btn btn-primary">Add Agent</span></a>
+                                </div>
                             </div>
                             <div class="table-responsive m-t-20">
                                 <table class="table table-bordered table-responsive-lg">
@@ -53,6 +55,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Contact</th>
+                                            <th scope="col">Address</th>
                                             <th scope="col">Image</th>
                                             <th scope="col">Action</th>
                                         </tr>
@@ -65,6 +68,7 @@
                                             <td>{{ $realtor -> email }}</td>
                                             <td>{{ $realtor -> contact_number }}</td>
                                             <td>{{ $realtor -> address }}</td>
+                                            <td><img src="{{ url($realtor->image) }}" class="img-thumbnail" width="50" ></td>
                                             <td>
                                             <a href="{{ route('realtors.show', $realtor -> id ) }}"><span class="btn btn-sm btn-rounded btn-success">View</span></a>
 

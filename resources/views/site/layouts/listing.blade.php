@@ -353,268 +353,6 @@
         /* align-items:center; */
         gap: 20px;
         padding: 20px 0;
-    
-}
-.about-host-inner span{
-   font-size:20px;
-}
-.fields1 {
-   display:flex;
-}
-.fileds-inner{
-   display:flex !important;
-}
-.cards{
-   padding-top:unset !important;
-}
-.adults-children.sec-menu-div.active {
-    display: block !important;
-}
-
-@media only screen and (max-width: 768px) {
-.container-form-one {
-    width:unset !important;
-}
-.fileds-inner{
-   display: block !important;
-}
-.cards{
-   padding-top:40px;
-}
-.page-title {
-    font-size: 30px;
-}
-.fields h2 {
-font-size: 30px;
-}
-.container-form-one h1{
-   margin:0;
-   padding:20px 0;
-}
-input[type="text"] {
- margin:0 !important;
-}
-.property-title h3 {
-    font-size: 30px;
-}
-.map-map h3 {
-    font-size: 30px;
-}
-.date h3 {
-    font-size: 30px;
-}
-
-    .about-host {
-        padding: 20px 0;
-    }
-
-    .about-host-title h3 {
-        padding: 10px 0;
-    }
-
-    .contact-details h4 {
-        font-size: 20px;
-    }
-
-    .contact-details h5 {
-        margin: 0;
-        font-size: 16px;
-        padding: 10px 0;
-    }
-
-    #listing {
-        padding: 100px 0;
-    }
-
-    #Booking-details {
-        padding: 40px 0;
-    }
-
-    .booking i {
-        color: #FFA920;
-    }
-
-    /* slick-slider */
-    body {
-        background: #ccc;
-    }
-
-    .main {
-        font-family: Arial;
-        width: 500px;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .action {
-        display: block;
-        margin: 100px auto;
-        width: 100%;
-        text-align: center;
-    }
-
-    .action a {
-        display: inline-block;
-        padding: 5px 10px;
-        background: #f30;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .action a:hover {
-        background: #000;
-    }
-
-    .form-group-one {
-        padding: 5px 10px;
-    }
-
-    .slick-tab {
-        padding: 0 10px;
-    }
-
-    #sticky {
-        position: sticky;
-        z-index: 999;
-        top: 20%;
-        background-color: #fff;
-        box-shadow: 0 1px 0 0 #d8d8d8;
-        width: 100%;
-    }
-
-    .listing {
-        position: relative;
-    }
-
-    .list-group-item i {
-        color: #FFA920;
-    }
-
-    .page-title {
-        font-family: var(--font-family);
-        font-size: 45px;
-    }
-
-    .bo p i {
-        color: #FFA920;
-    }
-
-    .list-group-item {
-        color: black;
-        font-size: 18px;
-        font-family: var(--font-family);
-    }
-
-    .slider-nav .slick-dots li button:before {
-        font-size: 10px;
-    }
-
-    .property-title h3 {
-        font-family: var(--font-family);
-        font-size: 40px;
-        color: black;
-        margin: 0;
-        padding: 20px 0;
-    }
-
-    .map-map {
-        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
-        padding: 30px;
-    }
-
-    .option-tab ul {
-        justify-content: space-between;
-    }
-
-    .map-map h3 {
-        font-family: var(--font-family);
-        font-size: 40px;
-        color: black;
-        margin: 0;
-        padding: 20px 0;
-    }
-
-    .property {
-        padding: 60px 0;
-    }
-
-    .property-title {
-        padding: 20px 30px;
-    }
-
-    .slider-nav .slick-slide img {
-        cursor: pointer;
-    }
-
-    .slider-for .slick-slide img {
-        cursor: pointer;
-    }
-
-    .counter-text h4,
-    .counter-text-one h4 {
-        font-size: 18px;
-    }
-
-    .counter-text p,
-    .counter-text-one p {
-        font-size: 14px;
-    }
-
-    #counter {
-        border-bottom: 1px solid lightgray;
-    }
-
-    .fields {
-        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
-        padding-top: 20px;
-        padding-bottom: 60px;
-        padding-left: 20px;
-    }
-
-    .fields h2 {
-        font-family: var(--font-family);
-        font-size: 40px;
-        color: black;
-        margin: 0;
-        padding: 20px 0;
-    }
-
-    .property-title {
-        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
-    }
-
-    .date {
-        padding: 40px 30px;
-        margin-top: 80px;
-        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
-    }
-
-    .date h3 {
-        font-family: var(--font-family);
-        font-size: 40px;
-        color: black;
-        margin: 0;
-        padding: 20px 0;
-    }
-
-    .about-host-title ul {
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-
-    .img-fluid {
-        display: block !important;
-    }
-
-    .about-host-title .review-icon li {
-        list-style: none;
-
-    }
-
-    .review-icon li i {
-        font-size: 16px;
-        padding-right: 5px !important;
 
     }
 
@@ -632,6 +370,10 @@ input[type="text"] {
 
     .cards {
         padding-top: unset !important;
+    }
+
+    .adults-children.sec-menu-div.active {
+        display: block !important;
     }
 
     @media only screen and (max-width: 768px) {
@@ -676,115 +418,388 @@ input[type="text"] {
             font-size: 30px;
         }
 
-        .calendar-main {
-            flex-wrap: wrap;
-            justify-content: center;
+        .about-host {
+            padding: 20px 0;
         }
 
-        .review-title h3 {
-            margin: 0;
+        .about-host-title h3 {
+            padding: 10px 0;
         }
 
-        .about-host-inner {
-            flex-wrap: wrap;
-        }
-    }
-
-    @media only screen and (max-width:425px) {
-        .fields1 {
-            flex-wrap: wrap;
-        }
-
-        .container-form-one h1 {
-            font-size: 21px !important;
-        }
-
-        .container-form-one input[type="text"] {
-            font-size: 14px;
-        }
-
-        .list-group {
-            gap: 0;
-        }
-
-        .alert-text p {
-            padding-bottom: 0 !important;
-        }
-
-        .page-title {
-            margin-top: 56px;
+        .contact-details h4 {
             font-size: 20px;
         }
 
-        .form-group-one {
-            padding: 10px;
-
-        }
-
-        .property-dec {
-            font-size: 14px;
-        }
-
-        .about-host-inner ul {
+        .contact-details h5 {
             margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        .author {
-            width: unset !important;
-        }
-
-        .review-btn button {
-            padding: 10px 13px;
-            font-size: 14px;
+            font-size: 16px;
+            padding: 10px 0;
         }
 
         #listing {
+            padding: 100px 0;
+        }
+
+        #Booking-details {
             padding: 40px 0;
         }
 
-        #listings {
-            padding: 40px 0;
+        .booking i {
+            color: #FFA920;
         }
 
-        .date {
+        /* slick-slider */
+        body {
+            background: #ccc;
+        }
+
+        .main {
+            font-family: Arial;
+            width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .action {
+            display: block;
+            margin: 100px auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .action a {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #f30;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .action a:hover {
+            background: #000;
+        }
+
+        .form-group-one {
+            padding: 5px 10px;
+        }
+
+        .slick-tab {
+            padding: 0 10px;
+        }
+
+        #sticky {
+            position: sticky;
+            z-index: 999;
+            top: 20%;
+            background-color: #fff;
+            box-shadow: 0 1px 0 0 #d8d8d8;
+            width: 100%;
+        }
+
+        .listing {
+            position: relative;
+        }
+
+        .list-group-item i {
+            color: #FFA920;
+        }
+
+        .page-title {
+            font-family: var(--font-family);
+            font-size: 45px;
+        }
+
+        .bo p i {
+            color: #FFA920;
+        }
+
+        .list-group-item {
+            color: black;
+            font-size: 18px;
+            font-family: var(--font-family);
+        }
+
+        .slider-nav .slick-dots li button:before {
+            font-size: 10px;
+        }
+
+        .property-title h3 {
+            font-family: var(--font-family);
+            font-size: 40px;
+            color: black;
             margin: 0;
+            padding: 20px 0;
+        }
+
+        .map-map {
+            box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+            padding: 30px;
         }
 
         .option-tab ul {
-            flex-wrap: wrap;
-            flex-direction: column;
+            justify-content: space-between;
         }
 
+        .map-map h3 {
+            font-family: var(--font-family);
+            font-size: 40px;
+            color: black;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .property {
+            padding: 60px 0;
+        }
+
+        .property-title {
+            padding: 20px 30px;
+        }
+
+        .slider-nav .slick-slide img {
+            cursor: pointer;
+        }
+
+        .slider-for .slick-slide img {
+            cursor: pointer;
+        }
+
+        .counter-text h4,
+        .counter-text-one h4 {
+            font-size: 18px;
+        }
+
+        .counter-text p,
+        .counter-text-one p {
+            font-size: 14px;
+        }
+
+        #counter {
+            border-bottom: 1px solid lightgray;
+        }
+
+        .fields {
+            box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+            padding-top: 20px;
+            padding-bottom: 60px;
+            padding-left: 20px;
+        }
+
+        .fields h2 {
+            font-family: var(--font-family);
+            font-size: 40px;
+            color: black;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .property-title {
+            box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+        }
+
+        .date {
+            padding: 40px 30px;
+            margin-top: 80px;
+            box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+        }
+
+        .date h3 {
+            font-family: var(--font-family);
+            font-size: 40px;
+            color: black;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .about-host-title ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-fluid {
+            display: block !important;
+        }
+
+        .about-host-title .review-icon li {
+            list-style: none;
+
+        }
+
+        .review-icon li i {
+            font-size: 16px;
+            padding-right: 5px !important;
+
+        }
+
+        .about-host-inner span {
+            font-size: 20px;
+        }
+
+        .fields1 {
+            display: flex;
+        }
+
+        .fileds-inner {
+            display: flex !important;
+        }
+
+        .cards {
+            padding-top: unset !important;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container-form-one {
+                width: unset !important;
+            }
+
+            .fileds-inner {
+                display: block !important;
+            }
+
+            .cards {
+                padding-top: 40px;
+            }
+
+            .page-title {
+                font-size: 30px;
+            }
+
+            .fields h2 {
+                font-size: 30px;
+            }
+
+            .container-form-one h1 {
+                margin: 0;
+                padding: 20px 0;
+            }
+
+            input[type="text"] {
+                margin: 0 !important;
+            }
+
+            .property-title h3 {
+                font-size: 30px;
+            }
+
+            .map-map h3 {
+                font-size: 30px;
+            }
+
+            .date h3 {
+                font-size: 30px;
+            }
+
+            .calendar-main {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .review-title h3 {
+                margin: 0;
+            }
+
+            .about-host-inner {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media only screen and (max-width:425px) {
+            .fields1 {
+                flex-wrap: wrap;
+            }
+
+            .container-form-one h1 {
+                font-size: 21px !important;
+            }
+
+            .container-form-one input[type="text"] {
+                font-size: 14px;
+            }
+
+            .list-group {
+                gap: 0;
+            }
+
+            .alert-text p {
+                padding-bottom: 0 !important;
+            }
+
+            .page-title {
+                margin-top: 56px;
+                font-size: 20px;
+            }
+
+            .form-group-one {
+                padding: 10px;
+
+            }
+
+            .property-dec {
+                font-size: 14px;
+            }
+
+            .about-host-inner ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            .author {
+                width: unset !important;
+            }
+
+            .review-btn button {
+                padding: 10px 13px;
+                font-size: 14px;
+            }
+
+            #listing {
+                padding: 40px 0;
+            }
+
+            #listings {
+                padding: 40px 0;
+            }
+
+            .date {
+                margin: 0;
+            }
+
+            .option-tab ul {
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+
+        }
+
+        .adults-children.sec-menu-div.active {
+            display: block !important;
+        }
+
+
+        /* .option-tab ul li a:hover{
+            underline:dotted;
+        } */
     }
-
-    .adults-children.sec-menu-div.active {
-        display: block !important;
-    }
-
-
-    /* .option-tab ul li a:hover{
- underline:dotted;
-} */
 </style>
 @section('content')
     <!-- Breadcrumb -->
     <!-- <section id="bc" class="mt-3">
-       <div class="container">
-          <nav>
-             <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                   <a href="{{ route('index') }}">Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                   <a href="{{ route('listings') }}">Listings</a>
-                </li>
-                <li class="breadcrumb-item active">{{ $listing->title }}</li>
-             </ol>
-          </nav>
-       </div>
-    </section> -->
+               <div class="container">
+                  <nav>
+                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                           <a href="{{ route('index') }}">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                           <a href="{{ route('listings') }}">Listings</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{ $listing->title }}</li>
+                     </ol>
+                  </nav>
+               </div>
+            </section> -->
     <!-- Listing -->
     <section id="listing">
 
@@ -892,7 +907,7 @@ input[type="text"] {
                                         </li>
                                         <li class="list-group-item">
                                             <i class="fas fa-bed"></i> Realtor:
-                                            <span class="">{{ $listing->realtor->name }}
+                                            <span class="">{{ @$listing->realtor->name }}
                                             </span>
                                         </li>
                                     </ul>
@@ -954,7 +969,7 @@ input[type="text"] {
                                                             <p>Total guests capacity</p>
                                                         </div>
                                                         <div class="counter-add text-center">
-                                                            <span class="minus">-</span>
+                                                            <span class="adults-minus">-</span>
                                                             <input type="text" id="adults" name="adults"
                                                                 value="1" readonly>
                                                             <span class="adults-plus">+</span>

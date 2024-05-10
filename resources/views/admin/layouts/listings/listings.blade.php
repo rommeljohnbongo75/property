@@ -25,7 +25,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All Property</h4>
-                                <a href="{{ route('listings.create') }}" class="btn btn-primary">Add Property</a>
+                                <div class=" text-right">
+                                    <a href="{{ route('listings.create') }}" class="btn btn-primary">Add Property</a>
+                                </div>
+
                             </div>
                             <div class="table-responsive m-t-20">
                                 <table id="" class="table table-bordered table-responsive-lg">
@@ -48,7 +51,7 @@
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $listing -> title }}</td>
                                             <td>{{ $listing -> price }}</td>
-                                            <td>{{ $listing -> realtor-> name }}</td>
+                                            <td>{{ @$listing -> realtor-> name }}</td>
                                             <td><img src="{{ url($listing -> thumbnail_0) }}" alt="" srcset="" style="width:70px;height:50px"></td>
                                             <td>@if ( $listing -> is_published == '1' )
                                                     Published

@@ -83,8 +83,9 @@ class ListingController extends Controller
 
     public function show($id)
     {
-        $listing = Listing::findOrFail($id);
-        return view('admin.layouts.listings.single-listing', compact('listing'));
+        $listing = Listing::with('realtor')->findOrFail($id);
+        $rantor = Realtor::get();
+        return view('admin.layouts.listings.single-listing', compact('listing','rantor'));
     }
 
 

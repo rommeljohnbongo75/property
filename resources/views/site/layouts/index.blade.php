@@ -1085,157 +1085,83 @@
     <!-- Showcase -->
     <section class="show-section">
         <div class="single-item">
-            <div class="banner">
-                <div class="banner-image">
-                    <img src="{{ asset('assets/img/showcase.jpg') }}">
-                    <div class="overlay"></div>
-                </div>
-                <div class="hover-line"></div>
-                <div class="container-form">
-                    <h1>Booking Request Deatils</h1>
-                    <form>
-                        <div class="serach-group">
-                            <div class="form-icon">
-                                <i class="fa-regular fa-calendar-days"></i>
+            @foreach ($banner as $banners)
+                <div class="banner">
+                    <div class="banner-image">
+                        <img src="{{ url('assets/uploads/home_banner/' . $banners->image) }}">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="hover-line"></div>
+                    <div class="container-form">
+                        <h1>Booking Request Deatils</h1>
+                        <form>
+                            <div class="serach-group">
+                                <div class="form-icon">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </div>
+                                <div class="date-pixel" id="cal">
+                                    <div class="form-group">
+                                        <input type="text" id='ranges' name="checkin" value="Check In"
+                                            placeholder="Location">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id='rangesend' name="checkout" value="Check-Out"
+                                            placeholder="Check-Out">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="date-pixel" id="cal">
+
+                            <div class="form-group-one d-flex align-items-center" id="sec-menu">
+                                <div class="guest-icon">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                                <div class="data-lable-one">
+                                    <input type="text" class="adults-adults" style="font-size:18px" value="Guest"
+                                        placeholder="1 Adults">
+                                </div>
+                                <div class="data-lable-one">
+                                    <input type="text" class="children-children" style="font-size:18px"
+                                        value="1 Children" placeholder="1 Children">
+                                </div>
+                            </div>
+
+                            <div class="adults-children sec-menu-div">
                                 <div class="form-group">
-                                    <input type="text" id='ranges' name="checkin" value="Check In"
-                                        placeholder="Location">
+                                    <div class="counter d-flex justify-content-center" id="counter">
+                                        <div class="form-date">
+                                            <h4>Adults Capacity</h4>
+                                            <p>Total guests capacity</p>
+                                        </div>
+                                        <div class="counter-add-data text-center">
+                                            <span class="adults-minus">-</span>
+                                            <input type="text" id="adults" name="adults" value="1" readonly>
+                                            <span class="adults-plus">+</span>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <input type="text" id='rangesend' name="checkout" value="Check-Out"
-                                        placeholder="Check-Out">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group-one d-flex align-items-center" id="sec-menu">
-                            <div class="guest-icon">
-                                <i class="fa-regular fa-user"></i>
-                            </div>
-                            <div class="data-lable-one">
-                                <input type="text" class="adults-adults" style="font-size:18px" value="Guest"
-                                    placeholder="1 Adults">
-                            </div>
-                            <div class="data-lable-one">
-                                <input type="text" class="children-children" style="font-size:18px" value="1 Children"
-                                    placeholder="1 Children">
-                            </div>
-                        </div>
-
-                        <div class="adults-children sec-menu-div">
-                            <div class="form-group">
-                                <div class="counter d-flex justify-content-center" id="counter">
-                                    <div class="form-date">
-                                        <h4>Adults Capacity</h4>
-                                        <p>Total guests capacity</p>
-                                    </div>
-                                    <div class="counter-add-data text-center">
-                                        <span class="adults-minus">-</span>
-                                        <input type="text" id="adults" name="adults" value="1" readonly>
-                                        <span class="adults-plus">+</span>
+                                    <div class="counter d-flex justify-content-center" id="counter">
+                                        <div class="form-date">
+                                            <h4>Children Capacity</h4>
+                                            <p>Total bedrooms capacity</p>
+                                        </div>
+                                        <div class="counter-add-data text-center">
+                                            <span class="minus">-</span>
+                                            <input type="text" id="adults" name="children" value="1" readonly>
+                                            <span class="plus">+</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="counter d-flex justify-content-center" id="counter">
-                                    <div class="form-date">
-                                        <h4>Children Capacity</h4>
-                                        <p>Total bedrooms capacity</p>
-                                    </div>
-                                    <div class="counter-add-data text-center">
-                                        <span class="adults-minus">-</span>
-                                        <input type="text" id="adults" name="adults" value="1" readonly>
-                                        <span class="adults-plus">+</span>
-                                    </div>
-                                </div>
+                            <div class="form-btn">
+                                <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
                             </div>
-                        </div>
-
-                        <div class="form-btn">
-                            <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="banner">
-                <div class="banner-image">
-                    <img src="{{ asset('assets/img/showcase.jpg') }}">
-                    <div class="overlay">
-
+                        </form>
                     </div>
                 </div>
-                <div class="container-form">
-                    <h1>Booking Request Deatils</h1>
-                    <form>
-                        <div class="serach-group">
-                            <div class="form-icon">
-                                <i class="fa-regular fa-calendar-days"></i>
-                            </div>
-                            <div class="date-pixel" id="cal1">
-                                <div class="form-group">
-                                    <input type="text" id='ranges' name="checkin" value="Check In"
-                                        placeholder="Location">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" id='rangesend' name="checkout" value="Check-Out"
-                                        placeholder="Check-Out">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group-one d-flex align-items-center" id="sec-menu1">
-                            <div class="guest-icon">
-                                <i class="fa-regular fa-user"></i>
-                            </div>
-                            <div class="data-lable-one">
-                                <input type="text" class="adults-adults" style="font-size:18px" value="Guest"
-                                    placeholder="1 Adults">
-                            </div>
-                            <div class="data-lable-one">
-                                <input type="text" class="children-children" style="font-size:18px"
-                                    value="1 Children" placeholder="1 Children">
-                            </div>
-                        </div>
-
-                        <div class="adults-children sec-menu-div">
-                            <div class="form-group">
-                                <div class="counter d-flex justify-content-center" id="counter">
-                                    <div class="form-date">
-                                        <h4>Adults Capacity</h4>
-                                        <p>Total guests capacity</p>
-                                    </div>
-                                    <div class="counter-add-data text-center">
-                                        <span class="adults-minus">-</span>
-                                        <input type="text" id="adults" name="adults" value="1" readonly>
-                                        <span class="adults-plus">+</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="counter d-flex justify-content-center" id="counter">
-                                    <div class="form-date">
-                                        <h4>Children Capacity</h4>
-                                        <p>Total bedrooms capacity</p>
-                                    </div>
-                                    <div class="counter-add-data text-center">
-                                        <span class="adults-minus">-</span>
-                                        <input type="text" id="adults" name="adults" value="1" readonly>
-                                        <span class="adults-plus">+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-btn">
-                            <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            @endforeach
         </div>
         </div>
     </section>
@@ -1250,270 +1176,62 @@
             <div class="responsive">
 
             </div>
-            <!-- @foreach ($latest_listings as $listing)
-    -->
             <div class="responsive">
-                <div class="px-2 mb-4">
-                    <div class="card listing-preview">
-                        <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
-                        <div class="card-img-overlay">
-                            <!-- <h2>
-                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                            </h2> -->
-                        </div>
-                        <div class="card-body-inner">
-                            <div class="listing-heading text-center">
-                                <h4 class="">{{ $listing->title }}</h4>
-                                <p>
-                                    <i class="fas fa-map-marker"></i>
-                                    {{ $listing->city }} {{ $listing->country }}
-                                </p>
+                @foreach ($latest_listings as $listing)
+                    <div class="px-2 mb-4">
+                        <div class="card listing-preview">
+                            <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
+                            <div class="card-img-overlay">
+                                <h2>
+                                    <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
+                                </h2>
                             </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-th-large"></i> Sqft: 2500
+                            <div class="card-body-inner">
+                                <div class="listing-heading text-center">
+                                    <h4 class="">{{ $listing->title }}</h4>
+                                    <p>
+                                        <i class="fas fa-map-marker"></i>
+                                        {{ $listing->city }} {{ $listing->country }}
+                                    </p>
                                 </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-car"></i> Garage: {{ $listing->garage }}
-                                </div>
+                                <hr>
+                                <div class="d-flex py-2 text-secondary justify-content-between">
+                                    <div class="card-icon-one">
+                                        <i class="fas fa-th-large"></i> Sqft: 2500
+                                    </div>
+                                    <div class="card-icon-one">
+                                        <i class="fas fa-car"></i> Garage: {{ $listing->garage }}
+                                    </div>
 
-                            </div>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-bed"></i> Bedrooms: {{ $listing->bedroom }}
                                 </div>
-                                <div class="card-icon-one  ">
-                                    <i class="fas fa-bath"></i> Bathrooms: {{ $listing->bathroom }}
+                                <div class="d-flex py-2 text-secondary justify-content-between">
+                                    <div class="card-icon-one">
+                                        <i class="fas fa-bed"></i> Bedrooms: {{ $listing->bedroom }}
+                                    </div>
+                                    <div class="card-icon-one  ">
+                                        <i class="fas fa-bath"></i> Bathrooms: {{ $listing->bathroom }}
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon">
-                                    <i class="fas fa-user"></i> {{ $listing->realtor->name }}
+                                <hr>
+                                <div class="d-flex py-2 text-secondary justify-content-between">
+                                    <div class="card-icon">
+                                        <i class="fas fa-user"></i> {{ @@$listing->realtor->name }}
+                                    </div>
+                                    <div class="card-icon">
+                                        <i class="fas fa-clock"></i> {{ $listing->created_at->diffForHumans() }}
+                                    </div>
                                 </div>
-                                <div class="card-icon">
-                                    <i class="fas fa-clock"></i> {{ $listing->created_at->diffForHumans() }}
-                                </div>
-                            </div>
-                            <div class="row text-secondary pb-2">
+                                <div class="row text-secondary pb-2">
 
-                            </div>
-                            <hr>
-                            <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4">Deatils</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-2 mb-4">
-                    <div class="card listing-preview">
-                        <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
-                        <div class="card-img-overlay">
-                            <!-- <h2>
-                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                            </h2> -->
-                        </div>
-                        <div class="card-body-inner">
-                            <div class="listing-heading text-center">
-                                <h4 class="">{{ $listing->title }}</h4>
-                                <p>
-                                    <i class="fas fa-map-marker"></i>
-                                    {{ $listing->city }} {{ $listing->country }}
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-th-large"></i> Sqft: 2500
                                 </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-car"></i> Garage: {{ $listing->garage }}
-                                </div>
-
+                                <hr>
+                                <a href="{{ route('single.listing', $listing->id) }}"
+                                    class="btn  btn-block mb-4">Deatils</a>
                             </div>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-bed"></i> Bedrooms: {{ $listing->bedroom }}
-                                </div>
-                                <div class="card-icon-one  ">
-                                    <i class="fas fa-bath"></i> Bathrooms: {{ $listing->bathroom }}
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-user"></i> {{ $listing->realtor->name }}
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-clock"></i> {{ $listing->created_at->diffForHumans() }}
-                                </div>
-                            </div>
-                            <div class="row text-secondary pb-2">
-
-                            </div>
-                            <hr>
-                            <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4">Deatils</a>
                         </div>
                     </div>
-                </div>
-                <div class="px-2 mb-4">
-                    <div class="card listing-preview">
-                        <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
-                        <div class="card-img-overlay">
-                            <!-- <h2>
-                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                            </h2> -->
-                        </div>
-                        <div class="card-body-inner">
-                            <div class="listing-heading text-center">
-                                <h4 class="">{{ $listing->title }}</h4>
-                                <p>
-                                    <i class="fas fa-map-marker"></i>
-                                    {{ $listing->city }} {{ $listing->country }}
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-th-large"></i> Sqft: 2500
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-car"></i> Garage: {{ $listing->garage }}
-                                </div>
-
-                            </div>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-bed"></i> Bedrooms: {{ $listing->bedroom }}
-                                </div>
-                                <div class="card-icon-one  ">
-                                    <i class="fas fa-bath"></i> Bathrooms: {{ $listing->bathroom }}
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-user"></i> {{ $listing->realtor->name }}
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-clock"></i> {{ $listing->created_at->diffForHumans() }}
-                                </div>
-                            </div>
-                            <div class="row text-secondary pb-2">
-
-                            </div>
-                            <hr>
-                            <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4">Deatils</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-2 mb-4">
-                    <div class="card listing-preview">
-                        <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
-                        <div class="card-img-overlay">
-                            <!-- <h2>
-                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                            </h2> -->
-                        </div>
-                        <div class="card-body-inner">
-                            <div class="listing-heading text-center">
-                                <h4 class="">{{ $listing->title }}</h4>
-                                <p>
-                                    <i class="fas fa-map-marker"></i>
-                                    {{ $listing->city }} {{ $listing->country }}
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-th-large"></i> Sqft: 2500
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-car"></i> Garage: {{ $listing->garage }}
-                                </div>
-
-                            </div>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-bed"></i> Bedrooms: {{ $listing->bedroom }}
-                                </div>
-                                <div class="card-icon-one  ">
-                                    <i class="fas fa-bath"></i> Bathrooms: {{ $listing->bathroom }}
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-user"></i> {{ $listing->realtor->name }}
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-clock"></i> {{ $listing->created_at->diffForHumans() }}
-                                </div>
-                            </div>
-                            <div class="row text-secondary pb-2">
-
-                            </div>
-                            <hr>
-                            <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4">Deatils</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-2 mb-4">
-                    <div class="card listing-preview">
-                        <img class="card-img-top" src="{{ url($listing->thumbnail_0) }}" alt="">
-                        <div class="card-img-overlay">
-                            <!-- <h2>
-                            <span class="badge badge-secondary text-white">{{ $listing->price }}</span>
-                            </h2> -->
-                        </div>
-                        <div class="card-body-inner">
-                            <div class="listing-heading text-center">
-                                <h4 class="">{{ $listing->title }}</h4>
-                                <p>
-                                    <i class="fas fa-map-marker"></i>
-                                    {{ $listing->city }} {{ $listing->country }}
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-th-large"></i> Sqft: 2500
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-car"></i> Garage: {{ $listing->garage }}
-                                </div>
-
-                            </div>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-bed"></i> Bedrooms: {{ $listing->bedroom }}
-                                </div>
-                                <div class="card-icon-one  ">
-                                    <i class="fas fa-bath"></i> Bathrooms: {{ $listing->bathroom }}
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex py-2 text-secondary justify-content-between">
-                                <div class="card-icon-one">
-                                    <i class="fas fa-user"></i> {{ $listing->realtor->name }}
-                                </div>
-                                <div class="card-icon-one">
-                                    <i class="fas fa-clock"></i> {{ $listing->created_at->diffForHumans() }}
-                                </div>
-                            </div>
-                            <div class="row text-secondary pb-2">
-
-                            </div>
-                            <hr>
-                            <a href="{{ route('single.listing', $listing->id) }}" class="btn  btn-block mb-4">Deatils</a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach 
             </div>
-
-            <!--
-    @endforeach -->
-            <!-- </div> -->
         </div>
         </div>
     </section>
@@ -1525,156 +1243,21 @@
                 <h3>Featured Locations</h3>
             </div>
             <div class="multiple-items">
+                @foreach ($location as $locations)
+                    
                 <div class="image-slider-inner">
                     <a href="{{ route('listings.location') }}">
                         <div class="image-card">
-                            <img src="{{ asset('assets/img/showcase.jpg') }}">
-                            <div class="card-dec">
-                                <div class="card-price">
-                                    <h4>From:</h4>
-                                    <span>$550.00/night</span>
-                                </div>
+                            <img src="{{ url('assets/uploads/location/',$locations->image) }}">
+                            <div class="card-dec mt-5">
                                 <div class="dec-title">
-                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                                </div>
-                                <div class="card-icon">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-bed"></i>
-                                        <h5>6</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-shower"></i>
-                                        <h5>2.5</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-user"></i>
-                                        <h5>5</h5>
-                                    </div>
+                                    <p>{{$locations->location}}</p>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="image-slider-inner">
-                    <a href="{{ route('listings.location') }}">
-                        <div class="image-card">
-                            <img src="{{ asset('assets/img/homes/home-3.jpg') }}">
-                            <div class="card-dec">
-                                <div class="card-price">
-                                    <h4>From:</h4>
-                                    <span>$550.00/night</span>
-                                </div>
-                                <div class="dec-title">
-                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                                </div>
-                                <div class="card-icon">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-bed"></i>
-                                        <h5>6</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-shower"></i>
-                                        <h5>2.5</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-user"></i>
-                                        <h5>5</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="image-slider-inner">
-                    <a href="{{ route('listings.location') }}">
-                        <div class="image-card">
-                            <img src="{{ url($listing->thumbnail_0) }}">
-                            <div class="card-dec">
-                                <div class="card-price">
-                                    <h4>From:</h4>
-                                    <span>$550.00/night</span>
-                                </div>
-                                <div class="dec-title">
-                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                                </div>
-                                <div class="card-icon">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-bed"></i>
-                                        <h5>6</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-shower"></i>
-                                        <h5>2.5</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-user"></i>
-                                        <h5>5</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="image-slider-inner">
-                    <a href="{{ route('listings.location') }}">
-                        <div class="image-card">
-                            <img src="{{ asset('assets/img/showcase.jpg') }}">
-                            <div class="card-dec">
-                                <div class="card-price">
-                                    <h4>From:</h4>
-                                    <span>$550.00/night</span>
-                                </div>
-                                <div class="dec-title">
-                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                                </div>
-                                <div class="card-icon">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-bed"></i>
-                                        <h5>6</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-shower"></i>
-                                        <h5>2.5</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-user"></i>
-                                        <h5>5</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="image-slider-inner">
-                    <a href="{{ route('listings.location') }}">
-                        <div class="image-card">
-                            <img src="{{ asset('assets/img/showcase.jpg') }}">
-                            <div class="card-dec">
-                                <div class="card-price">
-                                    <h4>From:</h4>
-                                    <span>$550.00/night</span>
-                                </div>
-                                <div class="dec-title">
-                                    <p>T36 - Tnuva Stunning 3-Bedroom Apartment</p>
-                                </div>
-                                <div class="card-icon">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-bed"></i>
-                                        <h5>6</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-shower"></i>
-                                        <h5>2.5</h5>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-user"></i>
-                                        <h5>5</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -1722,59 +1305,25 @@
                 <h2>Meet the Agents</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, magnam.</p>
                 <div class="team-inner">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="{{ asset('assets/img/realtors\jenny.jpg') }}">
-                        </div>
-                        <div class="team-name d-flex justify-content-between">
-                            <div class="team-dec">
-                                <h4>Jenny</h4>
-                                <span>Realtor</span>
+                        @foreach ($agents as $agent)
+                            <div class="team-card">
+                                <div class="team-image">
+                                    <img src="{{ url($agent->image) }}">
+                                </div>
+                                <div class="team-name d-flex justify-content-between">
+                                    <div class="team-dec">
+                                        <h4>{{ $agent->name }}</h4>
+                                        <span>Realtor</span>
+                                    </div>
+                                    <div class="team-cont d-flex">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <div class="team-cont d-flex">
-                                <i class="fa-solid fa-phone"></i>
-                                <i class="fa-solid fa-message"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="{{ asset('assets/img/realtors\kyle.jpg') }}">
-                        </div>
-                        <div class="team-name d-flex justify-content-between">
-                            <div class="team-dec">
-                                <h4>Kyle</h4>
-                                <span>Realtor</span>
-                            </div>
-                            <div class="team-cont d-flex">
-                                <i class="fa-solid fa-phone"></i>
-                                <i class="fa-solid fa-message"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="{{ asset('assets/img/realtors\mark.jpg') }}">
-                        </div>
-                        <div class="team-name d-flex justify-content-between">
-                            <div class="team-dec">
-                                <h4>Mark</h4>
-                                <span>Realtor</span>
-                            </div>
-                            <div class="team-cont d-flex">
-                                <i class="fa-solid fa-phone"></i>
-                                <i class="fa-solid fa-message"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
+                        @endforeach
                 </div>
             </div>
         </div>

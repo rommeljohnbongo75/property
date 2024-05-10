@@ -14,6 +14,7 @@ use App\Http\Controllers\RealtorController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\ContactNewController;
 use App\Http\Controllers\FullCalenderController;
+use App\Http\Controllers\FeaturedLocationsController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 
 /*
@@ -87,9 +88,15 @@ Route::controller(HomeController::class)->group(function () {
     Route::put('banner/update/{id}', 'update')->name('banner.update');
     Route::post('banner/chengestatus','changestatus')->name('banner.chnageStatus');
     Route::get('banner/delete/{id}', 'destroy')->name('banner.delete');
+});
 
-
-
+Route::controller(FeaturedLocationsController::class)->group(function () {
+    Route::get('FeaturedLocation','index')->name('FeaturedLocation.index');  
+    Route::get('FeaturedLocation/create','create')->name('FeaturedLocation.create');  
+    Route::post('FeaturedLocation/store','store')->name('FeaturedLocation.store');  
+    Route::get('FeaturedLocation/edit/{id}', 'edit')->name('FeaturedLocation.edit');
+    Route::put('FeaturedLocation/update/{id}', 'update')->name('FeaturedLocation.update');
+    Route::get('FeaturedLocation/delete/{id}', 'destroy')->name('FeaturedLocation.delete');
 
 
 });

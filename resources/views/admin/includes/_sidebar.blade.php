@@ -77,6 +77,15 @@
                         <span class="hide-menu">Contact Us</span>
                     </a>
                 </li>
+
+                
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('FeaturedLocation.index')}}"
+                        aria-expanded="false">
+                        <i class="mdi mdi-border-none"></i>
+                        <span class="hide-menu">Featured Locations  </span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

@@ -1,5 +1,5 @@
 @extends('admin.base')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
@@ -1396,8 +1396,7 @@
             });
         });
     </script> --}}
-@endsection
-</section>
+
 <!-- photos-section -->
 <!-- photos-section-start -->
 <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
@@ -1413,3 +1412,4 @@
                                 
 </script>
 @endsection
+</section>

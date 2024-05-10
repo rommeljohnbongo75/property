@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Som;
 use App\Models\Contact;
 use App\Models\Listing;
 use App\Models\Realtor;
-use App\Models\Som;
+use App\Models\HomeBanner;
 use Illuminate\Http\Request;
+use App\Models\FeaturedLocation;
 use Illuminate\Support\Facades\Auth;
 
 class FrontEndController extends Controller
 {
     public function index()
     {
-        $latest_listings = Listing::orderBy('id', 'DESC')->where('is_published','1')->limit('1')->get();
-        return view('site.layouts.index', compact('latest_listings'));
+        $latest_listings = Listing::orderBy('id', 'DESC')->get();
+        $agents = Realtor::get();
+        $banner = HomeBanner::get();
+        $location = FeaturedLocation::get();
+        return view('site.layouts.index', compact('latest_listings','agents','banner','location'));
     }
 
     public function listings()
@@ -53,7 +58,9 @@ class FrontEndController extends Controller
     
     public function listing($id)
     {
+        dd("dfgfdgdfgdgdg");
         $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
+        dd($listing);
         $initialMarkers = [
             [
                 'position' => [
@@ -73,7 +80,7 @@ class FrontEndController extends Controller
     public function about()
     {   
         $realtors = Realtor::all();
-        $som = Som::with('realtor')->first();
+        $som = Som::with(['realtor'])->first();
         
         return view('site.layouts.about',compact('som','realtors'));
     }

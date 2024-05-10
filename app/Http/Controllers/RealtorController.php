@@ -109,7 +109,7 @@ class RealtorController extends Controller
     {
 
         $image_new_name = $name.'.'.time().'.'.$image->getClientOriginalExtension();  
-        $isScucess = $image->move(public_path('images/realtor'), $image_new_name);
+        $isScucess = $image->move(public_path('images/realtor/'), $image_new_name);
     
         if($isScucess){
             $image_url = 'images/realtor/'.$image_new_name;

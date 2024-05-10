@@ -207,7 +207,9 @@
                             <div class="col-sm-12">
                                 <select  name="realtor_id" class="form-control form-control-line" required>
                                 <option  style="display:none">Select Realtor</option>
-                                    <option value="{{ $listing -> realtor-> id }}" selected >{{ $listing -> realtor-> name }}</option>
+                                @foreach ($rantor as $rantors)
+                                <option value="{{$rantors->id}}" selected >{{ $rantors->name  }}</option>
+                                @endforeach
                                 </select>
                             </div>
                         </div>
