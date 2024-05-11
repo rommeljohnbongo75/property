@@ -484,123 +484,214 @@
 
         }
     }
+
+    .arrive-data {
+        align-items: center;
+        margin-bottom: 324px;
+    }
+
+    .d-flex {
+        display: flex !important;
+        margin-bottom: 0px;
+    }
+
+    .minus {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #FFA920;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .plus {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #FFA920;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .adults-minus {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #FFA920;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .adults-plus {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #FFA920;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .sec-menu-div {
+        background-color: wheat;
+        padding: 20px;
+        width: 290px;
+        margin-left: 300px;
+    }
+
+    .counter-add-data input[type="text"] {
+        width: 30%;
+        height: 40px;
+        text-align: center;
+    }
+
+    .adults-children sec-menu-div active {
+        margin: 50px;
+        z-index: 1;
+    }
 </style>
 @section('content')
     <section id="listings">
         <div class="container">
-            <form action="{{route('filter')}}" method="post">
+            <form action="{{ route('filter') }}" method="post">
                 @csrf
-            <div class="search-bar-inner">
-                <div class="search-location d-flex">
-                    <label class="visually-hidden" for="specificSizeSelect"></label>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <select class="form-select" id="specificSizeSelect">
-                        <option selected>Jerusalem</option>
-                        <option value="Jerusalem">Geula</option>
-                        <option value="Jerusalem">New York</option>
-                        <option value="Jerusalem">Shalem Tower</option>
-                    </select>
-                </div>
-                <div class="adult-data d-flex">
-                    <label class="visually-hidden" for="specificSizeSelect"></label>
-                    <i class="fa-regular fa-user"></i>
-                    <select class="form-select" id="specificSizeSelect">
+                <div class="search-bar-inner">
+                    <div class="search-location d-flex">
+                        <label class="visually-hidden" for="specificSizeSelect"></label>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <select class="form-select" id="specificSizeSelect" name="city">
+                            <option value="Jerusalem">Jerusalem</option>
+                            <option value="Geula">Geula</option>
+                            <option value="New York">New York</option>
+                            <option value="Shalem Tower">Shalem Tower</option>
+                            <option value="netanya">netanya</option>
 
-                        <option selected>1 Adult | 0 Children </option>
-                        <option value="Jerusalem" class="adult-data-inner">
-                            <div class="">
-                                <h3>1 Adults</h3>
+                        </select>
+                    </div>
+                    <div class="adult-data d-flex">
+                        <label class="visually-hidden" for="specificSizeSelect"></label>
+                        <i class="fa-regular fa-user"></i>
+                        <div class="form-group-one d-flex align-items-center" id="sec-menu">
+                            <div class="data-lable-one">
+                                <input type="text" class="adults-adults" style="font-size:18px" value="1 Guest"
+                                    placeholder="1 Adults">
                             </div>
-                            <div class="d-flex plus-text">
-                                <h4>-</h4>
-                                <h5>+</h5>
+                            <div class="data-lable-one">
+                                <input type="text" class="children-children" style="font-size:18px" value="1 Children"
+                                    placeholder="1 Children">
                             </div>
-                        </option>
-                        <option value="Jerusalem" class="adult-data-inner">
-                            <div class="">
-                                <h3>1 Adults</h3>
-                            </div>
-                            <div class="d-flex plus-text">
-                                <h4>-</h4>
-                                <h5>+</h5>
-                            </div>
-                        </option>
-                        <option value="Jerusalem" class="adult-data-inner">
-                            <div class="">
-                                <h3>1 Adults</h3>
-                            </div>
-                            <div class="d-flex plus-text">
-                                <h4>-</h4>
-                                <h5>+</h5>
-                            </div>
-                        </option>
-                    </select>
-                </div>
-                <div class="arrive-data d-flex">
-                    <i class="fa-regular fa-calendar"></i><input type="text" name="checkin_filter" id="checkin_filter"
-                        autocomplete="off" value="" readonly="" class="form-control" placeholder="Arrive - Depart">
-                </div>
-                <div class=" Amenities-data">
-                    <div class="checkbox-dropdown">
-                        <i class="fa-solid fa-bath"></i>
-                        Amenities
-                        <ul class="checkbox-dropdown-list">
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Vejle" name="city" />Air Conditioning</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Horsens" name="city" />Barbecue Area</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" />Beis Medrash</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> City View</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Coffee Machine</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Dishwasher</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Elevator</label>
-                            </li>
+                        </div>
+                    </div>
+                    <div class="arrive-data d-flex">
+                        <i class="fa-regular fa-calendar"></i><input type="text" name="checkin_filter"
+                            id="checkin_filter" autocomplete="off" value="" readonly="" class="form-control"
+                            placeholder="Arrive - Depart">
+                    </div>
+                    <div class=" Amenities-data">
+                        <div class="checkbox-dropdown">
+                            <i class="fa-solid fa-bath"></i>
+                            Amenities
+                            <ul class="checkbox-dropdown-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Vejle" name="city" />Air Conditioning</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Horsens" name="city" />Barbecue Area</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" />Beis Medrash</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" /> City View</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" /> Coffee Machine</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" /> Dishwasher</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" /> Elevator</label>
+                                </li>
 
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Elevator for Shabbos</label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" /> Garden
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" />Laundry</label>
-                            </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" /> Elevator for
+                                        Shabbos</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" /> Garden
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" />Laundry</label>
+                                </li>
 
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="Kolding" name="city" />Microwave</label>
-                            </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" value="Kolding" name="city" />Microwave</label>
+                                </li>
 
-                        </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrive-search">
+                        <button type="submit" class="btn btn-primary"> search </button>
                     </div>
                 </div>
-                <div class="arrive-search">
-                    <button type="submit" class="btn btn-primary"> search </button>
+
+
+
+                <div class="adults-children sec-menu-div">
+                    <div class="form-group">
+                        <div class="counter d-flex justify-content-center" id="counter">
+                            <div class="form-date">
+                                <h4>Adults Capacity</h4>
+                                <p>Total guests capacity</p>
+                            </div>
+                            <div class="counter-add-data text-center">
+                                <span class="adults-minus">-</span>
+                                <input type="text" id="adults" name="adults" value="1" readonly>
+                                <span class="adults-plus">+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="counter d-flex justify-content-center" id="counter">
+                            <div class="form-date">
+                                <h4>Children Capacity</h4>
+                                <p>Total bedrooms capacity</p>
+                            </div>
+                            <div class="counter-add-data text-center">
+                                <span class="minus">-</span>
+                                <input type="text" id="adults" name="children" value="1" readonly>
+                                <span class="plus">+</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         </div>
         <div class="map-section">
             <div class="property">
@@ -636,36 +727,45 @@
 
                 <!-- listings-location-end -->
                 <!-- <div class="agent-widget-inner">
-                    <div class="agent-widget">
-                        <div class="agent-image">
-                            <img src="{{ asset('assets/img/realtors\jenny.jpg') }}"">
-                        </div>
-                        <div class="agent-name">
-                            <h3>Kelly</h3>
-                             <span>+ 9987766766</span>
-                        </div>
-                    </div>
-                    <div class="agent-form">
-                    <label for="first_name"></label>
-                      <input type="text" name="first_name" class="form-control" placeholder="Your Email" required>
-                      <label for="first_name"></label>
-                      <input type="text" name="first_name" class="form-control" placeholder="Your Phone" required>
-                      <label for="first_name"></label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1"
-                          placeholder="I'm interested in this property [ID 123456] and I'd like to know more details." rows="2"></textarea>
-                      <div class="agent-btn">
-                      <button>Send Message</button>
-                      </div>
-                    </div>
-                </div> -->
+                                                    <div class="agent-widget">
+                                                        <div class="agent-image">
+                                                            <img src="{{ asset('assets/img/realtors\jenny.jpg') }}"">
+                                                        </div>
+                                                        <div class="agent-name">
+                                                            <h3>Kelly</h3>
+                                                             <span>+ 9987766766</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="agent-form">
+                                                    <label for="first_name"></label>
+                                                      <input type="text" name="first_name" class="form-control" placeholder="Your Email" required>
+                                                      <label for="first_name"></label>
+                                                      <input type="text" name="first_name" class="form-control" placeholder="Your Phone" required>
+                                                      <label for="first_name"></label>
+                                                      <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                          placeholder="I'm interested in this property [ID 123456] and I'd like to know more details." rows="2"></textarea>
+                                                      <div class="agent-btn">
+                                                      <button>Send Message</button>
+                                                      </div>
+                                                    </div>
+                                                </div> -->
             </div>
         </div>
 
 
 
     </section>
+    <div id="searchResults"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap"
         defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.data-lable-one').click(function() {
+                $('.adults-children').toggle();
+            });
+        });
+    </script>
     <script>
         let map, activeInfoWindow, markers = [];
 

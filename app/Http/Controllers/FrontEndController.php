@@ -101,10 +101,8 @@ class FrontEndController extends Controller
         // dd($filter);
         $listingpost = Listing::where([
                                 ['city', 'like', '%' . request('city') . '%'],
-                               ['bedroom', 'like', '%' . request('bedroom') . '%'],
-                                ['bathroom', 'like', '%' . request('bathroom') . '%']
                             ])->get();
-            // dd($listingpost);
+    
         return view('site.layouts.filterdata',compact('listingpost'));
     }
 }

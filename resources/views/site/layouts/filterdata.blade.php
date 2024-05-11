@@ -525,62 +525,12 @@
         /* gap:20px; */
     }
 
-    .from-data {
-        background-color: #efe9e2;
-        border-radius: 10px;
-        padding: 5px 10px;
-        margin: 10px 0;
-    }
-
-    .form-group .form-control {
-        background-color: #efe9e2;
-        border-radius: 10px;
-        height: 20%;
-    }
-
-    .btn {
-        margin-top: 20px;
-    }
-
-
-    input.adults-adults:focus-visible,
-    input#ranges:focus-visible,
-    input#rangesend,
-    input.children-children {
-        border: none;
-        outline: none;
-    }
-
-
-    .counter span {
-        cursor: pointer;
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        background-color: #FFA920;
-        color: #fff;
-        border-radius: 5px;
-    }
-
-    .btn-primary {
-        margin-top: 2;
-        --bs-btn-color: #fff;
-        --bs-btn-bg: #0d6efd;
-        --bs-btn-border-color: #0d6efd;
-        --bs-btn-hover-color: #fff;
-        --bs-btn-hover-bg: #0b5ed7;
-        --bs-btn-hover-border-color: #0a58ca;
-        --bs-btn-focus-shadow-rgb: 49, 132, 253;
-        --bs-btn-active-color: #fff;
-        --bs-btn-active-bg: #0a58ca;
-        --bs-btn-active-border-color: #0a53be;
-        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-        --bs-btn-disabled-color: #fff;
-        --bs-btn-disabled-bg: #0d6efd;
-        --bs-btn-disabled-border-color: #0d6efd;
-    }
+footer#main-footer {
+    margin-top: 155px;
+    background-color: black;
+    padding: 0 90px;
+    /* margin-top: 80px; */
+}
 </style>
 @section('content')
     <section id="listings">
@@ -590,7 +540,7 @@
         <div class="map-section">
             <div class="property">
                 <!-- Property 1 -->
-                @if ($listingpost)
+                @if (count($listingpost) > 0)
                         @foreach ($listingpost as $post)
                             <div class="property-inner">
                                 <div class="property-img">
@@ -603,7 +553,23 @@
                             </div>
                         @endforeach
                 @else
-                        <p>No find data</p>
+                <div class="row">
+                    <div class="col-md-12 offset-md-5">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center" style="color:red;">
+                                                    <h1>No Data Found.</h1>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                </div>
                 @endif
             </div>
            
