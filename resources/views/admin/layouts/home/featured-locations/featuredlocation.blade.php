@@ -36,8 +36,8 @@
                                 <tr>
 
                                     <th scope="col">#</th>
-                                    <th scope="col">image</th>
                                     <th scope="col">Location</th>
+                                    <th scope="col">image</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

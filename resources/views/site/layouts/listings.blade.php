@@ -544,9 +544,10 @@
     }
 
     .sec-menu-div {
-        background-color: wheat;
+        background-color: rgb(202, 196, 185);
         padding: 20px;
         width: 290px;
+        height: 320px;
         margin-left: 300px;
     }
 
@@ -558,8 +559,29 @@
 
     .adults-children sec-menu-div active {
         margin: 50px;
-        z-index: 1;
     }
+
+    input.adults-adults,
+    input.children-children {
+        border: none;
+        background-color: whitesmoke;
+        padding: 5%;
+        border-radius: 2px;
+        font-size: 18px;
+    }
+    textarea:focus, input:focus{
+    outline: none;
+}
+  .map-section{
+    position: relative; top:
+  }
+  #bedrooms{
+    width: 50%;
+    text-align: left;
+  }
+  .data-lable-one{
+    border: 1px solid rgb(214, 206, 206);
+  }
 </style>
 @section('content')
     <section id="listings">
@@ -584,18 +606,18 @@
                         <i class="fa-regular fa-user"></i>
                         <div class="form-group-one d-flex align-items-center" id="sec-menu">
                             <div class="data-lable-one">
-                                <input type="text" class="adults-adults" style="font-size:18px" value="1 Guest"
+                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px" value="1 Guest"
                                     placeholder="1 Adults">
                             </div>
                             <div class="data-lable-one">
-                                <input type="text" class="children-children" style="font-size:18px" value="1 Children"
+                                <input type="text" class="children-children" name="bathroom" style="font-size:18px" value="1 Children"
                                     placeholder="1 Children">
                             </div>
                         </div>
                     </div>
                     <div class="arrive-data d-flex">
-                        <i class="fa-regular fa-calendar"></i><input type="text" name="checkin_filter"
-                            id="checkin_filter" autocomplete="off" value="" readonly="" class="form-control"
+                        <input type="date" name="checkin_filter"
+                            id="checkin_filter"  class="form-control"
                             placeholder="Arrive - Depart">
                     </div>
                     <div class=" Amenities-data">
@@ -671,7 +693,7 @@
                             </div>
                             <div class="counter-add-data text-center">
                                 <span class="adults-minus">-</span>
-                                <input type="text" id="adults" name="adults" value="1" readonly>
+                                <input type="text" id="adults" name="bedroom" value="1" readonly>
                                 <span class="adults-plus">+</span>
                             </div>
                         </div>
@@ -681,11 +703,11 @@
                         <div class="counter d-flex justify-content-center" id="counter">
                             <div class="form-date">
                                 <h4>Children Capacity</h4>
-                                <p>Total bedrooms capacity</p>
+                                <p id="bedrooms">Total bedrooms capacity</p>
                             </div>
                             <div class="counter-add-data text-center">
                                 <span class="minus">-</span>
-                                <input type="text" id="adults" name="children" value="1" readonly>
+                                <input type="text" id="adults" name="bathroom"  value="1" readonly>
                                 <span class="plus">+</span>
                             </div>
                         </div>
@@ -727,28 +749,28 @@
 
                 <!-- listings-location-end -->
                 <!-- <div class="agent-widget-inner">
-                                                    <div class="agent-widget">
-                                                        <div class="agent-image">
-                                                            <img src="{{ asset('assets/img/realtors\jenny.jpg') }}"">
+                                                        <div class="agent-widget">
+                                                            <div class="agent-image">
+                                                                <img src="{{ asset('assets/img/realtors\jenny.jpg') }}"">
+                                                            </div>
+                                                            <div class="agent-name">
+                                                                <h3>Kelly</h3>
+                                                                 <span>+ 9987766766</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="agent-name">
-                                                            <h3>Kelly</h3>
-                                                             <span>+ 9987766766</span>
+                                                        <div class="agent-form">
+                                                        <label for="first_name"></label>
+                                                          <input type="text" name="first_name" class="form-control" placeholder="Your Email" required>
+                                                          <label for="first_name"></label>
+                                                          <input type="text" name="first_name" class="form-control" placeholder="Your Phone" required>
+                                                          <label for="first_name"></label>
+                                                          <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                              placeholder="I'm interested in this property [ID 123456] and I'd like to know more details." rows="2"></textarea>
+                                                          <div class="agent-btn">
+                                                          <button>Send Message</button>
+                                                          </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="agent-form">
-                                                    <label for="first_name"></label>
-                                                      <input type="text" name="first_name" class="form-control" placeholder="Your Email" required>
-                                                      <label for="first_name"></label>
-                                                      <input type="text" name="first_name" class="form-control" placeholder="Your Phone" required>
-                                                      <label for="first_name"></label>
-                                                      <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                          placeholder="I'm interested in this property [ID 123456] and I'd like to know more details." rows="2"></textarea>
-                                                      <div class="agent-btn">
-                                                      <button>Send Message</button>
-                                                      </div>
-                                                    </div>
-                                                </div> -->
+                                                    </div> -->
             </div>
         </div>
 
@@ -763,6 +785,7 @@
         $(document).ready(function() {
             $('.data-lable-one').click(function() {
                 $('.adults-children').toggle();
+                
             });
         });
     </script>

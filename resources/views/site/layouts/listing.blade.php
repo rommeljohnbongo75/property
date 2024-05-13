@@ -776,6 +776,7 @@
         .adults-children.sec-menu-div.active {
             display: block !important;
         }
+ 
 
 
         /* .option-tab ul li a:hover{
@@ -1024,9 +1025,10 @@
                 </div>
                 <div class="date" id="Dates & Reservations">
                     <h3>Dates & Reservations</h3>
-                    <div class="calendar-main ">
-                        <div class="calendar" id="calendar-calendar"></div>
-                        <div class="calendar" id="calendar-calendar"></div>
+                    <div class="calendar-main">
+                        
+                        <div  class="calendar" id="calendar-calendar"></div>
+                        <div  class="calendar" id="calendar-calendar"></div>
                     </div>
                 </div>
 
@@ -1069,12 +1071,6 @@
                         </li>
 
                     </ul>
-
-
-
-
-
-
                 </div>
 
             </div>
@@ -1086,8 +1082,7 @@
     <!---------About-host-end------------>
     <!-- Inquiry Modal -->
     <!-- Inquiry Modal -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap"
-        defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
     <script>
         let map, activeInfoWindow, markers = [];
 

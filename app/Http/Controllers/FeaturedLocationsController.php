@@ -20,7 +20,7 @@ class FeaturedLocationsController extends Controller
         // dd("gfhghgfhfghfgh");
         $request->validate([
             "name" => "required",
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
         ]);
             $location = new FeaturedLocation();
             $location->location = $request->name;

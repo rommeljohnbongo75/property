@@ -56,10 +56,13 @@ class FrontEndController extends Controller
         return view('site.layouts.listings', compact('listings','initialMarkers'));
     }
     
-    public function listing($id)
+    public function listing(Request $request,$id)
     {
         // dd("dfgfdgdfgdgdg");
         $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
+        $Contact = Contact::where('listing_id', $request->id)->orWhere('start_date','start_date' && 'end_date','end_date')->select('start_date','end_date')->get();
+        
+        // dd($Contact);
         // dd($listing);
         $initialMarkers = [
             [
@@ -72,7 +75,7 @@ class FrontEndController extends Controller
             ],
         ];
 
-        return view('site.layouts.listing', compact('listing','initialMarkers'));
+        return view('site.layouts.listing', compact('listing','initialMarkers','Contact'));
     }
 
 
@@ -101,7 +104,11 @@ class FrontEndController extends Controller
         // dd($filter);
         $listingpost = Listing::where([
                                 ['city', 'like', '%' . request('city') . '%'],
+                                ['bedroom', 'like', '%' . request('bedroom') . '%'],
+                                ['bathroom', 'like', '%' . request('bathroom') . '%'],
+
                             ])->get();
+                // dd($listingpost);    
     
         return view('site.layouts.filterdata',compact('listingpost'));
     }
