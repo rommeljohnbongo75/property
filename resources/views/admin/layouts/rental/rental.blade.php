@@ -155,9 +155,6 @@
                                             <h4>{{ $overviews->name }}</h4>
                                             <span>ID:578916</span>
                                             <div class="rental-btn text-center">
-                                                <a href="{{ route('rental-form') }}">Add To Website<i class="fa-regular fa-circle-check"></i></a>
-                                            </div>
-                                            <div class="rental-btn text-center">
                                               <a href="{{route('rental.edit',$images->id)}}">Edit Property<i class="fa-regular fa-circle-check"></i></a>
                                           </div>
                                         @endif

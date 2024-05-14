@@ -1045,6 +1045,11 @@
                                         <div>
                                             <input type="file" name="images[]" id="Image" class="form-control"
                                                 placeholder="Image" multiple>
+                                                <span class="text-danger">
+                                                    @error('images')
+                                                        {{$message}}
+                                                    @enderror
+                                                </span>
                                         </div>
                                         <div>
                                             <button class="btn btn-primary">Create</button>
@@ -1369,8 +1374,7 @@
     </section>
     <!-- photos-section -->
     <!-- photos-section-start -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         ClassicEditor

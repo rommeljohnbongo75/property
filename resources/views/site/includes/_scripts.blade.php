@@ -317,34 +317,17 @@ $(".checkbox-dropdown ul").click(function(e) {
             window.location.reload();
         });
     });
-  var contactData = @json($Contact);
-
-$('.calendar').datepicker({
-    multidate: true,
-    updateViewDate: false,
-    beforeShowDay: function(date) {
-        var dateString = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-        var highlighted = false;
-
-        // Check if the date is in any of the contacts
-        contactData.forEach(function(contact) {
-            var startDate = new Date(contact.start_date);
-            var endDate = new Date(contact.end_date);
-
-            console.log('Date:', dateString);
-            console.log('Start Date:', startDate);
-            console.log('End Date:', endDate);
-
-            if (date == startDate && date == endDate) {
-                console.log(date
-                highlighted = true;
-            }
+    $('.calendar').map(function(index) {
+        $(this).datepicker({
+            defaultViewDate: {
+                year: (new Date()).getFullYear(),
+                month: (new Date()).getMonth() + index,
+                date: 1
+            },
+            multidate: true,
+            updateViewDate: false
         });
-
-        console.log('Highlighted:', highlighted);
-        return [highlighted, ''];
-    }
-});
+    });
 
     // keep month in sync
     var orderMonth = function(e) {

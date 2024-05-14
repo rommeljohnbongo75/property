@@ -85,7 +85,7 @@ class RentalController extends Controller
     {
         // Validate the uploaded images
         $request->validate([
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images' => 'required',
         ]);
         // Handle file upload
         if ($request->hasFile('images')) {

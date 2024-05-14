@@ -198,8 +198,12 @@ background-size: cover;
                                   </span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="password_confirmation" class="form-control"
-                                        placeholder="Confirm Password">
+                                    <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="Confirm Password">
+                                    <span class="text-danger"  style="margin-left: 130px">
+                                        @error('password_confirmation')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <button type="submit"  class="btn btn-primary btn-block"> Register </button>
                             </form>

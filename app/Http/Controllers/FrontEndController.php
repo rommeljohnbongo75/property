@@ -48,7 +48,15 @@ class FrontEndController extends Controller
                 ],
                 'label' => [ 'color' => 'white', 'text' => 'P3' ],
                 'draggable' => true
-            ]
+            ],
+            [
+                'position' => [
+                    'lat' => 40.771959,
+                    'lng' => 35.217018,
+                ],
+                'label' => [ 'color' => 'white', 'text' => 'P1' ],
+                'draggable' => true
+            ],
         ];
 
         $listings = Listing::orderBy('id', 'DESC')->where('is_published','1')->get();
@@ -58,24 +66,22 @@ class FrontEndController extends Controller
     
     public function listing(Request $request,$id)
     {
-        // dd("dfgfdgdfgdgdg");
+        
         $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
         $Contact = Contact::where('listing_id', $request->id)->orWhere('start_date','start_date' && 'end_date','end_date')->select('start_date','end_date')->get();
-        
-        // dd($Contact);
-        // dd($listing);
+        $location = Listing::findOrFail($id);
+
         $initialMarkers = [
             [
                 'position' => [
-                    'lat' => '31.771959',
-                    'lng' => '35.217018',
+                    'lat' => 31.771959,
+                    'lng' => 35.217018,
                 ],
-                'label' => [ 'color' => 'white', 'text' => 'P1' ],
                 'draggable' => true
-            ],
+            ]
         ];
 
-        return view('site.layouts.listing', compact('listing','initialMarkers','Contact'));
+        return view('site.layouts.listing', compact('listing','initialMarkers','Contact','location'));
     }
 
 

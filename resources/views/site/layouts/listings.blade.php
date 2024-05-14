@@ -688,8 +688,8 @@
                     <div class="form-group">
                         <div class="counter d-flex justify-content-center" id="counter">
                             <div class="form-date">
-                                <h4>Adults Capacity</h4>
-                                <p>Total guests capacity</p>
+                                <h4 style="font-size: 16px;">Bedroom Capacity</h4>
+                                <p>Total bedrooms capacity</p>
                             </div>
                             <div class="counter-add-data text-center">
                                 <span class="adults-minus">-</span>
@@ -702,7 +702,7 @@
                     <div class="form-group">
                         <div class="counter d-flex justify-content-center" id="counter">
                             <div class="form-date">
-                                <h4>Children Capacity</h4>
+                                <h4 style="font-size: 16px;">Bathroom Capacity</h4>
                                 <p id="bedrooms">Total bedrooms capacity</p>
                             </div>
                             <div class="counter-add-data text-center">
