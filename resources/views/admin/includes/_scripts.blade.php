@@ -1,37 +1,18 @@
 <!-- Scripts -->
 <!-- All Jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
-    integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('admin/libs/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{ asset('admin/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-<script src="{{ asset('admin/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/js/bootstrap5-toggle.ecmas.min.js"></script>
-<script src="{{ asset('admin/libs/popper.js/dist/umd/popper.min.js' ) }}"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
-<script src="{{ asset('admin/libs/sparkline/sparkline.js') }}"></script>
-<!--Wave Effects -->
-<script src="{{ asset('admin/dist/js/waves.js') }}"></script>
-<!--Menu sidebar -->
-<script src="{{ asset('admin/dist/js/sidebarmenu.js') }}"></script>
 <!--Custom JavaScript -->
-<script src="{{ asset('admin/dist/js/sweet-alert.js') }}"></script>
+<script src="{{ asset('admin/dist/js/sweet-alert.js') }}"></script> 
 <script src="{{ asset('admin/dist/js/ajax-call.js') }}"></script>
-<script src="{{ asset('admin/libs/datatable/datatable.js') }}"></script>
-<script src="{{ asset('admin/libs/datatable/dataTables.bootstrap.js') }}"></script>
-<script src="{{ asset('admin/dist/js/bs-custom-file-input.min.js') }}"></script>
 <script src="{{ asset('admin/dist/js/custom.min.js') }}"></script>
-<script src="{{ asset('admin/dist/js/pages/dashboards/dashboard1.js') }}"></script>
 <!--Custom CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
+<!--Wave Effects -->
+<script src="{{ asset('admin/dist/js/waves.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

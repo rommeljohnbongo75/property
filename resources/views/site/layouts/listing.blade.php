@@ -776,31 +776,37 @@
         .adults-children.sec-menu-div.active {
             display: block !important;
         }
- 
+
 
 
         /* .option-tab ul li a:hover{
             underline:dotted;
         } */
     }
+
+    .highlighted-date{
+        color: black !important;
+        background-color: rgb(225, 28, 28) !important;
+        text-decoration: line-through;
+    }
 </style>
 @section('content')
     <!-- Breadcrumb -->
     <!-- <section id="bc" class="mt-3">
-               <div class="container">
-                  <nav>
-                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                           <a href="{{ route('index') }}">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                           <a href="{{ route('listings') }}">Listings</a>
-                        </li>
-                        <li class="breadcrumb-item active">{{ $listing->title }}</li>
-                     </ol>
-                  </nav>
-               </div>
-            </section> -->
+                   <div class="container">
+                      <nav>
+                         <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                               <a href="{{ route('index') }}">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                               <a href="{{ route('listings') }}">Listings</a>
+                            </li>
+                            <li class="breadcrumb-item active">{{ $listing->title }}</li>
+                         </ol>
+                      </nav>
+                   </div>
+                </section> -->
     <!-- Listing -->
     <section id="listing">
 
@@ -1026,14 +1032,11 @@
                 <div class="date" id="Dates & Reservations">
                     <h3>Dates & Reservations</h3>
                     <div class="calendar-main">
-                        
-                        <div  class="calendar" id="calendar-calendar"></div>
-                        <div  class="calendar" id="calendar-calendar"></div>
+                        <div class="calendar" id="calendar-calendar-1"></div>
+                        <div class="calendar" id="calendar-calendar-2"></div>
                     </div>
                 </div>
-
             </div>
-        </div>
     </section>
     <!---------review-section-start------->
     <section class="review" id="review-one">
@@ -1083,9 +1086,20 @@
     <!-- Inquiry Modal -->
     <!-- Inquiry Modal -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ asset('assets/datepicker/js/bootstrap-datepicker.min.js' ) }}"></script>    
+   
+
+
+
+
+
     <script>
         function initMap() {
-            var location = {lat: {{ $location->latitude }}, lng: {{ $location->longitude }}};
+            var location = {
+                lat: {{ $location->latitude }},
+                lng: {{ $location->longitude }}
+            };
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10,
                 center: location
@@ -1095,5 +1109,43 @@
                 map: map
             });
         }
+        $('.calendar').map(function(index) {
+        var Contact = @json($Contact);
+        console.log("Contact Data:", Contact); // Debugging: Log Contact data
+
+        $('.calendar').each(function(index) {
+            var startDate;
+
+            if (Contact[index] && Contact[index].start_date) {
+                startDate = new Date(Contact[index].start_date);
+                console.log("Using contact date for calendar", index, startDate);
+            } else {
+                $(this).datepicker({
+                    defaultViewDate: {
+                        year: (new Date()).getFullYear(),
+                        month: (new Date()).getMonth() + index,
+                        date: 1
+                    },
+                    multidate: true,
+                    updateViewDate: false
+                });
+            }
+
+            $(this).datepicker({
+                defaultDate: startDate,
+                dateFormat: 'yy-mm-dd',
+                beforeShowDay: function(date) {
+                    var highlight = startDate.getTime() === date.getTime();
+                    if (highlight) {
+                        return [true, "highlighted-date", "Default date"];
+                    } else {
+                        return [true, "", ""];
+                    }
+                }
+            }).datepicker("setDate", startDate);
+        });
+
+    });
     </script>
+
 @endsection

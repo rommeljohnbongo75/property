@@ -38,14 +38,15 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/back/fullcalender') }}"
                         aria-expanded="false">
-                        <i class="mdi mdi-calendar"></i>
+                        <i class="mdi mdi-calculator"></i>
+
                         <span class="hide-menu">Calender</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ Route('rental') }}"
                         aria-expanded="false">
-                        <i class="mdi mdi-calendar"></i>
+                        <i class="mdi mdi-bulletin-board"></i>
                         <span class="hide-menu">Rental</span>
                     </a>
                 </li>
@@ -58,34 +59,36 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('inquiries.index') }}"
                         aria-expanded="false">
-                        <i class="mdi mdi-border-none"></i>
+                        <i class="mdi mdi-checkbox-marked-circle"></i>
                         <span class="hide-menu">Reservation</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('banner.index') }}"
                         aria-expanded="false">
-                        <i class="mdi mdi-border-none"></i>
+                        <i class="mdi mdi-home"></i>
                         <span class="hide-menu">Home</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('contact.index')}}"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('contact.index') }}"
                         aria-expanded="false">
-                        <i class="mdi mdi-border-none"></i>
+                        <i class="mdi mdi-cellphone-basic"></i>
                         <span class="hide-menu">Contact Us</span>
                     </a>
                 </li>
 
-                
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('FeaturedLocation.index')}}"
-                        aria-expanded="false">
-                        <i class="mdi mdi-border-none"></i>
-                        <span class="hide-menu">Featured Locations  </span>
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('FeaturedLocation.index') }}" aria-expanded="false">
+                        <i class="mdi mdi-map-marker"></i>
+                        <span class="hide-menu">Featured Locations </span>
                     </a>
                 </li>
+
+               
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

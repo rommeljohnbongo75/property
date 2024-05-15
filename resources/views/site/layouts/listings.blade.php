@@ -484,7 +484,7 @@
 
         }
     }
-
+/* adult-data */
     .arrive-data {
         align-items: center;
         margin-bottom: 324px;
@@ -582,6 +582,13 @@
   .data-lable-one{
     border: 1px solid rgb(214, 206, 206);
   }
+  .search{
+    background-color: #FFA920;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
 </style>
 @section('content')
     <section id="listings">
@@ -678,7 +685,7 @@
                         </div>
                     </div>
                     <div class="arrive-search">
-                        <button type="submit" class="btn btn-primary"> search </button>
+                        <button type="submit" class="search"> search </button>
                     </div>
                 </div>
 

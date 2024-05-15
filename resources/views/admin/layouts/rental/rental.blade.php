@@ -1,4 +1,5 @@
 @extends('admin.base')
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
@@ -137,11 +138,11 @@
             <div class="col-sm-12 text-right">
                 <a href="{{route('rental-form')}}" class="btn btn-primary">Add Property</a>
             </div>
-            @foreach ($image as $images)
-                @if ($image->first() == $images)
-                    <div class="rental-list">
-                        <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative">
-                            <img src="{{ url('assets/uploads/multipleproductimage/' . $images->image) }}">
+            
+            <div class="rental-list d-flex justify-content-around">
+                @foreach ($image as $images)
+                <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative ">
+                    <img src="{{ url('assets/uploads/multipleproductimage/' . $images->image) }}">
                             <div class="rental-dec ">
                                 <ul class="d-flex position-absolute">
                                     <li class="rental-text"><a href="">Completed</a></li>
@@ -161,9 +162,8 @@
                                     @endforeach
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                @endif
-            @endforeach
             </a>
         </div>
     </section>

@@ -1,6 +1,6 @@
-<script src="{{ asset('assets/js/main.js' ) }}"></script>
-<script src="{{ asset('assets/js/lightbox.min.js' ) }}"></script>
-<script src="{{ asset('assets/datepicker/locales/bootstrap-datepicker.de.min.js' ) }}"></script> 
+{{-- <script src="{{ asset('assets/js/main.js' ) }}"></script> --}}
+{{-- <script src="{{ asset('assets/js/lightbox.min.js' ) }}"></script> --}}
+{{-- <script src="{{ asset('assets/datepicker/locales/bootstrap-datepicker.de.min.js' ) }}"></script>  --}}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -315,17 +315,6 @@ $(".checkbox-dropdown ul").click(function(e) {
         $('button.fancybox-button.fancybox-close-small').click(function(){
             console.log("Button clicked");
             window.location.reload();
-        });
-    });
-    $('.calendar').map(function(index) {
-        $(this).datepicker({
-            defaultViewDate: {
-                year: (new Date()).getFullYear(),
-                month: (new Date()).getMonth() + index,
-                date: 1
-            },
-            multidate: true,
-            updateViewDate: false
         });
     });
 
