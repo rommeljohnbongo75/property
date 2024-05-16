@@ -1,14 +1,5 @@
 @extends('admin.base')
-
 @section('content')
-
-    <!-- ============================================================== -->
-    <!-- Page wrapper  -->
-    <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-5 align-self-center">
@@ -28,16 +19,7 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
         <div class="row">
             <div class="col-12">
                 <div class="card card-body">
@@ -55,44 +37,26 @@
                                 @enderror
                             </span>
                         </div>
-
                         <div class="form-group">
                             <label>Upload Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" name="image"  class="form-control @error('image') is-invalid @enderror">
-                                
+                                    <input type="file" name="image"
+                                        class="form-control @error('image') is-invalid @enderror">
                                     <span class="text-danger">
                                         @error('image')
                                             {{ $message }}
                                         @enderror
                                     </span>
-                            </label>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success"
+                            style="background-color:#FFA920;border:#333">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
 @endsection

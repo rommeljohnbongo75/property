@@ -33,15 +33,6 @@
         <div class="row justify-content-md-center">
             <div class="col-8">
                 <div class="card card-body">
-                    {{-- @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div><br />
-                    @endif --}}
                     <form action="{{ route('banner.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -58,7 +49,7 @@
                                 @enderror
                             </span>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success" style="background-color:#FFA920;border:#333">Submit</button>
                     </form>
                 </div>
             </div>

@@ -24,10 +24,9 @@
             <div class="col-12 test23">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">All Banner</h4>
-                        
+                        <h4 class="card-title">All Banner</h4> 
                     <div class=" text-right">
-                        <a href="{{ route('banner.create') }}" class="btn btn-primary ">Add Banner</a>
+                        <a href="{{ route('banner.create') }}" class="btn btn-primary " style="background-color:#FFA920;border:#333">Add Banner</a>
                     </div>
                     </div>
                     <div class="table-responsive m-t-20 p-2">

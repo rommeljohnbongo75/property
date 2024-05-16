@@ -17,7 +17,7 @@ class FrontEndController extends Controller
     {
         $latest_listings = Listing::orderBy('id', 'DESC')->get();
         $agents = Realtor::get();
-        $banner = HomeBanner::get();
+        $banner = HomeBanner::where('status',1)->get();
         $location = FeaturedLocation::get();
         return view('site.layouts.index', compact('latest_listings','agents','banner','location'));
     }

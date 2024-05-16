@@ -871,18 +871,12 @@
                     </ul>
                 </div>
             </div>
-            {{-- <div class="reserv-inbox d-flex justify-content-between align-items-center">
-                <div class="reserv-one">Select</div>
-                <div class="reserv-1"><i class="fa-solid fa-download"></i></div>
-                <div class="reserv-one"><i class="fa-solid fa-rotate"></i></div>
-           </div>  --}}
         </div>
     </section>
 
     <section class="overview">
         <div class="col-sm-8">
             <div class="col-xs-9">
-                <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane active" id="home-v">
                         <div class="overview-heading">
@@ -933,7 +927,8 @@
                                         @enderror
                                     </span>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary"
+                                    style="background-color:#FFA920;border:#333">Submit</button>
                             </form>
 
                             <div class="rental-type">
@@ -1004,7 +999,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- photos-tab-start-->
                     <div class="tab-pane photos-form" id="profile-v">
                         <div class="photos-heading d-flex justify-content-between">
                             <h2>Photos</h2>
@@ -1021,51 +1015,29 @@
                             <h4>English</h4>
                         </div>
                         <div class="photos-grid col-6">
-                            {{-- <div class="add-photos">
-                                    <h4><a href="">Add Photos</a></h4>
-                                    <span>Or drag them here</span>
-                            </div> --}}
-
                             <div class="container">
-                                {{-- <form class="form" id="upload-form">
-                                    <label class="form__container" id="upload-container">Choose or Drag & Drop Files
-                                        <input class="form__file" id="upload-files" type="file" accept="image/*"
-                                            multiple>
-                                    </label>
-                                    <div id="files-list-container" class="form__files-container"></div>
-                                </form> --}}
-
-                                {{-- <div class="container"> --}}
                                 <div id="drop-area">
                                     <form action="{{ route('photos.upload') }}" class="drop-form" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="rental_id" id="" value="{{ $rantalId->id }}">
+                                        <input type="hidden" name="rental_id" id=""
+                                            value="{{ $rantalId->id }}">
                                         <div>
                                             <input type="file" name="images[]" id="Image" class="form-control"
                                                 placeholder="Image" multiple>
-                                                <span class="text-danger">
-                                                    @error('images')
-                                                        {{$message}}
-                                                    @enderror
-                                                </span>
+                                            <span class="text-danger">
+                                                @error('images')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                         <div>
-                                            <button class="btn btn-primary">Create</button>
+                                            <button class="btn btn-primary"
+                                                style="background-color:#FFA920;border:#333">Create</button>
                                         </div>
                                     </form>
                                 </div>
-                                {{-- </div> --}}
                             </div>
-
-                            {{-- <div class="container">
-                                <form class="form" id="upload-form">
-                                    <label class="form__container" id="upload-container">Choose or Drag & Drop Files
-                                        <input class="form__file" id="upload-files" type="file" accept="image/*" multiple>
-                                    </label>
-                                    <div id="files-list-container" class="form__files-container"></div>
-                                </form>
-                            </div> --}}
                             <div class="rental-gallary">
                                 <img src="{{ asset('/assets/img/showcase.jpg') }}">
                                 <div class="input-data d-flex justify-content-between">
@@ -1076,9 +1048,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- photos-tab-end-->
-
-                    <!--location-tab -->
                     <div class="tab-pane location-inner" id="messages-v">
                         <div class="loaction-heading">
                             <h2>Location</h2>
@@ -1164,7 +1133,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="submit" class="btn btn-primary"
+                                        style="background-color:#FFA920;border:#333">Sign in</button>
                                 </div>
                                 <div class="loation-map">
                                     <iframe
@@ -1270,61 +1240,65 @@
                         </div>
                     </div>
                     <!-- Contact-page-start -->
-               
-                        <div class="tab-pane contact-from" id="contact-v">
-                            <div class="contact-heading">
-                                <h2>Contact</h2>
-                                <p>Make sure the contact details for this rental are correct. This is how guests will get in
-                                    touch.</p>
-                            </div>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Account Holder</option>
-                                <option value="1">Use custom contact information</option>
-                                <option value="2">Account holder</option>s
-                            </select>
-                            <div class="contact-info d-flex justify-content-between">
-                                <div class="d-flex alert"><i class="fa-solid fa-triangle-exclamation"></i>
-                                    <h4>Want to edit this information?</h4>
-                                </div>
-                                <button class="cont-btn" id="toggle" >Edit</button>
 
+                    <div class="tab-pane contact-from" id="contact-v">
+                        <div class="contact-heading">
+                            <h2>Contact</h2>
+                            <p>Make sure the contact details for this rental are correct. This is how guests will get in
+                                touch.</p>
+                        </div>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Account Holder</option>
+                            <option value="1">Use custom contact information</option>
+                            <option value="2">Account holder</option>s
+                        </select>
+                        <div class="contact-info d-flex justify-content-between">
+                            <div class="d-flex alert"><i class="fa-solid fa-triangle-exclamation"></i>
+                                <h4>Want to edit this information?</h4>
                             </div>
-                            <p id="box">You can edit the details below from your profile.</p>
-                            <form action="{{route('contact.update')}}" method="post">
-                                @csrf
-                                @method('PUT')
+                            <button class="cont-btn" id="toggle">Edit</button>
+
+                        </div>
+                        <p id="box">You can edit the details below from your profile.</p>
+                        <form action="{{ route('contact.update') }}" method="post">
+                            @csrf
+                            @method('PUT')
                             <div class="account-holder">
                                 <h3>Acount Holder</h3>
                                 <div class="acc-owner d-flex justify-content-between">
-                                    <h4 >Max</h4>
-                                    <input type="text" name="max" id="box1" value="{{ $user->username}}">
+                                    <h4>Max</h4>
+                                    <input type="text" name="max" id="box1" value="{{ $user->username }}">
                                 </div>
                                 <div class="acc-name d-flex justify-content-between">
                                     <h4>Name</h4>
-                                    <input type="text" name="name" id="box2" value="{{ $user->first_name }}">
+                                    <input type="text" name="name" id="box2"
+                                        value="{{ $user->first_name }}">
                                 </div>
                                 <div class="last-name d-flex justify-content-between">
                                     <h4>Last Name</h4>
-                                    <input type="text"  name="last_name" id="box1" value="{{ $user->last_name }}">
+                                    <input type="text" name="last_name" id="box1"
+                                        value="{{ $user->last_name }}">
                                 </div>
                                 <div class="acc-phn d-flex justify-content-between">
                                     <h4>Phone Number</h4>
-                                    <input type="text"  name="phone" id="box1" value="{{ $user->phone }}">
+                                    <input type="text" name="phone" id="box1" value="{{ $user->phone }}">
                                 </div>
                                 <div class="acc-email d-flex justify-content-between">
                                     <h4>Email</h4>
-                                    <input type="text"   name="email" id="box1" value="{{ $user->email }}">
+                                    <input type="text" name="email" id="box1" value="{{ $user->email }}">
                                 </div>
                                 <p>Spoken languages</p>
                             </div>
                             <div class="contact-button d-flex">
-                                <h5><a href="" class="btn btn-primary">Cancel</a></h5>
-                                <h5><button type="submit" class="btn btn-primary">Save Change</button></h5>
+                                <h5><a href="" class="btn btn-primary"
+                                        style="background-color:#FFA920;border:#333">Cancel</a></h5>
+                                <h5><button type="submit" class="btn btn-primary"
+                                        style="background-color:#FFA920;border:#333">Save Change</button></h5>
 
                             </div>
                         </form>
-                        </div>
-               
+                    </div>
+
 
                     <!-- Contact-page-end-->
 
@@ -1352,28 +1326,18 @@
                                 @csrf
                                 <input type="hidden" name="rental_id" id="" value="{{ $rantalId->id }}">
                                 <textarea class="ckeditor form-control" name="message" id="editor"></textarea>
-                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                                <button type="submit" class="btn btn-primary mt-2"
+                                    style="background-color:#FFA920;border:#333">Submit</button>
                             </form>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-
         </div>
-
-
         <div class="clearfix"></div>
-
         </div>
-
     </section>
-    <!-- photos-section -->
-    <!-- photos-section-start -->
-    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         ClassicEditor
@@ -1385,34 +1349,16 @@
                 console.error(error);
             });
     </script>
-    {{-- <script>
-        $(document).ready(function() {
-            var inputs = document.querySelectorAll('input[type="text"]');
-            inputs.forEach(function(input) {
-                input.style.display = "none";
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
             });
-            $("#toggle").click(function() {
-                var inputs = document.querySelectorAll('input[type="text"]');
-                inputs.forEach(function(input) {
-                    input.style.display = "block";
-                });
-            });
-        });
-    </script> --}}
-
-<!-- photos-section -->
-<!-- photos-section-start -->
-<script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
-<script>
-    ClassicEditor
-      .create( document.querySelector( '#editor' ) )
-      .then( editor => {
-               console.log( editor );
-      } )
-      .catch( error => {
-               console.error( error );
-      } );
-                                
-</script>
+    </script>
 @endsection
 </section>

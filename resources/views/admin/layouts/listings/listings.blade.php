@@ -26,7 +26,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">All Property</h4>
                                 <div class=" text-right">
-                                    <a href="{{ route('listings.create') }}" class="btn btn-primary">Add Property</a>
+                                    <a href="{{ route('listings.create') }}" class="btn btn-primary" style="background-color:#FFA920;border:#333">Add Property</a>
                                 </div>
 
                             </div>

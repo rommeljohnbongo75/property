@@ -50,12 +50,6 @@
                         <span class="hide-menu">Rental</span>
                     </a>
                 </li>
-                <!-- <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('som.index') }}" aria-expanded="false">
-                        <i class="mdi mdi-arrange-bring-forward"></i>
-                        <span class="hide-menu">Seller Of The Month</span>
-                    </a>
-                </li> -->
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('inquiries.index') }}"
                         aria-expanded="false">
@@ -64,31 +58,34 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('banner.index') }}"
-                        aria-expanded="false">
-                        <i class="mdi mdi-home"></i>
-                        <span class="hide-menu">Home</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('contact.index') }}"
                         aria-expanded="false">
                         <i class="mdi mdi-cellphone-basic"></i>
                         <span class="hide-menu">Contact Us</span>
                     </a>
                 </li>
-
-
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="{{ route('FeaturedLocation.index') }}" aria-expanded="false">
-                        <i class="mdi mdi-map-marker"></i>
-                        <span class="hide-menu">Featured Locations </span>
+                <li class="nav-item sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" data-toggle="collapse" href="#submenu1" role="button" aria-expanded="false" aria-controls="submenu1">
+                        <i class="mdi mdi-home"></i>
+                        <span class="hide-menu"> Home </span>
                     </a>
+                    <div class="collapse" id="submenu1">
+                        <ul class="nav flex-column ml-3  ">
+                            <li class="nav-item">
+                                <a  href="{{route('banner.index') }}" class="waves-effect waves-dark sidebar-link">
+                                    <i class="mdi mdi-folder-multiple"></i>
+                                     <span class="hide-menu">Banner </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a  href="{{ route('FeaturedLocation.index') }}" class="waves-effect waves-dark sidebar-link">
+                                    <i class="mdi mdi-map-marker"></i>
+                                    <span class="hide-menu">Featured Locations </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                
-               
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

@@ -1089,7 +1089,7 @@
     <!-- Showcase -->
     <section class="show-section">
         <div class="single-item">
-            @foreach ($banner as $banners)
+             @foreach ($banner as $banners)
                 <div class="banner">
                     <div class="banner-image">
                         <img src="{{ url('assets/uploads/home_banner/' . $banners->image) }}">
@@ -1165,7 +1165,7 @@
                         </form>
                     </div>
                 </div>
-            @endforeach
+            @endforeach     
         </div>
         </div>
     </section>

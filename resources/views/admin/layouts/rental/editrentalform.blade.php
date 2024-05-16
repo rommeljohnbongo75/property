@@ -931,7 +931,7 @@
                                         @enderror
                                     </span>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" style="background-color:#FFA920;border:#333">Submit</button>
                             </form>
 
                             <div class="rental-type">
@@ -1045,7 +1045,7 @@
                                                 placeholder="Image" multiple>
                                         </div>
                                         <div>
-                                            <button class="btn btn-primary">Create</button>
+                                            <button class="btn btn-primary" style="background-color:#FFA920;border:#333">Create</button>
                                         </div>
                                     </form>
                                 </div>
@@ -1158,7 +1158,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="submit" class="btn btn-primary" style="background-color:#FFA920;border:#333">Sign in</button>
                                 </div>
                                 <div class="loation-map">
                                     <iframe
@@ -1178,14 +1178,12 @@
                                     <div class="btn location-btn">
                                         Ok
                                     </div>
-
                                 </div>
                                 <div class="location-map-btn">
                                     <a href="">Save</a>
                                 </div>
                             </div>
                         </form>
-
                     </div>
                     <div class="tab-pane booking-settings" id="settings-v">
                         <div class="booking-heading">
@@ -1312,16 +1310,12 @@
                                 <p>Spoken languages</p>
                             </div>
                             <div class="contact-button d-flex">
-                                <h5><a href="" class="btn btn-primary">Cancel</a></h5>
-                                <h5><button type="submit" class="btn btn-primary">Save Change</button></h5>
+                                <h5><a href="" class="btn btn-primary" style="background-color:#FFA920;border:#333">Cancel</a></h5>
+                                <h5><button type="submit" class="btn btn-primary" style="background-color:#FFA920;border:#333">Save Change</button></h5>
 
                             </div>
                         </form>
                         </div>
-               
-
-                    <!-- Contact-page-end-->
-
                     <div class="tab-pane msg-placeholder" id="placeholder-v">
                         <div class="msg-holder-heading">
                             <h2>Messaging placeholders</h2>
@@ -1345,24 +1339,16 @@
                             <form action="" method="post">
                                 @csrf
                                 <textarea class="ckeditor form-control" name="message" id="editor"></textarea>
-                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                                <button type="submit" class="btn btn-primary mt-2" style="background-color:#FFA920;border:#333">Submit</button>
                             </form>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-
         </div>
-
-
         <div class="clearfix"></div>
-
         </div>
-
     </section>
     <!-- photos-section -->
     <!-- photos-section-start -->

@@ -136,29 +136,28 @@
     <section>
         <div class="container my-2">
             <div class="col-sm-12 text-right">
-                <a href="{{ route('rental-form') }}" class="btn btn-primary">Add Property</a>
+                <a href="{{ route('rental-form') }}" class="btn btn-primary" style="background-color:#FFA920;border:#333">Add
+                    Property</a>
             </div>
-
             <div class="rental-list d-flex justify-content-around">
                 @foreach ($rental as $images)
                     <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative ">
-                            @foreach ($images->mutipalImage as $image)
-                                {{-- @if ($image->first() == $image) --}}
-                                    <img src="{{ url('assets/uploads/multipleproductimage/' . $image->image) }}">
-                                {{-- @endif --}}
-                            @endforeach
-                            <div class="rental-dec ">
-                                <ul class="d-flex position-absolute">
-                                    <li class="rental-icon"><a href=""><i class="fa-solid fa-ellipsis"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="rental-details">
-                                <a href="{{ route('rental-form') }}">
-                                            <h4>{{ $images->name }}</h4>
-                                            <div class="rental-btn text-center">
-                                              <a href="{{route('rental.edit',$images->id)}}">Edit Property<i class="fa-regular fa-circle-check"></i></a>
-                                          </div>
-                            </div>
+                        @foreach ($images->mutipalImage as $image)
+                            <img src="{{ url('assets/uploads/multipleproductimage/' . $image->image) }}">
+                        @endforeach
+                        <div class="rental-dec ">
+                            <ul class="d-flex position-absolute">
+                                <li class="rental-icon"><a href=""><i class="fa-solid fa-ellipsis"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="rental-details">
+                            <a href="{{ route('rental-form') }}">
+                                <h4>{{ $images->name }}</h4>
+                                <div class="rental-btn text-center">
+                                    <a href="{{ route('rental.edit', $images->id) }}">Edit Property<i
+                                            class="fa-regular fa-circle-check"></i></a>
+                                </div>
+                        </div>
                     </div>
                 @endforeach
             </div>

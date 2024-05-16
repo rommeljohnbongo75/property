@@ -27,7 +27,7 @@
                         <h4 class="card-title">All Location</h4>
                         
                     <div class=" text-right">
-                        <a href="{{ route('FeaturedLocation.create') }}" class="btn btn-primary ">Add Location</a>
+                        <a href="{{ route('FeaturedLocation.create') }}" class="btn btn-primary " style="background-color:#FFA920;border:#333">Add Location</a>
                     </div>
                     </div>
                     <div class="table-responsive m-t-20 p-2">

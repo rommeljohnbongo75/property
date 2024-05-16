@@ -54,7 +54,7 @@
                             <td><img src="{{ url('assets/uploads/home_banner/' . $banner->image) }}" class="img-thumbnail" width="100"></td>
 
                         </div>
-                        <button type="submit" class="btn btn-success">update</button>
+                        <button type="submit" class="btn btn-success" style="background-color:#FFA920;border:#333">update</button>
                     </form>
                 </div>
             </div>

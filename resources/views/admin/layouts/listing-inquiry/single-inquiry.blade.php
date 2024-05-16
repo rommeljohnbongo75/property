@@ -1,14 +1,6 @@
 @extends('admin.base')
-
 @section('content')
- 
- <!-- Container fluid  -->
-            <!-- ============================================================== -->
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
                     <!-- Column -->
                     <div class="col-lg-4 col-xlg-3 col-md-5">
@@ -16,7 +8,6 @@
                             <div class="card-body">
                             <center class="m-t-30">
                                     <h4 class="card-title m-t-10">{{ $inquiry ->user-> username }}</h4>
-
                             </center>
                             </div>
                             <div>
@@ -30,8 +21,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- Column -->
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
@@ -56,7 +45,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
                 </div>
             </div>
 @endsection

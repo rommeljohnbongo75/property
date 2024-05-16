@@ -11,8 +11,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
 <!--Wave Effects -->
-<script src="{{ asset('admin/dist/js/waves.js') }}"></script>
+{{-- <script src="{{ asset('admin/dist/js/waves.js') }}"></script> --}}
 
 <script type="text/javascript">
     $(document).ready(function() {
