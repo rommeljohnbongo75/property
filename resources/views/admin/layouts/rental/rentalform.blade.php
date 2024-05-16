@@ -1040,8 +1040,7 @@
                                     <form action="{{ route('photos.upload') }}" class="drop-form" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="rental_id" id=""
-                                            value="{{ $rantalId->id }}">
+                                        <input type="hidden" name="rental_id" id="" value="{{ $rantalId->id }}">
                                         <div>
                                             <input type="file" name="images[]" id="Image" class="form-control"
                                                 placeholder="Image" multiple>

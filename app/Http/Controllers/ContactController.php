@@ -111,13 +111,12 @@ class ContactController extends Controller
         return view('site.layouts.contact');
     }
     public function rental(){
-        $image = MultiImage::get();
-        $overview =Rental::get();
-        return view('admin.layouts.rental.rental',compact('image','overview'));
+        $rental = Rental::with('mutipalImage')->get();
+        return view('admin.layouts.rental.rental',compact('rental'));
     }
     public function rentalform(){
 
-        $rantalId = Rental::first();
+        $rantalId = Rental::orderBy('created_at', 'desc')->first();
         $user = Auth::user();
         return view('admin.layouts.rental.rentalform',compact('rantalId',"user"));
     }

@@ -613,11 +613,11 @@
                         <i class="fa-regular fa-user"></i>
                         <div class="form-group-one d-flex align-items-center" id="sec-menu">
                             <div class="data-lable-one">
-                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px" value="1 Guest"
+                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px" value="1 Bedroom"
                                     placeholder="1 Adults">
                             </div>
                             <div class="data-lable-one">
-                                <input type="text" class="children-children" name="bathroom" style="font-size:18px" value="1 Children"
+                                <input type="text" class="children-children" name="bathroom" style="font-size:18px" value="1 Bathroom"
                                     placeholder="1 Children">
                             </div>
                         </div>

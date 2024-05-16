@@ -90,6 +90,7 @@ class RentalController extends Controller
         // Handle file upload
         if ($request->hasFile('images')) {
             $images = $request->file('images');
+            $counter = 1;
             foreach ($images as $image) {
                 $extension = $image->getClientOriginalName();
                 $filename = time() . '.' . $extension;
@@ -98,13 +99,18 @@ class RentalController extends Controller
                 $request['image'] = $filename;
                 //   $location->rental_id = $rantalId;
                 $request['rental_id'] = $request->input('rental_id');
-                MultiImage::create($request->all());
+
+                $renter = new MultiImage();
+                $renter->rental_id = $request->input('rental_id');
+                $renter->image = $filename;
+                $renter->main_image = $counter++ ;
+                $renter->save();
             }
         }
         if ($images) {
             return redirect()
                 ->route('rental-form')
-                ->with('success', "Product Update SuccessFully");
+                ->with('success', "Property Update SuccessFully");
         }
     }
 

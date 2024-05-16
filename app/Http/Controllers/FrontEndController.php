@@ -30,7 +30,6 @@ class FrontEndController extends Controller
                     'lat' => 31.771959,
                     'lng' => 35.217018,
                 ],
-                'label' => [ 'color' => 'white', 'text' => 'P1' ],
                 'draggable' => true
             ],
             [
@@ -38,7 +37,6 @@ class FrontEndController extends Controller
                     'lat' => 31.894756,
                     'lng' => 34.809322
                 ],
-                'label' => [ 'color' => 'white', 'text' => 'P2' ],
                 'draggable' => false
             ],
             [
@@ -46,7 +44,6 @@ class FrontEndController extends Controller
                     'lat' => 32.6996,
                     'lng' => 35.3035
                 ],
-                'label' => [ 'color' => 'white', 'text' => 'P3' ],
                 'draggable' => true
             ],
             [
@@ -54,7 +51,6 @@ class FrontEndController extends Controller
                     'lat' => 40.771959,
                     'lng' => 35.217018,
                 ],
-                'label' => [ 'color' => 'white', 'text' => 'P1' ],
                 'draggable' => true
             ],
         ];

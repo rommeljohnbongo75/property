@@ -9,6 +9,7 @@ class MultiImage extends Model
 {
     protected $fillable=[
         'image',
+        'main_image',
         'rental_id',
     ];
 

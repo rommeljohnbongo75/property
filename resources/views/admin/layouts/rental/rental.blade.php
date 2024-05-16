@@ -136,34 +136,32 @@
     <section>
         <div class="container my-2">
             <div class="col-sm-12 text-right">
-                <a href="{{route('rental-form')}}" class="btn btn-primary">Add Property</a>
+                <a href="{{ route('rental-form') }}" class="btn btn-primary">Add Property</a>
             </div>
-            
+
             <div class="rental-list d-flex justify-content-around">
-                @foreach ($image as $images)
-                <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative ">
-                    <img src="{{ url('assets/uploads/multipleproductimage/' . $images->image) }}">
+                @foreach ($rental as $images)
+                    <div class="rental-inner col-sm-4 col-lg-3 col-xl-2 position-relative ">
+                            @foreach ($images->mutipalImage as $image)
+                                {{-- @if ($image->first() == $image) --}}
+                                    <img src="{{ url('assets/uploads/multipleproductimage/' . $image->image) }}">
+                                {{-- @endif --}}
+                            @endforeach
                             <div class="rental-dec ">
                                 <ul class="d-flex position-absolute">
-                                    <li class="rental-text"><a href="">Completed</a></li>
                                     <li class="rental-icon"><a href=""><i class="fa-solid fa-ellipsis"></i></a></li>
                                 </ul>
                             </div>
                             <div class="rental-details">
                                 <a href="{{ route('rental-form') }}">
-                                    @foreach ($overview as $overviews)
-                                        @if ($overview->first() == $overviews)
-                                            <h4>{{ $overviews->name }}</h4>
-                                            <span>ID:578916</span>
+                                            <h4>{{ $images->name }}</h4>
                                             <div class="rental-btn text-center">
                                               <a href="{{route('rental.edit',$images->id)}}">Edit Property<i class="fa-regular fa-circle-check"></i></a>
                                           </div>
-                                        @endif
-                                    @endforeach
                             </div>
-                        </div>
-                        @endforeach
                     </div>
+                @endforeach
+            </div>
             </a>
         </div>
     </section>

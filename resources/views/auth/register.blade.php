@@ -47,7 +47,7 @@ background-size: cover;
         margin-bottom: 29px;
     }
 
-    #register .btn:hover {
+    #register .btn {
         background-color: #FFA920 !important;
     }
 
@@ -74,11 +74,6 @@ background-size: cover;
         padding: 22px 10px;
     }
 
-    #register input[type="submit"] {
-        width: 100%;
-        max-width: 60%;
-        margin: auto;
-    }
 
     #register .card-header {
         background-color: unset;
@@ -205,7 +200,7 @@ background-size: cover;
                                         @enderror
                                     </span>
                                 </div>
-                                <button type="submit"  class="btn btn-primary btn-block"> Register </button>
+                                <button type="submit" value="Login" class="btn   btn-block"> Register </button>
                             </form>
                         </div>
                     </div>

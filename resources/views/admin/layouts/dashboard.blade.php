@@ -85,7 +85,7 @@
             <div class="Revenue">
                 <div class=" d-flex justify-content-between">
                     <h4>Total Users</h4>
-                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="mdi mdi-account-circle" style="font-size: 20px;"></i>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h4>{{$total_users}}</h4>
@@ -94,31 +94,28 @@
             <div class="Revenue">
                 <div class=" d-flex justify-content-between">
                     <h4>Total Agent</h4>
-                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="mdi mdi-human" style="font-size: 20px;"></i>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h4>{{$total_realtors}}</h4>
-                    <h5>20%</h5>
                 </div>
             </div>
             <div class="Revenue">
                 <div class=" d-flex justify-content-between">
                     <h4>Property</h4>
-                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="mdi mdi-home" style="font-size: 20px;"></i>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h4>{{$listing}}</h4>
-                    <h5>20%</h5>
                 </div>
             </div>
             <div class="Revenue">
                 <div class=" d-flex justify-content-between">
                     <h4>Featured Location</h4>
-                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="mdi mdi-map-marker-radius" style="font-size: 20px;"></i>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h4>{{$featuredlocation}}</h4>
-                    <h5>20%</h5>
                 </div>
             </div>
 
