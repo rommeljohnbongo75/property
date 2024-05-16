@@ -776,12 +776,6 @@
         .adults-children.sec-menu-div.active {
             display: block !important;
         }
-
-
-
-        /* .option-tab ul li a:hover{
-            underline:dotted;
-        } */
     }
 
     .highlighted-date{
@@ -1080,20 +1074,10 @@
 
         </div>
     </section>
-    <!---------review-section-end------->
-
-    <!---------About-host-end------------>
-    <!-- Inquiry Modal -->
-    <!-- Inquiry Modal -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('assets/datepicker/js/bootstrap-datepicker.min.js' ) }}"></script>    
    
-
-
-
-
-
     <script>
         function initMap() {
             var location = {

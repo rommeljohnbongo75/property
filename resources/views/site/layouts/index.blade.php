@@ -1173,12 +1173,7 @@
     <section id="listings">
         <div class="container">
             <h3>Featured Listings</h3>
-
-            <!-- <div class="row"> -->
-            <!-- Listings -->
-            <!-- for listing in listings -->
             <div class="responsive">
-
             </div>
             <div class="responsive">
                 @foreach ($latest_listings as $listing)
@@ -1323,15 +1318,11 @@
                                         <i class="fa-solid fa-phone"></i>
                                         <i class="fa-brands fa-facebook"></i>
                                     </div>
-
                                 </div>
-
                             </div>
                         @endforeach
                 </div>
             </div>
         </div>
     </section>
-
-    <!--image-slider-section-end-->
 @endsection

@@ -83,11 +83,9 @@ class RentalController extends Controller
 
     public function upload(Request $request)
     {
-        // Validate the uploaded images
         $request->validate([
             'images' => 'required',
         ]);
-        // Handle file upload
         if ($request->hasFile('images')) {
             $images = $request->file('images');
             $counter = 1;

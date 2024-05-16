@@ -484,7 +484,8 @@
 
         }
     }
-/* adult-data */
+
+    /* adult-data */
     .arrive-data {
         align-items: center;
         margin-bottom: 324px;
@@ -569,26 +570,33 @@
         border-radius: 2px;
         font-size: 18px;
     }
-    textarea:focus, input:focus{
-    outline: none;
-}
-  .map-section{
-    position: relative; top:
-  }
-  #bedrooms{
-    width: 50%;
-    text-align: left;
-  }
-  .data-lable-one{
-    border: 1px solid rgb(214, 206, 206);
-  }
-  .search{
-    background-color: #FFA920;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
+
+    textarea:focus,
+    input:focus {
+        outline: none;
+    }
+
+    .map-section {
+        position: relative;
+        top:
+    }
+
+    #bedrooms {
+        width: 50%;
+        text-align: left;
+    }
+
+    .data-lable-one {
+        border: 1px solid rgb(214, 206, 206);
+    }
+
+    .search {
+        background-color: #FFA920;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
 </style>
 @section('content')
     <section id="listings">
@@ -613,18 +621,17 @@
                         <i class="fa-regular fa-user"></i>
                         <div class="form-group-one d-flex align-items-center" id="sec-menu">
                             <div class="data-lable-one">
-                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px" value="1 Bedroom"
-                                    placeholder="1 Adults">
+                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px"
+                                    value="1 Bedroom" placeholder="1 Adults">
                             </div>
                             <div class="data-lable-one">
-                                <input type="text" class="children-children" name="bathroom" style="font-size:18px" value="1 Bathroom"
-                                    placeholder="1 Children">
+                                <input type="text" class="children-children" name="bathroom" style="font-size:18px"
+                                    value="1 Bathroom" placeholder="1 Children">
                             </div>
                         </div>
                     </div>
                     <div class="arrive-data d-flex">
-                        <input type="date" name="checkin_filter"
-                            id="checkin_filter"  class="form-control"
+                        <input type="date" name="checkin_filter" id="checkin_filter" class="form-control"
                             placeholder="Arrive - Depart">
                     </div>
                     <div class=" Amenities-data">
@@ -714,7 +721,7 @@
                             </div>
                             <div class="counter-add-data text-center">
                                 <span class="minus">-</span>
-                                <input type="text" id="adults" name="bathroom"  value="1" readonly>
+                                <input type="text" id="adults" name="bathroom" value="1" readonly>
                                 <span class="plus">+</span>
                             </div>
                         </div>
@@ -746,38 +753,10 @@
                     </div>
                 @endforeach
             </div>
-            <!-- Map Section -->
-
             <div class="map">
                 <div class="map-heading">
-                    <!-- <h3>Location</h3> -->
                 </div>
                 <div id="map_canvas"></div>
-
-                <!-- listings-location-end -->
-                <!-- <div class="agent-widget-inner">
-                                                        <div class="agent-widget">
-                                                            <div class="agent-image">
-                                                                <img src="{{ asset('assets/img/realtors\jenny.jpg') }}"">
-                                                            </div>
-                                                            <div class="agent-name">
-                                                                <h3>Kelly</h3>
-                                                                 <span>+ 9987766766</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="agent-form">
-                                                        <label for="first_name"></label>
-                                                          <input type="text" name="first_name" class="form-control" placeholder="Your Email" required>
-                                                          <label for="first_name"></label>
-                                                          <input type="text" name="first_name" class="form-control" placeholder="Your Phone" required>
-                                                          <label for="first_name"></label>
-                                                          <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                              placeholder="I'm interested in this property [ID 123456] and I'd like to know more details." rows="2"></textarea>
-                                                          <div class="agent-btn">
-                                                          <button>Send Message</button>
-                                                          </div>
-                                                        </div>
-                                                    </div> -->
             </div>
         </div>
 
@@ -792,7 +771,7 @@
         $(document).ready(function() {
             $('.data-lable-one').click(function() {
                 $('.adults-children').toggle();
-                
+
             });
         });
     </script>
