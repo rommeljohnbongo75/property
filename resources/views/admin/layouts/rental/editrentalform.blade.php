@@ -1,5 +1,5 @@
 @extends('admin.base')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css" rel="stylesheet">
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
@@ -382,10 +382,10 @@
             width: 100%;
         }
 
-        .rental-gallary {
+        /* .rental-gallary {
             border: 1px solid black;
             border-radius: 4px;
-        }
+        } */
 
         .loation-map {
             padding: 30px 0;
@@ -830,6 +830,52 @@
         }
 
     }
+
+
+    /*  New Css Add */
+
+    .drag-area {
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        margin-bottom: 70px;
+    }
+
+    .drag-area p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .drag-area.dragging {
+        border-color: #333;
+    }
+
+    #preview-container {
+        display: flex;
+        /* flex-wrap: wrap; */
+        margin-top: -55px;
+
+    }
+
+    .preview-image {
+        width: 160px;
+        height: 160px;
+        margin: 10px;
+        position: relative;
+    }
+
+    .preview-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .preview-image-preview {
+        margin-top: 15%;
+    }
 </style>
 @section('content')
     <section class="rental-section ">
@@ -892,17 +938,19 @@
                         <div class="overview-form col-8">
                             <div class="d-flex justify-content-between">
                                 <div class="overview-lang">
-                                    <h4>GB<span>English</span></h4>
                                 </div>
                                 <div class="overview-lang-icon">
                                     <h4><i class="fa-solid fa-gear"></i>Languages</h4>
                                 </div>
                             </div>
-                            <form class="rental-form" action="{{route('rental.update',$rantal->id)}}" method="post">
+                            <form class="rental-form" action="{{ route('rental.update', $rantal->id) }}" method="post">
                                 @csrf
+                                @method('PUT')
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                                    <input type="name" name="name" value="" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1"  placeholder="Name" aria-describedby="emailHelp">
+                                    <input type="name" name="name" value="{{ $rantal->name }}"
+                                        class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1"
+                                        placeholder="Name" aria-describedby="emailHelp">
                                     <span class="text-danger">
                                         @error('name')
                                             {{ $message }}
@@ -912,7 +960,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Internal name</label>
-                                    <input type="Internal name" name="internal_name"
+                                    <input type="Internal name" value="{{ $rantal->internal_name }}" name="internal_name"
                                         class="form-control @error('internal_name') is-invalid @enderror"
                                         placeholder="Internal name" id="exampleInputPassword1">
                                     <span class="text-danger">
@@ -924,14 +972,15 @@
                                 <div class="mb-3 form-check">
                                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
                                     <textarea class="form-control @error('description') is-invalid @enderror" name="description"
-                                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        id="exampleFormControlTextarea1" rows="3"> {{ $rantal->description }}</textarea>
                                     <span class="text-danger">
                                         @error('description')
                                             {{ $message }}
                                         @enderror
                                     </span>
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="background-color:#FFA920;border:#333">Submit</button>
+                                <button type="submit" class="btn btn-primary"
+                                    style="background-color:#FFA920;border:#333">Submit</button>
                             </form>
 
                             <div class="rental-type">
@@ -1015,8 +1064,8 @@
 
                         </div>
                         <div class="photos-option d-flex gap-4">
-                            <span>GB</span>
-                            <h4>English</h4>
+
+                            <h4><span>Upload Multiple Images</span></h4>
                         </div>
                         <div class="photos-grid col-6">
                             {{-- <div class="add-photos">
@@ -1035,38 +1084,35 @@
 
                                 {{-- <div class="container"> --}}
                                 <div id="drop-area">
-                                    <form action="" class="drop-form" method="POST"
+                                    <form action="{{ route('photos.upload') }}" class="drop-form" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        {{-- <input type="hidden" name="rental_id" id=""
-                                            value="{{ $rantalId->id }}"> --}}
-                                        <div>
-                                            <input type="file" name="images[]" id="Image" class="form-control"
-                                                placeholder="Image" multiple>
+                                        {{-- <input type="hidden" name="rental_id" id="" value="{{ $rantalId->id }}"> --}}
+
+                                        <div class="drag-area" id="drag-area">
+                                            <p>Drag & Drop to Upload Files</p>
+                                            <input type="file" name="images[]" id="image-input" class="form-control"
+                                                placeholder="Image" multiple style="display: none;">
+                                            <span class="text-danger">
+                                                @error('images')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
-                                        <div>
-                                            <button class="btn btn-primary" style="background-color:#FFA920;border:#333">Create</button>
+
+                                        <div class="preview-image-preview">
+                                            <div id="preview-container"></div>
+                                        </div>
+                                        <div class="upload-submit" style="margin-top: 5%;">
+                                            <button class="btn btn-primary" style="background-color:#FFA920;border:#333">
+                                                Upload </button>
                                         </div>
                                     </form>
+
                                 </div>
                                 {{-- </div> --}}
                             </div>
-
-                            {{-- <div class="container">
-                                <form class="form" id="upload-form">
-                                    <label class="form__container" id="upload-container">Choose or Drag & Drop Files
-                                        <input class="form__file" id="upload-files" type="file" accept="image/*" multiple>
-                                    </label>
-                                    <div id="files-list-container" class="form__files-container"></div>
-                                </form>
-                            </div> --}}
                             <div class="rental-gallary">
-                                <img src="{{ asset('/assets/img/showcase.jpg') }}">
-                                <div class="input-data d-flex justify-content-between">
-                                    <input type="text">
-                                    <span>1/100</span>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -1077,279 +1123,302 @@
                         <div class="loaction-heading">
                             <h2>Location</h2>
                         </div>
-                        <form class="" action="" method="post">
+
+                        <form class="" action="{{ route('locationrental.update', $rantal->id) }}" method="post">
                             @csrf
-                          
-                            <div class="location-form">
-                                <div class="col-md-6">
-                                    <label for="inputEmail4" class="form-label">Email</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" id="inputEmail4">
-                                    <span class="text-danger">
-                                        @error('email')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Password</label>
-                                    <input type="password" name="password"
-                                        class="form-control @error('email') is-invalid @enderror" id="inputPassword4">
-                                    <span class="text-danger">
-                                        @error('password')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-12">
-                                    <label for="inputAddress" class="form-label">Address</label>
-                                    <input type="text" name="address"
-                                        class="form-control @error('address') is-invalid @enderror" id="inputAddress"
-                                        placeholder="1234 Main St">
-                                    <span class="text-danger">
-                                        @error('address')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-12">
-                                    <label for="inputAddress2" class="form-label">Address 2</label>
-                                    <input type="text" name="address2"
-                                        class="form-control @error('address2') is-invalid @enderror" id="inputAddress2"
-                                        placeholder="Apartment, studio, or floor">
-                                    <span class="text-danger">
-                                        @error('address2')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputCity" class="form-label">City</label>
-                                    <select id="inputState" class="form-select" name="city">
-                                        <option selected>Afghanistan</option>
-                                        <option value="1">Albania</option>
-                                        <option value="2">Andorra</option>
-                                        <option value="3">Angola</option>
-                                        <option value="4">Australia</option>
-                                        <option value="5">Azerbaijan</option>
-                                    </select>
-                                    <span class="text-danger">
-                                        @error('city')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="inputZip" class="form-label">Zip</label>
-                                    <input type="text" name="zip"
-                                        class="form-control @error('zip') is-invalid @enderror" id="inputZip">
-                                    <span class="text-danger">
-                                        @error('zip')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
+                            @method('PUT')
+                            @foreach ($rantal->location as $index => $locations)
+                                <input type="hidden" name="locations[{{ $index }}][id]"
+                                    value="{{ $locations->id }}">
+                                <div class="location-form">
+                                    <div class="col-md-6">
+                                        <label for="inputEmail4" class="form-label">Email</label>
+                                        <input type="email" name="locations[{{ $index }}][email]"
+                                            class="form-control" value="{{ $locations->email }}" placeholder="Email">
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary" style="background-color:#FFA920;border:#333">Sign in</button>
-                                </div>
-                                <div class="loation-map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2693991.100718813!2d-104.66015667334729!3d38.35762941154143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sin!4v1713506531455!5m2!1sen!2sin"
-                                        width="100%" height="450" style="border:0;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                                <div class="row g-3">
-                                    <div class="col">
-                                        <input type="text" class="form-control" aria-label="location"
-                                            value="21.170245">
+                                    <div class="col-md-6">
+                                        <label for="inputPassword4" class="form-label">Password</label>
+                                        <input type="password" name="locations[{{ $index }}][password]"class="form-control" value="{{ $locations->password }}" placeholder="Password">
                                     </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" aria-label="location"
-                                            value="72.831061">
+                                    <div class="col-12">
+                                        <label for="inputAddress" class="form-label">Address</label>
+                                        <input type="text" name="locations[{{ $index }}][address]"
+                                            class="form-control" value="{{ $locations->address }}"
+                                            placeholder="Address">
                                     </div>
-                                    <div class="btn location-btn">
-                                        Ok
+                                    <div class="col-12">
+                                        <label for="inputAddress2" class="form-label">Address 2</label>
+                                        <input type="text" name="locations[{{ $index }}][address2]"
+                                            class="form-control" value="{{ $locations->address2 }}"
+                                            placeholder="Address 2">
                                     </div>
-                                </div>
-                                <div class="location-map-btn">
-                                    <a href="">Save</a>
+                                    <div class="col-md-6">
+                                        <label for="inputCity" class="form-label">City</label>
+                                        <select id="inputState" class="form-select" name="city">
+                                            <option selected>Afghanistan</option>
+                                            <option value="1">Albania</option>
+                                            <option value="2">Andorra</option>
+                                            <option value="3">Angola</option>
+                                            <option value="4">Australia</option>
+                                            <option value="5">Azerbaijan</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="inputZip" class="form-label">Zip</label>
+                                        <input type="text" name="locations[{{ $index }}][zip]"
+                                            class="form-control" value="{{ $locations->zip }}" placeholder="Zip">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary"
+                                            style="background-color:#FFA920;border:#333">Sign in</button>
+                                    </div>
+                            @endforeach
+                        </form>
+                        <div class="loation-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2693991.100718813!2d-104.66015667334729!3d38.35762941154143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sin!4v1713506531455!5m2!1sen!2sin"
+                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col">
+                                <input type="text" class="form-control" aria-label="location" value="21.170245">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" aria-label="location" value="72.831061">
+                            </div>
+                            <div class="btn location-btn">
+                                Ok
+                            </div>
+
+                        </div>
+                        <div class="location-map-btn">
+                            <a href="">Save</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane booking-settings" id="settings-v">
+                    <div class="booking-heading">
+                        <h2>Booking settings</h2>
+                        <p>Set the payment schedule, cancellation rules, and security deposit for your rental</p>
+                    </div>
+                    <div class="booking-privacy">
+                        <div class="booking-policy d-flex justify-content-between">
+                            <h4>Primary policy</h4>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div class="booking-details">
+                            <h4>Payment schedule</h4>
+                            <p>50% due at time of booking. Remaining balance due 7 days before arrival.</p>
+                        </div>
+                        <div class="collection">
+                            <h4>Cancellation policy</h4>
+                            <p>All paid prepayments are non-refundable.</p>
+                        </div>
+                        <div class="deposit">
+                            <h4>Security deposit</h4>
+                            <p>No security deposit is due.</p>
+                        </div>
+                    </div>
+                    <div class="Bookability">
+                        <h4>Bookability</h4>
+                        <p>Choose how you want to accept bookings for this rental</p>
+                    </div>
+                    <div class="booking-box">
+                        <div class="instant-booking">
+                            <div class="d-flex justify-content-between">
+                                <h4>Instant booking</h4>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    </label>
                                 </div>
                             </div>
+                            <p>You accept bookings instantly without requiring your prior approval, i.e. guests can
+                                instantly
+                                book and pay your rental as long as they agree to your terms (price, payment &
+                                cancellation
+                                policy) and rental agreement.</p>
+                            <button>Recommended</button>
+                        </div>
+
+                        <div class="instant-booking">
+                            <div class="d-flex justify-content-between">
+                                <h4>Booking request</h4>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    </label>
+                                </div>
+                            </div>
+                            <p>Only accept bookings after review and approval, i.e. guests can request to book your
+                                rental as long as they agree to your terms (price, payment & cancellation policy), but
+                                you still need to approve each booking manually.</p>
+                        </div>
+
+                        <div class="instant-booking">
+                            <div class="d-flex justify-content-between">
+                                <h4>Inquiry only</h4>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    </label>
+                                </div>
+                            </div>
+                            <p>You only accept inquiries from guests, i.e. guests have no obligation to actually book
+                                the rental after submitting an inquiry.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact-page-start -->
+
+                <div class="tab-pane contact-from" id="contact-v">
+                    <div class="contact-heading">
+                        <h2>Contact</h2>
+                        <p>Make sure the contact details for this rental are correct. This is how guests will get in
+                            touch.</p>
+                    </div>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Account Holder</option>
+                        <option value="1">Use custom contact information</option>
+                        <option value="2">Account holder</option>s
+                    </select>
+                    <div class="contact-info d-flex justify-content-between">
+                        <div class="d-flex alert"><i class="fa-solid fa-triangle-exclamation"></i>
+                            <h4>Want to edit this information?</h4>
+                        </div>
+                        <button class="cont-btn" id="toggle">Edit</button>
+
+                    </div>
+                    <p id="box">You can edit the details below from your profile.</p>
+                    <form action="{{ route('contact.update') }}" method="post">
+                        @csrf
+                        @method('PUT')
+                        <div class="account-holder">
+                            <h3>Acount Holder</h3>
+                            <div class="acc-owner d-flex justify-content-between">
+                                <h4>Max</h4>
+                                <input type="text" name="max" id="box1" value="{{ $user->username }}">
+                            </div>
+                            <div class="acc-name d-flex justify-content-between">
+                                <h4>Name</h4>
+                                <input type="text" name="name" id="box2" value="{{ $user->first_name }}">
+                            </div>
+                            <div class="last-name d-flex justify-content-between">
+                                <h4>Last Name</h4>
+                                <input type="text" name="last_name" id="box1" value="{{ $user->last_name }}">
+                            </div>
+                            <div class="acc-phn d-flex justify-content-between">
+                                <h4>Phone Number</h4>
+                                <input type="text" name="phone" id="box1" value="{{ $user->phone }}">
+                            </div>
+                            <div class="acc-email d-flex justify-content-between">
+                                <h4>Email</h4>
+                                <input type="text" name="email" id="box1" value="{{ $user->email }}">
+                            </div>
+                            <p>Spoken languages</p>
+                        </div>
+                        <div class="contact-button d-flex">
+                            <h5><a href="" class="btn btn-primary"
+                                    style="background-color:#FFA920;border:#333">Cancel</a></h5>
+                            <h5><button type="submit" class="btn btn-primary"
+                                    style="background-color:#FFA920;border:#333">Save Change</button></h5>
+
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Contact-page-end-->
+
+                <div class="tab-pane msg-placeholder" id="placeholder-v">
+                    <div class="msg-holder-heading">
+                        <h2>Messaging placeholders</h2>
+                        <p>Here you can create the content of your messaging placeholders for the rental instructions.
+                            These auto-populated texts are reusable in any of the notification messages you send to your
+                            clients, and they complete the messaging placeholder library Lodgify automatically creates
+                            for you (rental name, guest name, etc.).</p>
+                    </div>
+                    <div class="msg-tips d-flex">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h4>Tips</h4>
+                    </div>
+                    <div class="msg-title d-flex">
+                        <h4>GB</h4>
+                        <h5>English</h5>
+                    </div>
+                    <div class="msg-toolbox">
+                        <h4>Check-in instructions</h4>
+                        <p>Inform your clients about the details on the check-in instructions and other specific when
+                            arriving.</p>
+                        <form action="{{ route('messagerental.update', $rantal->id) }}" method="post">
+                            @csrf
+                            @method('PUT')
+                            @foreach ($rantal->messages as $index => $message)
+                                <input type="hidden" name="messages[{{ $index }}][id]" value="{{ $message->id }}">
+                                <textarea class="ckeditor form-control"  name="messages[{{ $index }}][message]" id="editor">{!! $message->message !!}</textarea>
+                                <button type="submit" class="btn btn-primary mt-2"
+                                    style="background-color:#FFA920;border:#333">Update</button>
+                            @endforeach
                         </form>
                     </div>
-                    <div class="tab-pane booking-settings" id="settings-v">
-                        <div class="booking-heading">
-                            <h2>Booking settings</h2>
-                            <p>Set the payment schedule, cancellation rules, and security deposit for your rental</p>
-                        </div>
-                        <div class="booking-privacy">
-                            <div class="booking-policy d-flex justify-content-between">
-                                <h4>Primary policy</h4>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </div>
-                            <div class="booking-details">
-                                <h4>Payment schedule</h4>
-                                <p>50% due at time of booking. Remaining balance due 7 days before arrival.</p>
-                            </div>
-                            <div class="collection">
-                                <h4>Cancellation policy</h4>
-                                <p>All paid prepayments are non-refundable.</p>
-                            </div>
-                            <div class="deposit">
-                                <h4>Security deposit</h4>
-                                <p>No security deposit is due.</p>
-                            </div>
-                        </div>
-                        <div class="Bookability">
-                            <h4>Bookability</h4>
-                            <p>Choose how you want to accept bookings for this rental</p>
-                        </div>
-                        <div class="booking-box">
-                            <div class="instant-booking">
-                                <div class="d-flex justify-content-between">
-                                    <h4>Instant booking</h4>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                        </label>
-                                    </div>
-                                </div>
-                                <p>You accept bookings instantly without requiring your prior approval, i.e. guests can
-                                    instantly
-                                    book and pay your rental as long as they agree to your terms (price, payment &
-                                    cancellation
-                                    policy) and rental agreement.</p>
-                                <button>Recommended</button>
-                            </div>
 
-                            <div class="instant-booking">
-                                <div class="d-flex justify-content-between">
-                                    <h4>Booking request</h4>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                        </label>
-                                    </div>
-                                </div>
-                                <p>Only accept bookings after review and approval, i.e. guests can request to book your
-                                    rental as long as they agree to your terms (price, payment & cancellation policy), but
-                                    you still need to approve each booking manually.</p>
-                            </div>
 
-                            <div class="instant-booking">
-                                <div class="d-flex justify-content-between">
-                                    <h4>Inquiry only</h4>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                        </label>
-                                    </div>
-                                </div>
-                                <p>You only accept inquiries from guests, i.e. guests have no obligation to actually book
-                                    the rental after submitting an inquiry.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Contact-page-start -->
-               
-                        <div class="tab-pane contact-from" id="contact-v">
-                            <div class="contact-heading">
-                                <h2>Contact</h2>
-                                <p>Make sure the contact details for this rental are correct. This is how guests will get in
-                                    touch.</p>
-                            </div>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Account Holder</option>
-                                <option value="1">Use custom contact information</option>
-                                <option value="2">Account holder</option>s
-                            </select>
-                            <div class="contact-info d-flex justify-content-between">
-                                <div class="d-flex alert"><i class="fa-solid fa-triangle-exclamation"></i>
-                                    <h4>Want to edit this information?</h4>
-                                </div>
-                                <button class="cont-btn" id="toggle" >Edit</button>
 
-                            </div>
-                            <p id="box">You can edit the details below from your profile.</p>
-                            <form action="" method="post">
-                                @csrf
-                                @method('PUT')
-                            <div class="account-holder">
-                                <h3>Acount Holder</h3>
-                                <div class="acc-owner d-flex justify-content-between">
-                                    <h4 >Max</h4>
-                                    <input type="text" name="max" id="box1" value="">
-                                </div>
-                                <div class="acc-name d-flex justify-content-between">
-                                    <h4>Name</h4>
-                                    <input type="text" name="name" id="box2" value="">
-                                </div>
-                                <div class="last-name d-flex justify-content-between">
-                                    <h4>Last Name</h4>
-                                    <input type="text"  name="last_name" id="box1" value="">
-                                </div>
-                                <div class="acc-phn d-flex justify-content-between">
-                                    <h4>Phone Number</h4>
-                                    <input type="text"  name="phone" id="box1" value="">
-                                </div>
-                                <div class="acc-email d-flex justify-content-between">
-                                    <h4>Email</h4>
-                                    <input type="text"   name="email" id="box1" value="">
-                                </div>
-                                <p>Spoken languages</p>
-                            </div>
-                            <div class="contact-button d-flex">
-                                <h5><a href="" class="btn btn-primary" style="background-color:#FFA920;border:#333">Cancel</a></h5>
-                                <h5><button type="submit" class="btn btn-primary" style="background-color:#FFA920;border:#333">Save Change</button></h5>
-
-                            </div>
-                        </form>
-                        </div>
-                    <div class="tab-pane msg-placeholder" id="placeholder-v">
-                        <div class="msg-holder-heading">
-                            <h2>Messaging placeholders</h2>
-                            <p>Here you can create the content of your messaging placeholders for the rental instructions.
-                                These auto-populated texts are reusable in any of the notification messages you send to your
-                                clients, and they complete the messaging placeholder library Lodgify automatically creates
-                                for you (rental name, guest name, etc.).</p>
-                        </div>
-                        <div class="msg-tips d-flex">
-                            <i class="fa-solid fa-lightbulb"></i>
-                            <h4>Tips</h4>
-                        </div>
-                        <div class="msg-title d-flex">
-                            <h4>GB</h4>
-                            <h5>English</h5>
-                        </div>
-                        <div class="msg-toolbox">
-                            <h4>Check-in instructions</h4>
-                            <p>Inform your clients about the details on the check-in instructions and other specific when
-                                arriving.</p>
-                            <form action="" method="post">
-                                @csrf
-                                <textarea class="ckeditor form-control" name="message" id="editor"></textarea>
-                                <button type="submit" class="btn btn-primary mt-2" style="background-color:#FFA920;border:#333">Submit</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         </div>
-        <div class="clearfix"></div>
+
         </div>
+
+
+        <div class="clearfix"></div>
+
+        </div>
+
     </section>
+    <!-- photos-section -->
+    <!-- photos-section-start -->
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    {{-- <script>
+        $(document).ready(function() {
+            var inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(function(input) {
+                input.style.display = "none";
+            });
+            $("#toggle").click(function() {
+                var inputs = document.querySelectorAll('input[type="text"]');
+                inputs.forEach(function(input) {
+                    input.style.display = "block";
+                });
+            });
+        });
+    </script> --}}
+
     <!-- photos-section -->
     <!-- photos-section-start -->
     <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
@@ -1363,4 +1432,50 @@
                 console.error(error);
             });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dragArea = document.getElementById('drag-area');
+            const imageInput = document.getElementById('image-input');
+            const previewContainer = document.getElementById('preview-container');
+
+            dragArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dragArea.classList.add('dragging');
+            });
+
+            dragArea.addEventListener('dragleave', () => {
+                dragArea.classList.remove('dragging');
+            });
+
+            dragArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dragArea.classList.remove('dragging');
+                handleFiles(e.dataTransfer.files);
+            });
+
+            dragArea.addEventListener('click', () => {
+                imageInput.click();
+            });
+
+            imageInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                previewContainer.innerHTML = '';
+                for (let file of files) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const previewImage = document.createElement('div');
+                        previewImage.classList.add('preview-image');
+                        previewImage.innerHTML = `<img src="${e.target.result}" alt="Image">`;
+                        previewContainer.appendChild(previewImage);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+    </script>
 @endsection
+</section>

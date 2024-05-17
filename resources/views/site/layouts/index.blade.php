@@ -1120,8 +1120,7 @@
                                     <i class="fa-regular fa-user"></i>
                                 </div>
                                 <div class="data-lable-one">
-                                    <input type="text" class="adults-adults" style="font-size:18px" value="1 Guest"
-                                        placeholder="1 Adults">
+                                    <input type="text" class="adults-adults" style="font-size:18px" value="1 Guest" placeholder="1 Adults">
                                 </div>
                                 <div class="data-lable-one">
                                     <input type="text" class="children-children" style="font-size:18px"

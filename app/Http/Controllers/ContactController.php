@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rental;
 use App\Models\Contact;
+use App\Models\Listing;
 use App\Models\MultiImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -122,8 +123,22 @@ class ContactController extends Controller
     }
 
     public function listingLocation(){
-
-        return view('site.layouts.listings-location');
+        $listing = Listing::get();
+        return view('site.layouts.listings-location',compact('listing'));
     }
 
+    public function filterOrders(Request $request)
+    {
+        $filter = $request->all();
+        // dd($filter);
+        $listingpost = Listing::where([
+                                ['city', 'like', '%' . request('city') . '%'],
+                                ['bedroom', 'like', '%' . request('bedroom') . '%'],
+                                ['bathroom', 'like', '%' . request('bathroom') . '%'],
+
+                            ])->get();
+                // dd($listingpost);    
+    
+        return view('site.layouts.listings-location-filterdata',compact('listingpost'));
+    }
 }

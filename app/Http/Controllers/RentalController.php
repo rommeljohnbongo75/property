@@ -158,13 +158,76 @@ class RentalController extends Controller
 
     public function editrentalform($id)
     {
-        $rantal = Rental::find($id);
-
-        // Check if $rantal is null before passing it to the view
+        $rantal = Rental::with('location','messages')->find($id);
+        $user = Auth::user();
+        // $location = Location::where('rental_id',$id)->first();
+    //  return $location;
         if ($rantal === null) {
-            // Handle the case where the rental is not found
-            abort(404); // Or redirect, or return an error message, etc.
+           
+            abort(404); 
         }
-        return view('admin.layouts.rental.editrentalform',compact('rantal'));
+        return view('admin.layouts.rental.editrentalform',compact('rantal','user'));
+    }
+    public function updaterentalform(Request $request, $id)
+    {
+        $realtor = Rental::findOrFail($id);
+        $realtor->name = $request->name;
+        $realtor->internal_name = $request->internal_name;
+        $realtor->description = $request->description;
+        $isSuccess = $realtor->update();
+        if ($isSuccess) {
+            return redirect()
+                ->route('rental-form')
+                ->with('success', "Rental Update SuccessFully");
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'somthing went wrong');
+        }
+
+    }
+
+    public function locationupdaterentalform(Request $request, $id)
+    {
+        foreach ($request->input('locations') as $locationData) {
+            $location = Location::findOrFail($locationData['id']);
+            $location->email = $locationData['email'];
+            $location->password = $locationData['password'];
+            $location->address = $locationData['address'];
+            $location->address2 = $locationData['address2'];
+            $location->zip = $locationData['zip'];
+            $location->update();
+        }
+        
+        if ($location) {
+            return redirect()
+                ->route('rental-form')
+                ->with('success', "Rental Update SuccessFully");
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'somthing went wrong');
+        }
+
+    }
+
+    public function messageupdaterentalform(Request $request, $id)
+    {
+        foreach ($request->input('messages') as $locationData) {
+            $location = Message::findOrFail($locationData['id']);
+            $location->message = $locationData['message'];
+            $location->update();
+        }
+        
+        if ($location) {
+            return redirect()
+                ->route('rental-form')
+                ->with('success', "Rental Update SuccessFully");
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'somthing went wrong');
+        }
+
     }
 }

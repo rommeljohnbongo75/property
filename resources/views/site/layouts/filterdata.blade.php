@@ -531,6 +531,7 @@ footer#main-footer {
     padding: 0 90px;
     /* margin-top: 80px; */
 }
+
 </style>
 @section('content')
     <section id="listings">

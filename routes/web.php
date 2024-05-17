@@ -51,7 +51,7 @@ Route::get('/conatct-new', [ContactController::class, 'conatctNew'])->name('cona
 Route::get('/rental', [ContactController::class, 'rental'])->name('rental');
 Route::get('/rental-form', [ContactController::class, 'rentalform'])->name('rental-form');
 Route::get('/photos-form', [ContactController::class, 'photosform'])->name('photos-form');
-
+Route::post('/listings-location/filter', [ContactController::class, 'filterOrders'])->name('listingslocation.filter');
 Route::get('/photos-form', [ContactController::class, 'photosform'])->name('photos-form');
 Route::get('/listings-location', [ContactController::class, 'listingLocation'])->name('listings.location');
 
@@ -73,7 +73,10 @@ Route::controller(RentalController::class)->group(function () {
     Route::get('contact/edit','Edit')->name('contact.edit');  
     Route::put('contact/update','update')->name('contact.update'); 
     Route::get('rental/edit/{id}','editrentalform')->name('rental.edit');
-    Route::put('rental/update/{id}','updaterentalform')->name('rental.update'); 
+    Route::PUT('rental/update/{id}','updaterentalform')->name('rental.update'); 
+    Route::PUT('locationrantal/update/{id}','locationupdaterentalform')->name('locationrental.update'); 
+    Route::PUT('messagerantal/update/{id}','messageupdaterentalform')->name('messagerental.update'); 
+
 });
 Route::controller(ContactNewController::class)->group(function () {
     Route::get('contact','index')->name('contact.index');  
