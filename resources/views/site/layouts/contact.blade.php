@@ -92,6 +92,7 @@
 
     .contact-us-form .card-header i {
         padding-right: 10px;
+        color:#FFA920;
     }
 
     .cont-form-icon i:hover {

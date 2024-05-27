@@ -98,6 +98,16 @@ input[type="text"] {
 .form-btn button {
     width: 60%;
 }
+#listings .slick-next {
+ 
+    right: -14px;
+  
+}
+#listings .slick-prev {
+  
+    left:-14px !important;
+}
+
 }
 @media only screen and (max-width: 425px) {
   input#ranges, input#rangesend {
@@ -114,7 +124,13 @@ input[type="text"] {
 .active {
     background-color:white !important;
 }
-
+#listings .slick-next {
+ 
+ display:none !important;
+}
+#listings .slick-prev {
+  display:none !important;
+}
 #listings .slick-prev::before,.slick-next::before{
   display:none;
 }

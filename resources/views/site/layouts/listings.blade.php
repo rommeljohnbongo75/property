@@ -37,7 +37,7 @@
     }
 
     .property {
-        width: 100%;
+        /* width: 100%; */
         /* Change width to full width */
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -550,6 +550,8 @@
         width: 290px;
         height: 320px;
         margin-left: 300px;
+        position:absolute;
+        z-index:999;
     }
 
     .counter-add-data input[type="text"] {

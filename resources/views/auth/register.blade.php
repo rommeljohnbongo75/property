@@ -114,7 +114,6 @@ background-size: cover;
         font-size: 26px;
     }
 
-
     @media only screen and (max-width: 768px) {
         .reg-img {
             padding: 40px 0;
@@ -134,7 +133,7 @@ background-size: cover;
                 <!-- <div class="col-md-5 col-lg-6 reg-img">
               <img src="{{ asset('assets/img/user-registration.png') }}">
             </div> -->
-                <div class="col-md-6 col-lg-6 mx-auto form-reg-inner">
+                <div class="col-sm-12 col-lg-7 mx-auto form-reg-inner">
                     <div class="card">
                         <div class="card-header title">
                             <h2 class="text-center pt-3">Welcome To Estate Rental</h2>

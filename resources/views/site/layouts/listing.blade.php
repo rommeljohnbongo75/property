@@ -49,7 +49,9 @@
     .form-group {
         margin: 0 !important;
     }
-
+#Booking-details {
+    padding: 30px 0;
+}
     input[type="text"] {
         width: calc(100% - 40px);
         padding: 10px;
@@ -153,7 +155,9 @@
         display: block !important;
 
     }
-
+    .list-group.list-group-flush .list-group-item {
+        font-size: 20px;
+} 
     .counter input[type="text"] {
         width: 15%;
         padding: 10px;
@@ -305,6 +309,7 @@
     .review-title h3 {
         padding-bottom: 20px;
         color: black;
+        font-size:30px;
     }
 
     .review-dec p {
@@ -369,9 +374,11 @@
     }
 
     .cards {
-        padding-top: unset !important;
+        padding-top:30px !important;
     }
-
+    .list-group-item i {
+            color: #FFA920 !important;
+        }
     .adults-children.sec-menu-div.active {
         display: block !important;
     }
@@ -441,7 +448,7 @@
         }
 
         #Booking-details {
-            padding: 40px 0;
+            padding: 40px 0 !important;
         }
 
         .booking i {
@@ -500,9 +507,7 @@
             position: relative;
         }
 
-        .list-group-item i {
-            color: #FFA920;
-        }
+       
 
         .page-title {
             font-family: var(--font-family);
@@ -582,7 +587,7 @@
             box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
             padding-top: 20px;
             padding-bottom: 60px;
-            padding-left: 20px;
+            /* padding-left: 20px; */
         }
 
         .fields h2 {
@@ -647,10 +652,9 @@
         .cards {
             padding-top: unset !important;
         }
-
-        @media only screen and (max-width: 768px) {
-            .container-form-one {
+        .container-form-one {
                 width: unset !important;
+                margin:auto;
             }
 
             .fileds-inner {
@@ -658,7 +662,7 @@
             }
 
             .cards {
-                padding-top: 40px;
+                padding-top: 40px !important;
             }
 
             .page-title {
@@ -703,6 +707,8 @@
                 flex-wrap: wrap;
             }
         }
+
+    
 
         @media only screen and (max-width:425px) {
             .fields1 {
@@ -770,12 +776,13 @@
                 flex-wrap: wrap;
                 flex-direction: column;
             }
-
-        }
-
-        .adults-children.sec-menu-div.active {
+            .adults-children.sec-menu-div.active {
             display: block !important;
         }
+    
+        .datepicker-days table.table-condensed {
+        max-width: 400px !important;
+    
     }
 
     .highlighted-date{
@@ -783,6 +790,12 @@
         background-color: rgb(225, 28, 28) !important;
         text-decoration: line-through;
     }
+           
+}
+
+    
+
+        
 </style>
 @section('content')
     <!-- Breadcrumb -->

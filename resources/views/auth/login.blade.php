@@ -176,12 +176,31 @@
      .form-control {
          padding: 0.375rem 2.75rem !important;
      }
-
+     @media only screen and (max-width:1145px){
+     .form-group i {
+    transform: translate(95px, 10px);
+    position: absolute;
+    z-index: 999;
+}
+}
+@media only screen and (max-width:768px){
+.form-group i {
+    transform: translate(138px, 10px);
+}
+}
      @media only screen and (max-width:425px) {
          .login-media-icon {
              grid-template-columns: 1fr;
              gap: 20px;
          }
+         .form-group i {
+    transform: translate(79px, 10px);
+}
+     }
+     @media only screen and (max-width:320px) {
+     .form-group i {
+    transform: translate(55px, 10px);
+}
      }
  </style>
 

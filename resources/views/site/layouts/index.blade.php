@@ -437,6 +437,7 @@
 
     .form-group-one {
         padding: 10px;
+        justify-content:center;
     }
 
     .card-icon {
@@ -456,6 +457,7 @@
     input#rangesend {
         border: none;
         padding-left: 11px;
+        text-align:center;
     }
 
     .adults-children.sec-menu-div.active {
@@ -469,13 +471,16 @@
     .serach-group {
         display: flex;
         padding: 10px;
+        justify-content:center;
     }
 
     .form-icon {
         font-size: 30px;
         color: #FFA920;
     }
-
+.data-lable-one input[type=text]{
+    text-align:center;
+}
     /* .container-form::after{
    content:'';
    position: absolute;
@@ -494,19 +499,20 @@
         box-shadow: #00000024 2px 7px 20px 0px !important;
         border-radius: 20px;
         background-image: linear-gradient(180deg, white 60%, #ffffff00);
-        width: 450px;
+        width: 550px;
         z-index: 1 !important;
         position: absolute;
         top: 0;
         border: none;
         top: 30%;
-        left: 38%;
+        left: 34%;
     }
-
     .guest-icon i {
-        font-size: 22px;
-    }
-
+    font-size: 22px;
+    padding-right: 1px;
+    padding-left: 25px;
+}
+.serach-group .form-group
     .form-icon i {
         font-size: 22px;
     }
@@ -897,7 +903,7 @@
         }
 
         .container-form {
-            left: 30%;
+            left: 25%;
         }
 
         #services p {
@@ -911,7 +917,7 @@
         }
 
         #services i {
-            font-size: 50px;
+            font-size: 30px;
         }
 
         #services p {
@@ -980,7 +986,7 @@
         }
 
         .container-form {
-            left: 21% !important;
+            left: 14% !important;
             top: 27%;
         }
 
@@ -1006,11 +1012,15 @@
         .container-form h1 {
             font-size: 20px !important;
         }
-
+        .guest-icon i {
+    font-size: 22px;
+    padding-right: 1px;
+    padding-left: 0 !important;
+}
         .container-form {
             padding: 20px 15px;
             top: 30%;
-            left: 7% !important;
+            left: 12% !important;
             width: 331px;
         }
 
