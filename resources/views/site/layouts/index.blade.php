@@ -1069,7 +1069,7 @@
         border-radius: 5px;
     }
 
-    .plus {
+    #adults-plus {
         cursor: pointer;
         display: inline-block;
         width: 30px;
@@ -1152,7 +1152,7 @@
                                         <div class="counter-add-data text-center">
                                             <span class="minus">-</span>
                                             <input type="text" id="adults" name="children" value="1" readonly>
-                                            <span class="plus">+</span>
+                                            <span id="adults-plus">+</span>
                                         </div>
                                     </div>
                                 </div>

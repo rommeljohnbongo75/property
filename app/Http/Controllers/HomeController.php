@@ -7,39 +7,42 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $banners = HomeBanner::get();
-        return view('admin.layouts.home.banner.banners',compact('banners'));
+        return view('admin.layouts.home.banner.banners', compact('banners'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.layouts.home.banner.add-banner');
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         // dd("gfhghgfhfghfgh");
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-    
-            if ($request->hasFile('image')) {
-                $imageName = time().'.'.$request->image->extension();  
-                $request->image->move(public_path('assets/uploads/home_banner/'), $imageName);
-       
-                $image = new HomeBanner();
-                $image->image = $imageName;
-                $image->save();
-       
-                return redirect()
-                  ->route('banner.index')
-                    ->with('success','You have successfully uploaded the image.')
-                    ->with('image',$imageName);
-            } else {
-                return back()
-                    ->with('error','Failed to upload image. Please try again.');
-            }
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('assets/uploads/home_banner/'), $imageName);
+
+            $image = new HomeBanner();
+            $image->image = $imageName;
+            $image->save();
+
+            return redirect()
+                ->route('banner.index')
+                ->with('success', 'You have successfully uploaded the image.')
+                ->with('image', $imageName);
+        } else {
+            return back()
+                ->with('error', 'Failed to upload image. Please try again.');
+        }
     }
-    
+
     public function edit($id)
     {
         $banner = HomeBanner::find($id);
@@ -50,20 +53,20 @@ class HomeController extends Controller
     {
 
         if ($request->hasFile('image')) {
-            $imageName = time().'.'.$request->image->extension();  
+            $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('assets/uploads/home_banner/'), $imageName);
-   
+
             $image = HomeBanner::find($id);
             $image->image = $imageName;
             $image->update();
-   
+
             return redirect()
                 ->route('banner.index')
-                ->with('success','You have successfully uploaded the image.')
-                ->with('image',$imageName);
+                ->with('success', 'You have successfully uploaded the image.')
+                ->with('image', $imageName);
         } else {
             return back()
-                ->with('error','Failed to upload image. Please try again.');
+                ->with('error', 'Failed to upload image. Please try again.');
         }
     }
     public function destroy($id)
@@ -75,16 +78,29 @@ class HomeController extends Controller
 
     public function changestatus(Request $request)
     {
-          $userStatus = HomeBanner::where('id', $request->id)->first();
-          if ($userStatus->status == 1) {
-                $userStatus->status = 0;
-          } else {
-                $userStatus->status = 1;
-          }
-          $userStatus->update();
+        $userStatus = HomeBanner::find($request->id);
 
-          if($userStatus){
-            return back()->with('success', 'Status Update successfully');  
-          }
+        if (!$userStatus) {
+            return back()->with('error', 'Status not found');
+        }
+
+        $userStatus->status = $userStatus->status == 1 ? 0 : 1;
+        $userStatus->update();
+
+        // Flash success message
+        $message = 'Status updated successfully';
+        session()->flash('success', $message);
+
+        $lastStatus = HomeBanner::orderBy('created_at', 'desc')->first();
+
+        if ($lastStatus && $lastStatus->status == 0) {
+            $lastStatus->status = 1;
+            $lastStatus->update();
+            $warning = 'The last status was inactive and has been updated to active.';
+            session()->flash('success', $warning);
+
+        }
+
+        return response()->json(['success' => true]);
     }
 }

@@ -24,10 +24,11 @@
             <div class="col-12 test23">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">All Banner</h4> 
-                    <div class=" text-right">
-                        <a href="{{ route('banner.create') }}" class="btn btn-primary " style="background-color:#FFA920;border:#333">Add Banner</a>
-                    </div>
+                        <h4 class="card-title">All Banner</h4>
+                        <div class=" text-right">
+                            <a href="{{ route('banner.create') }}" class="btn btn-primary "
+                                style="background-color:#FFA920;border:#333">Add Banner</a>
+                        </div>
                     </div>
                     <div class="table-responsive m-t-20 p-2">
                         <table id="" class="table table-bordered table-responsive-lg">
@@ -42,21 +43,26 @@
                             </thead>
                             <tbody>
                                 @foreach ($banners as $key => $value)
-                                <tr>
                                     <tr>
-                                        <th scope="row">{{++$key}}</th>
-                                        <td scope="row"><img src="{{ url('assets/uploads/home_banner/'.$value->image) }}" class="img-thumbnail" width="50" ></td>
+                                    <tr>
+                                        <th scope="row">{{ ++$key }}</th>
+                                        <td scope="row"><img
+                                                src="{{ url('assets/uploads/home_banner/' . $value->image) }}"
+                                                class="img-thumbnail" width="50"></td>
                                         <td>
-                                            <input data-id="{{$value->id}}" class="toggle-class btn-sm" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $value->status ? 'checked' : '' }}>
+                                            <input data-id="{{ $value->id }}" class="toggle-class btn-sm" type="checkbox"
+                                                data-onstyle="success" data-offstyle="danger" data-toggle="toggle"
+                                                data-on="Active" data-off="InActive" {{ $value->status ? 'checked' : '' }}>
                                         </td>
-    
+
                                         <td>
-                                            <a href="{{route('banner.edit',$value->id)}}"><span class="btn btn-sm btn-rounded btn-success">Edit</span></a>
-                                            <a href="{{route('banner.delete',$value->id)}}" class="btn btn-sm btn-rounded btn-danger">Delete</a>
-    
+                                            <a href="{{ route('banner.edit', $value->id) }}"><span
+                                                    class="btn btn-sm btn-rounded btn-success">Edit</span></a>
+                                            <a href="{{ route('banner.delete', $value->id) }}"
+                                                class="btn btn-sm btn-rounded btn-danger">Delete</a>
+
                                         </td>
                                     </tr>
-    
                                 @endforeach
                             </tbody>
                         </table>
@@ -69,25 +75,43 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-       $(function() { 
-            $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
+        $(function() {
+            $('.toggle-class').change(function() {
+                var checkbox = $(this);
+                var id = checkbox.data('id');
+                var status = checkbox.prop('checked') ? 1 : 0;
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: 'banner/chengestatus',
+                    data: {
+                        'id': id,
+                        'status': status
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(data) {
+                        if (status === 1) {
+                            checkbox.prop('checked', true);
+                        } else {
+                            checkbox.prop('checked', false);
+                        }
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            console.error('Status change failed.');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
         });
-           $('.toggle-class').change(function() { 
-           var status = $(this).prop('checked') == true ? 1 : 0;  
-           var id = $(this).data('id');  
-           $.ajax({ 
-               type: "POST", 
-               dataType: "json", 
-               url: 'banner/chengestatus', 
-               data: {'status': status, 'id': id}, 
-               success: function(data){ 
-               location.reload();
-            } 
-         }); 
-      }) 
-   }); 
     </script>
+    
+    
+    
+    
 @endsection

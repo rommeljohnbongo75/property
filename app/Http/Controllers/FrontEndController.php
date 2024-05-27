@@ -64,7 +64,8 @@ class FrontEndController extends Controller
     {
         
         $listing = Listing::with('realtor')->where('is_published','1')->findOrFail($id);
-        $Contact = Contact::where('listing_id', $request->id)->select('start_date', 'end_date')->get();
+        $Contact = Contact::where('listing_id', $request->id)->select('start_date', 'end_date')->first();
+        
         $location = Listing::findOrFail($id);
 
         $initialMarkers = [

@@ -364,14 +364,14 @@
         border-radius: 5px;
     }
 
-    .plus {
+    #adults-plus {
         cursor: pointer;
         display: inline-block;
         width: 30px;
         height: 30px;
         line-height: 30px;
         text-align: center;
-        background-color: #FFA920 !important;
+        background-color: #FFA920;
         color: #fff;
         border-radius: 5px;
     }
@@ -422,6 +422,10 @@
         padding: 10px 15px;
         border-radius: 5px;
     }
+    #Deatils{
+        background-color: #FFA920;
+        border: 1px solid #d5dbdb;    
+    }
 </style>
 
 @section('content')
@@ -434,11 +438,9 @@
                         <label class="visually-hidden" for="specificSizeSelect"></label>
                         <i class="fa-solid fa-location-dot"></i>
                         <select class="form-select" id="specificSizeSelect" name="city">
-                            <option value="Jerusalem">Jerusalem</option>
-                            <option value="Geula">Geula</option>
-                            <option value="New York">New York</option>
-                            <option value="Shalem Tower">Shalem Tower</option>
-                            <option value="netanya">netanya</option>
+                          @foreach ($listing as $item) 
+                            <option value="{{$item->city}}">{{$item->city}}</option>
+                            @endforeach
 
                         </select>
                     </div>
@@ -447,39 +449,41 @@
                         <i class="fa-regular fa-user"></i>
                         <div class="form-group-one d-flex align-items-center" id="sec-menu">
                             <div class="data-lable-one">
-                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px" value="1 Bedroom"
-                                    placeholder="1 Adults">
+                                <input type="text" class="adults-adults" name="bedroom" style="font-size:18px"
+                                    value="1 Bedroom" placeholder="1 Bedroom">
                             </div>
                             <div class="data-lable-one">
-                                <input type="text" class="children-children" name="bathroom" style="font-size:18px" value="1 Bathroom"
-                                    placeholder="1 Children">
+                                <input type="text" class="children-children" name="bathroom" style="font-size:18px"
+                                    value="1 Bathroom" placeholder="1 Bathroom">
                             </div>
                         </div>
                         <ul class="position-absolute">
+                         <li>
                             <div class="counter-add-data text-center">
                                 <div class="form-date">
-                                    <h4>Adults Capacity</h4>
+                                    <h4>Bedroom Capacity</h4>
                                     <p>Total guests capacity</p>
                                 </div>
                                 <span class="adults-minus">-</span>
                                 <input type="text" id="adults" name="bedroom" value="1" readonly>
                                 <span class="adults-plus">+</span>
                             </div>
-
+                         </li>
+                         <li>
                             <div class="counter-add-data text-center">
                                 <div class="form-date">
-                                    <h4>Adults Capacity</h4>
+                                    <h4>Bathroom Capacity</h4>
                                     <p>Total guests capacity</p>
                                 </div>
                                 <span class="minus">-</span>
                                 <input type="text" id="adults" name="bathroom" value="1" readonly>
-                                <span class="plus">+</span>
+                                <span id="adults-plus">+</span>
                             </div>
+                         </li>
                         </ul>
                     </div>
                     <div class="arrive-data d-flex">
-                        <i class="fa-regular fa-calendar"></i><input type="text" name="checkin_filter"
-                            id="checkin_filter" autocomplete="off" value="" readonly="" class="form-control"
+                        <input type="date" name="checkin_filter" id="checkin_filter" class="form-control"
                             placeholder="Arrive - Depart">
                     </div>
                     <div class=" Amenities-data">
@@ -538,59 +542,52 @@
                 </div>
             </form>
 
-
-            <div class="listings-location-inner col-sm-12 col-md-12 col-xl-8">
-                @foreach ($listing as $item)
-                    <div class="filter-location-inner">
-                        <img src="{{ url($item->thumbnail_0) }}">
-                        <div class="filter-location-dec">
-                            <h4>{{ $item->title }}</h4>
-                        </div>
-                        <div class="location-filter-detials">
-                            <div class="card-body-inner">
-                                <div class="listing-heading text-center">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    {{ $item->city }}
+            <div class="container">
+                <div class="row">
+                    @foreach ($listing as $item)
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="{{ url($item->thumbnail_0) }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h6 class="card-title text-center">{{ $item->title }}</h6>
+                                    <div class="location-filter-detials">
+                                        <div class="card-body-inner">
+                                            <div class="listing-heading text-center">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                {{ $item->city }}
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex  text-secondary justify-content-between">
+                                                <div class="filter-icon ">
+                                                    <i class="fas fa-th-large"></i>sqft
+                                                    {{ $item->square_feet }}
+            
+                                                </div>
+                                                <div class="filter-icon">
+                                                    <i class="fas fa-car"></i>
+                                                    Garage:{{ $item->garage }}
+                                                </div>
+            
+                                            </div>
+                                            <div class="d-flex py-2 m-2 text-secondary">
+                                                <div class="filter-icon mr-5">
+                                                    <i class="fas fa-bed"></i>
+                                                    Bedrooms:{{ $item->bedroom }}
+                                                </div>
+                                                <div class="filter-icon">
+                                                    <i class="fas fa-bath"></i>
+                                                    Bathrooms:{{ $item->bathroom }}
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="{{route('single.listing', $item->id)}}" class="btn  btn-block mb-4" id="Deatils">Deatils</a>
                                 </div>
-                                <hr>
-                                <div class="d-flex py-2 text-secondary justify-content-between">
-                                    <div class="filter-icon">
-                                        <i class="fas fa-th-large"></i>sqft
-                                        {{ $item->square_feet }}
-
-                                    </div>
-                                    <div class="filter-icon">
-                                        <i class="fas fa-car"></i>
-                                        Garage:{{ $item->garage }}
-                                    </div>
-
-                                </div>
-                                <div class="d-flex py-2 text-secondary justify-content-between">
-                                    <div class="filter-icon">
-                                        <i class="fas fa-bed"></i>
-                                        Bedrooms:{{ $item->bedroom }}
-                                    </div>
-                                    <div class="filter-icon">
-                                        <i class="fas fa-bath"></i>
-                                        Bathrooms:{{ $item->bathroom }}
-
-                                    </div>
-                                </div>
-                                {{-- <hr>
-                                <div class="d-flex py-2 text-secondary justify-content-between">
-                                    <div class="filter-icon">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="filter-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                </div>
-                                <hr> --}}
-                                <a href="" class="btn  btn-block mb-4">Deatils</a>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
     </section>
 @endsection

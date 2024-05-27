@@ -330,7 +330,7 @@
     }
 
     /* .tab{
-   padding-bottom:30px;
+padding-bottom:30px;
     padding-top: 0px;
     padding-bottom: 1px;
     transform: translateY(60px);
@@ -778,29 +778,126 @@
         }
     }
 
-    .highlighted-date{
-        color: black !important;
-        background-color: rgb(225, 28, 28) !important;
+    td.active.day.test {
+        background-color: rgb(242, 94, 94) !important;
+        color: #000000 !important;
         text-decoration: line-through;
+    }
+
+    .calendar {
+        padding: 1em;
+        border-radius: 10px;
+
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(7, 1fr);
+        grid-auto-rows: max-content;
+        grid-auto-flow: row;
+
+        color: black;
+        background-color: hsl(231, 20%, 85%);
+    }
+
+    .cell {
+        width: 30%;
+        padding: 0.4em 0.8em;
+        text-align: center;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .cell:hover,
+    .cell:focus {
+        color: hsl(231, 20%, 85%);
+        background-color: #bf4e30;
+    }
+
+    .cell:empty {
+        width: 0;
+        padding: 0;
+    }
+
+    .cell--unselectable {
+        color: hsl(231, 20%, 50%);
+    }
+
+    .cell--unselectable:hover,
+    .cell--unselectable:focus {
+        color: hsl(231, 20%, 50%);
+        background-color: transparent;
+    }
+
+    .date-text {
+        padding: 1em 0.8em;
+        grid-column: 1 / 5;
+        justify-self: start;
+        display: flex;
+        align-items: center;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .button {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* OTHER */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    h1 {
+        margin: 0.5em 0;
+    }
+
+    .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .cell {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .cell--unselectable {
+        background-color: #f5f5f5;
+    }
+
+
+    .button {
+        cursor: pointer;
+        text-align: center;
+        user-select: none;
+    }
+
+    .button:hover {
+        background-color: #ddd;
+    }
+
+    .active {
+        background-color: #ec0c0c;
+        border-color: #d91414;
+        text-decoration: line-through
     }
 </style>
 @section('content')
-    <!-- Breadcrumb -->
-    <!-- <section id="bc" class="mt-3">
-                   <div class="container">
-                      <nav>
-                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                               <a href="{{ route('index') }}">Home</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                               <a href="{{ route('listings') }}">Listings</a>
-                            </li>
-                            <li class="breadcrumb-item active">{{ $listing->title }}</li>
-                         </ol>
-                      </nav>
-                   </div>
-                </section> -->
     <!-- Listing -->
     <section id="listing">
 
@@ -925,7 +1022,7 @@
                                             <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                                             <input type="hidden" name="name"
                                                 @auth value="{{ Auth::user()->get_full_name() }}"@endif>
-                           <input type="hidden" name="email" @auth value="{{ Auth::user()->email }}" @endif>
+                        <input type="hidden" name="email" @auth value="{{ Auth::user()->email }}" @endif>
                                             <div class="from-data d-flex justify-content-around align-items-center">
                                                 <div class="form-icon-one">
                                                     <i class="fa-regular fa-calendar-days" style="color:#10284e"></i>
@@ -953,12 +1050,12 @@
                                                 </div>
                                                 <div class="data-lable-one">
                                                     <input type="text" class="adults-adults" style="font-size:18px"
-                                                        value="1 Adults" placeholder="1 Adults">
+                                                        value="1 Bedroom" placeholder="1 Bedroom">
                                                 </div>
                                                 <div class="form-lable-two">
                                                     <input type="text" class="children-children"
-                                                        style="font-size:18px" value="1 Children"
-                                                        placeholder="1 Children">
+                                                        style="font-size:18px" value="1 Bathroom"
+                                                        placeholder="1 Bathroom">
                                                 </div>
                                             </div>
 
@@ -966,7 +1063,7 @@
                                                 <div class="form-group">
                                                     <div class="counter d-flex justify-content-center" id="counter">
                                                         <div class="counter-text">
-                                                            <h4>Adults Capacity</h4>
+                                                            <h4>Bedroom Capacity</h4>
                                                             <p>Total guests capacity</p>
                                                         </div>
                                                         <div class="counter-add text-center">
@@ -980,14 +1077,14 @@
                                                 <div class="form-group">
                                                     <div class="counter d-flex justify-content-center">
                                                         <div class="counter-text-one">
-                                                            <h4>Children Capacity</h4>
+                                                            <h4>Bathroom Capacity</h4>
                                                             <p>Total guests capacity</p>
                                                         </div>
                                                         <div class="counter-add text-center">
                                                             <span class="minus">-</span>
                                                             <input type="text" id="adults" name="children"
                                                                 value="1" readonly>
-                                                            <span class="plus">+</span>
+                                                            <span id="adults-plus">+</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1024,10 +1121,9 @@
                     <div id="map"></div>
                 </div>
                 <div class="date" id="Dates & Reservations">
-                    <h3>Dates & Reservations</h3>
-                    <div class="calendar-main">
-                        <div class="calendar" id="calendar-calendar-1"></div>
-                        <div class="calendar" id="calendar-calendar-2"></div>
+                    <h1>Dates & Reservations</h1>
+                    <div id="calendar" class="calendar">
+                        <span>Add something here</span>
                     </div>
                 </div>
             </div>
@@ -1074,10 +1170,11 @@
 
         </div>
     </section>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap"
+        defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ asset('assets/datepicker/js/bootstrap-datepicker.min.js' ) }}"></script>    
-   
+    <script src="{{ asset('assets/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+
     <script>
         function initMap() {
             var location = {
@@ -1093,43 +1190,149 @@
                 map: map
             });
         }
-        $('.calendar').map(function(index) {
-        var Contact = @json($Contact);
-        console.log("Contact Data:", Contact); // Debugging: Log Contact data
+        var calendarNode = document.querySelector("#calendar");
 
-        $('.calendar').each(function(index) {
-            var startDate;
+        var currDate = new Date();
+        var currYear = currDate.getFullYear();
+        var currMonth = currDate.getMonth() + 1;
 
-            if (Contact[index] && Contact[index].start_date) {
-                startDate = new Date(Contact[index].start_date);
-                console.log("Using contact date for calendar", index, startDate);
-            } else {
-                $(this).datepicker({
-                    defaultViewDate: {
-                        year: (new Date()).getFullYear(),
-                        month: (new Date()).getMonth() + index,
-                        date: 1
-                    },
-                    multidate: true,
-                    updateViewDate: false
-                });
-            }
+        var selectedYear = currYear;
+        var selectedMonth = currMonth;
+        var selectedMonthName = getMonthName(selectedYear, selectedMonth);
+        var selectedMonthDays = getDayCount(selectedYear, selectedMonth);
 
-            $(this).datepicker({
-                defaultDate: startDate,
-                dateFormat: 'yy-mm-dd',
-                beforeShowDay: function(date) {
-                    var highlight = startDate.getTime() === date.getTime();
-                    if (highlight) {
-                        return [true, "highlighted-date", "Default date"];
-                    } else {
-                        return [true, "", ""];
-                    }
+        // In Laravel Blade template
+        let start_date = new Date("{{ date('Y-m-d', strtotime($Contact->start_date)) }}");
+        let end_date = new Date("{{ date('Y-m-d', strtotime($Contact->end_date)) }}");
+
+
+        renderDOM(selectedYear, selectedMonth);
+
+        function getMonthName(year, month) {
+            let selectedDate = new Date(year, month - 1, 1);
+            return selectedDate.toLocaleString("default", {
+                month: "long"
+            });
+        }
+
+        function getMonthText() {
+            if (selectedYear === currYear) return selectedMonthName;
+            else return selectedMonthName + ", " + selectedYear;
+        }
+
+        function getDayName(year, month, day) {
+            let selectedDate = new Date(year, month - 1, day);
+            return selectedDate.toLocaleDateString("en-US", {
+                weekday: "long"
+            });
+        }
+
+        function getDayCount(year, month) {
+            return 32 - new Date(year, month - 1, 32).getDate();
+        }
+
+        function getDaysArray() {
+            let emptyFieldsCount = 0;
+            let emptyFields = [];
+            let days = [];
+
+            emptyFields = Array(emptyFieldsCount).fill("");
+            days = Array.from(Array(selectedMonthDays + 1).keys());
+            days.splice(0, 1);
+
+            return emptyFields.concat(days);
+        }
+
+        function renderDOM(year, month) {
+            let newCalendarNode = document.createElement("div");
+            newCalendarNode.id = "calendar";
+            newCalendarNode.className = "calendar";
+
+            let dateText = document.createElement("div");
+            dateText.append(getMonthText());
+            dateText.className = "date-text";
+            newCalendarNode.append(dateText);
+
+            let leftArrow = document.createElement("div");
+            leftArrow.append("«");
+            leftArrow.className = "button";
+            leftArrow.addEventListener("click", goToPrevMonth);
+            newCalendarNode.append(leftArrow);
+
+            let curr = document.createElement("div");
+            curr.append("📅");
+            curr.className = "button";
+            curr.addEventListener("click", goToCurrDate);
+            newCalendarNode.append(curr);
+
+            let rightArrow = document.createElement("div");
+            rightArrow.append("»");
+            rightArrow.className = "button";
+            rightArrow.addEventListener("click", goToNextMonth);
+            newCalendarNode.append(rightArrow);
+
+            let dayNames = ["M", "T", "W", "T", "F", "S", "S"];
+
+            dayNames.forEach((cellText) => {
+                let cellNode = document.createElement("div");
+                cellNode.className = "cell cell--unselectable";
+                cellNode.append(cellText);
+                newCalendarNode.append(cellNode);
+            });
+
+            let days = getDaysArray(month);
+
+            days.forEach((cellText) => {
+                let cellNode = document.createElement("div");
+                cellNode.className = "cell";
+                if (cellText !== "") {
+                    let cellDate = new Date(year, month - 1, cellText);
+                    console.log(cellDate);
+               if ((cellDate >= start_date && cellDate <= end_date) || cellDate === start_date || cellDate === 17) {
+    cellNode.classList.add("active");
+}
                 }
-            }).datepicker("setDate", startDate);
-        });
+                cellNode.append(cellText);
+                newCalendarNode.append(cellNode);
+            });
 
-    });
+            calendarNode.replaceWith(newCalendarNode);
+            calendarNode = document.querySelector("#calendar");
+        }
+
+
+        function goToPrevMonth() {
+            selectedMonth--;
+            if (selectedMonth === 0) {
+                selectedMonth = 12;
+                selectedYear--;
+            }
+            selectedMonthDays = getDayCount(selectedYear, selectedMonth);
+            selectedMonthName = getMonthName(selectedYear, selectedMonth);
+
+            renderDOM(selectedYear, selectedMonth);
+        }
+
+        function goToNextMonth() {
+            selectedMonth++;
+            if (selectedMonth === 13) {
+                selectedMonth = 1;
+                selectedYear++;
+            }
+            selectedMonthDays = getDayCount(selectedYear, selectedMonth);
+            selectedMonthName = getMonthName(selectedYear, selectedMonth);
+
+            renderDOM(selectedYear, selectedMonth);
+        }
+
+        function goToCurrDate() {
+            selectedYear = currYear;
+            selectedMonth = currMonth;
+
+            selectedMonthDays = getDayCount(selectedYear, selectedMonth);
+            selectedMonthName = getMonthName(selectedYear, selectedMonth);
+
+            renderDOM(selectedYear, selectedMonth);
+        }
     </script>
-
 @endsection
