@@ -59,6 +59,7 @@
     font-size:25px;
     padding:0 10px;
     transition:all 0.2s linear;
+    color:white;
 }
 .footer-media ul li i:hover{
     color:white;
@@ -76,14 +77,20 @@
     align-items:center;
     border-bottom:1px solid #9aa4af;
     padding-bottom:20px;
+    display:flex;
 }
 .footer-logo img{
     width: 100%;
     max-width:110px;
     
 }
-.icon1 a:hover{
+.icon1 a{
     color:white;
+    transitoin:all 0.2s linear;
+    text-decoration:none;
+}
+.icon1 a:hover{
+    color: #FFA920;
 }
     #services p i{
         color:#FFA920;
@@ -122,15 +129,26 @@
 .agent-widget-inner {
     margin: 35px 0;
 }
+.footer-logo{
+    display:block;
+}
 .footer-inner{
     gap:10px;
     
+}
+.footer-media{
+    padding:0;  
+}
+footer#main-footer {
+    /* margin-top: 40px; */
+    background-color: black;
+    padding: 0 10px !important;
 }
     }
 </style>
 <footer id="main-footer" class="text-white">
         <section id="services" class="py-4  text-white">
-           <div class="col-xl-12 footer-logo d-flex justify-content-between">
+           <div class="col-xl-12 footer-logo  justify-content-between">
             <div class="">
                 <a href="{{route('index')}}"><img src="{{ asset('assets/img/logo7.png' ) }}"></a>
             </div>
