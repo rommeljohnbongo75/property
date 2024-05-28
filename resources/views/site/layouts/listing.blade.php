@@ -49,9 +49,11 @@
     .form-group {
         margin: 0 !important;
     }
-#Booking-details {
-    padding: 30px 0;
-}
+
+    #Booking-details {
+        padding: 30px 0;
+    }
+
     input[type="text"] {
         width: calc(100% - 40px);
         padding: 10px;
@@ -155,9 +157,11 @@
         display: block !important;
 
     }
+
     .list-group.list-group-flush .list-group-item {
         font-size: 20px;
-} 
+    }
+
     .counter input[type="text"] {
         width: 15%;
         padding: 10px;
@@ -309,7 +313,7 @@
     .review-title h3 {
         padding-bottom: 20px;
         color: black;
-        font-size:30px;
+        font-size: 30px;
     }
 
     .review-dec p {
@@ -374,11 +378,13 @@ padding-bottom:30px;
     }
 
     .cards {
-        padding-top:30px !important;
+        padding-top: 30px !important;
     }
+
     .list-group-item i {
-            color: #FFA920 !important;
-        }
+        color: #FFA920 !important;
+    }
+
     .adults-children.sec-menu-div.active {
         display: block !important;
     }
@@ -507,7 +513,7 @@ padding-bottom:30px;
             position: relative;
         }
 
-       
+
 
         .page-title {
             font-family: var(--font-family);
@@ -652,160 +658,169 @@ padding-bottom:30px;
         .cards {
             padding-top: unset !important;
         }
+
         .container-form-one {
-                width: unset !important;
-                margin:auto;
-            }
-
-            .fileds-inner {
-                display: block !important;
-            }
-
-            .cards {
-                padding-top: 40px !important;
-            }
-
-            .page-title {
-                font-size: 30px;
-            }
-
-            .fields h2 {
-                font-size: 30px;
-            }
-
-            .container-form-one h1 {
-                margin: 0;
-                padding: 20px 0;
-            }
-
-            input[type="text"] {
-                margin: 0 !important;
-            }
-
-            .property-title h3 {
-                font-size: 30px;
-            }
-
-            .map-map h3 {
-                font-size: 30px;
-            }
-
-            .date h3 {
-                font-size: 30px;
-            }
-
-            .calendar-main {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .review-title h3 {
-                margin: 0;
-            }
-
-            .about-host-inner {
-                flex-wrap: wrap;
-            }
+            width: unset !important;
+            margin: auto;
         }
 
-    
-
-        @media only screen and (max-width:425px) {
-            .fields1 {
-                flex-wrap: wrap;
-            }
-
-            .container-form-one h1 {
-                font-size: 21px !important;
-            }
-
-            .container-form-one input[type="text"] {
-                font-size: 14px;
-            }
-
-            .list-group {
-                gap: 0;
-            }
-
-            .alert-text p {
-                padding-bottom: 0 !important;
-            }
-
-            .page-title {
-                margin-top: 56px;
-                font-size: 20px;
-            }
-
-            .form-group-one {
-                padding: 10px;
-
-            }
-
-            .property-dec {
-                font-size: 14px;
-            }
-
-            .about-host-inner ul {
-                margin: 0;
-                padding: 0;
-                display: flex;
-            }
-
-            .author {
-                width: unset !important;
-            }
-
-            .review-btn button {
-                padding: 10px 13px;
-                font-size: 14px;
-            }
-
-            #listing {
-                padding: 40px 0;
-            }
-
-            #listings {
-                padding: 40px 0;
-            }
-
-            .date {
-                margin: 0;
-            }
-
-            .option-tab ul {
-                flex-wrap: wrap;
-                flex-direction: column;
-            }
-            .adults-children.sec-menu-div.active {
+        .fileds-inner {
             display: block !important;
         }
-    
-        .datepicker-days table.table-condensed {
-        max-width: 400px !important;
-    
+
+        .cards {
+            padding-top: 40px !important;
+        }
+
+        .page-title {
+            font-size: 30px;
+        }
+
+        .fields h2 {
+            font-size: 30px;
+        }
+
+        .container-form-one h1 {
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        input[type="text"] {
+            margin: 0 !important;
+        }
+
+        .property-title h3 {
+            font-size: 30px;
+        }
+
+        .map-map h3 {
+            font-size: 30px;
+        }
+
+        .date h3 {
+            font-size: 30px;
+        }
+
+        .calendar-main {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .review-title h3 {
+            margin: 0;
+        }
+
+        .about-host-inner {
+            flex-wrap: wrap;
+        }
     }
 
-    td.active.day.test {
-        background-color: rgb(242, 94, 94) !important;
-        color: #000000 !important;
-        text-decoration: line-through;
+
+
+    @media only screen and (max-width:425px) {
+        .fields1 {
+            flex-wrap: wrap;
+        }
+
+        .container-form-one h1 {
+            font-size: 21px !important;
+        }
+
+        .container-form-one input[type="text"] {
+            font-size: 14px;
+        }
+
+        .list-group {
+            gap: 0;
+        }
+
+        .alert-text p {
+            padding-bottom: 0 !important;
+        }
+
+        .page-title {
+            margin-top: 56px;
+            font-size: 20px;
+        }
+
+        .form-group-one {
+            padding: 10px;
+
+        }
+
+        .property-dec {
+            font-size: 14px;
+        }
+
+        .about-host-inner ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .author {
+            width: unset !important;
+        }
+
+        .review-btn button {
+            padding: 10px 13px;
+            font-size: 14px;
+        }
+
+        #listing {
+            padding: 40px 0;
+        }
+
+        #listings {
+            padding: 40px 0;
+        }
+
+        .date {
+            margin: 0;
+        }
+
+        .option-tab ul {
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .adults-children.sec-menu-div.active {
+            display: block !important;
+        }
+
+        .datepicker-days table.table-condensed {
+            max-width: 400px !important;
+
+        }
+
+        td.active.day.test {
+            background-color: rgb(242, 94, 94) !important;
+            color: #000000 !important;
+            text-decoration: line-through;
+        }
+
+        .active {
+            background-color: #ec0c0c;
+            border-color: #d91414;
+            text-decoration: line-through
+        }
+
     }
+
     .calendar {
         padding: 1em;
         border-radius: 10px;
-
         display: grid;
         place-items: center;
         grid-template-columns: repeat(7, 1fr);
         grid-auto-rows: max-content;
         grid-auto-flow: row;
-
         color: black;
         background-color: hsl(231, 20%, 85%);
     }
 
     .cell {
-        width: 30%;
+        width: 100%;
         padding: 0.4em 0.8em;
         text-align: center;
 
@@ -819,6 +834,7 @@ padding-bottom:30px;
     .cell:focus {
         color: hsl(231, 20%, 85%);
         background-color: #bf4e30;
+        user-select: none;
     }
 
     .cell:empty {
@@ -864,50 +880,6 @@ padding-bottom:30px;
         padding: 0;
         box-sizing: border-box;
     }
-
-
-    h1 {
-        margin: 0.5em 0;
-    }
-
-    .calendar {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
-    }
-
-    .cell {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid #ddd;
-    }
-
-    .cell--unselectable {
-        background-color: #f5f5f5;
-    }
-
-
-    .button {
-        cursor: pointer;
-        text-align: center;
-        user-select: none;
-    }
-
-    .button:hover {
-        background-color: #ddd;
-    }
-
-    .active {
-        background-color: #ec0c0c;
-        border-color: #d91414;
-        text-decoration: line-through
-    }
-           
-}
-
-    
-
-        
 </style>
 @section('content')
     <!-- Listing -->
@@ -1185,7 +1157,7 @@ padding-bottom:30px;
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap"
         defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ asset('assets/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+
 
     <script>
         function initMap() {
@@ -1202,6 +1174,7 @@ padding-bottom:30px;
                 map: map
             });
         }
+
         var calendarNode = document.querySelector("#calendar");
 
         var currDate = new Date();
@@ -1300,9 +1273,10 @@ padding-bottom:30px;
                 if (cellText !== "") {
                     let cellDate = new Date(year, month - 1, cellText);
                     console.log(cellDate);
-               if ((cellDate >= start_date && cellDate <= end_date) || cellDate === start_date || cellDate === 17) {
-    cellNode.classList.add("active");
-}
+                    if ((cellDate >= start_date && cellDate <= end_date) || cellDate === start_date || cellDate ===
+                        17) {
+                        cellNode.classList.add("active");
+                    }
                 }
                 cellNode.append(cellText);
                 newCalendarNode.append(cellNode);

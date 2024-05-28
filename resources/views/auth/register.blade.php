@@ -83,6 +83,10 @@ background-size: cover;
     #register .btn {
         display: flex;
         justify-content: center;
+        background-color: #FFA920 !important;
+    width: 100%;
+    max-width: 30%;
+    margin: auto;
     }
 
     #register .card {
@@ -90,7 +94,7 @@ background-size: cover;
         border-radius: unset;
         border: none;
     }
-
+ 
     #register input[type="email"] {
         width: 100%;
         max-width: 60%;
@@ -124,6 +128,28 @@ background-size: cover;
             font-size: 20px;
         }
     }
+    @media only screen and (max-width: 425px) {
+    .text-danger{
+
+    margin-left:0 !important; 
+     text-align: center;
+    padding-left: 57px;
+}
+    }
+    @media only screen and (max-width:375px) {
+        .text-danger{
+             margin-left:-27px !important;
+             text-align: center;
+    }
+}
+@media only screen and (max-width:320px) {
+        .text-danger{
+             margin-left:0 !important;
+             text-align: center;
+             padding-left:0 !important;
+    }
+}
+
 </style>
 @section('content')
     <section id="register" class="">

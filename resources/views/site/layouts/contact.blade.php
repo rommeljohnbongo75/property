@@ -89,7 +89,9 @@
     .contact-us-form .card-header {
         background-color: unset;
     }
-
+.card-header h4{
+    text-align:center;
+}
     .contact-us-form .card-header i {
         padding-right: 10px;
         color:#FFA920;
@@ -237,7 +239,7 @@
                                         @csrf
                                         <div class="data1">
                                             <div class="form-group ">
-                                                <label for="username">Full Name</label>
+                                                <!-- <label for="username">Full Name</label> -->
                                                 <input type="text" name="fullname"
                                                     class="form-control   @error('fullname') is-invalid @enderror"
                                                     placeholder=" Name">
@@ -248,7 +250,7 @@
                                                 </span>
                                             </div>
                                             <div class="form-group">
-                                                <label for="username">Email Address</label>
+                                                <!-- <label for="username">Email Address</label> -->
                                                 <input type="text" name="email"
                                                     class="form-control @error('email') is-invalid @enderror"
                                                     placeholder="Email">
@@ -261,7 +263,7 @@
                                         </div>
                                         <div class="data-one">
                                             <div class="form-group">
-                                                <label for="subject">Subject</label>
+                                                <!-- <label for="subject">Subject</label> -->
                                                 <textarea class="form-control @error('subject') is-invalid @enderror" name="subject" id="exampleFormControlTextarea1"
                                                     placeholder="Subject" rows="3"></textarea>
                                                 <span class="text-danger">
@@ -271,7 +273,7 @@
                                                 </span>
                                             </div>
                                             <div class="form-group">
-                                                <label for="message">Message</label>
+                                                <!-- <label for="message">Message</label> -->
                                                 <textarea class="form-control @error('message') is-invalid @enderror" name="message" id="exampleFormControlTextarea1"
                                                     placeholder="Message" rows="3"></textarea>
                                                 <span class="text-danger">

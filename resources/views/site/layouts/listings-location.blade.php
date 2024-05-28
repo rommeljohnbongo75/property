@@ -319,20 +319,41 @@
         }
 
         .plus {
-            display: contents;
-            /* gap: 30px; */
-            padding: 0 46px;
-            border: 1px solid black;
-            border-radius: 10px;
-            color: black;
-        }
+            
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #FFA920;
+    color: #fff;
+    border-radius: 5px;
+}
+     
 
         @media only screen and (max-width:1024px) {
             .listings-location-inner {
                 grid-template-columns: 1fr 1fr;
             }
+            .search-bar-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;
+    gap: 20px;
+}
         }
-
+    
+    @media only screen and (max-width:768px) {
+        .search-bar-inner {
+    /* display: grid; */
+    display: block;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;
+    gap: 20px;
+}
+.Amenities-data, .arrive-data, .adult-data, .search-location{
+    margin-bottom: 10px;
+}
+    }
         @media only screen and (max-width:425px) {
             .listings-location-inner {
                 grid-template-columns: 1fr;
@@ -409,7 +430,7 @@
     input.adults-adults,
     input.children-children {
         border: none;
-        background-color: whitesmoke;
+        /* background-color: whitesmoke; */
         padding: 5%;
         border-radius: 2px;
         font-size: 18px;
@@ -542,48 +563,45 @@
                 </div>
             </form>
 
-            <div class="container">
-                <div class="row">
-                    @foreach ($listing as $item)
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{ url($item->thumbnail_0) }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title text-center">{{ $item->title }}</h6>
-                                    <div class="location-filter-detials">
-                                        <div class="card-body-inner">
-                                            <div class="listing-heading text-center">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                                {{ $item->city }}
-                                            </div>
-                                            <hr>
-                                            <div class="d-flex  text-secondary justify-content-between">
-                                                <div class="filter-icon ">
-                                                    <i class="fas fa-th-large"></i>sqft
-                                                    {{ $item->square_feet }}
-            
-                                                </div>
-                                                <div class="filter-icon">
-                                                    <i class="fas fa-car"></i>
-                                                    Garage:{{ $item->garage }}
-                                                </div>
-            
-                                            </div>
-                                            <div class="d-flex py-2 m-2 text-secondary">
-                                                <div class="filter-icon mr-5">
-                                                    <i class="fas fa-bed"></i>
-                                                    Bedrooms:{{ $item->bedroom }}
-                                                </div>
-                                                <div class="filter-icon">
-                                                    <i class="fas fa-bath"></i>
-                                                    Bathrooms:{{ $item->bathroom }}
-            
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="{{route('single.listing', $item->id)}}" class="btn  btn-block mb-4" id="Deatils">Deatils</a>
+
+            <div class="listings-location-inner col-sm-12 col-md-12 col-xl-8">
+                @foreach ($listing as $item)
+                    <div class="filter-location-inner">
+                        <img src="{{ url($item->thumbnail_0) }}">
+                        <div class="filter-location-dec">
+                            <h4>{{ $item->title }}</h4>
+                        </div>
+                        <div class="location-filter-detials">
+                            <div class="card-body-inner">
+                                <div class="listing-heading text-center">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    {{ $item->city }}
                                 </div>
+                                <hr>
+                                <div class="d-flex py-2 text-secondary justify-content-between">
+                                    <div class="filter-icon ">
+                                        <i class="fas fa-th-large px-2"></i>sqft
+                                        {{ $item->square_feet }}
+
+                                    </div>
+                                    <div class="filter-icon ">
+                                        <i class="fas fa-car px-2"></i>
+                                        Garage:{{ $item->garage }}
+                                    </div>
+
+                                </div>
+                                <div class="d-flex py-2 text-secondary justify-content-between">
+                                    <div class="filter-icon">
+                                        <i class="fas fa-bed px-2"></i>
+                                        Bedrooms:{{ $item->bedroom }}
+                                    </div>
+                                    <div class="filter-icon">
+                                        <i class="fas fa-bath px-2"></i>
+                                        Bathrooms:{{ $item->bathroom }}
+
+                                    </div>
+                                </div>
+                
                             </div>
                         </div>
                     @endforeach
