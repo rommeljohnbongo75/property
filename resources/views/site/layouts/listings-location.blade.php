@@ -319,20 +319,41 @@
         }
 
         .plus {
-            display: contents;
-            /* gap: 30px; */
-            padding: 0 46px;
-            border: 1px solid black;
-            border-radius: 10px;
-            color: black;
-        }
+            
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #FFA920;
+    color: #fff;
+    border-radius: 5px;
+}
+     
 
         @media only screen and (max-width:1024px) {
             .listings-location-inner {
                 grid-template-columns: 1fr 1fr;
             }
+            .search-bar-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;
+    gap: 20px;
+}
         }
-
+    
+    @media only screen and (max-width:768px) {
+        .search-bar-inner {
+    /* display: grid; */
+    display: block;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;
+    gap: 20px;
+}
+.Amenities-data, .arrive-data, .adult-data, .search-location{
+    margin-bottom: 10px;
+}
+    }
         @media only screen and (max-width:425px) {
             .listings-location-inner {
                 grid-template-columns: 1fr;
@@ -409,7 +430,7 @@
     input.adults-adults,
     input.children-children {
         border: none;
-        background-color: whitesmoke;
+        /* background-color: whitesmoke; */
         padding: 5%;
         border-radius: 2px;
         font-size: 18px;
@@ -554,24 +575,24 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex py-2 text-secondary justify-content-between">
-                                    <div class="filter-icon">
-                                        <i class="fas fa-th-large"></i>sqft
+                                    <div class="filter-icon ">
+                                        <i class="fas fa-th-large px-2"></i>sqft
                                         {{ $item->square_feet }}
 
                                     </div>
-                                    <div class="filter-icon">
-                                        <i class="fas fa-car"></i>
+                                    <div class="filter-icon ">
+                                        <i class="fas fa-car px-2"></i>
                                         Garage:{{ $item->garage }}
                                     </div>
 
                                 </div>
                                 <div class="d-flex py-2 text-secondary justify-content-between">
                                     <div class="filter-icon">
-                                        <i class="fas fa-bed"></i>
+                                        <i class="fas fa-bed px-2"></i>
                                         Bedrooms:{{ $item->bedroom }}
                                     </div>
                                     <div class="filter-icon">
-                                        <i class="fas fa-bath"></i>
+                                        <i class="fas fa-bath px-2"></i>
                                         Bathrooms:{{ $item->bathroom }}
 
                                     </div>
@@ -579,10 +600,10 @@
                                 {{-- <hr>
                                 <div class="d-flex py-2 text-secondary justify-content-between">
                                     <div class="filter-icon">
-                                        <i class="fas fa-user"></i>
+                                        <i class="fas fa-user px-2"></i>
                                     </div>
                                     <div class="filter-icon">
-                                        <i class="fas fa-clock"></i>
+                                        <i class="fas fa-clock px-2"></i>
                                     </div>
                                 </div>
                                 <hr> --}}

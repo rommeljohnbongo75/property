@@ -196,10 +196,26 @@
          .form-group i {
     transform: translate(79px, 10px);
 }
+.text-danger{
+    margin-left:0 !important;
+    text-align: center;
+    padding-left:60px;
+}
      }
      @media only screen and (max-width:320px) {
      .form-group i {
     transform: translate(55px, 10px);
+}
+.text-danger {
+    margin-left: 0 !important;
+    text-align: center;
+    padding-left: 9px;
+}
+#login .form-group input[type="text"], #login .form-group input[type="password"] {
+    position: relative;
+    width: 100%;
+    max-width: 68%;
+    margin: auto;
 }
      }
  </style>
@@ -227,7 +243,7 @@
                  <!-- <div class="col-sm-12 col-lg-6">
               <img src="{{ asset('assets/img/loginvector.png') }}">
             </div> -->
-                 <div class="col-sm-12 col-lg-6 mx-auto">
+                 <div class="col-sm-12 col-lg-6 mx-auto" id="login-form">
                      <div class="card">
                          <div class="card-header  text-black">
                              <h4>Login</h4>
