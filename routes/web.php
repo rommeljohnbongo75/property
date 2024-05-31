@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RentalController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\searchController;
 use App\Http\Controllers\SellerOftheMonth;
 use App\Http\Controllers\ContactController;
@@ -40,6 +41,7 @@ Route::get('/welcome', function () {
 Route::get('/', [FrontEndController::class, 'index'])->name('index');
 Route::post('/filter/orders', [FrontEndController::class, 'filterOrders'])->name('filter');
 Route::get('/listings', [FrontEndController::class, 'listings'])->name('listings');
+Route::post('/review', [FrontEndController::class, 'review'])->name('review');
 Route::get('/listings/{id}', [FrontEndController::class, 'listing'])->name('single.listing');
 Route::get('/dashboard', [FrontEndController::class, 'dashboard'])->name('dashboard');
 Route::get('/about', [FrontEndController::class, 'about'])->name('about');
@@ -94,6 +96,11 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('banner/delete/{id}', 'destroy')->name('banner.delete');
 });
 
+Route::controller(ReviewController::class)->group(function () {
+    Route::get('review','index')->name('review.index');  
+    Route::post('/changestatus', 'changestatus')->name('changestatus');
+});
+
 Route::controller(FeaturedLocationsController::class)->group(function () {
     Route::get('FeaturedLocation','index')->name('FeaturedLocation.index');  
     Route::get('FeaturedLocation/create','create')->name('FeaturedLocation.create');  
@@ -101,9 +108,8 @@ Route::controller(FeaturedLocationsController::class)->group(function () {
     Route::get('FeaturedLocation/edit/{id}', 'edit')->name('FeaturedLocation.edit');
     Route::put('FeaturedLocation/update/{id}', 'update')->name('FeaturedLocation.update');
     Route::get('FeaturedLocation/delete/{id}', 'destroy')->name('FeaturedLocation.delete');
-
-
 });
+
 
 Route::group(['prefix' => 'back', 'middleware' => 'isauthorize:0'], function () {
 

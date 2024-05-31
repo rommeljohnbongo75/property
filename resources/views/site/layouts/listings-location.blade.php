@@ -55,7 +55,7 @@
 
         .listings-location-inner {
             display: grid;
-            grid-template-columns: 0.8fr 0.8fr 0.8fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
             padding-top: 30px;
         }
@@ -336,6 +336,9 @@
             .listings-location-inner {
                 grid-template-columns: 1fr 1fr;
             }
+
+
+            
             .search-bar-inner {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;
@@ -350,6 +353,7 @@
     grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;
     gap: 20px;
 }
+
 .Amenities-data, .arrive-data, .adult-data, .search-location{
     margin-bottom: 10px;
 }
@@ -564,7 +568,7 @@
             </form>
 
 
-            <div class="listings-location-inner col-sm-12 col-md-12 col-xl-8">
+            <div class="listings-location-inner ">
                 @foreach ($listing as $item)
                     <div class="filter-location-inner">
                         <img src="{{ url($item->thumbnail_0) }}">

@@ -39,8 +39,8 @@
     .property {
         width: 100%;
         /* Change width to full width */
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        /* display: grid; */
+        /* grid-template-columns: 1fr 1fr; */
         flex-wrap: wrap;
         /* Ensure properties wrap to new line */
         gap: 30px;
@@ -54,9 +54,11 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
         position: relative;
         /* margin:20px 0; */
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         transition: all 0.4s linear;
         overflow: hidden;
+        gap:20px;
 
     }
 
@@ -78,7 +80,9 @@
         font-size: 14px;
         padding: 0;
     }
-
+.property-content h3{
+    padding:10px 0;
+}
     .property-box h5 {
         font-size: 16px;
     }
@@ -149,7 +153,9 @@
         pointer-events: auto;
         /* make sure that the user still can select checkboxes */
     }
-
+.offset-md-5{
+    margin-left:0 !important;
+}
     .checkbox-dropdown-list input[type="checkbox"] {
         margin-right: 5px;
     }
@@ -161,7 +167,7 @@
 
         transition: all 0.2s ease-out;
     }
-
+.
     .checkbox-dropdown-list li label:hover {
         background-color: #fff;
         color: #000;
@@ -313,7 +319,7 @@
     }
 
     .property img {
-        max-width: 500px;
+      
         height: 100%;
     }
 
@@ -400,8 +406,10 @@
 
     .filter-icon i {
         color: black;
-
-    }
+}
+.property-content p{
+    padding:20px 0;
+}
 
     /* ------------ocation-listings-end--------------*/
 
@@ -430,9 +438,15 @@
         .property {
             width: 100%;
             grid-template-columns: 1fr;
-
+        }
+        .property-inner{
+            grid-template-columns: 1fr;
+            padding:20px;
         }
 
+.offset-md-5 h1{
+    font-size: 25px;
+}
         .map-heading h3 {
             padding-top: 30px;
             font-size: 25px;
@@ -451,6 +465,12 @@
         .agent-widget-inner {
             margin: 40px 0;
         }
+        .property-content h3{
+            padding:20px 0;
+        }
+        .property-content p {
+    padding:0px 0;
+}
 
         #listings {
             padding: unset;
@@ -555,7 +575,7 @@ footer#main-footer {
                         @endforeach
                 @else
                 <div class="row">
-                    <div class="col-md-12 offset-md-5">
+                    <div class="col-md-6 offset-md-5">
                         <div class="card text-center">
                             <div class="card-body">
                                 <div class="table-responsive">

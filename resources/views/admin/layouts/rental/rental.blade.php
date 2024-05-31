@@ -130,6 +130,7 @@
                 gap: 229px;
             }
         }
+    }
 </style>
 
 @section('content')

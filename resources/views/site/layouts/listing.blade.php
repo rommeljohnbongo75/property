@@ -35,7 +35,12 @@
     h1 {
         text-align: center;
     }
-
+.Property-Description{
+    margin:30px 0;
+}
+.property-title h3{
+    font-size: 32px;
+}
     .container-form-one h1 {
         font-size: 30px;
         color: black;
@@ -74,7 +79,9 @@
         display: inline-block;
         vertical-align: middle;
     }
-
+.review-icon{
+    display: flex;
+}
     .counter {
         display: inline-block;
 
@@ -104,6 +111,10 @@
         cursor: pointer;
         margin-top: 20px;
     }
+#listing{
+  
+    padding-top: 105px;
+}
 
     .submit-request:hover {
         background-color: #0056b3;
@@ -113,14 +124,22 @@
         font-size: 25px;
         color: #FFA920 !important;
     }
-
+.property{
+    padding:40px 0;
+}
     .form-group-icon i {
         font-size: 25px;
         padding-right: 5px;
         color: #FFA920 !important;
         /* margin-left:10px; */
     }
-
+    .date{
+        padding:30px 0;
+    }
+    .date h3{
+        font-size: 32px;
+        
+    }
     .form-img i {
         font-size: 25px;
     }
@@ -151,6 +170,10 @@
 
     .sec-menu-div {
         padding: 20px 0;
+    }
+    .map-map h3{
+        padding:30px 0;
+        font-size:32px;
     }
 
     .adults-children .sec-menu-div.active {
@@ -324,7 +347,7 @@
     .review-dec {
         /* display:flex; */
     }
-
+.Dates
     .about-host-inner ul {
         display: flex;
     }
@@ -394,6 +417,7 @@ padding-bottom:30px;
             width: unset !important;
         }
 
+
         .fileds-inner {
             display: block !important;
         }
@@ -421,6 +445,8 @@ padding-bottom:30px;
 
         .property-title h3 {
             font-size: 30px;
+        
+         
         }
 
         .map-map h3 {
@@ -450,7 +476,7 @@ padding-bottom:30px;
         }
 
         #listing {
-            padding: 100px 0;
+            padding: 110px 0;
         }
 
         #Booking-details {
@@ -560,7 +586,7 @@ padding-bottom:30px;
         }
 
         .property {
-            padding: 60px 0;
+            padding: 30px 0;
         }
 
         .property-title {
@@ -592,7 +618,7 @@ padding-bottom:30px;
         .fields {
             box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
             padding-top: 20px;
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             /* padding-left: 20px; */
         }
 
@@ -609,10 +635,10 @@ padding-bottom:30px;
         }
 
         .date {
-            padding: 40px 30px;
-            margin-top: 80px;
-            box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
-        }
+    padding: 40px 30px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.0784313725);
+}
 
         .date h3 {
             font-family: var(--font-family);
@@ -710,9 +736,9 @@ padding-bottom:30px;
             margin: 0;
         }
 
-        .about-host-inner {
+        /* .about-host-inner {
             flex-wrap: wrap;
-        }
+        } */
     }
 
 
@@ -722,8 +748,19 @@ padding-bottom:30px;
             flex-wrap: wrap;
         }
 
+        .calendar {
+            display: block !important;
+        }
+
         .container-form-one h1 {
             font-size: 21px !important;
+        }
+ .about-host-inner {
+            flex-wrap: wrap;
+        }
+        .navbar img {
+            width: 100%;
+            max-width: 50px !important;
         }
 
         .container-form-one input[type="text"] {
@@ -745,7 +782,12 @@ padding-bottom:30px;
 
         .form-group-one {
             padding: 10px;
-
+        }
+        .fields h2 {
+            text-align: center;
+        }
+        .property-title h3{
+            text-align: center;
         }
 
         .property-dec {
@@ -800,85 +842,91 @@ padding-bottom:30px;
         }
 
         .active {
-            background-color: #ec0c0c;
-            border-color: #d91414;
-            text-decoration: line-through
+            background-color: rgb(181, 20, 20) !important;
         }
 
+.booking h2{
+    text-align: center;
+}
     }
 
-    .calendar {
-        padding: 1em;
-        border-radius: 10px;
-        display: grid;
-        place-items: center;
-        grid-template-columns: repeat(7, 1fr);
-        grid-auto-rows: max-content;
-        grid-auto-flow: row;
-        color: black;
-        background-color: hsl(231, 20%, 85%);
-    }
-
-    .cell {
-        width: 100%;
-        padding: 0.4em 0.8em;
-        text-align: center;
-
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    .cell:hover,
-    .cell:focus {
-        color: hsl(231, 20%, 85%);
-        background-color: #bf4e30;
-        user-select: none;
-    }
-
-    .cell:empty {
-        width: 0;
-        padding: 0;
-    }
-
-    .cell--unselectable {
-        color: hsl(231, 20%, 50%);
-    }
-
-    .cell--unselectable:hover,
-    .cell--unselectable:focus {
-        color: hsl(231, 20%, 50%);
-        background-color: transparent;
-    }
-
-    .date-text {
-        padding: 1em 0.8em;
-        grid-column: 1 / 5;
-        justify-self: start;
+    .calendar-container {
         display: flex;
+        justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
 
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    .button-container {
+        margin-top: 20px;
+        position: relative;
+    }
+
+    div#left-arrow {
+        position: absolute;
+    }
+
+    div#right-arrow {
+        position: absolute;
+        right: 0;
     }
 
     .button {
         cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        padding: 10px;
+        margin: 0 10px;
+        font-size: 1.5em;
     }
 
-    /* OTHER */
+    .calendar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    .month {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        margin: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .cell {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .cell--unselectable {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .date-text {
+        grid-column: span 7;
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .activated {
+        background-color: #d63384;
+        color: white;
+        text-decoration: line-through
+    }
+
+    .cell--highlight {
+        background-color: #aa0033;
+        color: white;
+        font-weight: bold;
+    }
+
+    .cell--disableded {
+        border-color: gray;
+        text-decoration: line-through;
+        color: #949ca5;
+        pointer-events: none;
     }
 </style>
 @section('content')
@@ -893,7 +941,7 @@ padding-bottom:30px;
                 <div class="col-md-12 booking ">
 
                     <!-- Home Main Image -->
-                    <h2 class="page-title">{{ $listing->title }}</h2>
+                    <h2 class="page-title text-xs">{{ $listing->title }}</h2>
                     <p><i class="fa-solid fa-location-dot"></i> {{ $listing->city }}, {{ $listing->country }} <i
                             class="fa-solid fa-bed"></i> {{ $listing->bedroom }} Bedroom <i
                             class="fa-solid fa-dollar-sign"></i> {{ $listing->price }} Price</p>
@@ -950,7 +998,7 @@ padding-bottom:30px;
                     <div class=" fields ">
                         <h2>Booking Details</h2>
                         <div class=" gap-5 fileds-inner">
-                            <div class="col-md-12 col-lg-6  justify-content-between fields1">
+                            <div class="col-md-12 col-lg-12  justify-content-between fields1">
                                 <div class="page-inner">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item ">
@@ -1088,10 +1136,10 @@ padding-bottom:30px;
                     </div>
                 </div>
                 <!-- Description -->
-                <section class="property" id="Property Description">
+                <section class="property" id="Property-Description">
                     <div class="property-title">
                         <h3>Property Description</h3>
-                        <div class="row mb-5">
+                        <div class="row mb-0 md:mb-5">
                             <div class="col-md-12 property-dec">
                                 {{ $listing->description }}
                             </div>
@@ -1101,18 +1149,25 @@ padding-bottom:30px;
                 </section>
 
                 <div class="map-map" id="Property Location">
-                    <h3 class="">Property Location</h3>
+                    <h3>Property Location</h3>
                     <div id="map"></div>
                 </div>
-                <div class="date" id="Dates & Reservations">
-                    <h1>Dates & Reservations</h1>
-                    <div id="calendar" class="calendar">
-                        <span>Add something here</span>
+                <div class="date" id="Dates&Reservations">
+                    <h1 class="text-start">Dates & Reservations</h1>
+                    <div id="calendar-container" class="calendar-container">
+                        <div class="button-container">
+                            <div id="left-arrow" class="button">«</div>
+                            <div id="right-arrow" class="button">»</div>
+                            <div id="calendar" class="calendar"></div>
+                        </div>
                     </div>
                 </div>
             </div>
     </section>
     <!---------review-section-start------->
+
+
+
     <section class="review" id="review-one">
         <div class="container">
             <div class="review-card">
@@ -1129,16 +1184,17 @@ padding-bottom:30px;
                     <h3>About Host</h3>
 
                 </div>
+                @foreach ($review as $reviews)
+                    
                 <div class="about-host-inner d-flex">
                     <div class="sm:col-sm-2 author">
                         <h4 class="author-name">FS</h4>
                     </div>
-                    <div class="review-dec">
-                        <span>Max MArtin</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore ducimus perferendis porro
-                            rerum non eligendi rem consequatur dolorum sint!</p>
+                    <div class="review-dec ">
+                        <span>{{$reviews->email}}</span> <br>
+                        <p>{{$reviews->description}}</p>
                     </div>
-                    <ul class="review-icon">
+                         <ul class="review-icon">
                         <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
                         <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
                         <li><a href=""><i class="fa-solid fa-star" style="color: #FFD43B;"></i></a></li>
@@ -1148,10 +1204,31 @@ padding-bottom:30px;
                         </li>
 
                     </ul>
+                        {{-- <p>may 2024</p> --}}
+                       
+                    </div>
+                   
                 </div>
+                @endforeach
 
             </div>
-
+            <div class="cards">
+                <form method="post" action="{{route('review')}}" id="form" class="validate">
+                    @csrf
+                    <input type="hidden" name="listing_id" value="{{ $listing->id }}">
+                    <div class="form-field">
+                        <label for="email-input">Email</label>
+                        <input type="email" name="email"  placeholder="JoeBloggs@gmail.com" id=""  required/>
+                    </div>
+                    <div class="form-field">
+                        <label for="description-input">Description</label>
+                        <textarea name="description" class="form-control" style=" background-color: #efe9e2;" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <input type="submit" value="Review" />
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-W2RjTGgl0IF9ijvUlWHTnN04Sy0wFo&callback=initMap"
@@ -1175,23 +1252,27 @@ padding-bottom:30px;
             });
         }
 
+        var calendarContainerNode = document.querySelector("#calendar-container");
         var calendarNode = document.querySelector("#calendar");
+        var leftArrowNode = document.querySelector("#left-arrow");
+        var rightArrowNode = document.querySelector("#right-arrow");
 
         var currDate = new Date();
         var currYear = currDate.getFullYear();
         var currMonth = currDate.getMonth() + 1;
+        var currDay = currDate.getDate();
 
         var selectedYear = currYear;
         var selectedMonth = currMonth;
-        var selectedMonthName = getMonthName(selectedYear, selectedMonth);
-        var selectedMonthDays = getDayCount(selectedYear, selectedMonth);
 
-        // In Laravel Blade template
-        let start_date = new Date("{{ date('Y-m-d', strtotime($Contact->start_date)) }}");
-        let end_date = new Date("{{ date('Y-m-d', strtotime($Contact->end_date)) }}");
-
+        // Parse dates from Laravel Blade template
+        let start_date = new Date("{{ $Contact->start_date }}");
+        let end_date = new Date("{{ $Contact->end_date }}");
 
         renderDOM(selectedYear, selectedMonth);
+
+        leftArrowNode.addEventListener("click", goToPrevMonth);
+        rightArrowNode.addEventListener("click", goToNextMonth);
 
         function getMonthName(year, month) {
             let selectedDate = new Date(year, month - 1, 1);
@@ -1200,9 +1281,9 @@ padding-bottom:30px;
             });
         }
 
-        function getMonthText() {
-            if (selectedYear === currYear) return selectedMonthName;
-            else return selectedMonthName + ", " + selectedYear;
+        function getMonthText(year, month) {
+            if (year === currYear) return getMonthName(year, month);
+            else return getMonthName(year, month) + ", " + year;
         }
 
         function getDayName(year, month, day) {
@@ -1216,45 +1297,45 @@ padding-bottom:30px;
             return 32 - new Date(year, month - 1, 32).getDate();
         }
 
-        function getDaysArray() {
+        function getDaysArray(year, month) {
             let emptyFieldsCount = 0;
             let emptyFields = [];
             let days = [];
 
+            switch (getDayName(year, month, 1)) {
+                case "Tuesday":
+                    emptyFieldsCount = 1;
+                    break;
+                case "Wednesday":
+                    emptyFieldsCount = 2;
+                    break;
+                case "Thursday":
+                    emptyFieldsCount = 3;
+                    break;
+                case "Friday":
+                    emptyFieldsCount = 4;
+                    break;
+                case "Saturday":
+                    emptyFieldsCount = 5;
+                    break;
+
+            }
+
             emptyFields = Array(emptyFieldsCount).fill("");
-            days = Array.from(Array(selectedMonthDays + 1).keys());
+            days = Array.from(Array(getDayCount(year, month) + 1).keys());
             days.splice(0, 1);
 
             return emptyFields.concat(days);
         }
 
-        function renderDOM(year, month) {
-            let newCalendarNode = document.createElement("div");
-            newCalendarNode.id = "calendar";
-            newCalendarNode.className = "calendar";
+        function renderMonth(year, month) {
+            let monthNode = document.createElement("div");
+            monthNode.className = "month";
 
             let dateText = document.createElement("div");
-            dateText.append(getMonthText());
+            dateText.append(getMonthText(year, month));
             dateText.className = "date-text";
-            newCalendarNode.append(dateText);
-
-            let leftArrow = document.createElement("div");
-            leftArrow.append("«");
-            leftArrow.className = "button";
-            leftArrow.addEventListener("click", goToPrevMonth);
-            newCalendarNode.append(leftArrow);
-
-            let curr = document.createElement("div");
-            curr.append("📅");
-            curr.className = "button";
-            curr.addEventListener("click", goToCurrDate);
-            newCalendarNode.append(curr);
-
-            let rightArrow = document.createElement("div");
-            rightArrow.append("»");
-            rightArrow.className = "button";
-            rightArrow.addEventListener("click", goToNextMonth);
-            newCalendarNode.append(rightArrow);
+            monthNode.append(dateText);
 
             let dayNames = ["M", "T", "W", "T", "F", "S", "S"];
 
@@ -1262,63 +1343,84 @@ padding-bottom:30px;
                 let cellNode = document.createElement("div");
                 cellNode.className = "cell cell--unselectable";
                 cellNode.append(cellText);
-                newCalendarNode.append(cellNode);
+                monthNode.append(cellNode);
             });
 
-            let days = getDaysArray(month);
+            let days = getDaysArray(year, month);
 
             days.forEach((cellText) => {
                 let cellNode = document.createElement("div");
                 cellNode.className = "cell";
                 if (cellText !== "") {
                     let cellDate = new Date(year, month - 1, cellText);
-                    console.log(cellDate);
-                    if ((cellDate >= start_date && cellDate <= end_date) || cellDate === start_date || cellDate ===
-                        17) {
-                        cellNode.classList.add("active");
+                    if (cellDate.toDateString() === start_date.toDateString() || cellDate.toDateString() ===
+                        end_date.toDateString() || (cellDate >= start_date && cellDate <= end_date)) {
+                        cellNode.classList.add("activated");
+                    }
+                    if (cellDate.getFullYear() === currYear && cellDate.getMonth() + 1 === currMonth && cellDate
+                        .getDate() === currDay) {
+                        cellNode.classList.add("cell--highlight");
+                    }
+                    if (cellDate.getFullYear() < currYear || (cellDate.getFullYear() === currYear && cellDate
+                            .getMonth() < currMonth - 1) ||
+                        (cellDate.getFullYear() === currYear && cellDate.getMonth() === currMonth - 1 && cellDate
+                            .getDate() < currDay)) {
+                        cellNode.classList.add("cell--disableded");
                     }
                 }
                 cellNode.append(cellText);
-                newCalendarNode.append(cellNode);
+                monthNode.append(cellNode);
             });
+
+            return monthNode;
+        }
+
+
+        function renderDOM(year, month) {
+            let newCalendarNode = document.createElement("div");
+            newCalendarNode.id = "calendar";
+            newCalendarNode.className = "calendar";
+
+            let firstMonth = renderMonth(year, month);
+            newCalendarNode.append(firstMonth);
+
+            let secondMonthYear = (month === 12) ? year + 1 : year;
+            let secondMonth = (month === 12) ? 1 : month + 1;
+            let secondMonthNode = renderMonth(secondMonthYear, secondMonth);
+            newCalendarNode.append(secondMonthNode);
 
             calendarNode.replaceWith(newCalendarNode);
             calendarNode = document.querySelector("#calendar");
         }
 
-
         function goToPrevMonth() {
-            selectedMonth--;
-            if (selectedMonth === 0) {
-                selectedMonth = 12;
+            selectedMonth -= 2;
+            if (selectedMonth <= 0) {
+                selectedMonth += 12;
                 selectedYear--;
             }
-            selectedMonthDays = getDayCount(selectedYear, selectedMonth);
-            selectedMonthName = getMonthName(selectedYear, selectedMonth);
-
             renderDOM(selectedYear, selectedMonth);
         }
 
         function goToNextMonth() {
-            selectedMonth++;
-            if (selectedMonth === 13) {
-                selectedMonth = 1;
+            selectedMonth += 2;
+            if (selectedMonth > 12) {
+                selectedMonth -= 12;
                 selectedYear++;
             }
-            selectedMonthDays = getDayCount(selectedYear, selectedMonth);
-            selectedMonthName = getMonthName(selectedYear, selectedMonth);
-
             renderDOM(selectedYear, selectedMonth);
         }
 
         function goToCurrDate() {
             selectedYear = currYear;
             selectedMonth = currMonth;
-
-            selectedMonthDays = getDayCount(selectedYear, selectedMonth);
-            selectedMonthName = getMonthName(selectedYear, selectedMonth);
-
             renderDOM(selectedYear, selectedMonth);
         }
+        $(document).ready(function() {
+            $('.cards').hide();
+            $('.review-btn').click(function() {
+                $('.cards').fadeToggle();
+            });
+        });
     </script>
 @endsection

@@ -55,6 +55,7 @@
          box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.10);
          border-radius: unset;
          border: none;
+         z-
          /* box-shadow:#00000024 2px 7px 20px 0px;
     background-image:linear-gradient(180deg, white 60%, #ffffff00);
     border-bottom:none; */
@@ -205,6 +206,7 @@
      @media only screen and (max-width:320px) {
      .form-group i {
     transform: translate(55px, 10px);
+    z-index:0;
 }
 .text-danger {
     margin-left: 0 !important;

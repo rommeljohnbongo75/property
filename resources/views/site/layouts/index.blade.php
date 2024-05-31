@@ -445,6 +445,7 @@
         color: black;
         display: flex;
         gap: 30px;
+        align-items: center;
     }
 
     .home-search.p-5 h4 {
@@ -872,7 +873,31 @@
         #listings h3 {
             font-size: 40px;
         }
-
+        .container-form {
+    border: 1px solid black;
+    padding: 21px 20px;
+    box-shadow: #00000024 2px 7px 20px 0px !important;
+    border-radius: 20px;
+    background-image: linear-gradient(180deg, white 60%, #ffffff00);
+    width: 529px;
+    z-index: 1 !important;
+    position: absolute;
+    top: 0;
+    border: none;
+    top: 16%;
+    left: 34%;
+}
+.form-btn {
+    text-align: center;
+    padding-top: 0px !important;
+}
+        .card-icon {
+    font-family: var(--font-family);
+    color: black;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
         .listing-heading h4 {
             font-size: 17px;
         }
@@ -919,6 +944,10 @@
         #services i {
             font-size: 30px;
         }
+        .listing .navbar img {
+    width: 100%;
+    max-width: 60px !important;
+}
 
         #services p {
             font-size: 16px !important;
@@ -1008,6 +1037,10 @@
         .services-card .col-md-6 {
             flex-wrap: wrap;
         }
+        .navbar img {
+    width: 100%;
+    max-width: 64px !important;
+}
 
         .container-form h1 {
             font-size: 20px !important;
@@ -1066,7 +1099,19 @@
             padding: 10px;
         }
     }
+    @media only screen and (max-width:375px) {
 
+        .navbar img {
+    width: 100%;
+    max-width:50px !important;
+}
+.container-form {
+    padding: 20px 15px;
+    top: 30%;
+    left: 4% !important;
+    width: 331px;
+}
+    }
     .minus {
         cursor: pointer;
         display: inline-block;
@@ -1130,11 +1175,11 @@
                                     <i class="fa-regular fa-user"></i>
                                 </div>
                                 <div class="data-lable-one">
-                                    <input type="text" class="adults-adults" style="font-size:18px" value="1 Guest" placeholder="1 Adults">
+                                    <input type="text" class="adults-adults" style="font-size:18px" value="1 Bedroom" placeholder="1 Adults">
                                 </div>
                                 <div class="data-lable-one">
                                     <input type="text" class="children-children" style="font-size:18px"
-                                        value="1 Children" placeholder="1 Children">
+                                        value="1 Bathroom" placeholder="1 Bathroom">
                                 </div>
                             </div>
 
@@ -1142,8 +1187,8 @@
                                 <div class="form-group">
                                     <div class="counter d-flex justify-content-center" id="counter">
                                         <div class="form-date">
-                                            <h4>Adults Capacity</h4>
-                                            <p>Total guests capacity</p>
+                                            <h4>Bedroom Capacity</h4>
+                                            <p>Total Bedroom capacity</p>
                                         </div>
                                         <div class="counter-add-data text-center">
                                             <span class="adults-minus">-</span>
@@ -1156,8 +1201,8 @@
                                 <div class="form-group">
                                     <div class="counter d-flex justify-content-center" id="counter">
                                         <div class="form-date">
-                                            <h4>Children Capacity</h4>
-                                            <p>Total bedrooms capacity</p>
+                                            <h4>Bathroom Capacity</h4>
+                                            <p>Total Bathroom capacity</p>
                                         </div>
                                         <div class="counter-add-data text-center">
                                             <span class="minus">-</span>

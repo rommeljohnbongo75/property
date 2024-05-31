@@ -21,4 +21,8 @@ class Listing extends Model
     {
         return $this->belongsTo(Realtor::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

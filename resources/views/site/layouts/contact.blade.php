@@ -171,6 +171,10 @@
         .contact-title h2 {
             font-size: 25px;
         }
+        .navbar img {
+    width: 100%;
+    max-width: 50px;
+}
     }
 </style>
 @section('content')

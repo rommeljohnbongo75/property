@@ -243,7 +243,6 @@
                             </a>
                         </li>
                         @auth
-                        telephone.png
                             @if (auth()->user()->role == 0)
                                 <li class="nav-item  {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('admin.index') }}"><i class="fas fa-user-plus"></i>

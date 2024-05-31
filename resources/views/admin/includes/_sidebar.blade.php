@@ -86,6 +86,13 @@
                         </ul>
                     </div>
                 </li>
+                
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('review.index')}}" aria-expanded="false">
+                        <i class="mdi mdi-cellphone-basic"></i>
+                        <span class="hide-menu">Review</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
