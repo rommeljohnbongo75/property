@@ -143,7 +143,7 @@
      .form-group i {
          transform: translate(127px, 10px);
          position: absolute;
-         z-index: 999;
+         z-index: 1;
      }
 
      ::placeholder {
@@ -187,6 +187,8 @@
 @media only screen and (max-width:768px){
 .form-group i {
     transform: translate(138px, 10px);
+    position: absolute;
+    z-index: 1;
 }
 }
      @media only screen and (max-width:425px) {
@@ -197,6 +199,7 @@
          .form-group i {
     transform: translate(79px, 10px);
 }
+
 .text-danger{
     margin-left:0 !important;
     text-align: center;
@@ -206,7 +209,7 @@
      @media only screen and (max-width:320px) {
      .form-group i {
     transform: translate(55px, 10px);
-    z-index:0;
+    z-index:1;
 }
 .text-danger {
     margin-left: 0 !important;

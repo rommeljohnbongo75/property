@@ -31,7 +31,15 @@
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+#header{
+    #header {
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
 
+}
     h1 {
         text-align: center;
     }

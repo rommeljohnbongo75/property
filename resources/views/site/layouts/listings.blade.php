@@ -761,10 +761,7 @@ input.adults-adults, input.children-children {
                         <button type="submit" class="search"> search </button>
                     </div>
                 </div>
-
-
-
-                <div class="adults-children sec-menu-div">
+        <div class="adults-children sec-menu-div">
                     <div class="form-group">
                         <div class="counter d-flex justify-content-center" id="counter">
                             <div class="form-date">

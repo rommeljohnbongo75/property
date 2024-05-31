@@ -519,7 +519,7 @@
     }
 
     .banner-image img {
-        height: 100%;
+        /* height: 100%; */
         position: relative;
     }
 
@@ -948,7 +948,10 @@
     width: 100%;
     max-width: 60px !important;
 }
-
+.banner-image img {
+        height:unset;
+        position: relative;
+    }
         #services p {
             font-size: 16px !important;
             margin: 0;
@@ -1108,7 +1111,7 @@
 .container-form {
     padding: 20px 15px;
     top: 30%;
-    left: 4% !important;
+    left: 8% !important;
     width: 331px;
 }
     }

@@ -40,6 +40,9 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.10);
         }
+        /* ul.navbar-nav.justify-content-end.flex-grow-1.pe-3 {
+            flex-grow: unset !important;
+} */
 
         .filter-location-dec h4 {
             font-size: 19px;
@@ -59,7 +62,7 @@
             gap: 30px;
             padding-top: 30px;
         }
-
+  
         .search-bar-inner {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 0.3fr;
@@ -338,7 +341,7 @@
             }
 
 
-            
+
             .search-bar-inner {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 0.3fr;

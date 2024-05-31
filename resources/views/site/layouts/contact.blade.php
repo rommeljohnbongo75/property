@@ -173,7 +173,8 @@
         }
         .navbar img {
     width: 100%;
-    max-width: 50px;
+    max-width: 5
+    0px;
 }
     }
 </style>
